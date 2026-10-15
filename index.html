@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aiden Hockinberry | Mechanical Engineering & Prototyping Portfolio</title>
-  <meta name="description" content="Mechanical Engineering Portfolio of Aiden Hockinberry. Showcasing physical prototypes, virtual physics simulations, 70+ piston engines, CAD modeling, and 3D printed mechatronics.">
-  <meta name="keywords" content="Aiden Hockinberry, Mechanical Engineering, Portfolio, CAD, Fusion 360, 3D Printing, Robotics, Kinematics, Piston Engines">
+  <meta name="description"
+    content="Mechanical Engineering Portfolio of Aiden Hockinberry. Showcasing physical prototypes, virtual physics simulations, 70+ piston engines, CAD modeling, and 3D printed mechatronics.">
+  <meta name="keywords"
+    content="Aiden Hockinberry, Mechanical Engineering, Portfolio, CAD, Fusion 360, 3D Printing, Robotics, Kinematics, Piston Engines">
   <meta name="author" content="Aiden Hockinberry">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
+
 <body>
 
   <!-- Navigation Bar -->
@@ -34,13 +39,16 @@
       </ul>
 
       <div class="nav-actions">
-        <button class="btn btn-icon-only" id="themeToggleBtn" title="Toggle Blueprint / Dark Theme" aria-label="Toggle Theme">
+        <button class="btn btn-icon-only" id="themeToggleBtn" title="Toggle Blueprint / Dark Theme"
+          aria-label="Toggle Theme">
           <span id="themeIcon">☀️</span>
         </button>
-        <button class="btn btn-primary" id="exportPdfBtn" title="Generate & Download PDF Portfolio with QR Codes" onclick="openExportStudioModal()">
+        <button class="btn btn-primary" id="exportPdfBtn" title="Generate & Download PDF Portfolio with QR Codes"
+          onclick="openExportStudioModal()">
           <span>🖨️ Export PDF Portfolio</span>
         </button>
-        <a href="#contact" class="btn btn-outline nav-contact-btn" id="navContactBtn" title="Get in Touch" aria-label="Get in Touch">
+        <a href="#contact" class="btn btn-outline nav-contact-btn" id="navContactBtn" title="Get in Touch"
+          aria-label="Get in Touch">
           <span class="nav-contact-text">Get in Touch</span>
           <span class="nav-contact-icon">✈️</span>
         </a>
@@ -68,7 +76,10 @@
           </div>
 
           <p class="hero-bio">
-            I’m a student who loves building, solving complex kinematic problems, and creating physical and virtual mechanisms that make life easier. My passion for machines started with hands-on physical assemblies and has evolved across real-time physics engines, digital twin simulations, CAD design in Fusion 360, and precision additive manufacturing.
+            I’m a student who loves building, solving complex kinematic problems, and creating physical and virtual
+            mechanisms that make life easier. My passion for machines started with hands-on physical assemblies and has
+            evolved across real-time physics engines, digital twin simulations, CAD design in Fusion 360, and precision
+            additive manufacturing.
           </p>
 
           <div class="hero-metrics">
@@ -100,14 +111,13 @@
         <div class="hero-visual-wrapper">
           <div class="hero-card">
             <div class="hero-portrait-frame">
-              <img src="assets/images/p1_img3_491.jpeg" alt="Aiden Hockinberry - Mechanical Engineering" class="hero-portrait-img" id="heroPortraitImg">
+              <!-- <img src="assets/images/p1_img3_491.jpeg" alt="Aiden Hockinberry - Mechanical Engineering" -->
+              <img src="assets/images/aidenhockinberry.jpg" alt="Aiden Hockinberry - Mechanical Engineering"
+                class="hero-portrait-img" id="heroPortraitImg">
               <div class="hero-badge-overlay">
                 <div>
                   <div class="overlay-title">Aiden Hockinberry</div>
                   <div class="overlay-sub">Mechanical Engineer & Systems Builder</div>
-                </div>
-                <div class="overlay-indicator">
-                  <span>●</span> <span>aidenhockinberry@gmail.com</span>
                 </div>
               </div>
             </div>
@@ -122,14 +132,15 @@
     <div class="container">
       <div class="filter-wrapper">
         <div class="era-tabs">
-          <button class="era-tab active" data-era="all">🚀 All Projects (12)</button>
+          <button class="era-tab active" data-era="all">🚀 All Projects (13)</button>
           <button class="era-tab" data-era="manufacturing">🖨️ Era 1: 3D Printing & Mechatronics</button>
           <button class="era-tab" data-era="virtual">🌌 Era 2: Virtual Simulation & Digital Twins</button>
           <button class="era-tab" data-era="early">⚙️ Era 3: Physical Foundations</button>
         </div>
 
         <div class="discipline-filters">
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-right: 0.3rem;">DISCIPLINE:</span>
+          <span
+            style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); margin-right: 0.3rem;">DISCIPLINE:</span>
           <button class="discipline-btn active" data-discipline="all">All Disciplines</button>
           <button class="discipline-btn" data-discipline="kinematics">Kinematics & Linkages</button>
           <button class="discipline-btn" data-discipline="cad">CAD & 3D Modeling</button>
@@ -154,7 +165,9 @@
         </div>
         <h2 class="section-title">Fusion 360 Design & Additive Manufacturing</h2>
         <p class="section-desc">
-          Transforming theoretical mechanics and digital simulations into physical realities. Leveraging Autodesk Fusion 360, TinkerCAD, and Creality 3D printers for high-precision component fabrication, tolerance testing, and functional electromechanical prototypes.
+          Transforming theoretical mechanics and digital simulations into physical realities. Leveraging Autodesk Fusion
+          360, TinkerCAD, and Creality 3D printers for high-precision component fabrication, tolerance testing, and
+          functional electromechanical prototypes.
         </p>
       </div>
 
@@ -168,19 +181,85 @@
               <span class="tech-tag">Autodesk Fusion 360</span>
               <span class="tech-tag">Ergonomic Modeling</span>
               <span class="tech-tag">Woodworking & Fabrication</span>
+              <button class="tech-tag chair-cad-tag" onclick="openTableLightbox()"
+                title="Click to view Table CAD vs Real build">🪵 Table (CAD vs Real)</button>
+              <button class="tech-tag chair-cad-tag" onclick="openChairLightbox()"
+                title="Click to view Chair CAD vs Real build">💺 Chair (CAD vs Real)</button>
             </div>
           </div>
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p11_img1_597.png', 'Ergonomic Gaming/Office Chair - Fusion 360 CAD Model')">
-                  <img src="assets/images/p11_img1_597.png" alt="Ergonomic Chair CAD" class="project-img">
-                  <button class="img-inspect-btn">🔍 Chair CAD</button>
+              <!-- Sub-Project Selector Tabs -->
+              <div class="fusion-tab-bar">
+                <button class="fusion-tab-btn active" id="fusionTabAll" onclick="setFusionDesignView('all')">
+                  <span>👥 All Builds</span>
+                </button>
+                <button class="fusion-tab-btn" id="fusionTabTable" onclick="setFusionDesignView('table')">
+                  <span>🪵 Console Table</span>
+                </button>
+                <button class="fusion-tab-btn" id="fusionTabChair" onclick="setFusionDesignView('chair')">
+                  <span>💺 Ergonomic Chair</span>
+                </button>
+              </div>
+
+              <!-- Pair 1: Console End Table -->
+              <div class="fusion-compare-card fusion-compare-block" id="fusionBlockTable">
+                <div class="fusion-compare-header">
+                  <div class="compare-tag cad">📐 CAD Table</div>
+                  <div class="compare-vs-badge">CONSOLE END TABLE</div>
+                  <div class="compare-tag real">🪵 real_end_table_2</div>
                 </div>
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p11_img2_598.png', 'Console End Table - 3D CAD vs Physical Build Comparison')">
-                  <img src="assets/images/p11_img2_598.png" alt="Table 3D CAD vs Real" class="project-img">
-                  <button class="img-inspect-btn">🔍 CAD vs Real</button>
+                <div class="fusion-compare-grid">
+                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox()"
+                    title="Console Table CAD Model - Click to inspect both in side-by-side lightbox">
+                    <img src="assets/images/end_table_1.png" alt="Console End Table 3D CAD Model" class="project-img">
+                    <span class="fusion-sub-badge cad">CAD Table</span>
+                    <button class="img-inspect-btn">🔍 View Both</button>
+                  </div>
+                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox()"
+                    title="Physical End Table Build - Click to inspect both in side-by-side lightbox">
+                    <img src="assets/images/real_end_table_2.jpg" alt="Physical End Table Build (real_end_table_2)"
+                      class="project-img real-table-img">
+                    <span class="fusion-sub-badge real">real_end_table_2</span>
+                    <button class="img-inspect-btn">🔍 View Both</button>
+                  </div>
+                </div>
+                <div class="fusion-compare-footer" onclick="openTableLightbox()"
+                  title="Click to inspect End Table in high-resolution comparison lightbox">
+                  <span class="compare-pulse-dot"></span>
+                  <span><strong>End Table Fidelity:</strong> Click either image to inspect CAD & Real Build
+                    side-by-side</span>
+                </div>
+              </div>
+
+              <!-- Pair 2: Ergonomic Office / Gaming Chair -->
+              <div class="fusion-compare-card fusion-compare-block" id="fusionBlockChair">
+                <div class="fusion-compare-header">
+                  <div class="compare-tag cad">📐 CAD Chair</div>
+                  <div class="compare-vs-badge">ERGONOMIC CHAIR</div>
+                  <div class="compare-tag real">💺 Real Chair</div>
+                </div>
+                <div class="fusion-compare-grid">
+                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox()"
+                    title="Ergonomic Chair CAD Model - Click to inspect both in side-by-side lightbox">
+                    <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD Model" class="project-img">
+                    <span class="fusion-sub-badge cad">CAD Chair</span>
+                    <button class="img-inspect-btn">🔍 View Both</button>
+                  </div>
+                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox()"
+                    title="Physical Chair Build - Click to inspect both in side-by-side lightbox">
+                    <img src="assets/images/real_chair_1.jpg" alt="Physical Chair Build"
+                      class="project-img real-chair-img" id="fusionRealChairImg" onerror="handleChairImgError(this)">
+                    <span class="fusion-sub-badge real">real_chair</span>
+                    <button class="img-inspect-btn">🔍 View Both</button>
+                  </div>
+                </div>
+                <div class="fusion-compare-footer" onclick="openChairLightbox()"
+                  title="Click to inspect Ergonomic Chair in high-resolution comparison lightbox">
+                  <span class="compare-pulse-dot chair-dot"></span>
+                  <span><strong>Chair Fidelity:</strong> Click either image to inspect CAD & Real Build
+                    side-by-side</span>
                 </div>
               </div>
             </div>
@@ -188,22 +267,27 @@
             <div class="card-info-side">
               <h3 class="project-heading">Fusion Design: Parametric CAD & Physical Build</h3>
               <p class="project-summary">
-                Applied parametric solid modeling in Autodesk Fusion 360 for complex product design. Engineered a multi-part ergonomic chair assembly and designed a dual-tone console table with cross-bracing that was fully translated from 3D CAD into a real-world physical build.
+                Applied parametric solid modeling in Autodesk Fusion 360 for complex product design. Engineered a
+                multi-part ergonomic chair assembly and designed a dual-tone console table with cross-bracing that was
+                fully translated from 3D CAD into a real-world physical build.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Design Process</div>
                   <ul class="spec-list">
-                    <li><strong>Parametric Constraining:</strong> Fully constrained sketches ensuring rapid dimensional modifications.</li>
-                    <li><strong>Joint Simulation:</strong> Verified mechanical interference and clearance fits prior to cutting materials.</li>
+                    <li><strong>Parametric Constraining:</strong> Fully constrained sketches ensuring rapid dimensional
+                      modifications.</li>
+                    <li><strong>Joint Simulation:</strong> Verified mechanical interference and clearance fits prior to
+                      cutting materials.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Manufacturing Fidelity</div>
                   <ul class="spec-list">
-                    <li>Achieved seamless 1-to-1 match between the virtual CAD render and the final physical wood-and-lacquer construction.</li>
+                    <li>Achieved seamless 1-to-1 match between the virtual CAD render and the final physical
+                      wood-and-lacquer construction.</li>
                   </ul>
                 </div>
               </div>
@@ -220,23 +304,42 @@
               <span class="tech-tag">Creality 3D Printer</span>
               <span class="tech-tag">Propeller Pitch Iteration</span>
               <span class="tech-tag">Power Transfer Linkage</span>
+              <span class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600;">🎬
+                Physical Test Video</span>
             </div>
           </div>
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="project-img-wrapper" onclick="openLightbox('assets/images/p12_img1_604.png', 'Wind-Powered Kinematic Transport Prototype - Bench testing with fan airflow')">
+              <div class="project-img-wrapper video-preview-wrapper"
+                onclick="openVideoLightbox('assets/videos/VID_20260426_161651.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
                 <img src="assets/images/p12_img1_604.png" alt="Wind Powered Kinematic Transport" class="project-img">
-                <button class="img-inspect-btn">🔍 View Test Bench</button>
+                <div class="video-play-overlay">
+                  <div class="play-icon-pulse">▶</div>
+                  <span class="video-play-label">Watch Wind Rover in Action</span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                  onclick="openVideoLightbox('assets/videos/VID_20260426_161651.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
+                  🎬 Play Test Video
+                </button>
+                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                  onclick="openLightbox('assets/images/p12_img1_604.png', 'Wind-Powered Kinematic Transport Prototype - Bench testing with fan airflow')">
+                  🔍 View Test Bench
+                </button>
               </div>
 
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;">
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p12_img2_606.png', 'Propeller Pitch Attempt 1 - Initial Blade Angle')">
-                  <img src="assets/images/p12_img2_606.png" alt="Propeller Attempt 1" class="project-img">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/turbine.png', 'Propeller Pitch Attempt 1 - Initial Blade Angle')">
+                  <img src="assets/images/turbine.png" alt="Propeller Attempt 1" class="project-img">
                   <button class="img-inspect-btn">🔍 Attempt 1</button>
                 </div>
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p12_img3_607.png', 'Propeller Pitch Attempt 2 - Optimized Aerodynamic Blade Pitch')">
-                  <img src="assets/images/p12_img3_607.png" alt="Propeller Attempt 2" class="project-img">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/turbine45.png', 'Propeller Pitch Attempt 2 - Optimized Aerodynamic Blade Pitch')">
+                  <img src="assets/images/turbine45.png" alt="Propeller Attempt 2" class="project-img">
                   <button class="img-inspect-btn">🔍 Attempt 2 (Tuned)</button>
                 </div>
               </div>
@@ -245,22 +348,27 @@
             <div class="card-info-side">
               <h3 class="project-heading">Wind-Powered Kinematic Transport Prototype</h3>
               <p class="project-summary">
-                Engineered a wind-driven rover that harnesses ambient air currents to generate forward mechanical locomotion. Developed custom multi-blade turbine propellers, evaluated fluid-dynamic pitch variations, and routed rotational energy to the drive axle through a 90-degree transmission linkage.
+                Engineered a wind-driven rover that harnesses ambient air currents to generate forward mechanical
+                locomotion. Developed custom multi-blade turbine propellers, evaluated fluid-dynamic pitch variations,
+                and routed rotational energy to the drive axle through a 90-degree transmission linkage.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Innovations</div>
                   <ul class="spec-list">
-                    <li><strong>Optimized Blade Pitch:</strong> Iterated through several 3D-printed impeller geometries (Attempt 1 vs. Attempt 2) to maximize torque extraction at lower air velocities.</li>
-                    <li><strong>Power Transmission:</strong> Efficient bevel/gear linkage converting horizontal turbine rotation to vertical axle drive.</li>
+                    <li><strong>Optimized Blade Pitch:</strong> Iterated through several 3D-printed impeller geometries
+                      (Attempt 1 vs. Attempt 2) to maximize torque extraction at lower air velocities.</li>
+                    <li><strong>Power Transmission:</strong> Efficient bevel/gear linkage converting horizontal turbine
+                      rotation to vertical axle drive.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Challenges Solved</div>
                   <ul class="spec-list">
-                    <li><strong>Center of Gravity Management:</strong> Re-engineered the modular Technic chassis to prevent aerodynamic tipping under high frontal wind drag.</li>
+                    <li><strong>Center of Gravity Management:</strong> Re-engineered the modular Technic chassis to
+                      prevent aerodynamic tipping under high frontal wind drag.</li>
                   </ul>
                 </div>
               </div>
@@ -269,13 +377,16 @@
         </article>
 
         <!-- Project 3: Pocket Connect 4 Snap-Fit Study -->
-        <article class="project-card" data-era="manufacturing" data-discipline="cad">
+        <article class="project-card project-card-featured" data-era="manufacturing" data-discipline="cad">
           <div class="card-top-bar">
-            <span class="era-badge manufacturing">Precision Fastening Study</span>
+            <span class="era-badge manufacturing">Fastening & Iterative Prototyping</span>
             <div class="card-tech-tags">
+              <span class="tech-tag"
+                style="background: rgba(0, 240, 255, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 700;">🔄
+                5 Iteration Cycles</span>
               <span class="tech-tag">Tolerance: 0.22mm</span>
-              <span class="tech-tag">Ender 3 V3 KE</span>
-              <span class="tech-tag">Snap-Fit Cantilever</span>
+              <span class="tech-tag">Creality Ender 3 V3 KE</span>
+              <span class="tech-tag">Compliant Cantilever Flexure</span>
               <span class="tech-tag">PLA Material</span>
             </div>
           </div>
@@ -283,21 +394,37 @@
           <div class="card-content-layout">
             <div class="card-media-side">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p13_img2_622.png', 'Pocket Connect 4 - Assembled Enclosure Render')">
-                  <img src="assets/images/p13_img2_622.png" alt="Pocket Connect 4 Render" class="project-img">
-                  <button class="img-inspect-btn">🔍 Assembly</button>
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/angled_exploded_connect_4.png?v=white', 'Pocket Connect 4 - Assembled 3D CAD Enclosure with Cantilever Snap-Top Lid')">
+                  <img src="assets/images/angled_exploded_connect_4.png?v=white" alt="Pocket Connect 4 Render"
+                    class="project-img">
+                  <button class="img-inspect-btn">🔍 CAD Assembly</button>
                 </div>
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p13_img3_623.png', 'Pocket Connect 4 - Exploded 3-Part Modular Component View')">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/p13_img3_623.png', 'Pocket Connect 4 - Exploded 3-Part Modular Component Architecture (Lid, Grid, Base)')">
                   <img src="assets/images/p13_img3_623.png" alt="Exploded 3 Part View" class="project-img">
-                  <button class="img-inspect-btn">🔍 Exploded View</button>
+                  <button class="img-inspect-btn">🔍 Exploded Architecture</button>
+                </div>
+              </div>
+
+              <!-- Full Timeline Banner Trigger -->
+              <div class="iteration-timeline-banner"
+                onclick="openLightbox('assets/images/connect4_iterations_diagram_2.png', 'Pocket Connect 4 - Complete 5-Stage Snap-Fit Iterative Evolution (V1 Loose Case to V5 Optimized Compliant Flexure)')"
+                title="Click to inspect high-resolution 5-stage iteration diagram">
+                <img src="assets/images/connect4_snap_fit_timeline_3.png" alt="Pocket Connect 4 Iteration Evolution"
+                  class="iteration-timeline-banner-img">
+                <div class="iteration-timeline-banner-overlay">
+                  <span>🔍 Expand</span>
                 </div>
               </div>
             </div>
 
             <div class="card-info-side">
-              <h3 class="project-heading">Integrated Fastening Systems: The Pocket Connect 4 Study</h3>
+              <h3 class="project-heading">Integrated Fastening Systems: The Pocket Connect 4 Design Study</h3>
               <p class="project-summary">
-                Addressed the problem of component retention and portability in travel games by creating a compact, 3D-printed enclosure featuring an integrated cantilever snap-fit lid and friction-fit assembly base.
+                Addressed the lack of portability and component retention in traditional tabletop games by engineering a
+                compact, 3D-printed enclosure. The study centered on the systematic design, stress analysis, and
+                empirical testing of an integrated compliant cantilever snap-fit lid and friction-fit assembly base.
               </p>
 
               <table class="tech-table">
@@ -305,24 +432,24 @@
                   <tr>
                     <th>Component</th>
                     <th>Mechanism Type</th>
-                    <th>Specification</th>
+                    <th>Engineering Specification</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><strong>Part 1: Cantilever Lid</strong></td>
                     <td>Snap-Top Flexure Joint</td>
-                    <td>Engineered deflection tooth with tactile lock</td>
+                    <td>Calibrated flexure arm with tactile positive detent retention</td>
                   </tr>
                   <tr>
                     <td><strong>Part 2: Play Grid</strong></td>
                     <td>Column Alignment Core</td>
-                    <td>Precision slot guides with anti-jam chamfers</td>
+                    <td>Internal gravity-drop token channels with anti-jam chamfers</td>
                   </tr>
                   <tr>
                     <td><strong>Part 3: Assembly Base</strong></td>
                     <td>Friction Fit Housing</td>
-                    <td><strong>0.22mm air gap tolerance</strong> on Creality Ender 3 V3 KE</td>
+                    <td><strong>0.22mm calibrated air gap tolerance</strong> on Ender 3 V3 KE</td>
                   </tr>
                 </tbody>
               </table>
@@ -335,28 +462,100 @@
           <div class="card-top-bar">
             <span class="era-badge manufacturing">Horological Kinematics & 3D Print</span>
             <div class="card-tech-tags">
-              <span class="tech-tag">14 CAD Iterations</span>
+              <span class="tech-tag"
+                style="background: rgba(0, 240, 255, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 700;">🔄
+                14 CAD Iterations</span>
               <span class="tech-tag">5-Stage Chain Drive</span>
               <span class="tech-tag">3-Gen Ratchet</span>
               <span class="tech-tag">Physical Prototype Graveyard</span>
+              <span class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600;">🎬
+                Physical Test Video</span>
             </div>
           </div>
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="project-img-wrapper" onclick="openLightbox('assets/images/p14_img1_630.png', 'Gravity-Driven Escapement & Ratchet System - Complete Physical Apparatus with Callouts: Weight, Chain, Ratchet, Escapement Mechanism')">
-                <img src="assets/images/p14_img1_630.png" alt="Gravity Driven Escapement Apparatus" class="project-img">
-                <button class="img-inspect-btn">🔍 View Labeled Mechanism</button>
+              <!-- Multi-Tab Navigation (Matching Automotive Chassis Tab Design) -->
+              <div class="escapement-tab-controls">
+                <button class="escapement-tab-btn active" id="escapementTabBtn-video"
+                  onclick="switchEscapementTab('video', this)">
+                  🎬 VIDEO & ITERATIONS
+                </button>
+                <button class="escapement-tab-btn" id="escapementTabBtn-gallery"
+                  onclick="switchEscapementTab('gallery', this)">
+                  📁 PROJECT GALLERY
+                </button>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;">
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p16_img1_653.png', 'Escapement Prototype Graveyard - 15+ 3D-printed iterations of escapement wheels and anchor pallets')">
-                  <img src="assets/images/p16_img1_653.png" alt="Escapement Graveyard" class="project-img">
-                  <button class="img-inspect-btn">🔍 The Graveyard</button>
+              <!-- TAB 1: Video & Underneath It, The Iterations Page -->
+              <div class="escapement-tab-pane active" id="escapement-tab-video">
+                <!-- Video Preview Card (Matches Motor Preview & Pulsing Play Button) -->
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/videos/pendulum_clock.mp4', 'Gravity-Driven Escapement & Ratchet System - Live physical operation of gravity-powered pendulum clockwork mechanism')">
+                  <img src="assets/images/p14_img1_630.png" alt="Gravity Driven Escapement Apparatus"
+                    class="project-img">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse">▶</div>
+                    <span class="video-play-label">Watch Pendulum in Action</span>
+                  </div>
                 </div>
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p17_img7_664.png', 'Pendulum Ratchet & Drive Train - 5 Chain Generations (V1-V5) and 3 Ratchet Revisions')">
-                  <img src="assets/images/p17_img7_664.png" alt="Chain & Ratchet Evolution" class="project-img">
-                  <button class="img-inspect-btn">🔍 Chain V1-V5 Evolution</button>
+
+                <!-- Video / Inspect Action Buttons -->
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.25rem;">
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                    onclick="openVideoLightbox('assets/videos/pendulum_clock.mp4', 'Gravity-Driven Escapement & Ratchet System - Live physical operation of gravity-powered pendulum clockwork mechanism')">
+                    🎬 Play Clockwork Video
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                    onclick="openLightbox('assets/images/p14_img1_630.png', 'Gravity-Driven Escapement & Ratchet System - Complete Physical Apparatus with Callouts: Weight, Chain, Ratchet, Escapement Mechanism')">
+                    🔍 View Labeled Mechanism
+                  </button>
+                </div>
+
+              </div>
+
+              <!-- TAB 2: Project Gallery (All other images related to this project) -->
+              <div class="escapement-tab-pane" id="escapement-tab-gallery">
+                <div class="escapement-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 All Project Images (2)</span>
+                  <span>Click any image to view in HD lightbox</span>
+                </div>
+
+                <div class="escapement-gallery-grid">
+                  <!-- 1. The Graveyard -->
+                  <div class="escapement-gallery-card"
+                    onclick="openLightbox('assets/images/p16_img1_653.png?v=white', 'Escapement Prototype Graveyard - 15+ 3D-printed iterations of escapement wheels and anchor pallets')">
+                    <div class="escapement-gallery-thumb-wrap">
+                      <img src="assets/images/p16_img1_653.png?v=white" alt="Escapement Graveyard"
+                        class="escapement-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 The Graveyard</button>
+                    </div>
+                    <div class="escapement-gallery-caption">
+                      <span class="escapement-gallery-title">Prototype Graveyard</span>
+                      <span class="escapement-gallery-sub">15+ 3D-printed wheels & pallets</span>
+                    </div>
+                  </div>
+
+                  <!-- 2. Escapement Design Progression Sheet (Page 15) -->
+                  <div class="escapement-gallery-card"
+                    onclick="openLightbox('assets/pages/page_15.png', 'Escapement Kinematic Design Progression & Tolerancing - Portfolio Sheet Page 15')">
+                    <div class="escapement-gallery-thumb-wrap">
+                      <img src="assets/pages/page_15.png" alt="Design Progression Sheet"
+                        class="escapement-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Sheet Page 15</button>
+                    </div>
+                    <div class="escapement-gallery-caption">
+                      <span class="escapement-gallery-title">Design Progression</span>
+                      <span class="escapement-gallery-sub">Pallet geometry R&D (Page 15)</span>
+                    </div>
+                  </div>
+
+                  <!-- =======================================================
+                       USER: ADD MORE IMAGES TO THIS PROJECT HERE
+                       To add more images, duplicate any .escapement-gallery-card
+                       above and update the src / caption accordingly!
+                       ======================================================= -->
                 </div>
               </div>
             </div>
@@ -364,23 +563,73 @@
             <div class="card-info-side">
               <h3 class="project-heading">Gravity-Driven Escapement & Ratchet System</h3>
               <p class="project-summary">
-                Designed and manufactured an entire gravity-powered pendulum clockwork mechanism. This comprehensive research study involved developing 14 discrete CAD iterations, 5 chain drive versions (from LEGO tread to custom modular 3D-printed link chains), and 3 ratchet generations to achieve continuous, deadbeat energy impulse transfer.
+                Designed and manufactured an entire gravity-powered pendulum clockwork mechanism. This comprehensive
+                research study involved developing 14 discrete CAD iterations, 5 chain drive versions (from LEGO tread
+                to custom modular 3D-printed link chains), and 3 ratchet generations to achieve continuous, deadbeat
+                energy impulse transfer.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Kinematic Sub-Assemblies</div>
                   <ul class="spec-list">
-                    <li><strong>Escapement Wheel & Anchor:</strong> Optimized pallet tooth angle to minimize recoil and deliver consistent impulse to the pendulum bob.</li>
-                    <li><strong>Drive Train Evolution:</strong> Transitioned from LEGO treads (V1) to custom interlocking links (V5) for higher tensile strength without stretching.</li>
+                    <li><strong>Escapement Wheel & Anchor:</strong> Optimized pallet tooth angle to minimize recoil and
+                      deliver consistent impulse to the pendulum bob.</li>
+                    <li><strong>Drive Train Evolution:</strong> Transitioned from LEGO treads (V1) to custom
+                      interlocking links (V5) for higher tensile strength without stretching.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 The Iteration Graveyard</div>
                   <ul class="spec-list">
-                    <li>Documented dozens of discarded prints to analyze tooth wear, friction coefficients, and center-distance tolerances in horological engineering.</li>
+                    <li>Documented dozens of discarded prints to analyze tooth wear, friction coefficients, and
+                      center-distance tolerances in horological engineering.</li>
                   </ul>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Level Dual Iteration Pages Row (Page 16 under video, Page 18 under specs - 100% Level) -->
+            <div class="escapement-level-pages-row" id="escapementLevelPagesRow">
+              <!-- Left: Escapement Mechanism (Page 16) directly under the video -->
+              <div class="escapement-iterations-card"
+                onclick="openLightbox('assets/pages/page_16.png', 'Gravity-Driven Escapement Mechanism - 14 Discrete CAD Iterations Portfolio Sheet')"
+                title="Click to inspect 14 discrete CAD iterations in high-resolution lightbox">
+                <div class="escapement-iterations-header">
+                  <span
+                    style="font-weight: 700; color: var(--cyan-primary); display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem;">
+                    <span>🔄</span> Escapement Mechanism Iterations
+                  </span>
+                  <span style="font-size: 0.65rem; color: var(--text-muted); flex-shrink: 0;">
+                    🔍 Click to Expand Page
+                  </span>
+                </div>
+                <div class="escapement-iterations-img-wrap" style="background: #ffffff; padding: 0.25rem;">
+                  <img src="assets/pages/page_16.png"
+                    alt="Gravity-Driven Escapement 14 CAD Iterations Portfolio Page (Page 16)"
+                    class="escapement-iterations-img" style="background: #ffffff;">
+                </div>
+              </div>
+
+              <!-- Right: Drive Train & Ratchet Evolution (Page 18) directly under the right-hand specs -->
+              <div class="escapement-iterations-card"
+                onclick="openLightbox('assets/pages/page_18.png', 'Gravity-Driven Pendulum Ratchet & Drive Train Eolution - Portfolio Sheet')"
+                title="Click to inspect Ratchet & Drive Train Evolution in high-resolution lightbox">
+                <div class="escapement-iterations-header">
+                  <span
+                    style="font-weight: 700; color: var(--cyan-primary); display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem;">
+                    <span>⛓️</span> Drive Train & Ratchet Iterations
+                  </span>
+                  <span style="font-size: 0.65rem; color: var(--text-muted); flex-shrink: 0;">
+                    🔍 Click to Expand Page
+                  </span>
+                </div>
+                <div class="escapement-iterations-img-wrap" style="background: #ffffff; padding: 0.25rem;">
+                  <img src="assets/pages/page_18.png"
+                    alt="Gravity-Driven Pendulum Ratchet & Drive Train Evolution Portfolio Page (Page 18)"
+                    class="escapement-iterations-img" style="background: #ffffff;">
                 </div>
               </div>
             </div>
@@ -396,13 +645,16 @@
               <span class="tech-tag">Lorentz Force</span>
               <span class="tech-tag">Neodymium Array</span>
               <span class="tech-tag">Commutator Timing</span>
-              <span class="tech-tag" style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600;">🎬 Physical Test Video</span>
+              <span class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600;">🎬
+                Physical Test Video</span>
             </div>
           </div>
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="project-img-wrapper video-preview-wrapper" onclick="openVideoLightbox('assets/videos/dc_motor_prototype.mp4', 'Brushed DC (BDC) Motor Prototype - Live physical demonstration of Lorentz force rotation & commutator timing')">
+              <div class="project-img-wrapper video-preview-wrapper"
+                onclick="openVideoLightbox('assets/videos/dc_motor_prototype.mp4', 'Brushed DC (BDC) Motor Prototype - Live physical demonstration of Lorentz force rotation & commutator timing')">
                 <img src="assets/images/p18_img2_671.png" alt="Brushed DC Motor Prototype" class="project-img">
                 <div class="video-play-overlay">
                   <div class="play-icon-pulse">▶</div>
@@ -410,10 +662,12 @@
                 </div>
               </div>
               <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;" onclick="openVideoLightbox('assets/videos/dc_motor_prototype.mp4', 'Brushed DC (BDC) Motor Prototype - Live physical demonstration of Lorentz force rotation & commutator timing')">
+                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                  onclick="openVideoLightbox('assets/videos/dc_motor_prototype.mp4', 'Brushed DC (BDC) Motor Prototype - Live physical demonstration of Lorentz force rotation & commutator timing')">
                   🎬 Play Test Video
                 </button>
-                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;" onclick="openLightbox('assets/images/p18_img2_671.png', 'Brushed DC (BDC) Motor Prototype - Labeled Callouts: 9V Battery, Neodymium Magnet Array, Stability Tower & Brush Contacts, Lorentz Force Rotor')">
+                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                  onclick="openLightbox('assets/images/p18_img2_671.png', 'Brushed DC (BDC) Motor Prototype - Labeled Callouts: 9V Battery, Neodymium Magnet Array, Stability Tower & Brush Contacts, Lorentz Force Rotor')">
                   🔍 Inspect Rig Blueprint
                 </button>
               </div>
@@ -422,26 +676,454 @@
             <div class="card-info-side">
               <h3 class="project-heading">Brushed DC (BDC) Motor Prototype</h3>
               <p class="project-summary">
-                Designed and assembled a functional brushed DC motor utilizing LEGO Technic for the structural chassis and a hand-wound copper wire armature. The project required micro-positioning of the commutator and brush system to ensure continuous current reversal and consistent torque generation.
+                Designed and assembled a functional brushed DC motor utilizing LEGO Technic for the structural chassis
+                and a hand-wound copper wire armature. The project required micro-positioning of the commutator and
+                brush system to ensure continuous current reversal and consistent torque generation.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Electromechanical Highlights</div>
                   <ul class="spec-list">
-                    <li><strong>Lorentz Force Rotor:</strong> Hand-wound magnetic coil armature situated inside a permanent magnetic field.</li>
-                    <li><strong>Stability Tower & Contacts:</strong> Spring-tensioned copper brush contacts aligned with commutator split rings.</li>
+                    <li><strong>Lorentz Force Rotor:</strong> Hand-wound magnetic coil armature situated inside a
+                      permanent magnetic field.</li>
+                    <li><strong>Stability Tower & Contacts:</strong> Spring-tensioned copper brush contacts aligned with
+                      commutator split rings.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Challenges & Iterations</div>
                   <ul class="spec-list">
-                    <li><strong>Flux Density:</strong> Swapped initial wiring for high-conductivity enamel magnet wire to increase coil density.</li>
-                    <li><strong>Field Calibration:</strong> Tested multiple neodymium magnet array configurations to maximize RPM without stalling.</li>
+                    <li><strong>Flux Density:</strong> Swapped initial wiring for high-conductivity enamel magnet wire
+                      to increase coil density.</li>
+                    <li><strong>Field Calibration:</strong> Tested multiple neodymium magnet array configurations to
+                      maximize RPM without stalling.</li>
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Autonomous 6-Axis Robotic Rubik's Cube Solver -->
+        <article class="project-card project-card-featured" id="project-rubiks-solver" data-era="manufacturing"
+          data-discipline="cad electromechanical logic kinematics">
+          <div class="card-top-bar">
+            <span class="era-badge manufacturing">Robotics & Mechatronics Flagship</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag rubiks-badge-record">⚡ 9.68s Solve Record</span>
+              <span class="tech-tag">6x NEMA 17 Steppers</span>
+              <span class="tech-tag">Raspberry Pi + Klipper MCU</span>
+              <span class="tech-tag">Kociemba Two-Phase Algorithm</span>
+              <span class="tech-tag">Silent TMC2209 (24V)</span>
+              <span class="tech-tag">Creality Ender 3 V3 KE</span>
+              <button class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/images/rubiks_cube/20260731_183126 (1).mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - High-speed parallel move physical solve in 9.68 seconds')">
+                🎬 Play Solve Video
+              </button>
+            </div>
+          </div>
+
+          <div class="card-content-layout">
+            <div class="card-media-side">
+              <!-- Multi-Tab Controls -->
+              <div class="rubiks-tab-controls">
+                <button class="rubiks-tab-btn active" id="rubiksTabBtn-video" onclick="switchRubiksTab('video', this)">
+                  🎬 LIVE VIDEO & OVERVIEW
+                </button>
+                <button class="rubiks-tab-btn" id="rubiksTabBtn-cad-parts" onclick="switchRubiksTab('cad-parts', this)">
+                  ⚙️ 3D PRINTED SUBASSEMBLIES
+                </button>
+                <button class="rubiks-tab-btn" id="rubiksTabBtn-firmware" onclick="switchRubiksTab('firmware', this)">
+                  ⚡ ELECTRONICS & ALGORITHM
+                </button>
+                <button class="rubiks-tab-btn" id="rubiksTabBtn-gallery" onclick="switchRubiksTab('gallery', this)">
+                  📁 ALL PHOTOS (12)
+                </button>
+              </div>
+
+              <!-- TAB 1: Video & Key Machine Views -->
+              <div class="rubiks-tab-pane active" id="rubiks-tab-video">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/images/rubiks_cube/20260731_183126 (1).mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')"
+                  title="Click to play high-speed physical solve video demonstration">
+                  <div class="rubiks-benchmark-badge">⏱️ BENCHMARK: 9.68s SOLVE</div>
+                  <img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
+                    alt="Autonomous 6-Axis Robotic Rubik's Cube Solver" class="project-img">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse">▶</div>
+                    <span class="video-play-label">Watch Physical Solve (9.68s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/images/rubiks_cube/20260731_183126 (1).mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')">
+                    🎬 Play Solve Video (9.68s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_1.jpg', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Complete Assembly: 3D printed modular frame, 6 NEMA 17 steppers, custom direct-drive spindles, and 24V silent TMC2209 driver bay')">
+                    🔍 Inspect 6-Axis Rig
+                  </button>
+                </div>
+
+                <!-- Tri-view thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_2.jpg', 'Overhead 6-Axis View - Upper gantry motor mount, high-flex wiring harness, and central axis intersection')"
+                    title="Overhead Gantry Perspective">
+                    <img src="assets/images/rubiks_cube/rubiks_cube_solver_2.jpg" alt="Overhead Gantry"
+                      class="project-img">
+                    <button class="img-inspect-btn">🔍 Top Gantry</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_3.jpg', 'Front Elevation - Central Rubik\'s cube suspension and direct-drive NEMA 17 face couplings')"
+                    title="Front Elevation">
+                    <img src="assets/images/rubiks_cube/rubiks_cube_solver_3.jpg" alt="Front Elevation"
+                      class="project-img">
+                    <button class="img-inspect-btn">🔍 Front Axis</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_5.jpg', 'Orthogonal Intersection - Precision 3-axis alignment preventing face collision during concurrent rotations')"
+                    title="Orthogonal Intersection">
+                    <img src="assets/images/rubiks_cube/rubiks_cube_solver_5.jpg" alt="Orthogonal Alignment"
+                      class="project-img">
+                    <button class="img-inspect-btn">🔍 Kinematics</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: 3D Printed Subassemblies & Spindles -->
+              <div class="rubiks-tab-pane" id="rubiks-tab-cad-parts">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">⚙️ Precision 3D Printed Subassemblies
+                    (Ender 3 V3 KE)</span>
+                  <span>Click to inspect CAD fit & tolerances</span>
+                </div>
+
+                <div class="rubiks-gallery-grid">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_204548.jpg', 'Modular Frame & Riser Towers - 3D-printed interlocking vertical pylons engineered to resist reactionary motor torque')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/20260731_204548.jpg" alt="3D Printed Chassis & Riser Towers"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Chassis Towers</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Modular Chassis & Riser Towers</span>
+                      <span class="rubiks-gallery-sub">Interlocking high-rigidity structural frame</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_203212.jpg', 'Custom D-Shaft Stepper Spindles - 3D-printed face adapters with set screws for direct torque transmission to cube centers')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/20260731_203212.jpg" alt="Custom D-Shaft Spindle Adapters"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Spindle Couplers</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Custom D-Shaft Drive Spindles</span>
+                      <span class="rubiks-gallery-sub">Set of 6 direct motor-to-cube face adapters</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_204839.jpg', 'Direct-Drive Center Cap Retention Interface - Internal mechanical coupling retaining internal cube core bearings')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/20260731_204839.jpg" alt="Center Cap Retention Mechanism"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Center Interface</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Center Cap Retention Interface</span>
+                      <span class="rubiks-gallery-sub">Maintains internal spherical core tension</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_7.jpg', 'High-Tolerance Axis Alignment - Close inspection of motor spindle mating with the Rubik\'s cube face')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/rubiks_cube_solver_7.jpg" alt="Axis Coupling Detail"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Axis Tolerancing</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Orthogonal Axis Tolerancing</span>
+                      <span class="rubiks-gallery-sub">Zero-backlash face coupling alignment</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Electronics, Klipper MCU & Algorithm -->
+              <div class="rubiks-tab-pane" id="rubiks-tab-firmware">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">⚡ 24V Mechatronics, Klipper MCU &
+                    Two-Phase Solver</span>
+                  <span>Click to view telemetry & wiring</span>
+                </div>
+
+                <div class="rubiks-gallery-grid">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_8.jpg', '24V Mechatronics & Power Architecture - Mean Well LRS-350-24 PSU, 32-bit controller board, and silent TMC2209 stepper drivers')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/rubiks_cube_solver_8.jpg" alt="24V Power & Driver Bay"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Power & Drivers</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">24V Power & TMC2209 Driver Bay</span>
+                      <span class="rubiks-gallery-sub">350W Mean Well PSU + silent microstepping</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_184027.jpg', 'Raspberry Pi Host Controller - Custom 3D-printed enclosure with forced-air cooling duct and high-speed serial')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/20260731_184027.jpg" alt="Raspberry Pi Enclosure"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Raspberry Pi</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Raspberry Pi Enclosure</span>
+                      <span class="rubiks-gallery-sub">Custom cooling housing + Klipper host</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_220640.jpg', 'Kociemba Two-Phase Solve Telemetry - Optimal move generator producing 18-20 move solutions with parallel step compression')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/20260731_220640.jpg" alt="Kociemba Algorithm Log"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 Kociemba Log</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Kociemba Two-Phase Telemetry</span>
+                      <span class="rubiks-gallery-sub">Optimal solution + parallel move compression</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_215404.jpg', 'Sub-10s Physical Execution Log - Klipper MCU step dispatch telemetry recording the 9.68-second benchmark solve')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/rubiks_cube/20260731_215404.jpg" alt="Execution Telemetry Log"
+                        class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🔍 9.68s Solve Log</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">9.68s Benchmark Execution Log</span>
+                      <span class="rubiks-gallery-sub">High-speed MCU motion buffer & timing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 4: All Photos Gallery -->
+              <div class="rubiks-tab-pane" id="rubiks-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 Project Media Gallery (12 Selected
+                    Photos)</span>
+                  <span>Click any image to inspect in full HD</span>
+                </div>
+
+                <div class="rubiks-gallery-grid">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_1.jpg', 'Rubik\'s Cube Solver - Complete 6-Axis Machine Isometric View')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
+                        alt="Complete 6-Axis Solver" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Complete 6-Axis
+                        Solver</span><span class="rubiks-gallery-sub">Full isometric overview</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_2.jpg', 'Rubik\'s Cube Solver - Overhead Gantry Perspective & Wiring Loom')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_2.jpg"
+                        alt="Overhead Gantry" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Overhead Gantry
+                        Assembly</span><span class="rubiks-gallery-sub">Top motor mount & wiring</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_3.jpg', 'Rubik\'s Cube Solver - Front Elevation & Central Cube Alignment')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_3.jpg"
+                        alt="Front Elevation" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Front Elevation</span><span
+                        class="rubiks-gallery-sub">Direct face motor couplers</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_4.jpg', 'Rubik\'s Cube Solver - Lateral Rigidity Bracing & Side Elevation')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_4.jpg"
+                        alt="Lateral Bracing" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Lateral Rigidity
+                        Bracing</span><span class="rubiks-gallery-sub">Anti-flex structural struts</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_5.jpg', 'Rubik\'s Cube Solver - Orthogonal 3-Axis Central Core')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_5.jpg"
+                        alt="Orthogonal Core" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Orthogonal 3-Axis
+                        Core</span><span class="rubiks-gallery-sub">Kinematic center suspension</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_6.jpg', 'Rubik\'s Cube Solver - Base Plate Mounting & Cable Routing Channels')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_6.jpg"
+                        alt="Base Plate" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Base Mount &
+                        Routing</span><span class="rubiks-gallery-sub">Bottom axis stepper mount</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_7.jpg', 'Rubik\'s Cube Solver - Close-Up Motor Shaft Coupler Seating')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_7.jpg"
+                        alt="Coupler Seating" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Coupler Seating
+                        Detail</span><span class="rubiks-gallery-sub">Zero-backlash spindle fit</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_8.jpg', 'Rubik\'s Cube Solver - 24V Mechatronics & Power Supply Bay')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_8.jpg"
+                        alt="Electronics Bay" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">24V Electronics
+                        Bay</span><span class="rubiks-gallery-sub">Mean Well PSU + TMC2209</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_204548.jpg', 'Modular Frame & Riser Towers Assembly Bench')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/20260731_204548.jpg"
+                        alt="Frame Assembly Bench" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Frame Assembly
+                        Bench</span><span class="rubiks-gallery-sub">3D-printed modular towers</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_203212.jpg', 'Custom 3D-Printed D-Shaft Stepper Spindles')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/20260731_203212.jpg"
+                        alt="3D Printed Spindles" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">3D Printed
+                        Spindles</span><span class="rubiks-gallery-sub">Set of 6 face adapters</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_204839.jpg', 'Disassembled Rubik\'s Cube Center Cap Retention Interface')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/20260731_204839.jpg"
+                        alt="Cube Center Interface" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Center Cap
+                        Interface</span><span class="rubiks-gallery-sub">Cube core retention design</span></div>
+                  </div>
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/rubiks_cube/20260731_184027.jpg', 'Raspberry Pi Custom Enclosure with Cooling Housing')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/20260731_184027.jpg"
+                        alt="Raspberry Pi Enclosure" class="rubiks-gallery-thumb"></div>
+                    <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Raspberry Pi
+                        Enclosure</span><span class="rubiks-gallery-sub">Custom active cooling case</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Information Side -->
+            <div class="card-info-side">
+              <h3 class="project-heading">Autonomous 6-Axis Robotic Rubik's Cube Solver</h3>
+              <p class="project-summary">
+                Engineered an autonomous high-speed robotics system capable of physically solving any scrambled 3x3
+                Rubik's cube in under 10 seconds. Designed and manufactured a custom 3D-printed modular chassis on the
+                Creality Ender 3 V3 KE, developed direct-drive NEMA 17 spindle couplers, wired a 24V silent stepper
+                driver bay, deployed Klipper MCU firmware on a dedicated Raspberry Pi, and executed a Two-Phase Kociemba
+                algorithmic solver with parallel dual-axis step compression.
+              </p>
+
+              <!-- Live Engineering Telemetry Strip -->
+              <div class="rubiks-telemetry-strip">
+                <div class="rubiks-telemetry-item gold">
+                  <span class="rubiks-telemetry-lbl">Benchmark Speed</span>
+                  <span class="rubiks-telemetry-val gold">9.68 <span class="unit">sec</span></span>
+                </div>
+                <div class="rubiks-telemetry-item cyan">
+                  <span class="rubiks-telemetry-lbl">Kinematic Axes</span>
+                  <span class="rubiks-telemetry-val cyan">6-Axis <span class="unit">Indep.</span></span>
+                </div>
+                <div class="rubiks-telemetry-item emerald">
+                  <span class="rubiks-telemetry-lbl">Move Complexity</span>
+                  <span class="rubiks-telemetry-val emerald">18-20 <span class="unit">moves</span></span>
+                </div>
+                <div class="rubiks-telemetry-item purple">
+                  <span class="rubiks-telemetry-lbl">Motion Planning</span>
+                  <span class="rubiks-telemetry-val purple">Parallel <span class="unit">Axis</span></span>
+                </div>
+              </div>
+
+              <!-- Engineering Specifications Table -->
+              <table class="tech-table">
+                <thead>
+                  <tr>
+                    <th>Subsystem</th>
+                    <th>Engineering Specification</th>
+                    <th>Operational Parameters</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Structural Chassis</strong></td>
+                    <td>Modular 3D-Printed Frame & Towers</td>
+                    <td>Printed on Ender 3 V3 KE; 4 vertical stanchions absorbing reactionary torque</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Actuation System</strong></td>
+                    <td>6x NEMA 17 Stepper Motors</td>
+                    <td>1.8° step angle, 1.5A current, direct-drive coupling to each cube face</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Motion Controller</strong></td>
+                    <td>32-Bit MCU + Silent TMC2209 Drivers</td>
+                    <td>Trinamic StealthChop microstepping, high acceleration velocity trapezoids</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Host Compute</strong></td>
+                    <td>Raspberry Pi + Klipper</td>
+                    <td>Custom 3D printed active-cooled case, high-speed USB-serial motion link</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Solving Algorithm</strong></td>
+                    <td>Two-Phase Kociemba Algorithm</td>
+                    <td>Optimal ~18–20 move solutions (God's Number tier) generated in milliseconds</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Step Compression</strong></td>
+                    <td>Parallel Dual-Axis Scheduling</td>
+                    <td>Simultaneous execution of non-conflicting face turns (U+D, L+R, F+B)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Power Supply</strong></td>
+                    <td>Mean Well LRS-350-24 (24V 14.6A)</td>
+                    <td>350W industrial power delivery for high concurrent stepper current draws</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Dual Technical Spec Callouts -->
+              <div class="card-spec-grid" style="margin-top: 1rem;">
+                <div class="spec-box">
+                  <div class="spec-box-title">⚙️ Mechanical & Kinematic Design</div>
+                  <ul class="spec-list">
+                    <li><strong>Direct-Drive Spindle Adapters:</strong> Engineered custom D-shaft couplers with
+                      set-screw retention, directly interfacing with the Rubik's cube center piece cavities while
+                      maintaining internal spherical bearing preload.</li>
+                    <li><strong>Reactionary Torque Dampening:</strong> 4 interlocking vertical riser towers form a rigid
+                      orthogonal box with the gantry, preventing angular deflection during abrupt 500+ RPM/s² face
+                      stops.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box orange">
+                  <div class="spec-box-title">⚡ Software, Firmware & Digital Twin</div>
+                  <ul class="spec-list">
+                    <li><strong>Parallel Move Compression:</strong> Algorithmic motion planner analyzes God's Number
+                      move sequences and merges opposing face turns into concurrent dual-axis pulses, slashing physical
+                      solve time to <strong>9.68 seconds</strong>.</li>
+                    <li><strong>Digital Twin State Verification:</strong> Python simulation verifies cube legality and
+                      virtual kinematic states before issuing motion commands to the Klipper MCU, preventing jam states.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
             </div>
           </div>
         </article>
@@ -459,7 +1141,9 @@
         </div>
         <h2 class="section-title">Engineering Beyond Physical Constraints & Digital Twins</h2>
         <p class="section-desc">
-          Transitioning from physical parts to high-fidelity physics engines (Kerbal Space Program, Scrap Mechanic, modded Minecraft). Using virtual sandboxes as real-time dynamic CAD testbeds to validate kinematics, orbital trajectory staging, and multi-axis logic loops prior to physical fabrication.
+          Transitioning from physical parts to high-fidelity physics engines (Kerbal Space Program, Scrap Mechanic).
+          Using virtual sandboxes as real-time dynamic CAD testbeds to validate kinematics, orbital
+          trajectory staging, and multi-axis logic loops prior to physical fabrication.
         </p>
       </div>
 
@@ -482,7 +1166,8 @@
               <div class="engine-gallery-grid" id="engineGalleryGrid">
                 <!-- 27 Engine CAD thumbnails rendered via JavaScript -->
               </div>
-              <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-align: center;">
+              <p
+                style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-align: center;">
                 Click any engine block to inspect in high-resolution CAD lightbox (27 detailed variants shown).
               </p>
             </div>
@@ -490,22 +1175,28 @@
             <div class="card-info-side">
               <h3 class="project-heading">Virtual Prototyping: 70+ Piston Engine Iterations</h3>
               <p class="project-summary">
-                Utilized real-time physics engines as a dynamic mechanical testing sandbox to design, construct, and stress-test over <strong>70 custom piston engine configurations</strong>. Iterated across inline, radial, V-type, and boxer layouts to maximize torque output, optimize ignition timing efficiency, and eliminate crankshaft torsional resonance.
+                Utilized real-time physics engines as a dynamic mechanical testing sandbox to design, construct, and
+                stress-test over <strong>70 custom piston engine configurations</strong>. Iterated across inline,
+                radial, V-type, and boxer layouts to maximize torque output, optimize ignition timing efficiency, and
+                eliminate crankshaft torsional resonance.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Engineering Focus</div>
                   <ul class="spec-list">
-                    <li><strong>Crankshaft Phase Shifts:</strong> Calibrating offset throw angles to maintain continuous power delivery and reduce vibration harmonics.</li>
-                    <li><strong>Valve & Timing Sequences:</strong> Engineering intake/exhaust phase timing to maximize stroke displacement and cylinder volumetric efficiency.</li>
+                    <li><strong>Crankshaft Phase Shifts:</strong> Calibrating offset throw angles to maintain continuous
+                      power delivery and reduce vibration harmonics.</li>
+                    <li><strong>Valve & Timing Sequences:</strong> Engineering intake/exhaust phase timing to maximize
+                      stroke displacement and cylinder volumetric efficiency.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Simulation As Rapid Prototyping</div>
                   <ul class="spec-list">
-                    <li>Identified structural fatigue points and bearing stress tolerances in milliseconds without material fabrication waste, mirroring industry Digital Twin workflows.</li>
+                    <li>Identified structural fatigue points and bearing stress tolerances in milliseconds without
+                      material fabrication waste, mirroring industry Digital Twin workflows.</li>
                   </ul>
                 </div>
               </div>
@@ -528,13 +1219,20 @@
             <div class="card-media-side">
               <div class="cad-viewer-container">
                 <div class="cad-view-controls">
-                  <button class="cad-view-btn active" data-view="front" data-src="assets/images/p7_img3_554.png">FRONT VIEW</button>
-                  <button class="cad-view-btn" data-view="back" data-src="assets/images/p7_img2_553.png">BACK VIEW</button>
-                  <button class="cad-view-btn" data-view="side" data-src="assets/images/p7_img4_556.png">SIDE (ENGINE)</button>
-                  <button class="cad-view-btn" data-view="detail" data-src="assets/images/p7_img5_557.png">U-JOINT & SUSPENSION</button>
+                  <button class="cad-view-btn active" data-view="front"
+                    data-src="assets/images/p7_img3_554.png?v=white">FRONT
+                    VIEW</button>
+                  <button class="cad-view-btn" data-view="back" data-src="assets/images/p7_img2_553.png?v=white">BACK
+                    VIEW</button>
+                  <button class="cad-view-btn" data-view="side" data-src="assets/images/p7_img4_556.png?v=white">SIDE
+                    (ENGINE)</button>
+                  <button class="cad-view-btn" data-view="detail"
+                    data-src="assets/images/p7_img5_557.png?v=white">U-JOINT &
+                    SUSPENSION</button>
                 </div>
                 <div class="cad-display-frame" onclick="openActiveCadLightbox()">
-                  <img src="assets/images/p7_img3_554.png" alt="Mechanical Automotive Design CAD" class="cad-display-img" id="autoCadImg">
+                  <img src="assets/images/p7_img3_554.png?v=white" alt="Mechanical Automotive Design CAD"
+                    class="cad-display-img" id="autoCadImg">
                   <button class="img-inspect-btn">🔍 View Full CAD</button>
                 </div>
               </div>
@@ -543,22 +1241,27 @@
             <div class="card-info-side">
               <h3 class="project-heading">Mechanical Automotive Chassis & Drivetrain</h3>
               <p class="project-summary">
-                Engineered a complete vehicle chassis integrating a central custom piston engine, independent suspension linkages, and universal joint drive shafts. Designed to test torque transfer during uneven terrain deflection.
+                Engineered a complete vehicle chassis integrating a central custom piston engine, independent suspension
+                linkages, and universal joint drive shafts. Designed to test torque transfer during uneven terrain
+                deflection.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Sub-System Architecture</div>
                   <ul class="spec-list">
-                    <li><strong>Universal Joint Transmission:</strong> Accommodates angular displacement between the differential and wheel hubs under suspension travel.</li>
-                    <li><strong>Independent Damped Suspension:</strong> Geometry optimized to minimize body roll and keep tires planted.</li>
+                    <li><strong>Universal Joint Transmission:</strong> Accommodates angular displacement between the
+                      differential and wheel hubs under suspension travel.</li>
+                    <li><strong>Independent Damped Suspension:</strong> Geometry optimized to minimize body roll and
+                      keep tires planted.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Kinematic Analysis</div>
                   <ul class="spec-list">
-                    <li>Validated steering knuckle kingpin inclination and Ackerman steering geometry under dynamic wheel turn loads.</li>
+                    <li>Validated steering knuckle kingpin inclination and Ackerman steering geometry under dynamic
+                      wheel turn loads.</li>
                   </ul>
                 </div>
               </div>
@@ -605,7 +1308,8 @@
                 </div>
 
                 <div class="project-img-wrapper" id="rocketStageImgWrapper" onclick="openActiveStageLightbox()">
-                  <img src="assets/images/p8_img3_569.jpeg" alt="Rocket Staging Simulation" class="project-img" id="rocketStageImg">
+                  <img src="assets/images/p8_img3_569.jpeg" alt="Rocket Staging Simulation" class="project-img"
+                    id="rocketStageImg">
                   <button class="img-inspect-btn">🔍 Inspect Flight Stage</button>
                 </div>
               </div>
@@ -613,7 +1317,8 @@
               <div class="stage-detail-box" id="stageDetailBox">
                 <div class="stage-detail-title" id="stageDetailTitle">Stage 1: High TWR Atmospheric Escape (SRBs)</div>
                 <div class="stage-detail-desc" id="stageDetailDesc">
-                  High thrust-to-weight solid rocket boosters engineered to overcome sea-level atmospheric drag and punch through the thick lower atmosphere with maximum initial impulse.
+                  High thrust-to-weight solid rocket boosters engineered to overcome sea-level atmospheric drag and
+                  punch through the thick lower atmosphere with maximum initial impulse.
                 </div>
               </div>
             </div>
@@ -621,7 +1326,9 @@
             <div class="card-info-side">
               <h3 class="project-heading">Case Study: Simulated Mun Mission Architecture</h3>
               <p class="project-summary">
-                Designed a complete 5-stage spacecraft architecture engineered for orbital insertion, trans-lunar transfer, surface touchdown, and atmospheric reentry recovery. Calculated delta-V requirements using the Tsiolkovsky rocket equation to ensure mission feasibility.
+                Designed a complete 5-stage spacecraft architecture engineered for orbital insertion, trans-lunar
+                transfer, surface touchdown, and atmospheric reentry recovery. Calculated delta-V requirements using the
+                Tsiolkovsky rocket equation to ensure mission feasibility.
               </p>
 
               <table class="tech-table">
@@ -679,12 +1386,14 @@
           <div class="card-content-layout">
             <div class="card-media-side">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p10_img1_585.jpeg', 'Biomimetic Multi-Legged Walking Robot')">
-                  <img src="assets/images/p10_img1_585.jpeg" alt="Biomimetic Robot" class="project-img">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/p10_img4_588.jpeg', 'Biomimetic Multi-Legged Walking Robot')">
+                  <img src="assets/images/p10_img4_588.jpeg" alt="Biomimetic Robot" class="project-img">
                   <button class="img-inspect-btn">🔍 Gait Robot</button>
                 </div>
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p10_img4_588.jpeg', 'Digital Logic Architecture - AND, OR, XOR, NAND State Machine')">
-                  <img src="assets/images/p10_img4_588.jpeg" alt="Digital Logic Gates" class="project-img">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/p10_img1_585.jpeg', 'Digital Logic Architecture - AND, OR, XOR, NAND State Machine')">
+                  <img src="assets/images/p10_img1_585.jpeg" alt="Digital Logic Gates" class="project-img">
                   <button class="img-inspect-btn">🔍 Logic Gates</button>
                 </div>
               </div>
@@ -693,22 +1402,28 @@
             <div class="card-info-side">
               <h3 class="project-heading">Biomimetic Robotics & Logic-Driven Kinematics</h3>
               <p class="project-summary">
-                Designed a multi-legged walking mechanism integrating sequential rotation matrices and an on-board digital logic array to coordinate joint phase shifts. This mechatronic system synchronizes mechanical linkages to translate rotary motion into a stable linear gait while optimizing runtime timing to prevent joint binding.
+                Designed a multi-legged walking mechanism integrating sequential rotation matrices and an on-board
+                digital logic array to coordinate joint phase shifts. This mechatronic system synchronizes mechanical
+                linkages to translate rotary motion into a stable linear gait while optimizing runtime timing to prevent
+                joint binding.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Digital Logic Architecture</div>
                   <ul class="spec-list">
-                    <li><strong>Boolean Gate Matrix:</strong> Configured standard logic gates (AND, OR, XOR, NAND) to handle state machines and control feedback loops.</li>
-                    <li><strong>Phase Shifting:</strong> Prevents opposing leg pairs from entering identical stride phases simultaneously.</li>
+                    <li><strong>Boolean Gate Matrix:</strong> Configured standard logic gates (AND, OR, XOR, NAND) to
+                      handle state machines and control feedback loops.</li>
+                    <li><strong>Phase Shifting:</strong> Prevents opposing leg pairs from entering identical stride
+                      phases simultaneously.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Sequential Multi-Axis Actuation</div>
                   <ul class="spec-list">
-                    <li>Functions exactly like a real-world programmable microcontroller (e.g. Arduino) to time specific rotational angles of hip and knee joints during walking cycles.</li>
+                    <li>Functions exactly like a real-world programmable microcontroller (e.g. Arduino) to time specific
+                      rotational angles of hip and knee joints during walking cycles.</li>
                   </ul>
                 </div>
               </div>
@@ -729,7 +1444,8 @@
         </div>
         <h2 class="section-title">Physical Prototyping & Kinematic Foundations</h2>
         <p class="section-desc">
-          Hands-on tactile exploration in gear ratios, structural rigidity, torque balance, and dynamic equilibrium. Building functional proof-of-concept machines from raw structural components.
+          Hands-on tactile exploration in gear ratios, structural rigidity, torque balance, and dynamic equilibrium.
+          Building functional proof-of-concept machines from raw structural components.
         </p>
       </div>
 
@@ -749,7 +1465,8 @@
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="project-img-wrapper video-preview-wrapper" onclick="openVideoLightbox('assets/videos/linear_transport_prototype.mp4', 'Linear Transport System Prototype - Live dynamic physical testing of synchronized dual-motor carriage')">
+              <div class="project-img-wrapper video-preview-wrapper"
+                onclick="openVideoLightbox('assets/videos/linear_transport_prototype.mp4', 'Linear Transport System Prototype - Live dynamic physical testing of synchronized dual-motor carriage')">
                 <img src="assets/images/p2_img1_497.png" alt="Linear Transport System Prototype" class="project-img">
                 <div class="video-play-overlay">
                   <div class="play-icon-pulse">▶</div>
@@ -757,10 +1474,12 @@
                 </div>
               </div>
               <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;" onclick="openVideoLightbox('assets/videos/linear_transport_prototype.mp4', 'Linear Transport System Prototype - Live dynamic physical testing of synchronized dual-motor carriage')">
+                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                  onclick="openVideoLightbox('assets/videos/linear_transport_prototype.mp4', 'Linear Transport System Prototype - Live dynamic physical testing of synchronized dual-motor carriage')">
                   🎬 Play Test Video
                 </button>
-                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;" onclick="openLightbox('assets/images/p2_img1_497.png', 'Linear Transport System Prototype - Aiden Hockinberry testing synchronized dual-motor belt assembly')">
+                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
+                  onclick="openLightbox('assets/images/p2_img1_497.png', 'Linear Transport System Prototype - Aiden Hockinberry testing synchronized dual-motor belt assembly')">
                   🔍 View Blueprint
                 </button>
               </div>
@@ -769,24 +1488,31 @@
             <div class="card-info-side">
               <h3 class="project-heading">Linear Transport System Prototype</h3>
               <p class="project-summary">
-                Designed a heavy-duty linear transport carriage utilizing a dual-motor synchronized drive to balance load distribution across track guide beams. Focused on structural rigidity during high-cycle dynamic reversals.
+                Designed a heavy-duty linear transport carriage utilizing a dual-motor synchronized drive to balance
+                load distribution across track guide beams. Focused on structural rigidity during high-cycle dynamic
+                reversals.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Key Technical Features</div>
                   <ul class="spec-list">
-                    <li><strong>Dual Motor Drive System:</strong> Synchronized high-torque motors for balanced power distribution and reduced belt slippage.</li>
-                    <li><strong>Reinforced Chassis Design:</strong> Robust Technic beam structure designed to minimize vibration during high-cycle load reversals.</li>
+                    <li><strong>Dual Motor Drive System:</strong> Synchronized high-torque motors for balanced power
+                      distribution and reduced belt slippage.</li>
+                    <li><strong>Reinforced Chassis Design:</strong> Robust Technic beam structure designed to minimize
+                      vibration during high-cycle load reversals.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Challenges & Solutions</div>
                   <ul class="spec-list">
-                    <li><strong>Challenge:</strong> Initial belt tension issues causing dynamic instability and tooth jumping.</li>
-                    <li><strong>Solution:</strong> Iterated pulley and track configurations to optimize traction and alignment under varying loads.</li>
-                    <li><strong>Inertia Management:</strong> Implemented structural cross-bracing and a tuned gear-train to absorb kinetic energy.</li>
+                    <li><strong>Challenge:</strong> Initial belt tension issues causing dynamic instability and tooth
+                      jumping.</li>
+                    <li><strong>Solution:</strong> Iterated pulley and track configurations to optimize traction and
+                      alignment under varying loads.</li>
+                    <li><strong>Inertia Management:</strong> Implemented structural cross-bracing and a tuned gear-train
+                      to absorb kinetic energy.</li>
                   </ul>
                 </div>
               </div>
@@ -807,7 +1533,8 @@
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="project-img-wrapper" onclick="openLightbox('assets/images/p3_img2_504.png', 'Mechanical Logic Exploration - Linkages, gear alignment, and spatial motion translation')">
+              <div class="project-img-wrapper"
+                onclick="openLightbox('assets/images/p3_img2_504.png', 'Mechanical Logic Exploration - Linkages, gear alignment, and spatial motion translation')">
                 <img src="assets/images/p3_img2_504.png" alt="Mechanical Logic Exploration" class="project-img">
                 <button class="img-inspect-btn">🔍 Inspect Linkage Assembly</button>
               </div>
@@ -816,22 +1543,27 @@
             <div class="card-info-side">
               <h3 class="project-heading">Mechanical Logic & Linkage Exploration</h3>
               <p class="project-summary">
-                Investigating spatial motion translation and mechanical timing through interconnected gear linkages. These foundational hands-on builds established intuition for gear backlash, mechanical advantage, and non-binding pivot kinematics.
+                Investigating spatial motion translation and mechanical timing through interconnected gear linkages.
+                These foundational hands-on builds established intuition for gear backlash, mechanical advantage, and
+                non-binding pivot kinematics.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Core Principles</div>
                   <ul class="spec-list">
-                    <li><strong>Motion Conversion:</strong> Transforming continuous rotational inputs into reciprocating mechanical output strokes.</li>
-                    <li><strong>Friction Mitigation:</strong> Pin tolerance alignment and reduction of multi-pivot parasitic drag.</li>
+                    <li><strong>Motion Conversion:</strong> Transforming continuous rotational inputs into reciprocating
+                      mechanical output strokes.</li>
+                    <li><strong>Friction Mitigation:</strong> Pin tolerance alignment and reduction of multi-pivot
+                      parasitic drag.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Engineering Takeaways</div>
                   <ul class="spec-list">
-                    <li>Developed an early hands-on sense of tolerance budgeting and physical constraints that later drove high-precision CAD modeling.</li>
+                    <li>Developed an early hands-on sense of tolerance budgeting and physical constraints that later
+                      drove high-precision CAD modeling.</li>
                   </ul>
                 </div>
               </div>
@@ -853,12 +1585,16 @@
           <div class="card-content-layout">
             <div class="card-media-side">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p4_img2_510.jpeg', 'Self-Stabilizing Dynamic Rolling Structure - Physical Build with Aiden')">
-                  <img src="assets/images/p4_img2_510.jpeg" alt="Dynamic Rolling Structure Physical" class="project-img">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/p4_img2_510.jpeg', 'Self-Stabilizing Dynamic Rolling Structure - Physical Build with Aiden')">
+                  <img src="assets/images/p4_img2_510.jpeg" alt="Dynamic Rolling Structure Physical"
+                    class="project-img">
                   <button class="img-inspect-btn">🔍 Physical</button>
                 </div>
-                <div class="project-img-wrapper" onclick="openLightbox('assets/images/p4_img4_512.png', 'Self-Stabilizing Dynamic Rolling Structure - 3D Wireframe CAD Geometry')">
-                  <img src="assets/images/p4_img4_512.png" alt="Dynamic Rolling Structure CAD" class="project-img">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/images/p4_img4_512.png?v=white', 'Self-Stabilizing Dynamic Rolling Structure - 3D Wireframe CAD Geometry')">
+                  <img src="assets/images/p4_img4_512.png?v=white" alt="Dynamic Rolling Structure CAD"
+                    class="project-img">
                   <button class="img-inspect-btn">🔍 3D CAD</button>
                 </div>
               </div>
@@ -867,22 +1603,27 @@
             <div class="card-info-side">
               <h3 class="project-heading">Self-Stabilizing Dynamic Rolling Structure</h3>
               <p class="project-summary">
-                Conceived and engineered a large-scale self-stabilizing rolling ring structure. By distributing radial structural truss members symmetrically around a central hub, the mechanism maintains rotational momentum and self-rights under dynamic perturbation.
+                Conceived and engineered a large-scale self-stabilizing rolling ring structure. By distributing radial
+                structural truss members symmetrically around a central hub, the mechanism maintains rotational momentum
+                and self-rights under dynamic perturbation.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Structural Dynamics</div>
                   <ul class="spec-list">
-                    <li><strong>Radial Truss Geometry:</strong> Multi-point radial spoke network providing high torsional stiffness against lateral roll forces.</li>
-                    <li><strong>Gyroscopic Tendency:</strong> Perimeter mass concentration maximizing moment of inertia ($I = m r^2$).</li>
+                    <li><strong>Radial Truss Geometry:</strong> Multi-point radial spoke network providing high
+                      torsional stiffness against lateral roll forces.</li>
+                    <li><strong>Gyroscopic Tendency:</strong> Perimeter mass concentration maximizing moment of inertia
+                      ($I = m r^2$).</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">🔧 Digital-Physical Bridge</div>
                   <ul class="spec-list">
-                    <li>Modeled in 3D wireframe space to verify angular symmetry before physical assembly with modular structural struts.</li>
+                    <li>Modeled in 3D wireframe space to verify angular symmetry before physical assembly with modular
+                      structural struts.</li>
                   </ul>
                 </div>
               </div>
@@ -903,7 +1644,8 @@
         </div>
         <h2 class="section-title">Engineering Skills & Toolchain</h2>
         <p class="section-desc">
-          Interdisciplinary capabilities spanning computer-aided design, additive prototyping, electromechanical assembly, digital twin simulations, and kinematic optimization.
+          Interdisciplinary capabilities spanning computer-aided design, additive prototyping, electromechanical
+          assembly, digital twin simulations, and kinematic optimization.
         </p>
       </div>
 
@@ -1014,7 +1756,8 @@
             <div class="section-tag">05 // GET IN TOUCH</div>
             <h2 class="section-title">Let’s Build Something Remarkable</h2>
             <p class="section-desc">
-              Whether you’re interested in collaborating on mechanical engineering projects, discussing prototype design, or exploring engineering opportunities, feel free to reach out directly.
+              Whether you’re interested in collaborating on mechanical engineering projects, discussing prototype
+              design, or exploring engineering opportunities, feel free to reach out directly.
             </p>
 
             <div class="contact-channels">
@@ -1035,7 +1778,8 @@
             <form id="contactForm" onsubmit="handleContactSubmit(event)">
               <div class="form-group">
                 <label class="form-label" for="contactName">YOUR NAME / ORGANIZATION</label>
-                <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Alex Vance / Tesla" required>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Dr. Alex Vance / Tesla"
+                  required>
               </div>
 
               <div class="form-group">
@@ -1045,7 +1789,9 @@
 
               <div class="form-group">
                 <label class="form-label" for="contactMessage">PROJECT INQUIRY / MESSAGE</label>
-                <textarea id="contactMessage" class="form-textarea" placeholder="Tell me about your project, mechanism requirement, or opportunity..." required></textarea>
+                <textarea id="contactMessage" class="form-textarea"
+                  placeholder="Tell me about your project, mechanism requirement, or opportunity..."
+                  required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -1066,8 +1812,10 @@
         © 2026 Aiden Hockinberry — Mechanical Engineering & Prototyping Portfolio.
       </div>
       <div style="display: flex; gap: 1rem; align-items: center;">
-        <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.35rem 0.85rem;" onclick="openExportStudioModal()">🖨️ Export PDF Portfolio</button>
-        <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;" onclick="window.scrollTo({top:0, behavior:'smooth'})">▲ Back to Top</button>
+        <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.35rem 0.85rem;"
+          onclick="openExportStudioModal()">🖨️ Export PDF Portfolio</button>
+        <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;"
+          onclick="window.scrollTo({top:0, behavior:'smooth'})">▲ Back to Top</button>
       </div>
     </div>
   </footer>
@@ -1077,11 +1825,60 @@
     <div class="lightbox-modal">
       <div class="modal-header">
         <div class="modal-title" id="lightboxTitle">High-Resolution CAD Blueprint</div>
+
+        <!-- Design Switcher (Table vs Chair) -->
+        <div class="modal-item-switcher" id="modalItemSwitcher" style="display: none;">
+          <button class="modal-switch-btn" id="modalSwitchTable" onclick="openTableLightbox()">🪵 Table</button>
+          <button class="modal-switch-btn" id="modalSwitchChair" onclick="openChairLightbox()">💺 Chair</button>
+        </div>
+
+        <!-- Dual View Mode Switcher -->
+        <div class="dual-view-controls" id="dualViewControls" style="display: none;">
+          <button class="dual-ctrl-btn active" id="dualBtnBoth" onclick="setDualLightboxView('both')">👥 Both
+            Side-by-Side</button>
+          <button class="dual-ctrl-btn" id="dualBtnCad" onclick="setDualLightboxView('cad')">📐 CAD Model</button>
+          <button class="dual-ctrl-btn" id="dualBtnReal" onclick="setDualLightboxView('real')">🔨 Real Build</button>
+        </div>
         <button class="modal-close-btn" onclick="closeLightbox()" title="Close Lightbox (Esc)">&times;</button>
       </div>
       <div class="modal-body">
         <img src="" alt="High resolution inspection" class="modal-image" id="lightboxImg">
-        <video src="" controls playsinline class="modal-video" id="lightboxVideo" style="display: none; max-width: 100%; max-height: 75vh; border-radius: var(--radius-sm);"></video>
+        <video src="" controls playsinline class="modal-video" id="lightboxVideo"
+          style="display: none; max-width: 100%; max-height: 75vh; border-radius: var(--radius-sm);"></video>
+
+        <!-- Dual Comparison Layout (CAD Model vs. Real Build) -->
+        <div class="lightbox-dual-container" id="lightboxDualContainer" style="display: none;">
+          <div class="dual-comparison-grid" id="dualComparisonGrid">
+            <!-- CAD Pane -->
+            <div class="dual-card cad-pane" id="dualCadPane">
+              <div class="dual-card-header">
+                <span class="dual-card-badge cad" id="dualCadBadge">📐 Autodesk Fusion 360</span>
+                <span class="dual-card-type" id="dualCadType">3D Parametric CAD Solid Model</span>
+              </div>
+              <div class="dual-card-img-wrap">
+                <img src="" alt="3D CAD Model" id="dualCadImg" class="dual-img">
+              </div>
+              <div class="dual-card-footer" id="dualCadFooter">
+                <span>Constrained joint tolerances, angled cross-bracing & top rebate</span>
+              </div>
+            </div>
+
+            <!-- Real Build Pane -->
+            <div class="dual-card real-pane" id="dualRealPane">
+              <div class="dual-card-header">
+                <span class="dual-card-badge real" id="dualRealBadge">🪵 Physical Woodworking Build</span>
+                <span class="dual-card-type" id="dualRealType">Finished Build</span>
+              </div>
+              <div class="dual-card-img-wrap">
+                <img src="" alt="Physical Build Photo" id="dualRealImg" class="dual-img">
+              </div>
+              <div class="dual-card-footer" id="dualRealFooter">
+                <span>Hand-finished construction with verified dimensional and joint fidelity</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="modal-caption" id="lightboxCaption"></div>
       </div>
     </div>
@@ -1103,53 +1900,64 @@
       <div class="export-studio-body">
         <div class="export-config-sidebar">
           <h3 class="config-sidebar-title">⚙️ Export Settings</h3>
-          
+
           <div class="form-group">
             <label class="form-label" for="exportBaseUrl">LIVE QR BASE URL</label>
-            <input type="text" id="exportBaseUrl" class="form-input" value="https://aidenhockinberry.github.io/mechenical-engineering-portfolio/" placeholder="https://..." oninput="updateQrCodes(this.value)">
-            <span style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.25rem;">QR codes automatically direct readers to online 3D CAD & live simulations.</span>
+            <input type="text" id="exportBaseUrl" class="form-input"
+              value="https://aidenhockinberry.github.io/mechenical-engineering-portfolio/" placeholder="https://..."
+              oninput="updateQrCodes(this.value)">
+            <span
+              style="font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 0.25rem;">QR
+              codes automatically direct readers to online 3D CAD & live simulations.</span>
           </div>
 
           <div class="form-group" style="margin-top: 1rem;">
             <label class="form-label">INCLUDE PORTFOLIO SHEETS</label>
             <div class="sheet-toggle-list">
               <label class="sheet-toggle-item">
-                <input type="checkbox" id="toggleSheetCover" checked onchange="togglePrintSheet('print-sheet-cover', this.checked)">
+                <input type="checkbox" id="toggleSheetCover" checked
+                  onchange="togglePrintSheet('print-sheet-cover', this.checked)">
                 <span>Page 1: Cover & Engineering Summary</span>
               </label>
               <label class="sheet-toggle-item">
-                <input type="checkbox" id="toggleSheetEra1" checked onchange="togglePrintSheet('print-sheet-era1', this.checked)">
+                <input type="checkbox" id="toggleSheetEra1" checked
+                  onchange="togglePrintSheet('print-sheet-era1', this.checked)">
                 <span>Page 2: Era 1 — 3D Printing & Mechatronics</span>
               </label>
               <label class="sheet-toggle-item">
-                <input type="checkbox" id="toggleSheetEra2" checked onchange="togglePrintSheet('print-sheet-era2', this.checked)">
+                <input type="checkbox" id="toggleSheetEra2" checked
+                  onchange="togglePrintSheet('print-sheet-era2', this.checked)">
                 <span>Page 3: Era 2 — Virtual Prototyping & Twins</span>
               </label>
               <label class="sheet-toggle-item">
-                <input type="checkbox" id="toggleSheetEra3" checked onchange="togglePrintSheet('print-sheet-era3', this.checked)">
+                <input type="checkbox" id="toggleSheetEra3" checked
+                  onchange="togglePrintSheet('print-sheet-era3', this.checked)">
                 <span>Page 4: Era 3 — Physical Foundations</span>
               </label>
               <label class="sheet-toggle-item">
-                <input type="checkbox" id="toggleSheetSkills" checked onchange="togglePrintSheet('print-sheet-skills', this.checked)">
+                <input type="checkbox" id="toggleSheetSkills" checked
+                  onchange="togglePrintSheet('print-sheet-skills', this.checked)">
                 <span>Page 5: Competencies & Toolchain Matrix</span>
               </label>
             </div>
           </div>
 
           <div class="print-instruction-box">
-            <div style="font-weight: 700; color: var(--cyan-primary); margin-bottom: 0.35rem;">💡 PDF Print Instructions:</div>
+            <div style="font-weight: 700; color: var(--cyan-primary); margin-bottom: 0.35rem;">💡 PDF Print
+              Instructions:</div>
             <ol style="padding-left: 1.1rem; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.55;">
               <li>Click <strong>"Download / Print PDF"</strong> above.</li>
               <li>Set Destination to <strong>"Save as PDF"</strong>.</li>
               <li>Set Paper Size to <strong>Letter</strong> or <strong>A4</strong>.</li>
-              <li>Enable <strong>"Background graphics"</strong> to render blueprint borders and photo frames cleanly.</li>
+              <li>Enable <strong>"Background graphics"</strong> to render blueprint borders and photo frames cleanly.
+              </li>
             </ol>
           </div>
         </div>
 
         <div class="export-preview-container" id="exportPreviewContainer">
           <div class="preview-zoom-label">PRINT SHEET LIVE PREVIEW (LETTER / A4)</div>
-          
+
           <!-- PRINTABLE PORTFOLIO CONTAINER -->
           <div class="printable-portfolio" id="printablePortfolio">
 
@@ -1193,15 +2001,21 @@
                     “I have been doing Mechanical Engineering my whole life.”
                   </div>
                   <p class="print-body-text">
-                    I am an engineering student dedicated to solving complex kinematic problems, creating functional physical prototypes, and verifying mechanical designs through digital twin simulations. My work spans hands-on mechanical assemblies, parametric CAD modeling in Autodesk Fusion 360, tolerance-critical 3D printing on Creality machines, and physics sandbox testing.
+                    I am an engineering student dedicated to solving complex kinematic problems, creating functional
+                    physical prototypes, and verifying mechanical designs through digital twin simulations. My work
+                    spans hands-on mechanical assemblies, parametric CAD modeling in Autodesk Fusion 360,
+                    tolerance-critical 3D printing on Creality machines, and physics sandbox testing.
                   </p>
 
                   <div class="print-highlights-box">
                     <div class="print-hl-title">CORE ENGINEERING DOMAINS</div>
                     <ul class="print-hl-list">
-                      <li><strong>CAD & Rapid Prototyping:</strong> Parametric solid modeling, exploded assemblies, tolerance-budgeted snap-fits (0.22mm).</li>
-                      <li><strong>Digital Twin Simulations:</strong> High-frequency kinematic balancing across 70+ piston engine variations and orbital staging mechanics.</li>
-                      <li><strong>Electromechanical Systems:</strong> Hand-wound brushed DC motor armatures, gravity-driven escapement clockworks, and logic-timed robotic gaits.</li>
+                      <li><strong>CAD & Rapid Prototyping:</strong> Parametric solid modeling, exploded assemblies,
+                        tolerance-budgeted snap-fits (0.22mm).</li>
+                      <li><strong>Digital Twin Simulations:</strong> High-frequency kinematic balancing across 70+
+                        piston engine variations and orbital staging mechanics.</li>
+                      <li><strong>Electromechanical Systems:</strong> Hand-wound brushed DC motor armatures,
+                        gravity-driven escapement clockworks, and logic-timed robotic gaits.</li>
                     </ul>
                   </div>
                 </div>
@@ -1215,7 +2029,8 @@
                     <div class="print-qr-img-box" id="qr-cover"></div>
                     <div class="print-qr-info">
                       <div class="print-qr-title">SCAN FOR LIVE SITE</div>
-                      <div class="print-qr-desc">View interactive 3D CAD models, animations & digital twin sandbox.</div>
+                      <div class="print-qr-desc">View interactive 3D CAD models, animations & digital twin sandbox.
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1232,7 +2047,9 @@
               <div class="print-sheet-tag">ERA 01 // 3D PRINTING, CAD MODELING & MECHATRONICS</div>
               <h2 class="print-sheet-title">Fusion 360 Design & Additive Manufacturing</h2>
               <p class="print-sheet-desc">
-                Transforming theoretical mechanics and digital simulations into physical realities using Autodesk Fusion 360, TinkerCAD, and Creality 3D printers for high-precision component fabrication, tolerance testing, and functional electromechanical prototypes.
+                Transforming theoretical mechanics and digital simulations into physical realities using Autodesk Fusion
+                360, TinkerCAD, and Creality 3D printers for high-precision component fabrication, tolerance testing,
+                and functional electromechanical prototypes.
               </p>
 
               <div class="print-projects-grid">
@@ -1240,13 +2057,21 @@
                 <div class="print-proj-row">
                   <div class="print-proj-card">
                     <div class="print-proj-title">1. Fusion Design: Parametric CAD & Physical Build</div>
-                    <div class="print-proj-meta">Autodesk Fusion 360 • Parametric Constraints • Woodworking & Finish</div>
+                    <div class="print-proj-meta">Autodesk Fusion 360 • Parametric Constraints • Woodworking & Finish
+                    </div>
                     <div class="print-thumb-row">
-                      <img src="assets/images/p11_img1_597.png" alt="Chair CAD" class="print-thumb">
-                      <img src="assets/images/p11_img2_598.png" alt="Table Real" class="print-thumb">
+                      <img src="assets/images/end_table_1.png" alt="Console Table 3D CAD" class="print-thumb"
+                        title="Console Table 3D CAD">
+                      <img src="assets/images/real_end_table_2.jpg" alt="Physical Build Table (real_end_table_2)"
+                        class="print-thumb" title="Physical Table Build">
+                      <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD" class="print-thumb"
+                        title="Ergonomic Chair 3D CAD">
+                      <img src="assets/images/real_chair_1.jpg" alt="Physical Chair Build" class="print-thumb"
+                        title="Physical Chair Build" onerror="handleChairImgError(this)">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a multi-part ergonomic chair assembly and cross-braced dual-tone console table fully translated from 3D parametric CAD into high-fidelity physical builds.
+                      Engineered a multi-part ergonomic chair assembly and cross-braced dual-tone console table fully
+                      translated from 3D parametric CAD into high-fidelity physical builds.
                     </p>
                   </div>
 
@@ -1258,7 +2083,8 @@
                       <img src="assets/images/p12_img3_607.png" alt="Propeller Pitch" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a wind-driven rover harnessing ambient airflow. Developed custom 3D-printed multi-blade impellers (Attempt 1 vs. 2) and 90° torque transfer linkages.
+                      Engineered a wind-driven rover harnessing ambient airflow. Developed custom 3D-printed multi-blade
+                      impellers (Attempt 1 vs. 2) and 90° torque transfer linkages.
                     </p>
                   </div>
                 </div>
@@ -1274,12 +2100,28 @@
                     <div style="width: 66%;">
                       <table class="print-table">
                         <thead>
-                          <tr><th>Component</th><th>Mechanism</th><th>Specification</th></tr>
+                          <tr>
+                            <th>Component</th>
+                            <th>Mechanism</th>
+                            <th>Specification</th>
+                          </tr>
                         </thead>
                         <tbody>
-                          <tr><td>Cantilever Lid</td><td>Snap-Top Flexure</td><td>Engineered deflection tooth with tactile retention</td></tr>
-                          <tr><td>Play Grid Core</td><td>Column Guides</td><td>Precision anti-jam slot chamfers</td></tr>
-                          <tr><td>Assembly Base</td><td>Friction Housing</td><td><strong>0.22mm air gap tolerance</strong> for repeatable print fit</td></tr>
+                          <tr>
+                            <td>Cantilever Lid</td>
+                            <td>Snap-Top Flexure</td>
+                            <td>Engineered deflection tooth with tactile retention</td>
+                          </tr>
+                          <tr>
+                            <td>Play Grid Core</td>
+                            <td>Column Guides</td>
+                            <td>Precision anti-jam slot chamfers</td>
+                          </tr>
+                          <tr>
+                            <td>Assembly Base</td>
+                            <td>Friction Housing</td>
+                            <td><strong>0.22mm air gap tolerance</strong> for repeatable print fit</td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -1290,13 +2132,15 @@
                 <div class="print-proj-row">
                   <div class="print-proj-card">
                     <div class="print-proj-title">4. Gravity Escapement & Ratchet System</div>
-                    <div class="print-proj-meta">14 CAD Iterations • 5 Chain Generations (V1-V5) • Prototype Graveyard</div>
+                    <div class="print-proj-meta">14 CAD Iterations • 5 Chain Generations (V1-V5) • Prototype Graveyard
+                    </div>
                     <div class="print-thumb-row">
                       <img src="assets/images/p14_img1_630.png" alt="Escapement Apparatus" class="print-thumb">
-                      <img src="assets/images/p16_img1_653.png" alt="Graveyard" class="print-thumb">
+                      <img src="assets/images/p16_img1_653.png?v=white" alt="Graveyard" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a gravity-powered pendulum clockwork mechanism with optimized pallet tooth angle and 5 chain generations to achieve deadbeat impulse transfer.
+                      Engineered a gravity-powered pendulum clockwork mechanism with optimized pallet tooth angle and 5
+                      chain generations to achieve deadbeat impulse transfer.
                     </p>
                   </div>
 
@@ -1307,8 +2151,40 @@
                       <img src="assets/images/p18_img2_671.png" alt="BDC Motor" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Constructed a functional DC motor with high-conductivity enamel magnet wire, spring-tensioned copper brushes, and split-ring commutator timing.
+                      Constructed a functional DC motor with high-conductivity enamel magnet wire, spring-tensioned
+                      copper brushes, and split-ring commutator timing.
                     </p>
+                  </div>
+                </div>
+
+                <!-- Project 6: Autonomous 6-Axis Rubik's Cube Solver -->
+                <div class="print-proj-full" style="margin-top: 0.5rem;">
+                  <div class="print-proj-title">6. Autonomous 6-Axis Robotic Rubik's Cube Solver</div>
+                  <div class="print-proj-meta">6x NEMA 17 Steppers • Klipper MCU • Kociemba Algorithm • 9.68s Solve
+                    Record</div>
+                  <div class="print-table-layout">
+                    <div style="width: 32%;">
+                      <img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
+                        alt="Autonomous 6-Axis Robotic Rubik's Cube Solver" class="print-thumb-single">
+                    </div>
+                    <div style="width: 66%;">
+                      <p class="print-proj-summary" style="margin: 0 0 0.35rem 0;">
+                        Engineered a high-speed 6-axis robotic Rubik's cube solver using modular 3D-printed frame
+                        towers, 6 direct-drive NEMA 17 steppers with silent TMC2209 drivers, Raspberry Pi Klipper MCU
+                        firmware, and Kociemba Two-Phase parallel step compression achieving a benchmark 9.68-second
+                        solve.
+                      </p>
+                      <div class="print-thumb-row">
+                        <img src="assets/images/rubiks_cube/rubiks_cube_solver_2.jpg" alt="Top Gantry"
+                          class="print-thumb" title="6-Axis Gantry">
+                        <img src="assets/images/rubiks_cube/rubiks_cube_solver_8.jpg" alt="Electronics Bay"
+                          class="print-thumb" title="24V TMC2209 Control Bay">
+                        <img src="assets/images/rubiks_cube/20260731_203212.jpg" alt="Drive Spindles"
+                          class="print-thumb" title="3D Printed Spindles">
+                        <img src="assets/images/rubiks_cube/20260731_220640.jpg" alt="Kociemba Log" class="print-thumb"
+                          title="Kociemba Solve Log">
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1332,7 +2208,9 @@
               <div class="print-sheet-tag">ERA 02 // THE VIRTUAL ERA & DIGITAL TWINS</div>
               <h2 class="print-sheet-title">Engineering Beyond Physical Constraints & Digital Twins</h2>
               <p class="print-sheet-desc">
-                Transitioning from physical constraints to high-fidelity physics engines (Kerbal Space Program, Scrap Mechanic, modded Minecraft) to validate kinematics, orbital trajectory staging, and multi-axis logic loops prior to physical fabrication.
+                Transitioning from physical constraints to high-fidelity physics engines (Kerbal Space Program, Scrap
+                Mechanic) to validate kinematics, orbital trajectory staging, and multi-axis logic
+                loops prior to physical fabrication.
               </p>
 
               <div class="print-projects-grid">
@@ -1340,14 +2218,16 @@
                 <div class="print-proj-row">
                   <div class="print-proj-card">
                     <div class="print-proj-title">6. 70+ Piston Engine Iteration Lab</div>
-                    <div class="print-proj-meta">70+ Engine Builds • Crankshaft Phase Balancing • Timing Efficiency</div>
+                    <div class="print-proj-meta">70+ Engine Builds • Crankshaft Phase Balancing • Timing Efficiency
+                    </div>
                     <div class="print-thumb-row">
-                      <img src="assets/images/p6_img1_521.png" alt="Engine 1" class="print-thumb">
-                      <img src="assets/images/p6_img2_522.png" alt="Engine 2" class="print-thumb">
-                      <img src="assets/images/p6_img3_523.png" alt="Engine 3" class="print-thumb">
+                      <img src="assets/images/p6_img1_521.png?v=white" alt="Engine 1" class="print-thumb">
+                      <img src="assets/images/p6_img2_522.png?v=white" alt="Engine 2" class="print-thumb">
+                      <img src="assets/images/p6_img3_523.png?v=white" alt="Engine 3" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Designed and stress-tested over 70 custom piston configurations (inline, radial, V-type, boxer) to optimize ignition timing, eliminate torsional resonance, and maximize torque.
+                      Designed and stress-tested over 70 custom piston configurations (inline, radial, V-type, boxer) to
+                      optimize ignition timing, eliminate torsional resonance, and maximize torque.
                     </p>
                   </div>
 
@@ -1359,7 +2239,8 @@
                       <img src="assets/images/p7_img5_557.png" alt="Suspension U-Joint" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a complete chassis integrating central piston power, independent damped suspension, and U-joint drivetrain to maintain torque transfer across uneven terrain.
+                      Engineered a complete chassis integrating central piston power, independent damped suspension, and
+                      U-joint drivetrain to maintain torque transfer across uneven terrain.
                     </p>
                   </div>
                 </div>
@@ -1367,7 +2248,8 @@
                 <!-- Project 8: Mun Mission Case Study -->
                 <div class="print-proj-full">
                   <div class="print-proj-title">8. Case Study: Simulated Mun Mission Spacecraft Architecture</div>
-                  <div class="print-proj-meta">Kerbal Space Program • 5-Stage Rocket • Total ΔV: 9,243 m/s • Tsiolkovsky Equation</div>
+                  <div class="print-proj-meta">Kerbal Space Program • 5-Stage Rocket • Total ΔV: 9,243 m/s • Tsiolkovsky
+                    Equation</div>
                   <div class="print-table-layout">
                     <div style="width: 32%;">
                       <img src="assets/images/p8_img3_569.jpeg" alt="Rocket Staging" class="print-thumb-single">
@@ -1375,13 +2257,33 @@
                     <div style="width: 66%;">
                       <table class="print-table">
                         <thead>
-                          <tr><th>Mission Metric</th><th>Specification</th><th>Engineering Purpose</th></tr>
+                          <tr>
+                            <th>Mission Metric</th>
+                            <th>Specification</th>
+                            <th>Engineering Purpose</th>
+                          </tr>
                         </thead>
                         <tbody>
-                          <tr><td><strong>Total ΔV Budget</strong></td><td><strong>9,243 m/s</strong></td><td>Sufficient for LKO, Trans-Munar, Landing, & Earth Reentry</td></tr>
-                          <tr><td><strong>Vehicle Part Count</strong></td><td>147 Components</td><td>Structural rigidity and aerodynamic fairing optimization</td></tr>
-                          <tr><td><strong>Staging Profile</strong></td><td>5 Discrete Stages</td><td>Maximizes vacuum Isp by discarding dry booster mass</td></tr>
-                          <tr><td><strong>Ascent Trajectory</strong></td><td>Gravity Turn @ 70km</td><td>Trades vertical climb for horizontal orbital insertion velocity</td></tr>
+                          <tr>
+                            <td><strong>Total ΔV Budget</strong></td>
+                            <td><strong>9,243 m/s</strong></td>
+                            <td>Sufficient for LKO, Trans-Munar, Landing, & Earth Reentry</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Vehicle Part Count</strong></td>
+                            <td>147 Components</td>
+                            <td>Structural rigidity and aerodynamic fairing optimization</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Staging Profile</strong></td>
+                            <td>5 Discrete Stages</td>
+                            <td>Maximizes vacuum Isp by discarding dry booster mass</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Ascent Trajectory</strong></td>
+                            <td>Gravity Turn @ 70km</td>
+                            <td>Trades vertical climb for horizontal orbital insertion velocity</td>
+                          </tr>
                         </tbody>
                       </table>
                     </div>
@@ -1391,13 +2293,15 @@
                 <!-- Project 9: Biomimetic Walking Robot -->
                 <div class="print-proj-full">
                   <div class="print-proj-title">9. Biomimetic Robotics & Logic-Driven Kinematics</div>
-                  <div class="print-proj-meta">Boolean State Machine (AND/OR/XOR) • Microcontroller Timing • Walking Gait Coordination</div>
+                  <div class="print-proj-meta">Boolean State Machine (AND/OR/XOR) • Microcontroller Timing • Walking
+                    Gait Coordination</div>
                   <div class="print-thumb-row" style="margin-bottom: 0.4rem;">
-                    <img src="assets/images/p10_img1_585.jpeg" alt="Gait Robot" class="print-thumb">
-                    <img src="assets/images/p10_img4_588.jpeg" alt="Logic Matrix" class="print-thumb">
+                    <img src="assets/images/p10_img4_588.jpeg" alt="Gait Robot" class="print-thumb">
+                    <img src="assets/images/p10_img1_585.jpeg" alt="Logic Matrix" class="print-thumb">
                   </div>
                   <p class="print-proj-summary">
-                    Engineered a multi-legged walking robot integrating on-board digital logic state machines to coordinate joint phase shifts and prevent joint binding during continuous linear gaits.
+                    Engineered a multi-legged walking robot integrating on-board digital logic state machines to
+                    coordinate joint phase shifts and prevent joint binding during continuous linear gaits.
                   </p>
                 </div>
               </div>
@@ -1421,21 +2325,26 @@
               <div class="print-sheet-tag">ERA 03 // KINEMATIC FOUNDATIONS & EARLY PROTOTYPES</div>
               <h2 class="print-sheet-title">Physical Prototyping & Kinematic Foundations</h2>
               <p class="print-sheet-desc">
-                Hands-on tactile exploration in gear ratios, structural rigidity, torque balance, and dynamic equilibrium. Building functional proof-of-concept machines from raw structural components.
+                Hands-on tactile exploration in gear ratios, structural rigidity, torque balance, and dynamic
+                equilibrium. Building functional proof-of-concept machines from raw structural components.
               </p>
 
               <div class="print-projects-grid">
                 <!-- Project 10 -->
                 <div class="print-proj-full">
                   <div class="print-proj-title">10. Linear Transport System Prototype</div>
-                  <div class="print-proj-meta">Synchronized Dual-Motor Drive • Belt Tension Tuning • Reinforced Cross-Bracing</div>
+                  <div class="print-proj-meta">Synchronized Dual-Motor Drive • Belt Tension Tuning • Reinforced
+                    Cross-Bracing</div>
                   <div class="print-table-layout">
                     <div style="width: 38%;">
                       <img src="assets/images/p2_img1_497.png" alt="Linear Transport" class="print-thumb-single">
                     </div>
                     <div style="width: 60%; font-size: 0.8rem; line-height: 1.5; color: #1e293b;">
-                      <p><strong>Design Challenge:</strong> Dynamic carriage instability and belt tooth jumping during high-cycle directional reversals.</p>
-                      <p><strong>Engineering Solution:</strong> Implemented dual-motor synchronized drive to balance track load distribution, reinforced Technic beam cross-bracing to absorb vibration, and tuned pulley drive-train.</p>
+                      <p><strong>Design Challenge:</strong> Dynamic carriage instability and belt tooth jumping during
+                        high-cycle directional reversals.</p>
+                      <p><strong>Engineering Solution:</strong> Implemented dual-motor synchronized drive to balance
+                        track load distribution, reinforced Technic beam cross-bracing to absorb vibration, and tuned
+                        pulley drive-train.</p>
                     </div>
                   </div>
                 </div>
@@ -1444,12 +2353,14 @@
                 <div class="print-proj-row">
                   <div class="print-proj-card">
                     <div class="print-proj-title">11. Mechanical Logic & Linkage Exploration</div>
-                    <div class="print-proj-meta">Spatial Motion Translation • Rotary-to-Linear • Tolerance Budgeting</div>
+                    <div class="print-proj-meta">Spatial Motion Translation • Rotary-to-Linear • Tolerance Budgeting
+                    </div>
                     <div class="print-thumb-row">
                       <img src="assets/images/p3_img2_504.png" alt="Linkage" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Investigated spatial motion translation and mechanical timing through interconnected gear linkages, developing an intuitive foundation for backlash and multi-pivot pin tolerances.
+                      Investigated spatial motion translation and mechanical timing through interconnected gear
+                      linkages, developing an intuitive foundation for backlash and multi-pivot pin tolerances.
                     </p>
                   </div>
 
@@ -1458,10 +2369,11 @@
                     <div class="print-proj-meta">Rotational Inertia • Radial Truss Symmetry • 3D Wireframe CAD</div>
                     <div class="print-thumb-row">
                       <img src="assets/images/p4_img2_510.jpeg" alt="Rolling Physical" class="print-thumb">
-                      <img src="assets/images/p4_img4_512.png" alt="Rolling CAD" class="print-thumb">
+                      <img src="assets/images/p4_img4_512.png?v=white" alt="Rolling CAD" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a self-stabilizing rolling ring utilizing radial truss spoke geometry and perimeter mass concentration ($I = mr^2$) to maintain rotational momentum under dynamic perturbation.
+                      Engineered a self-stabilizing rolling ring utilizing radial truss spoke geometry and perimeter
+                      mass concentration ($I = mr^2$) to maintain rotational momentum under dynamic perturbation.
                     </p>
                   </div>
                 </div>
@@ -1486,7 +2398,8 @@
               <div class="print-sheet-tag">ENGINEERING MATRIX // SKILLS & TOOLCHAIN</div>
               <h2 class="print-sheet-title">Engineering Competencies & Toolchain Matrix</h2>
               <p class="print-sheet-desc">
-                Comprehensive interdisciplinary toolkit spanning computer-aided design, additive prototyping, electromechanical assembly, digital twin simulations, and kinematic optimization.
+                Comprehensive interdisciplinary toolkit spanning computer-aided design, additive prototyping,
+                electromechanical assembly, digital twin simulations, and kinematic optimization.
               </p>
 
               <div class="print-skills-grid">
@@ -1559,9 +2472,12 @@
 
               <div class="print-contact-strip">
                 <div>
-                  <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">Aiden Hockinberry — Mechanical Engineering</div>
-                  <div style="font-size: 0.8rem; color: #475569; font-family: var(--font-mono);">Email: aidenhockinberry@gmail.com</div>
-                  <div style="font-size: 0.75rem; color: #64748b;">Available for university engineering programs, prototype collaboration, and mechanical engineering opportunities.</div>
+                  <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a;">Aiden Hockinberry — Mechanical
+                    Engineering</div>
+                  <div style="font-size: 0.8rem; color: #475569; font-family: var(--font-mono);">Email:
+                    aidenhockinberry@gmail.com</div>
+                  <div style="font-size: 0.75rem; color: #64748b;">Available for university engineering programs,
+                    prototype collaboration, and mechanical engineering opportunities.</div>
                 </div>
                 <div class="print-qr-card mini">
                   <div class="print-qr-img-box mini" id="qr-skills"></div>
@@ -1590,4 +2506,5 @@
   <!-- Javascript Logic -->
   <script src="app.js"></script>
 </body>
+
 </html>

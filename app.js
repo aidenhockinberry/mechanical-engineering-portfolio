@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initEngineGallery();
   initCadViewers();
   initRocketStages();
+  initConnect4Iterations();
   initFilters();
   initThemeToggle();
   initExportStudio();
@@ -55,11 +56,11 @@ function initEngineGallery() {
     item.className = 'engine-item';
     item.title = `${eng.name} - Click to inspect CAD`;
     item.innerHTML = `
-      <img src="assets/images/${eng.file}" alt="${eng.name}" class="engine-thumb" loading="lazy">
+      <img src="assets/images/${eng.file}?v=white" alt="${eng.name}" class="engine-thumb" loading="lazy">
       <span class="engine-number">#${String(index + 1).padStart(2, '0')}</span>
     `;
     item.addEventListener('click', () => {
-      openLightbox(`assets/images/${eng.file}`, `Virtual Piston Engine Prototype: ${eng.name}. Designed & stress-tested in real-time physics engine for torque optimization, timing efficiency, and structural equilibrium.`);
+      openLightbox(`assets/images/${eng.file}?v=white`, `Virtual Piston Engine Prototype: ${eng.name}. Designed & stress-tested in real-time physics engine for torque optimization, timing efficiency, and structural equilibrium.`);
     });
     container.appendChild(item);
   });
@@ -68,11 +69,11 @@ function initEngineGallery() {
 /* ==========================================================================
    2. MULTI-VIEW CAD SWITCHER (Automotive Chassis)
    ========================================================================== */
-let activeCadSrc = 'assets/images/p7_img3_554.png';
+let activeCadSrc = 'assets/images/p7_img3_554.png?v=white';
 let activeCadTitle = 'Mechanical Automotive Chassis - FRONT VIEW';
 
 function initCadViewers() {
-  const btns = document.querySelectorAll('.cad-view-btn');
+  const btns = document.querySelectorAll('.cad-viewer-container .cad-view-btn');
   const img = document.getElementById('autoCadImg');
 
   const titles = {
@@ -106,6 +107,60 @@ function initCadViewers() {
 function openActiveCadLightbox() {
   openLightbox(activeCadSrc, activeCadTitle);
 }
+
+/* ==========================================================================
+   2b. ESCAPEMENT & RATCHET SYSTEM TAB SWITCHER
+   ========================================================================== */
+function switchEscapementTab(tabId, btnElement) {
+  // Hide all escapement tab panes
+  const panes = document.querySelectorAll('.escapement-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`escapement-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.escapement-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`escapementTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchEscapementTab = switchEscapementTab;
+
+/* ==========================================================================
+   2c. RUBIK'S CUBE SOLVER TAB SWITCHER
+   ========================================================================== */
+function switchRubiksTab(tabId, btnElement) {
+  // Hide all rubiks tab panes
+  const panes = document.querySelectorAll('.rubiks-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`rubiks-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.rubiks-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`rubiksTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchRubiksTab = switchRubiksTab;
 
 /* ==========================================================================
    3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission)
@@ -177,7 +232,153 @@ function openActiveStageLightbox() {
 }
 
 /* ==========================================================================
-   4. ERA & DISCIPLINE FILTERING
+   4. POCKET CONNECT 4 SNAP-FIT 5-STAGE ITERATION CONTROLLER (PDF Page 14)
+   ========================================================================== */
+const connect4Stages = {
+  1: {
+    name: 'V1: Loose Friction-Fit Enclosure (Too Loose, No Snap)',
+    desc: 'Initial baseline prototype attempted a basic slip-on friction enclosure around the token grid without dedicated mechanical interlocks.',
+    statusClass: 'failure',
+    statusText: '⚠️ Failure Mode: Zero Positive Retention',
+    modelImg: 'assets/images/connect4_model_v1.png',
+    circleImg: null,
+    circleCaption: '',
+    rootCause: 'Thermal shrinkage and layer tolerance stack-up in FDM printing caused unpredictable friction. Zero mechanical detent meant any minor vibration or inversion caused the case to slip off, spilling all 42 game tokens.',
+    nextStep: 'Transition from passive friction fit to active mechanical latching by introducing an external snap hook tab to achieve positive locking.'
+  },
+  2: {
+    name: 'V2: Case Hook Tab (Hook is Brittle & Keeps Breaking)',
+    desc: 'Added an exterior cantilever hook catch protruding from the base to positively clip the top lid shut.',
+    statusClass: 'failure',
+    statusText: '⚠️ Failure Mode: Anisotropic Layer Delamination & Stress Fracture',
+    modelImg: 'assets/images/connect4_model_v2.png',
+    circleImg: 'assets/images/connect4_circle_v2.png',
+    circleCaption: '<strong>Stress Concentration at 90° Root:</strong> Tensile bending loads perpendicular to FDM layer lines caused brittle inter-layer cleavage failure.',
+    rootCause: 'In FDM additive manufacturing, tensile strength is weakest across the Z-axis layer lines. Combined with a sharp 90-degree corner root (high Kt stress concentration factor), bending the hook snapped it off along layer boundaries after minimal cycle counts.',
+    nextStep: 'Re-engineer the latch into an internal dual-cantilever flexure ("pincher") with stress-relief root fillets and shielded flexure arms.'
+  },
+  3: {
+    name: 'V3: Dual Pincher Case Gen 1 (Too Hard to Open)',
+    desc: 'Transitioned to an internal dual-cantilever flexure mechanism with top squeeze tabs to protect the latch elements.',
+    statusClass: 'failure',
+    statusText: '⚠️ Failure Mode: Over-Stiff Beam (High Actuation Effort)',
+    modelImg: 'assets/images/connect4_model_v3.png',
+    circleImg: 'assets/images/connect4_circle_v3.png',
+    circleCaption: '<strong>Internal Interference Latch:</strong> Steep undercut angle and short beam length generated excessive deflection resistance.',
+    rootCause: 'Cantilever beam bending stiffness scales inversely with length cubed (k = 3EI / L³). The initial flexure arms were too short and thick (I = bh³ / 12), requiring thumb pinch forces far exceeding comfortable human grip limits.',
+    nextStep: 'Extend the cantilever beam moment arm, reduce wall thickness, and integrate shallow lead-in wedge chamfers to lower actuation resistance.'
+  },
+  4: {
+    name: 'V4: Pincher Case Gen 2 (Angle & Deflection Tuning)',
+    desc: 'Optimized flexure arm length and added internal lead-in angle chamfers for smoother insertion and release.',
+    statusClass: 'refinement',
+    statusText: '🔄 Refinement: Tactile Angle & Deflection Calibration',
+    modelImg: 'assets/images/connect4_model_v4.png',
+    circleImg: 'assets/images/connect4_circle_v4.png',
+    circleCaption: '<strong>Tapered Lead-In Chamfer:</strong> 45° entry ramp reduced insertion force, but single-sided pinch caused binding.',
+    rootCause: 'While insertion force was reduced, the release undercut was prone to asymmetrical tilting when squeezed off-center, causing momentary mechanical binding.',
+    nextStep: 'Calibrate the precise 0.22mm air gap clearance on Creality Ender 3 V3 KE and add symmetric release cutouts for smooth one-handed pinching.'
+  },
+  5: {
+    name: 'V5: Final Compliant Cantilever Snap-Top Lid (Optimized Production Fit)',
+    desc: 'Fully realized production-grade compliant mechanism featuring generous stress-relief fillets, calibrated 0.22mm air gap, and ergonomic pinch release.',
+    statusClass: 'success',
+    statusText: '✅ Production Success: 0.22mm Calibrated Air Gap Tolerance',
+    modelImg: 'assets/images/connect4_model_v5.png',
+    circleImg: 'assets/images/connect4_circle_v5.png',
+    circleCaption: '<strong>Optimized Compliant Flexure:</strong> Balanced retention tooth with stress-relief fillet and 0.22mm FDM air gap tolerance.',
+    rootCause: 'Achieved the optimal balance between positive retention force (0% accidental travel spillage) and smooth ergonomic thumb release with zero fatigue deformation over hundreds of cycles.',
+    nextStep: 'Successfully validated on Creality Ender 3 V3 KE with PLA material; production file finalized.'
+  }
+};
+
+let currentConnect4Stage = 1;
+
+function initConnect4Iterations() {
+  const stepBtns = document.querySelectorAll('.iteration-step-btn[data-stage]');
+  if (!stepBtns.length) return;
+
+  stepBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const stage = parseInt(btn.getAttribute('data-stage'), 10);
+      selectConnect4Stage(stage);
+    });
+  });
+}
+
+function selectConnect4Stage(stageNum) {
+  const data = connect4Stages[stageNum];
+  if (!data) return;
+
+  currentConnect4Stage = stageNum;
+
+  // Update button active classes
+  const stepBtns = document.querySelectorAll('.iteration-step-btn[data-stage]');
+  stepBtns.forEach(btn => {
+    const s = parseInt(btn.getAttribute('data-stage'), 10);
+    btn.classList.toggle('active', s === stageNum);
+  });
+
+  // Update text elements
+  const stageName = document.getElementById('connect4StageName');
+  const stageDesc = document.getElementById('connect4StageDesc');
+  const statusPill = document.getElementById('connect4StatusPill');
+  const rootCause = document.getElementById('connect4RootCause');
+  const nextStep = document.getElementById('connect4NextStep');
+
+  if (stageName) stageName.textContent = data.name;
+  if (stageDesc) stageDesc.textContent = data.desc;
+  if (rootCause) rootCause.textContent = data.rootCause;
+  if (nextStep) nextStep.textContent = data.nextStep;
+
+  if (statusPill) {
+    statusPill.className = `iteration-status-pill ${data.statusClass}`;
+    statusPill.innerHTML = `<span>${data.statusText}</span>`;
+  }
+
+  // Update model image with smooth transition
+  const modelImg = document.getElementById('connect4ModelImg');
+  if (modelImg) {
+    modelImg.style.opacity = '0';
+    setTimeout(() => {
+      modelImg.src = data.modelImg;
+      modelImg.alt = data.name;
+      modelImg.style.opacity = '1';
+    }, 150);
+  }
+
+  // Update zoom circle inset
+  const zoomRow = document.getElementById('connect4ZoomRow');
+  const circleImg = document.getElementById('connect4CircleImg');
+  const circleCaption = document.getElementById('connect4CircleCaption');
+
+  if (zoomRow && circleImg && circleCaption) {
+    if (data.circleImg) {
+      zoomRow.style.display = 'grid';
+      circleImg.src = data.circleImg;
+      circleCaption.innerHTML = data.circleCaption;
+    } else {
+      zoomRow.style.display = 'none';
+    }
+  }
+}
+
+function openActiveConnect4ModelLightbox() {
+  const data = connect4Stages[currentConnect4Stage];
+  if (data) {
+    openLightbox(data.modelImg, `Pocket Connect 4 CAD Model: ${data.name}. ${data.desc}`);
+  }
+}
+
+function openActiveConnect4CircleLightbox() {
+  const data = connect4Stages[currentConnect4Stage];
+  if (data && data.circleImg) {
+    openLightbox(data.circleImg, `Micro-Mechanism Detail: ${data.name}. ${data.circleCaption.replace(/<[^>]*>?/gm, '')}`);
+  }
+}
+
+/* ==========================================================================
+   6. ERA & DISCIPLINE FILTERING
    ========================================================================== */
 function initFilters() {
   const eraTabs = document.querySelectorAll('.era-tab');
@@ -238,13 +439,86 @@ function initFilters() {
 /* ==========================================================================
    5. LIGHTBOX MODAL (Full Resolution CAD & Diagrams)
    ========================================================================== */
+function openTableLightbox() {
+  openDualLightbox(
+    'assets/images/end_table_1.png',
+    'assets/images/real_end_table_2.jpg',
+    'Console End Table - 3D CAD vs Physical Build Comparison',
+    '<strong>1-to-1 Manufacturing Fidelity:</strong> Direct side-by-side comparison between the Autodesk Fusion 360 parametric CAD solid model and the finished physical wood-and-lacquer console table (real_end_table_2). Verified dimensional tolerance, joint stability, and aesthetic fidelity.',
+    {
+      cadBadge: '📐 Autodesk Fusion 360',
+      cadType: '3D Parametric CAD Solid Model',
+      cadFooter: 'Constrained joint tolerances, angled cross-bracing & top rebate',
+      realBadge: '🪵 Physical Woodworking Build',
+      realType: 'Finished Table (real_end_table_2)',
+      realFooter: 'Hand-finished white lacquer frame, hardwood top, and lower slatted shelf',
+      activeItem: 'table'
+    }
+  );
+}
+
+function handleChairImgError(imgEl) {
+  if (!imgEl) return;
+  const candidates = [
+    'assets/images/real_chair_1.jpg',
+    'assets/images/real_chair.jpg',
+    'assets/images/real_chair_1.png',
+    'assets/images/real_chair.png',
+    'assets/images/real_chair_1.jpeg',
+    'assets/images/real_chair.jpeg'
+  ];
+  let currentIdx = parseInt(imgEl.dataset.tryIdx || '0', 10);
+  currentIdx++;
+  if (currentIdx < candidates.length) {
+    imgEl.dataset.tryIdx = currentIdx.toString();
+    imgEl.src = candidates[currentIdx];
+  }
+}
+
+function openChairLightbox() {
+  const chairImg = document.getElementById('fusionRealChairImg');
+  const realSrc = (chairImg && chairImg.currentSrc) ? chairImg.currentSrc : 'assets/images/real_chair_1.jpg';
+  openDualLightbox(
+    'assets/images/gaming_chair_1.png',
+    realSrc,
+    'Ergonomic Gaming/Office Chair - 3D CAD vs Physical Build Comparison',
+    '<strong>Biomechanical & Ergonomic Modeling:</strong> Direct comparison between the Autodesk Fusion 360 multi-part ergonomic chair CAD model and the finished physical chair. Verified lumbar curvature, tilt-pivot joint clearance, and caster stability.',
+    {
+      cadBadge: '📐 Autodesk Fusion 360',
+      cadType: '3D Parametric CAD Solid Model',
+      cadFooter: 'Multi-part seat assembly, contoured lumbar support & armrest joints',
+      realBadge: '💺 Physical Chair Build',
+      realType: 'Finished Chair Build',
+      realFooter: 'Contoured racing backrest with lumbar bolsters, armrests, and 5-star swivel base',
+      activeItem: 'chair'
+    }
+  );
+}
+
 function openLightbox(src, caption) {
+  // If user clicks on chair images, show chair dual comparison modal
+  if (src && (src.includes('chair') || src.includes('gaming_chair'))) {
+    return openChairLightbox();
+  }
+  // If user clicks on end table or real table image, show table dual comparison modal
+  if (src && (src.includes('end_table') || src.includes('real_end_table'))) {
+    return openTableLightbox();
+  }
+
   const modal = document.getElementById('lightboxModal');
   const img = document.getElementById('lightboxImg');
   const video = document.getElementById('lightboxVideo');
+  const dualContainer = document.getElementById('lightboxDualContainer');
+  const dualControls = document.getElementById('dualViewControls');
+  const itemSwitcher = document.getElementById('modalItemSwitcher');
   const titleEl = document.getElementById('lightboxTitle');
   const captionEl = document.getElementById('lightboxCaption');
   if (!modal || !img) return;
+
+  modal.classList.remove('modal-dual-active');
+  if (dualContainer) dualContainer.style.display = 'none';
+  if (dualControls) dualControls.style.display = 'none';
+  if (itemSwitcher) itemSwitcher.style.display = 'none';
 
   if (video) {
     video.pause();
@@ -254,23 +528,166 @@ function openLightbox(src, caption) {
   img.style.display = 'block';
   img.src = src;
   if (titleEl) titleEl.textContent = 'High-Resolution Blueprint & Build';
-  if (captionEl) captionEl.textContent = caption || 'High-Resolution CAD / Prototype Diagram';
+  if (captionEl) captionEl.innerHTML = caption || 'High-Resolution CAD / Prototype Diagram';
   modal.classList.add('open');
+}
+
+function openDualLightbox(cadSrc, realSrc, title, caption, meta) {
+  if (cadSrc === 'chair') return openChairLightbox();
+  if (cadSrc === 'table') return openTableLightbox();
+  const modal = document.getElementById('lightboxModal');
+  const img = document.getElementById('lightboxImg');
+  const video = document.getElementById('lightboxVideo');
+  const dualContainer = document.getElementById('lightboxDualContainer');
+  const dualCadImg = document.getElementById('dualCadImg');
+  const dualRealImg = document.getElementById('dualRealImg');
+  const dualControls = document.getElementById('dualViewControls');
+  const itemSwitcher = document.getElementById('modalItemSwitcher');
+  const titleEl = document.getElementById('lightboxTitle');
+  const captionEl = document.getElementById('lightboxCaption');
+  if (!modal) return;
+
+  if (video) {
+    video.pause();
+    video.style.display = 'none';
+    video.src = '';
+  }
+  if (img) img.style.display = 'none';
+  if (dualContainer) dualContainer.style.display = 'block';
+  if (dualControls) dualControls.style.display = 'flex';
+  if (itemSwitcher) itemSwitcher.style.display = 'flex';
+  if (dualCadImg) dualCadImg.src = cadSrc || 'assets/images/end_table_1.png';
+  if (dualRealImg) {
+    dualRealImg.src = realSrc || 'assets/images/real_end_table_2.jpg';
+    dualRealImg.onerror = function() {
+      if (realSrc && realSrc.includes('chair')) {
+        handleChairImgError(this);
+      }
+    };
+  }
+
+  // Update dynamic metadata badges
+  if (meta) {
+    const cadBadge = document.getElementById('dualCadBadge');
+    const cadType = document.getElementById('dualCadType');
+    const cadFooter = document.getElementById('dualCadFooter');
+    const realBadge = document.getElementById('dualRealBadge');
+    const realType = document.getElementById('dualRealType');
+    const realFooter = document.getElementById('dualRealFooter');
+    const switchTable = document.getElementById('modalSwitchTable');
+    const switchChair = document.getElementById('modalSwitchChair');
+
+    if (cadBadge && meta.cadBadge) cadBadge.textContent = meta.cadBadge;
+    if (cadType && meta.cadType) cadType.textContent = meta.cadType;
+    if (cadFooter && meta.cadFooter) cadFooter.textContent = meta.cadFooter;
+    if (realBadge && meta.realBadge) realBadge.textContent = meta.realBadge;
+    if (realType && meta.realType) realType.textContent = meta.realType;
+    if (realFooter && meta.realFooter) realFooter.textContent = meta.realFooter;
+
+    if (switchTable && switchChair) {
+      if (meta.activeItem === 'chair') {
+        switchChair.classList.add('active');
+        switchTable.classList.remove('active');
+      } else {
+        switchTable.classList.add('active');
+        switchChair.classList.remove('active');
+      }
+    }
+  }
+
+  modal.classList.add('modal-dual-active');
+
+  setDualLightboxView('both');
+
+  if (titleEl) titleEl.textContent = title || '3D CAD vs Physical Build Comparison';
+  if (captionEl) {
+    captionEl.innerHTML = caption || '<strong>1-to-1 Manufacturing Fidelity:</strong> Direct side-by-side comparison between Autodesk Fusion 360 parametric CAD model and physical build.';
+  }
+  modal.classList.add('open');
+}
+
+function setDualLightboxView(mode) {
+  const grid = document.getElementById('dualComparisonGrid');
+  const cadPane = document.getElementById('dualCadPane');
+  const realPane = document.getElementById('dualRealPane');
+  const btnBoth = document.getElementById('dualBtnBoth');
+  const btnCad = document.getElementById('dualBtnCad');
+  const btnReal = document.getElementById('dualBtnReal');
+
+  [btnBoth, btnCad, btnReal].forEach(btn => { if (btn) btn.classList.remove('active'); });
+
+  if (mode === 'cad') {
+    if (grid) grid.style.gridTemplateColumns = '1fr';
+    if (cadPane) cadPane.style.display = 'flex';
+    if (realPane) realPane.style.display = 'none';
+    if (btnCad) btnCad.classList.add('active');
+  } else if (mode === 'real') {
+    if (grid) grid.style.gridTemplateColumns = '1fr';
+    if (cadPane) cadPane.style.display = 'none';
+    if (realPane) realPane.style.display = 'flex';
+    if (btnReal) btnReal.classList.add('active');
+  } else {
+    // Both
+    if (grid) grid.style.gridTemplateColumns = '';
+    if (cadPane) cadPane.style.display = 'flex';
+    if (realPane) realPane.style.display = 'flex';
+    if (btnBoth) btnBoth.classList.add('active');
+  }
+}
+
+function setFusionDesignView(viewName) {
+  const btnAll = document.getElementById('fusionTabAll');
+  const btnTable = document.getElementById('fusionTabTable');
+  const btnChair = document.getElementById('fusionTabChair');
+  const blockTable = document.getElementById('fusionBlockTable');
+  const blockChair = document.getElementById('fusionBlockChair');
+  if (!blockTable || !blockChair) return;
+
+  [btnAll, btnTable, btnChair].forEach(btn => { if (btn) btn.classList.remove('active'); });
+
+  if (viewName === 'table') {
+    blockTable.style.display = 'flex';
+    blockChair.style.display = 'none';
+    blockTable.classList.add('expanded');
+    blockChair.classList.remove('expanded');
+    if (btnTable) btnTable.classList.add('active');
+  } else if (viewName === 'chair') {
+    blockTable.style.display = 'none';
+    blockChair.style.display = 'flex';
+    blockChair.classList.add('expanded');
+    blockTable.classList.remove('expanded');
+    if (btnChair) btnChair.classList.add('active');
+  } else {
+    // All (Both)
+    blockTable.style.display = 'flex';
+    blockChair.style.display = 'flex';
+    blockTable.classList.remove('expanded');
+    blockChair.classList.remove('expanded');
+    if (btnAll) btnAll.classList.add('active');
+  }
 }
 
 function openVideoLightbox(videoSrc, caption) {
   const modal = document.getElementById('lightboxModal');
   const img = document.getElementById('lightboxImg');
   const video = document.getElementById('lightboxVideo');
+  const dualContainer = document.getElementById('lightboxDualContainer');
+  const dualControls = document.getElementById('dualViewControls');
+  const itemSwitcher = document.getElementById('modalItemSwitcher');
   const titleEl = document.getElementById('lightboxTitle');
   const captionEl = document.getElementById('lightboxCaption');
   if (!modal || !video) return;
+
+  modal.classList.remove('modal-dual-active');
+  if (dualContainer) dualContainer.style.display = 'none';
+  if (dualControls) dualControls.style.display = 'none';
+  if (itemSwitcher) itemSwitcher.style.display = 'none';
 
   if (img) img.style.display = 'none';
   video.style.display = 'block';
   video.src = videoSrc;
   if (titleEl) titleEl.textContent = '🎬 Live Prototype Testing Video';
-  if (captionEl) captionEl.textContent = caption || 'Live Physical Prototype Testing Demonstration';
+  if (captionEl) captionEl.innerHTML = caption || 'Live Physical Prototype Testing Demonstration';
   modal.classList.add('open');
   video.play().catch(err => console.log('Autoplay deferred until user interaction'));
 }
@@ -278,11 +695,20 @@ function openVideoLightbox(videoSrc, caption) {
 function closeLightbox() {
   const modal = document.getElementById('lightboxModal');
   const video = document.getElementById('lightboxVideo');
+  const dualContainer = document.getElementById('lightboxDualContainer');
+  const dualControls = document.getElementById('dualViewControls');
+  const itemSwitcher = document.getElementById('modalItemSwitcher');
   if (video) {
     video.pause();
     video.src = '';
   }
-  if (modal) modal.classList.remove('open');
+  if (modal) {
+    modal.classList.remove('open');
+    modal.classList.remove('modal-dual-active');
+  }
+  if (dualContainer) dualContainer.style.display = 'none';
+  if (dualControls) dualControls.style.display = 'none';
+  if (itemSwitcher) itemSwitcher.style.display = 'none';
 }
 
 // Global key handler (Esc closes modals)
