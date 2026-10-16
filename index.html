@@ -114,7 +114,7 @@
               <!-- <img src="assets/images/p1_img3_491.jpeg" alt="Aiden Hockinberry - Mechanical Engineering" -->
               <img src="assets/images/aidenhockinberry.jpg" alt="Aiden Hockinberry - Mechanical Engineering"
                 class="hero-portrait-img" id="heroPortraitImg"
-                onerror="this.onerror=null; this.src='assets/images/aidenhockinberry.jpg';">
+                onerror="if (!this.dataset.tried) { this.dataset.tried = '1'; this.src = 'assets/images/AidenHockinberry.jpg'; } else { this.src = 'assets/images/p1_img3_491.jpeg'; }">
               <div class="hero-badge-overlay">
                 <div>
                   <div class="overlay-title">Aiden Hockinberry</div>
@@ -2024,7 +2024,7 @@
                 <div class="print-cover-sidebar">
                   <div class="print-portrait-frame">
                     <img src="assets/images/aidenhockinberry.jpg" alt="Aiden Hockinberry" class="print-portrait-img"
-                      onerror="this.onerror=null; this.src='assets/images/p1_img3_491.jpeg';">
+                      onerror="if (!this.dataset.tried) { this.dataset.tried = '1'; this.src = 'assets/images/AidenHockinberry.jpg'; } else { this.src = 'assets/images/p1_img3_491.jpeg'; }">
                   </div>
 
                   <div class="print-qr-card">
