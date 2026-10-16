@@ -671,6 +671,10 @@ function openVideoLightbox(videoSrc, caption) {
   const modal = document.getElementById('lightboxModal');
   const img = document.getElementById('lightboxImg');
   const video = document.getElementById('lightboxVideo');
+  const videoSource = document.getElementById('lightboxVideoSource');
+  const videoContainer = document.getElementById('modalVideoContainer');
+  const loadingIndicator = document.getElementById('videoLoadingIndicator');
+  const directLink = document.getElementById('videoDirectLink');
   const dualContainer = document.getElementById('lightboxDualContainer');
   const dualControls = document.getElementById('dualViewControls');
   const itemSwitcher = document.getElementById('modalItemSwitcher');
@@ -678,30 +682,87 @@ function openVideoLightbox(videoSrc, caption) {
   const captionEl = document.getElementById('lightboxCaption');
   if (!modal || !video) return;
 
+  // Reset layout & hide other views
   modal.classList.remove('modal-dual-active');
   if (dualContainer) dualContainer.style.display = 'none';
   if (dualControls) dualControls.style.display = 'none';
   if (itemSwitcher) itemSwitcher.style.display = 'none';
-
   if (img) img.style.display = 'none';
+
+  // Normalize URL for web safety (handles spaces, parentheses, etc.)
+  const cleanSrc = encodeURI(decodeURI(videoSrc));
+
+  if (videoContainer) videoContainer.style.display = 'flex';
   video.style.display = 'block';
-  video.src = videoSrc;
+
+  // Configure direct download/stream link
+  if (directLink) {
+    directLink.href = cleanSrc;
+  }
+
+  // Show loading indicator while buffering
+  if (loadingIndicator) loadingIndicator.style.display = 'flex';
+
+  // Reset and load new source (calling video.load() is mandatory when changing src dynamically)
+  video.pause();
+  if (videoSource) {
+    videoSource.src = cleanSrc;
+    videoSource.type = 'video/mp4';
+  }
+  video.src = cleanSrc;
+  video.load();
+
+  // Browser Autoplay Policy: muted autoplay is permitted on 100% of modern browsers (Chrome, Safari, iOS, Edge)
+  // Users can unmute at any moment via the native audio control
+  video.muted = true;
+
+  video.oncanplay = function() {
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
+  };
+
+  video.onplaying = function() {
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
+  };
+
+  video.onerror = function() {
+    if (loadingIndicator) loadingIndicator.style.display = 'none';
+    console.warn('Video failed to stream directly:', cleanSrc);
+    if (captionEl) {
+      captionEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">⚠️ Notice:</span> Stream blocked by browser or connection. <a href="${cleanSrc}" target="_blank" style="color: var(--cyan-primary); text-decoration: underline; font-weight: bold;">Click here to open raw video file</a>.`;
+    }
+  };
+
   if (titleEl) titleEl.textContent = '🎬 Live Prototype Testing Video';
   if (captionEl) captionEl.innerHTML = caption || 'Live Physical Prototype Testing Demonstration';
   modal.classList.add('open');
-  video.play().catch(err => console.log('Autoplay deferred until user interaction'));
+
+  const playPromise = video.play();
+  if (playPromise !== undefined) {
+    playPromise.then(() => {
+      if (loadingIndicator) loadingIndicator.style.display = 'none';
+    }).catch(err => {
+      console.log('Autoplay was prevented by browser policy:', err);
+      if (loadingIndicator) loadingIndicator.style.display = 'none';
+    });
+  }
 }
 
 function closeLightbox() {
   const modal = document.getElementById('lightboxModal');
   const video = document.getElementById('lightboxVideo');
+  const videoContainer = document.getElementById('modalVideoContainer');
+  const loadingIndicator = document.getElementById('videoLoadingIndicator');
   const dualContainer = document.getElementById('lightboxDualContainer');
   const dualControls = document.getElementById('dualViewControls');
   const itemSwitcher = document.getElementById('modalItemSwitcher');
   if (video) {
     video.pause();
-    video.src = '';
+    video.removeAttribute('src');
+    video.load();
+    video.style.display = 'none';
   }
+  if (loadingIndicator) loadingIndicator.style.display = 'none';
+  if (videoContainer) videoContainer.style.display = 'none';
   if (modal) {
     modal.classList.remove('open');
     modal.classList.remove('modal-dual-active');

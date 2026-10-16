@@ -10,7 +10,7 @@
   <meta name="keywords"
     content="Aiden Hockinberry, Mechanical Engineering, Portfolio, CAD, Fusion 360, 3D Printing, Robotics, Kinematics, Piston Engines">
   <meta name="author" content="Aiden Hockinberry">
-  <link rel="stylesheet" href="styles.css?v=4">
+  <link rel="stylesheet" href="styles.css?v=6">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -314,7 +314,7 @@
           <div class="card-content-layout">
             <div class="card-media-side">
               <div class="project-img-wrapper video-preview-wrapper"
-                onclick="openVideoLightbox('assets/videos/VID_20260426_161651.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
+                onclick="openVideoLightbox('assets/videos/wind_transport_prototype.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
                 <img src="assets/images/p12_img1_604.png" alt="Wind Powered Kinematic Transport" class="project-img">
                 <div class="video-play-overlay">
                   <div class="play-icon-pulse">▶</div>
@@ -323,7 +323,7 @@
               </div>
               <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
                 <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
-                  onclick="openVideoLightbox('assets/videos/VID_20260426_161651.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
+                  onclick="openVideoLightbox('assets/videos/wind_transport_prototype.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
                   🎬 Play Test Video
                 </button>
                 <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
@@ -721,7 +721,7 @@
               <span class="tech-tag">Creality Ender 3 V3 KE</span>
               <button class="tech-tag"
                 style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600; cursor: pointer;"
-                onclick="openVideoLightbox('assets/images/rubiks_cube/20260731_183126 (1).mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - High-speed parallel move physical solve in 9.68 seconds')">
+                onclick="openVideoLightbox('assets/videos/rubiks_cube_solver.mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - High-speed parallel move physical solve in 9.68 seconds')">
                 🎬 Play Solve Video
               </button>
             </div>
@@ -748,7 +748,7 @@
               <!-- TAB 1: Video & Key Machine Views -->
               <div class="rubiks-tab-pane active" id="rubiks-tab-video">
                 <div class="project-img-wrapper video-preview-wrapper"
-                  onclick="openVideoLightbox('assets/images/rubiks_cube/20260731_183126 (1).mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')"
+                  onclick="openVideoLightbox('assets/videos/rubiks_cube_solver.mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')"
                   title="Click to play high-speed physical solve video demonstration">
                   <div class="rubiks-benchmark-badge">⏱️ BENCHMARK: 9.68s SOLVE</div>
                   <img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
@@ -761,7 +761,7 @@
 
                 <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
                   <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
-                    onclick="openVideoLightbox('assets/images/rubiks_cube/20260731_183126 (1).mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')">
+                    onclick="openVideoLightbox('assets/videos/rubiks_cube_solver.mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')">
                     🎬 Play Solve Video (9.68s)
                   </button>
                   <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
@@ -1844,8 +1844,22 @@
       </div>
       <div class="modal-body">
         <img src="" alt="High resolution inspection" class="modal-image" id="lightboxImg">
-        <video src="" controls playsinline class="modal-video" id="lightboxVideo"
-          style="display: none; max-width: 100%; max-height: 75vh; border-radius: var(--radius-sm);"></video>
+        
+        <!-- Video Lightbox Player with buffering indicator & fallback -->
+        <div class="modal-video-container" id="modalVideoContainer" style="display: none;">
+          <div class="video-loading-indicator" id="videoLoadingIndicator">
+            <div class="video-spinner"></div>
+            <span>Buffering prototype video...</span>
+          </div>
+          <video controls playsinline preload="auto" class="modal-video" id="lightboxVideo">
+            <source src="" type="video/mp4" id="lightboxVideoSource">
+            Your browser does not support HTML5 video streaming.
+          </video>
+          <div class="video-controls-hint" id="videoControlsHint">
+            <span id="videoMuteNotice">💡 Video starts muted for browser compliance — unmute anytime via controls!</span>
+            <a href="#" target="_blank" id="videoDirectLink" class="video-direct-link" title="Open or download raw video file">Open raw video ↗</a>
+          </div>
+        </div>
 
         <!-- Dual Comparison Layout (CAD Model vs. Real Build) -->
         <div class="lightbox-dual-container" id="lightboxDualContainer" style="display: none;">
@@ -2506,7 +2520,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Javascript Logic -->
-  <script src="app.js"></script>
+  <script src="app.js?v=6"></script>
 </body>
 
 </html>
