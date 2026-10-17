@@ -3595,7 +3595,8 @@ body::before {
 }
 
 .rubiks-tab-controls,
-.chassis-tab-controls {
+.chassis-tab-controls,
+.kinematics-tab-controls {
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -3604,7 +3605,8 @@ body::before {
 }
 
 .rubiks-tab-btn,
-.chassis-tab-btn {
+.chassis-tab-btn,
+.kinematics-tab-btn {
   padding: 0.42rem 0.85rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -3621,13 +3623,15 @@ body::before {
 }
 
 .rubiks-tab-btn:hover,
-.chassis-tab-btn:hover {
+.chassis-tab-btn:hover,
+.kinematics-tab-btn:hover {
   color: var(--cyan-primary);
   border-color: var(--cyan-primary);
 }
 
 .rubiks-tab-btn.active,
-.chassis-tab-btn.active {
+.chassis-tab-btn.active,
+.kinematics-tab-btn.active {
   background: rgba(0, 240, 255, 0.15);
   border-color: var(--cyan-primary);
   color: var(--cyan-primary);
@@ -3636,12 +3640,14 @@ body::before {
 }
 
 .rubiks-tab-pane,
-.chassis-tab-pane {
+.chassis-tab-pane,
+.kinematics-tab-pane {
   display: none;
 }
 
 .rubiks-tab-pane.active,
-.chassis-tab-pane.active {
+.chassis-tab-pane.active,
+.kinematics-tab-pane.active {
   display: flex;
   flex-direction: column;
   animation: rubiksFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;

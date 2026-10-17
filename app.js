@@ -188,6 +188,33 @@ function switchRubiksTab(tabId, btnElement) {
 window.switchRubiksTab = switchRubiksTab;
 
 /* ==========================================================================
+   2d. BIOMIMETIC ROBOTICS & KINEMATICS TAB SWITCHER
+   ========================================================================== */
+function switchKinematicsTab(tabId, btnElement) {
+  // Hide all kinematics tab panes
+  const panes = document.querySelectorAll('.kinematics-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`kinematics-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.kinematics-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`kinematicsTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchKinematicsTab = switchKinematicsTab;
+
+/* ==========================================================================
    3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission)
    ========================================================================== */
 const stageData = {

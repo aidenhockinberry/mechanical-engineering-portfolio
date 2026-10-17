@@ -1481,16 +1481,177 @@
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+              <!-- Multi-Tab Controls -->
+              <div class="rubiks-tab-controls kinematics-tab-controls">
+                <button class="rubiks-tab-btn kinematics-tab-btn active" id="kinematicsTabBtn-final" onclick="switchKinematicsTab('final', this)">
+                  🤖 FINAL MACHINE
+                </button>
+                <button class="rubiks-tab-btn kinematics-tab-btn" id="kinematicsTabBtn-iterations" onclick="switchKinematicsTab('iterations', this)">
+                  🔄 DESIGN ITERATIONS (3)
+                </button>
+                <button class="rubiks-tab-btn kinematics-tab-btn" id="kinematicsTabBtn-logic" onclick="switchKinematicsTab('logic', this)">
+                  ⚡ GAIT "CODING" &amp; LOGIC
+                </button>
+                <button class="rubiks-tab-btn kinematics-tab-btn" id="kinematicsTabBtn-gallery" onclick="switchKinematicsTab('gallery', this)">
+                  📁 ALL PHOTOS (3)
+                </button>
+              </div>
+
+              <!-- TAB 1: Final Machine Result -->
+              <div class="rubiks-tab-pane kinematics-tab-pane active" id="kinematics-tab-final">
                 <div class="project-img-wrapper"
-                  onclick="openLightbox('assets/images/p10_img4_588.jpeg', 'Biomimetic Multi-Legged Walking Robot')">
-                  <img src="assets/images/p10_img4_588.jpeg" alt="Biomimetic Robot" class="project-img">
-                  <button class="img-inspect-btn">🔍 Gait Robot</button>
+                  onclick="openLightbox('assets/images/kinematics/kinematics_1.jpg', 'Biomimetic Robotics & Kinematics - Final Operational Walking Machine traversing terrain with synchronized multi-legged stride linkages and enclosed chassis')"
+                  title="Click to inspect operational walking machine in full HD">
+                  <img src="assets/images/kinematics/kinematics_1.jpg" alt="Final Biomimetic Walking Robot" class="project-img" style="aspect-ratio: 16/9; object-fit: cover;">
+                  <button class="img-inspect-btn">🔍 View Final Machine</button>
                 </div>
-                <div class="project-img-wrapper"
-                  onclick="openLightbox('assets/images/p10_img1_585.jpeg', 'Digital Logic Architecture - AND, OR, XOR, NAND State Machine')">
-                  <img src="assets/images/p10_img1_585.jpeg" alt="Digital Logic Gates" class="project-img">
-                  <button class="img-inspect-btn">🔍 Logic Gates</button>
+
+                <!-- Quick Highlight Previews -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_2.jpg', 'Biomimetic Robotics - Iteration 1 Spine & Leg Stations: Initial bare wooden spine and damper mounts')"
+                    title="Iteration 1: Structural Spine">
+                    <img src="assets/images/kinematics/kinematics_2.jpg" alt="Iteration 1 Spine" class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Iteration 1</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_5.jpg', 'Gait Step Sequencing Configuration - Level 5 Rotation Editor coordinating multi-track rotational angles, loop modes, and phase timings')"
+                    title="Rotation Sequencer">
+                    <img src="assets/images/kinematics/kinematics_5.jpg" alt="Rotation Sequencer" class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Sequencer</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_6.jpg', 'Boolean Logic Gate Architecture - Digital state machine controlling leg lift and stance phases')"
+                    title="Boolean Logic Gates">
+                    <img src="assets/images/kinematics/kinematics_6.jpg" alt="Logic Gates" class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Logic Gates</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: Earlier Design Iterations (V1, V2, V3) -->
+              <div class="rubiks-tab-pane kinematics-tab-pane" id="kinematics-tab-iterations">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">🔄 Prototyping Evolution (V1 → V3)</span>
+                  <span>Click to inspect engineering iteration in full HD</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_2.jpg', 'Biomimetic Walking Robot - Iteration 1: Bare structural spine with initial paired leg stations and shock damper mounts')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_2.jpg" alt="Iteration 1 Structural Spine" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Iteration 1: Structural Spine</span>
+                      <span class="rubiks-gallery-sub">Bare chassis, damper mounts &amp; leg stations</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_3.jpg', 'Biomimetic Walking Robot - Iteration 2: Extended multi-segment articulated spine, forward cockpit station, and stationary test stand')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_3.jpg" alt="Iteration 2 Elongated Spine" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Iteration 2: Elongated Spine</span>
+                      <span class="rubiks-gallery-sub">Multi-segment chassis, cockpit &amp; test stand</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_4.jpg', 'Biomimetic Walking Robot - Iteration 3: Upper translucent protective shell integration, elevated leg geometry, and ground clearance optimization')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_4.jpg" alt="Iteration 3 Enclosure Shell" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Iteration 3: Enclosure Shell</span>
+                      <span class="rubiks-gallery-sub">Protective hull &amp; elevated leg clearance</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Gait "Coding" & Logic Configuration -->
+              <div class="rubiks-tab-pane kinematics-tab-pane" id="kinematics-tab-logic">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">⚡ Gait "Coding" &amp; Logic Configuration</span>
+                  <span>Click to inspect sequencer &amp; state-machine</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_5.jpg', 'Gait Step Sequencing Configuration - Scrap Mechanic Level 5 Rotation Editor coordinating multi-track rotational angles, loop modes, and phase timings for smooth leg articulation')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_5.jpg" alt="Rotation Editor Sequencer" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Level 5 Rotation Sequencer</span>
+                      <span class="rubiks-gallery-sub">Sequential angular phase timing (+90° step loops)</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_6.jpg', 'Boolean Logic Gate Architecture - Scrap Mechanic digital logic gate matrix handling input/output triggers, preventing opposing leg binding and coordinating walking gait cycles')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_6.jpg" alt="Boolean Logic Gate Configurator" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Boolean Logic State Machine</span>
+                      <span class="rubiks-gallery-sub">AND, OR, XOR, NAND gate phase coordination</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 4: All Photos Folder Gallery -->
+              <div class="rubiks-tab-pane kinematics-tab-pane" id="kinematics-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 Project Media Gallery (3 Additional Photos)</span>
+                  <span>Click any image to inspect in full HD</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_7.jpg', 'Biomimetic Walking Robot - Interior view of upper translucent hull looking along the mechanical walking spine and structural bulkheads')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_7.jpg" alt="Interior Cockpit & Spine" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Interior Cockpit &amp; Spine</span>
+                      <span class="rubiks-gallery-sub">Upper hull interior &amp; mechanism spine</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_8.jpg', 'Biomimetic Walking Robot - Close-up of multi-jointed walking leg linkage, suspension shock dampers, and high-friction ground contact pads')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_8.jpg" alt="Articulated Leg Struts & Dampers" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Articulated Leg &amp; Dampers</span>
+                      <span class="rubiks-gallery-sub">Shock absorbers &amp; high-friction foot pads</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/kinematics/kinematics_9.jpg', 'Biomimetic Walking Robot - Underside ventral perspective showing central walking pivot hinges, actuation rods, and bilateral leg linkages')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/kinematics/kinematics_9.jpg" alt="Ventral Underside View" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Ventral Underside View</span>
+                      <span class="rubiks-gallery-sub">Central pivot hinges &amp; linkage geometry</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2408,8 +2569,8 @@
                   <div class="print-proj-meta">Boolean State Machine (AND/OR/XOR) • Microcontroller Timing • Walking
                     Gait Coordination</div>
                   <div class="print-thumb-row" style="margin-bottom: 0.4rem;">
-                    <img src="assets/images/p10_img4_588.jpeg" alt="Gait Robot" class="print-thumb">
-                    <img src="assets/images/p10_img1_585.jpeg" alt="Logic Matrix" class="print-thumb">
+                    <img src="assets/images/kinematics/kinematics_1.jpg" alt="Final Walking Robot" class="print-thumb">
+                    <img src="assets/images/kinematics/kinematics_6.jpg" alt="Logic Matrix Configuration" class="print-thumb">
                   </div>
                   <p class="print-proj-summary">
                     Engineered a multi-legged walking robot integrating on-board digital logic state machines to
