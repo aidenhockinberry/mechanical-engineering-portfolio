@@ -109,6 +109,30 @@ function openActiveCadLightbox() {
 }
 
 /* ==========================================================================
+   2a. AUTOMOTIVE CHASSIS TAB SWITCHER (CAD vs All Photos)
+   ========================================================================== */
+function switchChassisTab(tabId, btnElement) {
+  const panes = document.querySelectorAll('.chassis-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  const target = document.getElementById(`chassis-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  const buttons = document.querySelectorAll('.chassis-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`chassisTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchChassisTab = switchChassisTab;
+
+/* ==========================================================================
    2b. ESCAPEMENT & RATCHET SYSTEM TAB SWITCHER
    ========================================================================== */
 function switchEscapementTab(tabId, btnElement) {

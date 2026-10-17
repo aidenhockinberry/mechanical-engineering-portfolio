@@ -1218,21 +1218,150 @@
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="cad-viewer-container">
-                <div class="cad-view-controls">
-                  <button class="cad-view-btn active" data-view="front"
-                    data-src="assets/images/sm_car/sm_front_view.png">FRONT VIEW</button>
-                  <button class="cad-view-btn" data-view="back"
-                    data-src="assets/images/sm_car/sm_rear_view.png">REAR VIEW</button>
-                  <button class="cad-view-btn" data-view="side"
-                    data-src="assets/images/sm_car/sm_side_view.png">SIDE VIEW</button>
-                  <button class="cad-view-btn" data-view="detail"
-                    data-src="assets/images/sm_car/sm_ujoint_suspension.png">U-JOINT &amp; SUSPENSION</button>
+              <!-- Multi-Tab Controls (Similar to Rubik's Cube Solver) -->
+              <div class="rubiks-tab-controls chassis-tab-controls">
+                <button class="rubiks-tab-btn chassis-tab-btn active" id="chassisTabBtn-cad" onclick="switchChassisTab('cad', this)">
+                  🏎️ 4-VIEW CAD SWITCHER
+                </button>
+                <button class="rubiks-tab-btn chassis-tab-btn" id="chassisTabBtn-gallery" onclick="switchChassisTab('gallery', this)">
+                  📁 ALL PHOTOS (7)
+                </button>
+              </div>
+
+              <!-- TAB 1: 4-View CAD Switcher -->
+              <div class="rubiks-tab-pane chassis-tab-pane active" id="chassis-tab-cad">
+                <div class="cad-viewer-container">
+                  <div class="cad-view-controls">
+                    <button class="cad-view-btn active" data-view="front"
+                      data-src="assets/images/sm_car/sm_front_view.png">FRONT VIEW</button>
+                    <button class="cad-view-btn" data-view="back"
+                      data-src="assets/images/sm_car/sm_rear_view.png">REAR VIEW</button>
+                    <button class="cad-view-btn" data-view="side"
+                      data-src="assets/images/sm_car/sm_side_view.png">SIDE VIEW</button>
+                    <button class="cad-view-btn" data-view="detail"
+                      data-src="assets/images/sm_car/sm_ujoint_suspension.png">U-JOINT &amp; SUSPENSION</button>
+                  </div>
+                  <div class="cad-display-frame" onclick="openActiveCadLightbox()">
+                    <img src="assets/images/sm_car/sm_front_view.png" alt="Mechanical Automotive Chassis CAD - Front View"
+                      class="cad-display-img" id="autoCadImg">
+                    <button class="img-inspect-btn">🔍 View Full CAD</button>
+                  </div>
                 </div>
-                <div class="cad-display-frame" onclick="openActiveCadLightbox()">
-                  <img src="assets/images/sm_car/sm_front_view.png" alt="Mechanical Automotive Chassis CAD - Front View"
-                    class="cad-display-img" id="autoCadImg">
-                  <button class="img-inspect-btn">🔍 View Full CAD</button>
+
+                <!-- Tri-view quick thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/sm_car/sm_1.png', 'Mechanical Automotive Chassis - 3/4 Front Isometric Perspective (Tubular Space Frame & Steering Column)')"
+                    title="3/4 Front Isometric Perspective">
+                    <img src="assets/images/sm_car/sm_1.png" alt="3/4 Front Isometric" class="project-img" style="background:#ffffff; object-fit:contain;">
+                    <button class="img-inspect-btn">🔍 3/4 Frame</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/sm_car/sm_2.png', 'Mechanical Automotive Chassis - Wheel Hub & Knuckle Assembly (Dual-Strut Shock Absorbers & Kingpin)')"
+                    title="Wheel Hub & Knuckle Assembly">
+                    <img src="assets/images/sm_car/sm_2.png" alt="Wheel Hub & Knuckle" class="project-img" style="background:#ffffff; object-fit:contain;">
+                    <button class="img-inspect-btn">🔍 Wheel Hub</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/sm_car/sm_11.jpg', 'Mechanical Automotive Chassis - In-Situ Operating Environment (Desert Terrain Traversal & Dynamic Central Piston Engine Test)')"
+                    title="Desert Terrain Field Run">
+                    <img src="assets/images/sm_car/sm_11.jpg" alt="In-Situ Field Run" class="project-img" style="object-fit:cover;">
+                    <button class="img-inspect-btn">🔍 Field Run</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: All Photos Folder Gallery -->
+              <div class="rubiks-tab-pane chassis-tab-pane" id="chassis-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 Project Media Gallery (7 Additional Photos)</span>
+                  <span>Click any image to inspect in full HD</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_1.png', 'Mechanical Automotive Chassis - 3/4 Front Isometric Perspective (Tubular Space Frame & Steering Column)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_1.png" alt="3/4 Front Isometric Perspective" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">3/4 Front Isometric</span>
+                      <span class="rubiks-gallery-sub">Tubular space frame &amp; steering</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_2.png', 'Mechanical Automotive Chassis - Wheel Hub & Knuckle Assembly (Dual-Strut Shock Absorbers & Kingpin)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_2.png" alt="Wheel Hub & Knuckle Assembly" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Wheel Hub &amp; Knuckle</span>
+                      <span class="rubiks-gallery-sub">Dual-strut dampers &amp; kingpin</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_3.png', 'Mechanical Automotive Chassis - High Clearance Articulation (Twin Suspension Rebound & Track Clearance)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_3.png" alt="High Clearance Articulation" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">High Clearance Articulation</span>
+                      <span class="rubiks-gallery-sub">Suspension rebound &amp; track</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_6.png', 'Mechanical Automotive Chassis - Top-Down Cockpit & Steering Geometry (Steering Linkage & Driver Controls)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_6.png" alt="Top-Down Cockpit & Steering" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Top-Down Cockpit</span>
+                      <span class="rubiks-gallery-sub">Steering rack &amp; Ackerman geometry</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_8.png', 'Mechanical Automotive Chassis - Front Suspension & Frame Bracing (Triangulated Space Frame Rigidity)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_8.png" alt="Front Suspension & Frame Bracing" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Frame Rigidity Bracing</span>
+                      <span class="rubiks-gallery-sub">Triangulated tubular structure</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_9.png', 'Mechanical Automotive Chassis - Overhead Track Alignment (Perpendicular Steering Kinematics)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_9.png" alt="Overhead Track Alignment" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Overhead Track Alignment</span>
+                      <span class="rubiks-gallery-sub">Perpendicular steering kinematics</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/sm_car/sm_11.jpg', 'Mechanical Automotive Chassis - In-Situ Operating Environment (Desert Terrain Traversal & Dynamic Central Piston Engine Test)')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/sm_car/sm_11.jpg" alt="In-Situ Operating Environment" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">In-Situ Dynamic Field Run</span>
+                      <span class="rubiks-gallery-sub">Full desert traversal &amp; engine load</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1262,102 +1391,6 @@
                     <li>Validated steering knuckle kingpin inclination and Ackerman steering geometry under dynamic
                       wheel turn loads.</li>
                   </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional Chassis & Drivetrain Engineering Renders -->
-          <div class="chassis-gallery-section">
-            <div class="chassis-gallery-header">
-              <span class="chassis-gallery-header-title">
-                <span class="chassis-gallery-icon">📷</span> ADDITIONAL ENGINEERING ANGLES &amp; FIELD TESTING
-              </span>
-              <span class="chassis-gallery-header-meta">7 Detailed Captures • Click any image to inspect in full HD</span>
-            </div>
-
-            <div class="chassis-gallery-grid">
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_1.png', 'Mechanical Automotive Chassis - 3/4 Front Isometric Perspective (Tubular Space Frame & Steering Column)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_1.png" alt="3/4 Front Isometric Perspective" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">3/4 Front Isometric</span>
-                  <span class="chassis-gallery-sub">Tubular space frame &amp; steering</span>
-                </div>
-              </div>
-
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_2.png', 'Mechanical Automotive Chassis - Wheel Hub & Knuckle Assembly (Dual-Strut Shock Absorbers & Kingpin)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_2.png" alt="Wheel Hub & Knuckle Assembly" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">Wheel Hub &amp; Knuckle</span>
-                  <span class="chassis-gallery-sub">Dual-strut dampers &amp; kingpin</span>
-                </div>
-              </div>
-
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_3.png', 'Mechanical Automotive Chassis - High Clearance Articulation (Twin Suspension Rebound & Track Clearance)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_3.png" alt="High Clearance Articulation" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">High Clearance Articulation</span>
-                  <span class="chassis-gallery-sub">Suspension rebound &amp; track</span>
-                </div>
-              </div>
-
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_6.png', 'Mechanical Automotive Chassis - Top-Down Cockpit & Steering Geometry (Steering Linkage & Driver Controls)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_6.png" alt="Top-Down Cockpit & Steering" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">Top-Down Cockpit</span>
-                  <span class="chassis-gallery-sub">Steering rack &amp; Ackerman geometry</span>
-                </div>
-              </div>
-
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_8.png', 'Mechanical Automotive Chassis - Front Suspension & Frame Bracing (Triangulated Space Frame Rigidity)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_8.png" alt="Front Suspension & Frame Bracing" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">Frame Rigidity Bracing</span>
-                  <span class="chassis-gallery-sub">Triangulated tubular structure</span>
-                </div>
-              </div>
-
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_9.png', 'Mechanical Automotive Chassis - Overhead Track Alignment (Perpendicular Steering Kinematics)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_9.png" alt="Overhead Track Alignment" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">Overhead Track Alignment</span>
-                  <span class="chassis-gallery-sub">Perpendicular steering kinematics</span>
-                </div>
-              </div>
-
-              <div class="chassis-gallery-card"
-                onclick="openLightbox('assets/images/sm_car/sm_11.jpg', 'Mechanical Automotive Chassis - In-Situ Operating Environment (Desert Terrain Traversal & Dynamic Central Piston Engine Test)')">
-                <div class="chassis-gallery-thumb-wrap">
-                  <img src="assets/images/sm_car/sm_11.jpg" alt="In-Situ Operating Environment" class="chassis-gallery-thumb" loading="lazy">
-                  <span class="chassis-gallery-badge">Zoom</span>
-                </div>
-                <div class="chassis-gallery-caption">
-                  <span class="chassis-gallery-title">In-Situ Dynamic Field Run</span>
-                  <span class="chassis-gallery-sub">Full desert traversal &amp; engine load</span>
                 </div>
               </div>
             </div>
