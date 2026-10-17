@@ -1221,14 +1221,14 @@
               <!-- Multi-Tab Controls (Similar to Rubik's Cube Solver) -->
               <div class="rubiks-tab-controls chassis-tab-controls">
                 <button class="rubiks-tab-btn chassis-tab-btn active" id="chassisTabBtn-cad" onclick="switchChassisTab('cad', this)">
-                  🏎️ 4-VIEW CAD SWITCHER
+                  🏎️ 5-VIEW CAD SWITCHER
                 </button>
                 <button class="rubiks-tab-btn chassis-tab-btn" id="chassisTabBtn-gallery" onclick="switchChassisTab('gallery', this)">
-                  📁 ALL PHOTOS (7)
+                  📁 ALL PHOTOS (6)
                 </button>
               </div>
 
-              <!-- TAB 1: 4-View CAD Switcher -->
+              <!-- TAB 1: 5-View CAD Switcher -->
               <div class="rubiks-tab-pane chassis-tab-pane active" id="chassis-tab-cad">
                 <div class="cad-viewer-container">
                   <div class="cad-view-controls">
@@ -1240,6 +1240,8 @@
                       data-src="assets/images/sm_car/sm_side_view.png">SIDE VIEW</button>
                     <button class="cad-view-btn" data-view="detail"
                       data-src="assets/images/sm_car/sm_ujoint_suspension.png">U-JOINT &amp; SUSPENSION</button>
+                    <button class="cad-view-btn" data-view="hub"
+                      data-src="assets/images/sm_car/sm_2.png">WHEEL HUB</button>
                   </div>
                   <div class="cad-display-frame" onclick="openActiveCadLightbox()">
                     <img src="assets/images/sm_car/sm_front_view.png" alt="Mechanical Automotive Chassis CAD - Front View"
@@ -1247,34 +1249,12 @@
                     <button class="img-inspect-btn">🔍 View Full CAD</button>
                   </div>
                 </div>
-
-                <!-- Tri-view quick thumbnails -->
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
-                  <div class="project-img-wrapper"
-                    onclick="openLightbox('assets/images/sm_car/sm_1.png', 'Mechanical Automotive Chassis - 3/4 Front Isometric Perspective (Tubular Space Frame & Steering Column)')"
-                    title="3/4 Front Isometric Perspective">
-                    <img src="assets/images/sm_car/sm_1.png" alt="3/4 Front Isometric" class="project-img" style="background:#ffffff; object-fit:contain;">
-                    <button class="img-inspect-btn">🔍 3/4 Frame</button>
-                  </div>
-                  <div class="project-img-wrapper"
-                    onclick="openLightbox('assets/images/sm_car/sm_2.png', 'Mechanical Automotive Chassis - Wheel Hub & Knuckle Assembly (Dual-Strut Shock Absorbers & Kingpin)')"
-                    title="Wheel Hub & Knuckle Assembly">
-                    <img src="assets/images/sm_car/sm_2.png" alt="Wheel Hub & Knuckle" class="project-img" style="background:#ffffff; object-fit:contain;">
-                    <button class="img-inspect-btn">🔍 Wheel Hub</button>
-                  </div>
-                  <div class="project-img-wrapper"
-                    onclick="openLightbox('assets/images/sm_car/sm_11.jpg', 'Mechanical Automotive Chassis - In-Situ Operating Environment (Desert Terrain Traversal & Dynamic Central Piston Engine Test)')"
-                    title="Desert Terrain Field Run">
-                    <img src="assets/images/sm_car/sm_11.jpg" alt="In-Situ Field Run" class="project-img" style="object-fit:cover;">
-                    <button class="img-inspect-btn">🔍 Field Run</button>
-                  </div>
-                </div>
               </div>
 
               <!-- TAB 2: All Photos Folder Gallery -->
               <div class="rubiks-tab-pane chassis-tab-pane" id="chassis-tab-gallery">
                 <div class="rubiks-gallery-header">
-                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 Project Media Gallery (7 Additional Photos)</span>
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 Project Media Gallery (6 Additional Photos)</span>
                   <span>Click any image to inspect in full HD</span>
                 </div>
 
@@ -1288,18 +1268,6 @@
                     <div class="rubiks-gallery-caption">
                       <span class="rubiks-gallery-title">3/4 Front Isometric</span>
                       <span class="rubiks-gallery-sub">Tubular space frame &amp; steering</span>
-                    </div>
-                  </div>
-
-                  <div class="rubiks-gallery-card"
-                    onclick="openLightbox('assets/images/sm_car/sm_2.png', 'Mechanical Automotive Chassis - Wheel Hub & Knuckle Assembly (Dual-Strut Shock Absorbers & Kingpin)')">
-                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
-                      <img src="assets/images/sm_car/sm_2.png" alt="Wheel Hub & Knuckle Assembly" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
-                      <button class="img-inspect-btn">🔍 View Full HD</button>
-                    </div>
-                    <div class="rubiks-gallery-caption">
-                      <span class="rubiks-gallery-title">Wheel Hub &amp; Knuckle</span>
-                      <span class="rubiks-gallery-sub">Dual-strut dampers &amp; kingpin</span>
                     </div>
                   </div>
 

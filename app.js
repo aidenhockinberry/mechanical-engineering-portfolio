@@ -80,7 +80,8 @@ function initCadViewers() {
     front: 'Mechanical Automotive Chassis - FRONT VIEW (Twin-wheel steering alignment & suspension geometry)',
     back: 'Mechanical Automotive Chassis - REAR VIEW (Rear axle power transfer & engine mounting)',
     side: 'Mechanical Automotive Chassis - SIDE VIEW (Central piston engine mounting & wheelbase geometry)',
-    detail: 'Mechanical Automotive Chassis - SUSPENSION & UNIVERSAL JOINT (Drivetrain kinematics & angular deflection)'
+    detail: 'Mechanical Automotive Chassis - SUSPENSION & UNIVERSAL JOINT (Drivetrain kinematics & angular deflection)',
+    hub: 'Mechanical Automotive Chassis - WHEEL HUB & KNUCKLE ASSEMBLY (Dual-strut dampers & kingpin inclination)'
   };
 
   btns.forEach(btn => {
