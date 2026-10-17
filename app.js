@@ -69,18 +69,18 @@ function initEngineGallery() {
 /* ==========================================================================
    2. MULTI-VIEW CAD SWITCHER (Automotive Chassis)
    ========================================================================== */
-let activeCadSrc = 'assets/images/p7_img3_554.png?v=white';
-let activeCadTitle = 'Mechanical Automotive Chassis - FRONT VIEW';
+let activeCadSrc = 'assets/images/sm_car/sm_front_view.png';
+let activeCadTitle = 'Mechanical Automotive Chassis - FRONT VIEW (Twin-wheel steering alignment & suspension geometry)';
 
 function initCadViewers() {
   const btns = document.querySelectorAll('.cad-viewer-container .cad-view-btn');
   const img = document.getElementById('autoCadImg');
 
   const titles = {
-    front: 'Mechanical Automotive Chassis - FRONT VIEW (Twin-wheel steering alignment)',
-    back: 'Mechanical Automotive Chassis - BACK VIEW (Rear axle power transfer)',
-    side: 'Mechanical Automotive Chassis - SIDE VIEW (Central piston engine mounting)',
-    detail: 'Mechanical Automotive Chassis - SUSPENSION & UNIVERSAL JOINT (Drivetrain kinematics)'
+    front: 'Mechanical Automotive Chassis - FRONT VIEW (Twin-wheel steering alignment & suspension geometry)',
+    back: 'Mechanical Automotive Chassis - REAR VIEW (Rear axle power transfer & engine mounting)',
+    side: 'Mechanical Automotive Chassis - SIDE VIEW (Central piston engine mounting & wheelbase geometry)',
+    detail: 'Mechanical Automotive Chassis - SUSPENSION & UNIVERSAL JOINT (Drivetrain kinematics & angular deflection)'
   };
 
   btns.forEach(btn => {
