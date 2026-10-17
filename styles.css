@@ -800,6 +800,17 @@ body::before {
   align-items: start;
 }
 
+/* Staggered / Alternating Layout (Pictures & Write-Up flip every other section) */
+@media (min-width: 1025px) {
+  .project-card.card-reversed .card-content-layout .card-media-side {
+    order: 2;
+  }
+
+  .project-card.card-reversed .card-content-layout .card-info-side {
+    order: 1;
+  }
+}
+
 .card-media-side {
   display: flex;
   flex-direction: column;

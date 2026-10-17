@@ -442,6 +442,7 @@ function initFilters() {
   let activeDiscipline = 'all';
 
   function applyFilters() {
+    let visibleIndex = 0;
     projectCards.forEach(card => {
       const cardEra = card.getAttribute('data-era') || '';
       const cardDisc = card.getAttribute('data-discipline') || '';
@@ -453,8 +454,12 @@ function initFilters() {
         card.style.display = 'block';
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
+        // Stagger layout: pictures and write-up flip every other visible section
+        card.classList.toggle('card-reversed', visibleIndex % 2 === 1);
+        visibleIndex++;
       } else {
         card.style.display = 'none';
+        card.classList.remove('card-reversed');
       }
     });
 
