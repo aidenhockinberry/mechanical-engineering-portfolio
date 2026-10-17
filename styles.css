@@ -89,6 +89,7 @@
   --orange-accent: #ea580c;
   --orange-glow: rgba(234, 88, 12, 0.2);
   --emerald-accent: #059669;
+  --purple-accent: #7c3aed;
 
   --text-primary: #0f172a;
   --text-secondary: #334155;
@@ -474,6 +475,10 @@ body::before {
 
 .metric-val.emerald {
   color: var(--emerald-accent);
+}
+
+.metric-val.purple {
+  color: var(--purple-accent);
 }
 
 .metric-label {
