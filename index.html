@@ -36,6 +36,7 @@
         <li><a href="#early-era" class="nav-link">Physical Foundations</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="about.html" class="nav-link">About Aiden</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -43,11 +44,7 @@
           aria-label="Toggle Theme">
           <span id="themeIcon">☀️</span>
         </button>
-        <button class="btn btn-primary" id="exportPdfBtn" title="Generate & Download PDF Portfolio with QR Codes"
-          onclick="openExportStudioModal()">
-          <span>🖨️ Export PDF Portfolio</span>
-        </button>
-        <a href="#contact" class="btn btn-outline nav-contact-btn" id="navContactBtn" title="Get in Touch"
+        <a href="#contact" class="btn btn-primary nav-contact-btn" id="navContactBtn" title="Get in Touch"
           aria-label="Get in Touch">
           <span class="nav-contact-text">Get in Touch</span>
           <span class="nav-contact-icon">✈️</span>
@@ -102,9 +99,9 @@
           </div>
 
           <div class="hero-cta">
-            <a href="#manufacturing-era" class="btn btn-primary">Explore Engineering Journey</a>
-            <a href="#early-era" class="btn btn-accent">⚙️ Early Foundations</a>
-            <a href="mailto:aidenhockinberry@gmail.com" class="btn btn-outline">aidenhockinberry@gmail.com</a>
+            <a href="about.html" class="btn btn-primary">👤 About Aiden & Resume →</a>
+            <a href="#manufacturing-era" class="btn btn-accent">Explore Engineering Builds</a>
+            <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="btn btn-outline" title="Open Official Resume PDF">📄 Official Resume</a>
           </div>
         </div>
 
@@ -3027,14 +3024,30 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
-      <div class="footer-text">
-        © 2026 Aiden Hockinberry — Mechanical Engineering & Prototyping Portfolio.
+      <div class="footer-brand-column">
+        <div class="footer-logo">
+          <span class="logo-badge mini">AH</span>
+          <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">Aiden Hockinberry</span>
+        </div>
+        <div class="footer-text">
+          © 2026 Aiden Hockinberry — Mechanical Engineering & Prototyping Portfolio.
+        </div>
       </div>
-      <div style="display: flex; gap: 1rem; align-items: center;">
-        <button class="btn btn-primary" style="font-size: 0.75rem; padding: 0.35rem 0.85rem;"
-          onclick="openExportStudioModal()">🖨️ Export PDF Portfolio</button>
-        <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.35rem 0.75rem;"
-          onclick="window.scrollTo({top:0, behavior:'smooth'})">▲ Back to Top</button>
+      <div class="footer-actions-group">
+        <a href="javascript:void(0)" class="footer-link footer-export-link" id="footerExportLink"
+          onclick="openExportStudioModal()" title="Open interactive Print & PDF Portfolio Studio">
+          <span>🖨️ Export PDF Portfolio</span>
+        </a>
+        <a href="about.html" class="footer-link" title="View Aiden's background, coursework & transcript">
+          <span>👤 About Aiden</span>
+        </a>
+        <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="footer-link" title="Open official resume PDF">
+          <span>📄 Resume PDF</span>
+        </a>
+        <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;"
+          onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Scroll back to top">
+          <span>▲ Back to Top</span>
+        </button>
       </div>
     </div>
   </footer>
@@ -3736,6 +3749,38 @@
 
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Aiden's Official Resume PDF -->
+  <div class="modal-backdrop" id="resumeModal">
+    <div class="lightbox-modal resume-modal-container">
+      <div class="modal-header">
+        <div class="modal-title">📄 Aiden Hockinberry — Official Resume</div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" title="Open PDF in new tab">
+            <span>↗️ Open in Tab</span>
+          </a>
+          <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" title="Download PDF file">
+            <span>⬇️ Download</span>
+          </a>
+          <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <iframe src="assets/Aiden_Hockinberry_resume_1.pdf" class="resume-iframe" title="Aiden Hockinberry Resume PDF" id="resumeIframe"></iframe>
+        <div class="resume-fallback-box" id="resumeFallback">
+          <p>If the PDF does not display in your browser frame, you can open or download it directly:</p>
+          <div style="margin-top: 1rem; display: flex; gap: 0.75rem; justify-content: center;">
+            <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="btn btn-primary">Open PDF in New Tab</a>
+            <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline">Download PDF File</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding: 0.85rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); background: var(--bg-surface-subtle); font-size: 0.82rem; color: var(--text-secondary);">
+        <span>Aiden Hockinberry • Mechanical Engineering Portfolio</span>
+        <span>Delaware, OH • aidenhockinberry@gmail.com • 614-632-6111</span>
       </div>
     </div>
   </div>

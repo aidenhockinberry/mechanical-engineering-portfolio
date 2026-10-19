@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Aiden Hockinberry | Mechanical Engineering Profile & Resume</title>
+  <meta name="description"
+    content="Official biography, academic transcripts, Makerspace training, and engineering credentials of Aiden Hockinberry. High school senior and collegiate dual-enrolled student.">
+  <meta name="keywords"
+    content="Aiden Hockinberry, Mechanical Engineering, Resume, Transcripts, Hayes High School, Marion Technical College, Columbus State, Point Makerspace">
+  <meta name="author" content="Aiden Hockinberry">
+  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" id="nav-brand-logo">
+        <div class="logo-badge">AH</div>
+        <div class="brand-text">
+          <span class="brand-name">Aiden Hockinberry</span>
+          <span class="brand-sub">Mechanical Engineering</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="index.html#manufacturing-era" class="nav-link">3D Printing & CAD</a></li>
+        <li><a href="index.html#virtual-era" class="nav-link">Virtual Era</a></li>
+        <li><a href="index.html#early-era" class="nav-link">Physical Foundations</a></li>
+        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="about.html" class="nav-link active">About Aiden</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn btn-icon-only" id="themeToggleBtn" title="Toggle Blueprint / Dark Theme"
+          aria-label="Toggle Theme">
+          <span id="themeIcon">☀️</span>
+        </button>
+        <button class="btn btn-primary" id="openResumeNavBtn" title="View Official Resume PDF"
+          onclick="openResumeModal()">
+          <span>📄 View Resume PDF</span>
+        </button>
+        <a href="index.html#manufacturing-era" class="btn btn-outline" title="Explore Engineering Builds">
+          <span>🚀 Explore Builds →</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page Breadcrumb / Hero Header -->
+  <section class="about-hero-section">
+    <div class="container">
+      <div class="about-hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">About Aiden & Resume</span>
+      </div>
+
+      <div class="section-tag" style="margin-top: 1.25rem;">
+        <span>00 // BIOGRAPHY, ACADEMIC TRANSCRIPTS & RESUME</span>
+      </div>
+      <h1 class="section-title" style="font-size: 2.75rem; margin-top: 0.5rem;">
+        Meet Aiden: Background & Credentials
+      </h1>
+      <p class="section-desc" style="font-size: 1.15rem; max-width: 860px; margin-top: 0.75rem;">
+        Driven high school senior and dual-enrolled collegiate engineering student bridging rigorous academics with practical machine shop fabrication, CAD modeling, and community leadership.
+      </p>
+
+      <!-- Quick Action Buttons -->
+      <div class="about-hero-actions" style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;">
+        <button class="btn btn-primary" onclick="openResumeModal()">
+          <span>📄 Preview Official Resume (PDF)</span>
+        </button>
+        <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="btn btn-accent">
+          <span>📜 View Official Transcript (PDF)</span>
+        </a>
+        <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline">
+          <span>⬇️ Download Resume</span>
+        </a>
+        <a href="index.html#manufacturing-era" class="btn btn-outline">
+          <span>⚙️ Explore Engineering Builds →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container" style="padding-top: 0.5rem; padding-bottom: 5rem;">
+
+    <!-- Top Highlights Metric Strip -->
+    <div class="about-metrics-strip">
+      <div class="about-metric-card">
+        <div class="about-metric-icon">🎓</div>
+        <div class="about-metric-data">
+          <span class="about-metric-val">4.014 GPA</span>
+          <span class="about-metric-label">Weighted Cumulative • 3.71 Unweighted</span>
+        </div>
+      </div>
+      <div class="about-metric-card">
+        <div class="about-metric-icon">🏆</div>
+        <div class="about-metric-data">
+          <span class="about-metric-val">Rank 52 / 368</span>
+          <span class="about-metric-label">Top 14% of Senior Class</span>
+        </div>
+      </div>
+      <div class="about-metric-card">
+        <div class="about-metric-icon">🏛️</div>
+        <div class="about-metric-data">
+          <span class="about-metric-val">Dual Enrollment</span>
+          <span class="about-metric-label">Marion Tech & Columbus State</span>
+        </div>
+      </div>
+      <div class="about-metric-card">
+        <div class="about-metric-icon">⚖️</div>
+        <div class="about-metric-data">
+          <span class="about-metric-val">#2 in Region (BPA)</span>
+          <span class="about-metric-label">Business Law & Ethics • State Finalist</span>
+        </div>
+      </div>
+      <div class="about-metric-card">
+        <div class="about-metric-icon">🏭</div>
+        <div class="about-metric-data">
+          <span class="about-metric-val">The Point Makerspace</span>
+          <span class="about-metric-label">Otterbein Univ. • MIG Welding & Machine Tools</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filter Controls for About Section -->
+    <div class="about-filter-bar">
+      <div class="about-filter-tabs">
+        <button class="about-tab-btn active" data-about-tab="all" onclick="filterAboutGrid('all')">
+          <span>✨ Complete Profile</span>
+        </button>
+        <button class="about-tab-btn" data-about-tab="academics" onclick="filterAboutGrid('academics')">
+          <span>🎓 Academics & Dual Credit</span>
+        </button>
+        <button class="about-tab-btn" data-about-tab="makerspace" onclick="filterAboutGrid('makerspace')">
+          <span>🏭 Makerspace & Fabrication</span>
+        </button>
+        <button class="about-tab-btn" data-about-tab="leadership" onclick="filterAboutGrid('leadership')">
+          <span>⚖️ Leadership & Ethics</span>
+        </button>
+        <button class="about-tab-btn" data-about-tab="projects" onclick="filterAboutGrid('projects')">
+          <span>⚙️ Hands-On Skills</span>
+        </button>
+        <button class="about-tab-btn" data-about-tab="athletics" onclick="filterAboutGrid('athletics')">
+          <span>🏃 Athletics & Volunteering</span>
+        </button>
+      </div>
+
+      <div class="about-quick-actions">
+        <button class="btn btn-primary" onclick="openResumeModal()" title="View Aiden's Official Resume">
+          <span>📄 View Official Resume (PDF)</span>
+        </button>
+        <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="btn btn-outline" title="View Official Transcript">
+          <span>📜 Official Transcript</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="about-bento-grid" id="aboutBentoGrid">
+
+      <!-- Bento Card 1: Executive Summary & Narrative (Full Width Highlight) -->
+      <article class="about-card about-card-featured" data-about-cat="all narrative">
+        <div class="about-card-badge-row">
+          <span class="about-pill cyan">Individual Summary</span>
+          <span class="about-pill-meta">Delaware, OH • High School Senior (Class of 2027)</span>
+        </div>
+        <div class="about-narrative-split">
+          <div class="about-narrative-main">
+            <h3 class="about-narrative-title">“Driven by first-principles mechanics, physical fabrication, and real-world problem solving.”</h3>
+            <p class="about-narrative-text">
+              Aiden Hockinberry is an emerging mechanical engineer whose technical curiosity started early with physical assemblies and has expanded across high-performance computer simulations, CAD design in Autodesk Fusion 360, and precision additive fabrication. Rather than limiting himself to digital models or prefabricated kits, Aiden actively seeks to master the raw physics of engineering—from winding copper wire for custom brushed DC motors to operating shop machinery and learning MIG welding under professional guidance and safety precautions at Otterbein University's Point Makerspace.
+            </p>
+            <p class="about-narrative-text">
+              He balances heavy academic coursework across high school and dual-enrollment college programs with varsity athletics and community volunteer leadership, bringing relentless curiosity, self-directed discipline, and an engineer's attention to detail to every challenge.
+            </p>
+          </div>
+          <div class="about-contact-quick-col">
+            <div class="about-contact-box">
+              <div class="about-contact-item">
+                <span class="contact-box-icon">📍</span>
+                <div>
+                  <span class="contact-box-label">Location</span>
+                  <span class="contact-box-val">Delaware, Ohio 43015</span>
+                </div>
+              </div>
+              <div class="about-contact-item">
+                <span class="contact-box-icon">✉️</span>
+                <div>
+                  <span class="contact-box-label">Email</span>
+                  <a href="mailto:aidenhockinberry@gmail.com" class="contact-box-link">aidenhockinberry@gmail.com</a>
+                </div>
+              </div>
+              <div class="about-contact-item">
+                <span class="contact-box-icon">📞</span>
+                <div>
+                  <span class="contact-box-label">Phone</span>
+                  <a href="tel:6146326111" class="contact-box-link">614-632-6111</a>
+                </div>
+              </div>
+              <div class="about-contact-item">
+                <span class="contact-box-icon">🌐</span>
+                <div>
+                  <span class="contact-box-label">Website</span>
+                  <span class="contact-box-val">aidenhockinberry.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-card-resume-cta">
+              <button class="btn btn-primary" onclick="openResumeModal()" style="width: 100%;">
+                <span>👁️ Preview Resume PDF</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bento Card 2: Academic Excellence & Dual Enrollment (academics) -->
+      <article class="about-card" data-about-cat="academics">
+        <div class="about-card-header">
+          <div class="about-cat-icon">🎓</div>
+          <div>
+            <h3 class="about-card-title">Academic Excellence & Dual Enrollment</h3>
+            <span class="about-card-sub">Concurrent High School & Collegiate Studies</span>
+          </div>
+        </div>
+
+        <div class="education-timeline">
+          <!-- School 1 -->
+          <div class="edu-item">
+            <div class="edu-top">
+              <div class="edu-institution">Rutherford B. Hayes High School</div>
+              <span class="edu-timeline-pill">Aug 2023 – May 2027</span>
+            </div>
+            <div class="edu-location">Delaware, OH</div>
+            <div class="edu-badges-row">
+              <span class="edu-badge gpa">GPA: 4.014 (Weighted)</span>
+              <span class="edu-badge rank">Class Rank: 52 / 368 (Top 14%)</span>
+              <span class="edu-badge honor">Honor Roll (9th, 10th, 11th)</span>
+            </div>
+            <div class="edu-course-list">
+              <span class="course-chip">AP Computer Science Principles</span>
+              <span class="course-chip">AP Calculus AB</span>
+              <span class="course-chip">Robotics (Grade: A)</span>
+              <span class="course-chip">Physics 1</span>
+            </div>
+            <div class="edu-seals-row" style="margin-top: 0.65rem; padding: 0.65rem 0.85rem; background: rgba(2, 6, 23, 0.4); border: 1px solid rgba(56, 189, 248, 0.15); border-radius: var(--radius-sm);">
+              <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan-primary); font-weight: 700; margin-bottom: 0.35rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem;">
+                <span>🎖️ OHIO GRADUATION SEALS (ALL 6 EARNED):</span>
+                <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" style="color: var(--cyan-primary); text-decoration: underline; font-size: 0.72rem;">View Official Transcript (PDF) ↗</a>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
+                <span class="course-chip" style="font-size: 0.72rem;">🏅 Honors Diploma</span>
+                <span class="course-chip" style="font-size: 0.72rem;">🔬 Science</span>
+                <span class="course-chip" style="font-size: 0.72rem;">💻 Technology</span>
+                <span class="course-chip" style="font-size: 0.72rem;">🎓 College-Ready</span>
+                <span class="course-chip" style="font-size: 0.72rem;">🏛️ Citizenship</span>
+                <span class="course-chip" style="font-size: 0.72rem;">🤝 Community Service</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- School 2 -->
+          <div class="edu-item">
+            <div class="edu-top">
+              <div class="edu-institution">Marion Technical College</div>
+              <span class="edu-timeline-pill college">College Credit Plus</span>
+            </div>
+            <div class="edu-location">Marion, OH • Aug 2023 – May 2027</div>
+            <div class="edu-badges-row">
+              <span class="edu-badge gpa">GPA: 3.8</span>
+              <span class="edu-badge college-credit">Collegiate Engineering Track</span>
+            </div>
+            <div class="edu-course-list">
+              <span class="course-chip">Engineering Drawings & Diagrams (Grade: A)</span>
+              <span class="course-chip">Intro to Engineering</span>
+              <span class="course-chip">Oral Communications</span>
+              <span class="course-chip">English Composition I & II (Grades: A/A)</span>
+            </div>
+          </div>
+
+          <!-- School 3 -->
+          <div class="edu-item">
+            <div class="edu-top">
+              <div class="edu-institution">Columbus State Community College</div>
+              <span class="edu-timeline-pill college">Dual Enrollment</span>
+            </div>
+            <div class="edu-location">Delaware, OH • May 2026 – Aug 2026</div>
+            <div class="edu-badges-row">
+              <span class="edu-badge gpa">GPA: 4.0</span>
+              <span class="edu-badge college-credit">Advanced Mathematics</span>
+            </div>
+            <div class="edu-course-list">
+              <span class="course-chip">College Trigonometry (Grade: A)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bento Card 3: Makerspace Membership & Technical Training (makerspace) -->
+      <article class="about-card" data-about-cat="makerspace">
+        <div class="about-card-header">
+          <div class="about-cat-icon orange">🏭</div>
+          <div>
+            <h3 class="about-card-title">Makerspace & Heavy Fabrication Training</h3>
+            <span class="about-card-sub">Otterbein University • Machine Tool & Metal Shop</span>
+          </div>
+        </div>
+
+        <div class="makerspace-content">
+          <div class="makerspace-facility-banner">
+            <div class="facility-icon">🏛️</div>
+            <div class="facility-details">
+              <div class="facility-name">The Point Makerspace at Otterbein University</div>
+              <div class="facility-desc">Active facility membership at a premier 61,000 sq ft multidisciplinary STEAM innovation and fabrication center.</div>
+            </div>
+          </div>
+
+          <div class="maker-spec-grid">
+            <div class="maker-spec-block">
+              <div class="spec-block-title">
+                <span>⚡ Metal Fabrication</span>
+                <span class="spec-cert-badge">Professional Instruction</span>
+              </div>
+              <p class="spec-block-text">Introduced to <strong>Metal Inert Gas (MIG) welding</strong> through one-on-one professional instruction—shown proper technique, equipment setup, and thorough safety precautions by a professional.</p>
+            </div>
+
+            <div class="maker-spec-block">
+              <div class="spec-block-title">
+                <span>🪚 Equipment Operations</span>
+                <span class="spec-cert-badge">Shop Trained</span>
+              </div>
+              <p class="spec-block-text">Trained on wood and metal shop machinery with comprehensive safety walk-throughs:</p>
+              <div class="equipment-tag-cloud">
+                <span class="equip-tag">Drill Press</span>
+                <span class="equip-tag">Precision Table Saw</span>
+                <span class="equip-tag">Sliding Miter Saw</span>
+                <span class="equip-tag">Horizontal/Vertical Bandsaw</span>
+                <span class="equip-tag">Industrial Belt & Disc Sander</span>
+              </div>
+            </div>
+
+            <div class="maker-spec-block">
+              <div class="spec-block-title">
+                <span>🪵 Structural Woodworking</span>
+                <span class="spec-cert-badge">Fabrication</span>
+              </div>
+              <p class="spec-block-text">Constructed custom load-bearing furniture and architectural pieces, including an ergonomic cat tower, customized shelving assemblies, and a solid joinery bench.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bento Card 4: Honors, Business Law & Civic Advocacy (leadership) -->
+      <article class="about-card" data-about-cat="leadership">
+        <div class="about-card-header">
+          <div class="about-cat-icon purple">⚖️</div>
+          <div>
+            <h3 class="about-card-title">Honors, Business Law & Civic Advocacy</h3>
+            <span class="about-card-sub">State Competition Finalist & Civic Initiative</span>
+          </div>
+        </div>
+
+        <div class="leadership-timeline">
+          <!-- BPA Award -->
+          <div class="leadership-item highlight">
+            <div class="leadership-header-row">
+              <div class="leadership-title-group">
+                <span class="award-rank-badge">🥈 #2 In Region</span>
+                <div class="leadership-org">Business Professionals of America (BPA)</div>
+              </div>
+              <span class="state-qualifier-pill">State Competition Qualifier</span>
+            </div>
+            <div class="leadership-event">Category: Business Law and Ethics</div>
+            <p class="leadership-desc">
+              Competed against top students across five regional school districts. Demonstrated rigorous analytical mastery of corporate law, contractual obligations, liability, and professional engineering ethics. Advanced to and competed at the <strong>Ohio State BPA Competition</strong>.
+            </p>
+            <div class="leadership-footer-meta">Active Grade 11 Member • Delaware Hayes Chapter</div>
+          </div>
+
+          <!-- Civic Advocacy -->
+          <div class="leadership-item">
+            <div class="leadership-header-row">
+              <div class="leadership-title-group">
+                <span class="award-rank-badge civic">🏛️ School Board Advocacy</span>
+                <div class="leadership-org">Delaware City School District</div>
+              </div>
+              <span class="status-pill-small">Formal Civic Action</span>
+            </div>
+            <div class="leadership-event">Later High School Start Time Policy Proposal</div>
+            <p class="leadership-desc">
+              Conducted independent policy and scientific research synthesizing adolescent sleep circadian biology with student mental health and academic performance metrics. Formally drafted and presented a petition to the local School Board proposing a delayed, healthier morning start time for high school students.
+            </p>
+          </div>
+
+          <!-- Honor Roll -->
+          <div class="leadership-item">
+            <div class="leadership-header-row">
+              <div class="leadership-title-group">
+                <span class="award-rank-badge emerald">🌟 Academic Honor Roll</span>
+                <div class="leadership-org">Rutherford B. Hayes High School</div>
+              </div>
+              <span class="status-pill-small">Consecutive Years</span>
+            </div>
+            <p class="leadership-desc">
+              Earned continuous Honor Roll distinction across 9th, 10th, and 11th grades while taking accelerated AP and collegiate dual-enrollment coursework.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bento Card 5: Technical Projects & Electromechanical Highlights (projects) -->
+      <article class="about-card" data-about-cat="projects">
+        <div class="about-card-header">
+          <div class="about-cat-icon emerald">⚡</div>
+          <div>
+            <h3 class="about-card-title">Technical Projects & Skills Breakdown</h3>
+            <span class="about-card-sub">Electromagnetism, CAD, PC Architecture & 3D Prototyping</span>
+          </div>
+        </div>
+
+        <div class="resume-tech-grid">
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">🧲</span>
+              <span class="tech-name">Brushed Motor Engineering</span>
+            </div>
+            <p class="tech-box-desc">
+              Designed, hand-wound armatures, and assembled a functioning brushed electric motor from raw electromagnetic components, demonstrating applied electromagnetism, magnetic flux paths, and commutator timing from first principles.
+            </p>
+          </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">🖥️</span>
+              <span class="tech-name">Custom PC Architecture</span>
+            </div>
+            <p class="tech-box-desc">
+              Designed, budgeted, and built a custom high-performance gaming and CAD workstation. Optimized thermal airflow, component clearance, power delivery, and hardware architecture for physics simulations and 3D modeling.
+            </p>
+          </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">📐</span>
+              <span class="tech-name">CAD Modeling (Fusion 360 & TinkerCAD)</span>
+            </div>
+            <p class="tech-box-desc">
+              Proficient in Autodesk Fusion 360 and TinkerCAD, with supplementary modeling experience in Blender. Created complex parametric parts, exploded assembly models, and motion studies.
+            </p>
+          </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">⚙️</span>
+              <span class="tech-name">Kinematic 3D Printing</span>
+            </div>
+            <p class="tech-box-desc">
+              Engineered functional mechanical assemblies: boundary-layer Tesla turbine, pendulum clock escapement, functional rolling-element ball bearings, spinning decision maker, and multi-piece snap-fit Connect 4.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bento Card 6: Athletics & Community Volunteer Leadership (athletics) -->
+      <article class="about-card" data-about-cat="athletics">
+        <div class="about-card-header">
+          <div class="about-cat-icon blue">🏃</div>
+          <div>
+            <h3 class="about-card-title">Athletics & Community Service</h3>
+            <span class="about-card-sub">Work Ethic, Physical Conditioning & Civic Giving</span>
+          </div>
+        </div>
+
+        <div class="athletics-service-layout">
+          <div class="ath-column">
+            <div class="ath-title">
+              <span>🏃‍♂️ Competitive Athletics</span>
+              <span class="ath-chip">Dedication</span>
+            </div>
+            <div class="ath-card">
+              <div class="ath-sport-title">Track & Field / Track Club</div>
+              <div class="ath-grade">Grade 10 • Rutherford B. Hayes High School</div>
+              <p class="ath-desc">
+                Committed up to <strong>16 hours per week</strong> during the competitive season. Honed discipline, interval endurance, physical resilience, and time management while balancing a 4.014 GPA and college coursework.
+              </p>
+            </div>
+            <div class="ath-card">
+              <div class="ath-sport-title">Soccer Club</div>
+              <div class="ath-grade">Grade 11 • Rutherford B. Hayes High School</div>
+              <p class="ath-desc">
+                Active member of the high school Soccer Club, cultivating teamwork, on-field spatial awareness, and athletic coordination.
+              </p>
+            </div>
+          </div>
+
+          <div class="ath-column">
+            <div class="ath-title">
+              <span>🤝 YMCA Volunteer Experience</span>
+              <span class="ath-chip ymca">Delaware, OH</span>
+            </div>
+            <div class="ymca-item">
+              <div class="ymca-sub">👶 Community Drives & Support</div>
+              <p class="ymca-desc">Participated in local Diaper Drives collecting essential childcare supplies; staffed and assisted community Halloween festivals.</p>
+            </div>
+            <div class="ymca-item">
+              <div class="ymca-sub">🎄 Youth & Event Coordination</div>
+              <p class="ymca-desc">Planned and executed Parents' Night Out childcare evenings; made personalized "Christmas Elf" holiday phone calls to local children.</p>
+            </div>
+            <div class="ymca-item">
+              <div class="ymca-sub">🌱 Facility & Environmental Care</div>
+              <p class="ymca-desc">Conducted park and street trash cleanups, community gardening, trail maintenance, and brush clearing to improve local outdoor spaces.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bento Card 7: Official Resume Document & Download Widget (resume) -->
+      <article class="about-card resume-widget-card" data-about-cat="resume">
+        <div class="resume-widget-wrapper">
+          <div class="resume-doc-preview">
+            <div class="resume-doc-sheet" onclick="openResumeModal()" title="Click to view resume in interactive modal" style="cursor: pointer;">
+              <div class="resume-mini-header">
+                <div class="mini-name">Aiden Hockinberry</div>
+                <div class="mini-contact">Delaware, OH • 4.014 GPA • Mechanical Engineering</div>
+              </div>
+              <div class="resume-mini-lines">
+                <div class="mini-line w-80"></div>
+                <div class="mini-line w-60"></div>
+                <div class="mini-line w-90"></div>
+                <div class="mini-line w-75"></div>
+                <div class="mini-line w-85"></div>
+              </div>
+              <div class="resume-pdf-badge">PDF DOCUMENT</div>
+            </div>
+          </div>
+
+          <div class="resume-widget-info">
+            <div class="resume-badge-row">
+              <span class="resume-tag-pill">Official Credentials Hub</span>
+              <span class="resume-tag-pill meta">Updated 2026 • Verified PDF Documents</span>
+            </div>
+            <h3 class="resume-widget-title">Official Resume & Academic Transcript</h3>
+            <p class="resume-widget-desc">
+              Download or view Aiden's official resume and high school academic transcript detailing course-by-course letter grades, dual-college credits, Point Makerspace technical training, and BPA honors.
+            </p>
+            <div class="resume-widget-buttons">
+              <button class="btn btn-primary" onclick="openResumeModal()">
+                <span>👁️ View Resume PDF Modal</span>
+              </button>
+              <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="btn btn-accent">
+                <span>↗️ Open Resume in Tab</span>
+              </a>
+              <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline">
+                <span>⬇️ Download Resume PDF</span>
+              </a>
+              <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="btn btn-outline" title="Open Official High School Transcript PDF">
+                <span>📜 View Official Transcript (PDF)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Transition Call-to-Action to Engineering Builds -->
+    <div class="about-next-banner">
+      <div>
+        <span class="about-pill cyan" style="margin-bottom: 0.5rem;">NEXT DESTINATION</span>
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--text-primary); margin-top: 0.35rem;">
+          Ready to Explore the Engineering Builds?
+        </h3>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 680px; margin-top: 0.35rem;">
+          Inspect 13 functional engineered systems across 3 distinct eras—from Autodesk Fusion 360 parametric models and 3D-printed mechatronics to 70+ virtual piston engines.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="index.html#manufacturing-era" class="btn btn-primary">
+          <span>🚀 Explore Era 1: 3D Printing & CAD →</span>
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">
+          <span>✉️ Get in Touch</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand-column">
+        <div class="footer-logo">
+          <span class="logo-badge mini">AH</span>
+          <span style="font-weight: 700; color: var(--text-primary); font-size: 0.95rem;">Aiden Hockinberry</span>
+        </div>
+        <div class="footer-text">
+          © 2026 Aiden Hockinberry — Mechanical Engineering & Prototyping Portfolio.
+        </div>
+      </div>
+      <div class="footer-actions-group">
+        <a href="index.html" class="footer-link">
+          <span>🚀 Home Portfolio</span>
+        </a>
+        <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="footer-link" title="Open official resume PDF">
+          <span>📄 Resume PDF</span>
+        </a>
+        <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="footer-link" title="Download official high school transcript">
+          <span>🎓 Transcript PDF</span>
+        </a>
+        <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;"
+          onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Scroll back to top">
+          <span>▲ Back to Top</span>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Aiden's Official Resume PDF -->
+  <div class="modal-backdrop" id="resumeModal">
+    <div class="lightbox-modal resume-modal-container">
+      <div class="modal-header">
+        <div class="modal-title">📄 Aiden Hockinberry — Official Resume</div>
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="btn btn-outline" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" title="Open PDF in new tab">
+            <span>↗️ Open in Tab</span>
+          </a>
+          <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;" title="Download PDF file">
+            <span>⬇️ Download</span>
+          </a>
+          <button class="modal-close-btn" onclick="closeResumeModal()" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+      <div class="resume-modal-body">
+        <iframe src="assets/Aiden_Hockinberry_resume_1.pdf" class="resume-iframe" title="Aiden Hockinberry Resume PDF" id="resumeIframe"></iframe>
+        <div class="resume-fallback-box" id="resumeFallback">
+          <p>If the PDF does not display in your browser frame, you can open or download it directly:</p>
+          <div style="margin-top: 1rem; display: flex; gap: 0.75rem; justify-content: center;">
+            <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="btn btn-primary">Open PDF in New Tab</a>
+            <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline">Download PDF File</a>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" style="padding: 0.85rem 1.5rem; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); background: var(--bg-surface-subtle); font-size: 0.82rem; color: var(--text-secondary);">
+        <span>Aiden Hockinberry • Mechanical Engineering Portfolio</span>
+        <span>Delaware, OH • aidenhockinberry@gmail.com • 614-632-6111</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Javascript Logic -->
+  <script src="app.js?v=6"></script>
+</body>
+
+</html>
