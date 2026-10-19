@@ -2065,53 +2065,249 @@
         <!-- Project 8: Simulated Mun Mission (KSP) Case Study -->
         <article class="project-card project-card-featured" data-era="virtual" data-discipline="aerospace">
           <div class="card-top-bar">
-            <span class="era-badge virtual">Aerospace & Orbital Case Study</span>
+            <span class="era-badge virtual">Aerospace &amp; Orbital Case Study</span>
             <div class="card-tech-tags">
               <span class="tech-tag">Kerbal Space Program</span>
               <span class="tech-tag">5-Stage Rocket</span>
               <span class="tech-tag">ΔV Budget: 9,243 m/s</span>
               <span class="tech-tag">Orbital Staging</span>
+              <span class="tech-tag">Tsiolkovsky Optimization</span>
             </div>
           </div>
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="rocket-stages-layout">
-                <div class="stage-buttons">
-                  <button class="stage-btn active" data-stage="1" data-img="assets/images/p8_img3_569.jpeg">
-                    <span class="stage-name">1. Ascent Stage (SRB)</span>
-                    <span class="stage-dv">TWR > 1.8</span>
-                  </button>
-                  <button class="stage-btn" data-stage="2" data-img="assets/images/p8_img3_569.jpeg">
-                    <span class="stage-name">2. Booster Core</span>
-                    <span class="stage-dv">Gravity Turn</span>
-                  </button>
-                  <button class="stage-btn" data-stage="3" data-img="assets/images/p8_img6_573.png">
-                    <span class="stage-name">3. Trans-Munar (TMI)</span>
-                    <span class="stage-dv">Max Vac Isp</span>
-                  </button>
-                  <button class="stage-btn" data-stage="4" data-img="assets/images/p9_img1_578.jpeg">
-                    <span class="stage-name">4. Munar Lander</span>
-                    <span class="stage-dv">Landing Legs</span>
-                  </button>
-                  <button class="stage-btn" data-stage="5" data-img="assets/images/p9_img2_579.png">
-                    <span class="stage-name">5. Command & Recovery</span>
-                    <span class="stage-dv">Parachutes</span>
-                  </button>
+              <!-- Multi-Tab Controls for Mun Mission -->
+              <div class="rubiks-tab-controls mun-tab-controls">
+                <button class="rubiks-tab-btn mun-tab-btn active" id="munTabBtn-sequence"
+                  onclick="switchMunTab('sequence', this)">
+                  🚀 FLIGHT MISSION SEQUENCE (7)
+                </button>
+                <button class="rubiks-tab-btn mun-tab-btn" id="munTabBtn-blueprint"
+                  onclick="switchMunTab('blueprint', this)">
+                  📐 5-STAGE VEHICLE BLUEPRINT
+                </button>
+                <button class="rubiks-tab-btn mun-tab-btn" id="munTabBtn-gallery"
+                  onclick="switchMunTab('gallery', this)">
+                  📁 MISSION PHOTO GALLERY (9)
+                </button>
+              </div>
+
+              <!-- TAB 1: Flight Mission Sequence (7-Phase Interactive Switcher) -->
+              <div class="rubiks-tab-pane mun-tab-pane active" id="mun-tab-sequence">
+                <div class="rocket-stages-layout">
+                  <div class="stage-buttons">
+                    <button class="stage-btn active" data-stage="1">
+                      <span class="stage-name">1. SRB Launch Ascent</span>
+                      <span class="stage-dv">TWR &gt; 1.8</span>
+                    </button>
+                    <button class="stage-btn" data-stage="2">
+                      <span class="stage-name">2. SRB Separation</span>
+                      <span class="stage-dv">Jettison</span>
+                    </button>
+                    <button class="stage-btn" data-stage="3">
+                      <span class="stage-name">3. Atmospheric Escape</span>
+                      <span class="stage-dv">70km LKO</span>
+                    </button>
+                    <button class="stage-btn" data-stage="4">
+                      <span class="stage-name">4. Trans-Munar (TMI)</span>
+                      <span class="stage-dv">Max Vac Isp</span>
+                    </button>
+                    <button class="stage-btn" data-stage="5">
+                      <span class="stage-name">5. Munar Touchdown</span>
+                      <span class="stage-dv">Quad Legs</span>
+                    </button>
+                    <button class="stage-btn" data-stage="6">
+                      <span class="stage-name">6. Munar Liftoff</span>
+                      <span class="stage-dv">Stage 4B</span>
+                    </button>
+                    <button class="stage-btn" data-stage="7">
+                      <span class="stage-name">7. Parachute Splashdown</span>
+                      <span class="stage-dv">&lt;6 m/s Safe</span>
+                    </button>
+                  </div>
+
+                  <div class="project-img-wrapper" id="rocketStageImgWrapper" onclick="openActiveStageLightbox()"
+                    title="Click to inspect flight phase capture in full HD">
+                    <img src="assets/images/p8_img3_569.jpeg" alt="Rocket Staging Simulation" class="project-img"
+                      id="rocketStageImg" style="aspect-ratio: 4/3; object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Inspect Flight Phase</button>
+                  </div>
                 </div>
 
-                <div class="project-img-wrapper" id="rocketStageImgWrapper" onclick="openActiveStageLightbox()">
-                  <img src="assets/images/p8_img3_569.jpeg" alt="Rocket Staging Simulation" class="project-img"
-                    id="rocketStageImg">
-                  <button class="img-inspect-btn">🔍 Inspect Flight Stage</button>
+                <div class="stage-detail-box" id="stageDetailBox" style="margin-top: 0.75rem;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <div class="stage-detail-title" id="stageDetailTitle" style="margin-bottom: 0;">Stage 1: Launch Pad Ignition &amp; SRB Atmospheric Boost</div>
+                    <span class="tech-tag" id="stageDetailBadge" style="background: rgba(0, 240, 255, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-size: 0.72rem;">Phase 1: Lift-Off | TWR &gt; 1.8</span>
+                  </div>
+                  <div class="stage-detail-desc" id="stageDetailDesc">
+                    Solid Rocket Boosters (SRBs) ignite alongside the center liquid core to punch through Kerbin’s dense lower atmosphere with massive sea-level thrust and high initial impulse. Telemetry HUD: Altitude 374m, Stage 005, Total Mission ΔV 9,243 m/s.
+                  </div>
                 </div>
               </div>
 
-              <div class="stage-detail-box" id="stageDetailBox">
-                <div class="stage-detail-title" id="stageDetailTitle">Stage 1: High TWR Atmospheric Escape (SRBs)</div>
-                <div class="stage-detail-desc" id="stageDetailDesc">
-                  High thrust-to-weight solid rocket boosters engineered to overcome sea-level atmospheric drag and
-                  punch through the thick lower atmosphere with maximum initial impulse.
+              <!-- TAB 2: 5-Stage Vehicle Blueprint CAD Schematic -->
+              <div class="rubiks-tab-pane mun-tab-pane" id="mun-tab-blueprint">
+                <div class="mun-blueprint-container">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/p8_img1_567.png', 'Case Study: Simulated Mun Mission (KSP) — Complete 5-Stage Launch Vehicle CAD Schematic with Stage Brackets &amp; Sub-System Callouts')"
+                    title="Click to inspect full rocket blueprint schematic in HD">
+                    <div style="background: #ffffff; padding: 0.75rem; border-radius: var(--radius-sm); text-align: center;">
+                      <img src="assets/images/p8_img1_567.png" alt="5-Stage Rocket Blueprint Schematic" class="project-img"
+                        style="max-height: 380px; width: auto; object-fit: contain; margin: 0 auto; display: block; filter: contrast(1.05);">
+                    </div>
+                    <button class="img-inspect-btn">🔍 Inspect Full Schematic</button>
+                  </div>
+
+                  <div class="mun-blueprint-callouts">
+                    <div class="blueprint-callout-item">
+                      <span class="callout-num">1</span>
+                      <div class="callout-text">
+                        <strong style="color: var(--text-primary);">Ascent Stage (Twin SRBs):</strong> High-thrust solid rocket motors delivering TWR &gt; 1.8 to overcome initial atmospheric drag.
+                      </div>
+                    </div>
+                    <div class="blueprint-callout-item">
+                      <span class="callout-num">2</span>
+                      <div class="callout-text">
+                        <strong style="color: var(--text-primary);">Booster Core:</strong> High-capacity central liquid propellant sustainer executing pitch-over gravity turn into 70km parking orbit.
+                      </div>
+                    </div>
+                    <div class="blueprint-callout-item">
+                      <span class="callout-num">3</span>
+                      <div class="callout-text">
+                        <strong style="color: var(--text-primary);">Trans-Munar Injection (TMI) Stage:</strong> Vacuum-optimized engine maximizing specific impulse ($I_{sp}$) for translunar Hohmann transfer.
+                      </div>
+                    </div>
+                    <div class="blueprint-callout-item">
+                      <span class="callout-num">4</span>
+                      <div class="callout-text">
+                        <strong style="color: var(--text-primary);">Munar Descent &amp; Ascent Stage (Lander):</strong> Throttleable descent module with wide-stance quad landing legs &amp; separable ascent stage.
+                      </div>
+                    </div>
+                    <div class="blueprint-callout-item">
+                      <span class="callout-num">5</span>
+                      <div class="callout-text">
+                        <strong style="color: var(--text-primary);">Command Module &amp; Recovery:</strong> Aerodynamic capsule with blunt heat shield and sequenced triple recovery parachutes.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Mission Photo Gallery (9) -->
+              <div class="rubiks-tab-pane mun-tab-pane" id="mun-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 Full Mission Capture Archive (Pages 8 &amp; 9)</span>
+                  <span>Click any image to inspect in full HD Lightbox</span>
+                </div>
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p8_img1_567.png', '5-Stage Rocket Blueprint Schematic — Complete launch vehicle CAD layout with callout brackets 1, 2, 4, 5')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #ffffff;">
+                      <img src="assets/images/p8_img1_567.png" alt="5-Stage Rocket Schematic" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 4px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Rocket CAD Schematic</span>
+                      <span class="rubiks-gallery-sub">5-Stage vehicle architecture blueprint</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p8_img3_569.jpeg', 'Stage 1: Launch Pad Ignition &amp; Vertical Ascent — Solid rocket boosters firing with telemetry HUD active (Alt: 374m, Stage: 005)')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p8_img3_569.jpeg" alt="Stage 1 Launch Ascent" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 1: Pad Ignition</span>
+                      <span class="rubiks-gallery-sub">Vertical climb &amp; telemetry HUD (374m)</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p8_img2_568.png', 'Stage 2: Radial Booster Jettison — Stage 1-2 separation with radial separation pushers firing')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p8_img2_568.png" alt="Stage 2 Booster Separation" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 2: Booster Jettison</span>
+                      <span class="rubiks-gallery-sub">Stage 1-2 separation &amp; radial pushers</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p8_img4_570.png', 'Stage 3: High TWR Atmospheric Escape — Center liquid core burning horizontally into 70km LKO parking orbit')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p8_img4_570.png" alt="Stage 3 Atmospheric Escape" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 3: Orbital Insertion</span>
+                      <span class="rubiks-gallery-sub">High TWR burn &amp; Kerbin curvature</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p8_img6_573.png', 'Stage 4: Trans-Munar Injection (TMI) &amp; Trajectory — Hohmann transfer orbit curve and Mun gravitational capture geometry')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p8_img6_573.png" alt="TMI Hohmann Trajectory" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 4: Transfer Trajectory</span>
+                      <span class="rubiks-gallery-sub">Hohmann transfer ellipse &amp; Mun SOI</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p9_img1_578.jpeg', 'Stage 5: Munar Surface Touchdown — Wide-stance quad landing legs deployed on Mun surface (Alt: 2,819m, Stage: 002)')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p9_img1_578.jpeg" alt="Stage 5 Munar Surface Touchdown" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 5: Munar Touchdown</span>
+                      <span class="rubiks-gallery-sub">Low-g landing &amp; quad gear deployed</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p9_img3_580.png', 'Stage 6: Munar Liftoff &amp; Ascent Stage Separation — Upper ascent module ignites 4 thrusters, leaving descent base on Mun')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p9_img3_580.png" alt="Stage 6 Munar Liftoff" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 6: Munar Ascent Liftoff</span>
+                      <span class="rubiks-gallery-sub">Ascent thrusters firing &amp; staging</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p9_img2_579.png', 'Stage 7: Atmospheric Entry Recovery — Sequenced triple parachutes deployed over Kerbin ocean for safe splashdown')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/images/p9_img2_579.png" alt="Stage 7 Parachute Recovery" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Stage 7: Parachute Recovery</span>
+                      <span class="rubiks-gallery-sub">Triple parachutes deployed (&lt;6 m/s)</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/images/p8_img5_571.png', 'Flight Simulation QR Code — Scan to view external flight logs, mission video &amp; engineering blueprints')">
+                    <div class="rubiks-gallery-thumb-wrap" style="background: #000000;">
+                      <img src="assets/images/p8_img5_571.png" alt="Mission QR Code" class="rubiks-gallery-thumb" style="object-fit: contain; padding: 6px;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Blueprint &amp; Video QR Code</span>
+                      <span class="rubiks-gallery-sub">*Scan to view video &amp; blueprints</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -2119,47 +2315,106 @@
             <div class="card-info-side">
               <h3 class="project-heading">Case Study: Simulated Mun Mission Architecture</h3>
               <p class="project-summary">
-                Designed a complete 5-stage spacecraft architecture engineered for orbital insertion, trans-lunar
-                transfer, surface touchdown, and atmospheric reentry recovery. Calculated delta-V requirements using the
-                Tsiolkovsky rocket equation to ensure mission feasibility.
+                Designed and simulated a complete 5-stage spacecraft architecture in Kerbal Space Program (KSP),
+                engineered for orbital insertion, trans-lunar transfer, surface touchdown, and atmospheric reentry recovery.
+                Calculated delta-V requirements using the Tsiolkovsky rocket equation to ensure mission feasibility across all flight regimes.
               </p>
 
-              <table class="tech-table">
-                <thead>
-                  <tr>
-                    <th>Mission Metric</th>
-                    <th>Specification</th>
-                    <th>Engineering Purpose</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Total Mission ΔV</strong></td>
-                    <td><strong>9,243 m/s</strong></td>
-                    <td>Sufficient for LKO, TMI, capture, landing, ascent, & return</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Vehicle Part Count</strong></td>
-                    <td>147 Components</td>
-                    <td>Optimized for structural integrity & aerodynamic fairing limits</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Staging Architecture</strong></td>
-                    <td>5 Discrete Stages</td>
-                    <td>Maximizes vacuum specific impulse ($I_{sp}$) by discarding dry mass</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Ascent Profile</strong></td>
-                    <td>Gravity Turn @ 70km</td>
-                    <td>Gradual pitch-over to trade vertical climb for horizontal orbital velocity</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Landing Dynamics</strong></td>
-                    <td>Wide-Stance Quad Legs</td>
-                    <td>Prevents tipping on uneven regolith during constant-altitude suicide burns</td>
-                  </tr>
-                </tbody>
-              </table>
+              <!-- Key Metrics Strip directly from Page 8 -->
+              <div class="rubiks-telemetry-strip" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1rem;">
+                <div class="rubiks-telemetry-item">
+                  <span class="rubiks-telemetry-label">Total Mission ΔV</span>
+                  <span class="rubiks-telemetry-value" style="color: var(--cyan-primary); font-size: 1.15rem;">9,243 m/s</span>
+                  <span style="font-size: 0.65rem; color: var(--text-muted);">Sufficient for LKO, TMI, capture, landing, ascent &amp; return</span>
+                </div>
+                <div class="rubiks-telemetry-item">
+                  <span class="rubiks-telemetry-label">Vehicle Part Count</span>
+                  <span class="rubiks-telemetry-value" style="color: var(--orange-accent); font-size: 1.15rem;">147 Parts</span>
+                  <span style="font-size: 0.65rem; color: var(--text-muted);">Optimized for structural integrity &amp; fairing volume</span>
+                </div>
+                <div class="rubiks-telemetry-item">
+                  <span class="rubiks-telemetry-label">Staging Architecture</span>
+                  <span class="rubiks-telemetry-value" style="color: #10b981; font-size: 1.15rem;">5 Discrete Stages</span>
+                  <span style="font-size: 0.65rem; color: var(--text-muted);">Maximizes vacuum specific impulse ($I_{sp}$)</span>
+                </div>
+              </div>
+
+              <!-- Section 1: Design Philosophy & Multistage Integration (Page 8) -->
+              <div class="spec-box" style="margin-bottom: 0.85rem;">
+                <div class="spec-box-title">🚀 Section 1: Design Philosophy &amp; Multistage Integration (Page 8)</div>
+                <ul class="spec-list">
+                  <li><strong>Staging Strategy (Maximizing Vacuum $I_{sp}$):</strong> Discarding dead structural mass (empty fuel tanks and spent booster casings) drastically increases the vehicle mass ratio ($m_0 / m_f$). Initial ascent utilizes high sea-level thrust solid and liquid boosters (TWR &gt; 1.8), transitioning to high vacuum specific impulse engines ($I_{sp} &gt; 350\text{s}$) for trans-munar burns.</li>
+                  <li><strong>Gravity Turn Optimization:</strong> Executed a continuous aerodynamic pitch-over maneuver through Kerbin's 70km atmosphere. Locking vehicle thrust to the surface prograde vector minimizes cosine steering losses and atmospheric drag while converting vertical impulse into horizontal orbital velocity.</li>
+                </ul>
+              </div>
+
+              <!-- Section 2: Landing Dynamics & Re-Entry Systems (Page 9) -->
+              <div class="spec-box orange" style="margin-bottom: 0.85rem;">
+                <div class="spec-box-title">🌕 Section 2: Landing Dynamics &amp; Surface Operations (Page 9)</div>
+                <ul class="spec-list">
+                  <li><strong>Wide-Stance Quad Landing Gear:</strong> Low center-of-gravity quad footprint resists tip-over moments on sloped lunar crater walls up to 15° inclination. Telescopic oleo struts with integrated damping absorb touchdown impact without elastic rebound.</li>
+                  <li><strong>Deceleration Profile ("Suicide Burn"):</strong> Precision throttle governance zeroes out horizontal and vertical velocities simultaneously meters above the surface, eliminating fuel-costly hover phases and minimizing gravity drag.</li>
+                </ul>
+              </div>
+
+              <!-- Section 3 & Conclusion (Page 9) -->
+              <div class="card-spec-grid">
+                <div class="spec-box">
+                  <div class="spec-box-title">🪂 Section 3: Ascent &amp; Re-Entry</div>
+                  <ul class="spec-list">
+                    <li><strong>Ascent Staging:</strong> Descent stage serves as a stationary launch base; decoupling the upper ascent capsule sheds dead structural mass for the return trip.</li>
+                    <li><strong>Parachute Recovery:</strong> Blunt heat shield dissipates &gt;3,200 m/s entry velocity, followed by staged triple parachutes slowing the capsule to &lt;6 m/s.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box green">
+                  <div class="spec-box-title">🔬 Systems Evaluation &amp; Takeaway</div>
+                  <ul class="spec-list">
+                    <li><strong>Real-World Aerospace Validation:</strong> Demonstrates that real-time physics environments function as valid Digital Twins to verify multi-variable trade-offs in aerospace staging logic before costly hardware fabrication.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Portfolio Blueprint Pages Row (Page 8 & Page 9) -->
+          <div class="escapement-level-pages-row" id="munPortfolioPagesRow" style="margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border-color);">
+            <!-- Left: Page 8 -->
+            <div class="escapement-iterations-card"
+              onclick="openLightbox('assets/pages/page_8.png', 'Case Study: Simulated Mun Mission (KSP) — Page 8: Staging Strategy, Gravity Turn &amp; Trajectory Architecture Portfolio Sheet')"
+              title="Click to inspect Portfolio Page 8 in high-resolution lightbox">
+              <div class="escapement-iterations-header">
+                <span style="font-weight: 700; color: var(--cyan-primary); display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem;">
+                  <span>🚀</span> Portfolio Page 8: Staging Strategy &amp; Mission Architecture
+                </span>
+                <span style="font-size: 0.65rem; color: var(--text-muted); flex-shrink: 0;">
+                  🔍 Click to Expand Page
+                </span>
+              </div>
+              <div class="escapement-iterations-img-wrap" style="background: #ffffff; padding: 0.25rem;">
+                <img src="assets/pages/page_8.png"
+                  alt="Case Study: Simulated Mun Mission Portfolio Page (Page 8)"
+                  class="escapement-iterations-img" style="background: #ffffff;">
+              </div>
+            </div>
+
+            <!-- Right: Page 9 -->
+            <div class="escapement-iterations-card"
+              onclick="openLightbox('assets/pages/page_9.png', 'Case Study: Simulated Mun Mission (KSP) — Page 9: Landing Dynamics, Ascent Staging &amp; Atmospheric Re-Entry Portfolio Sheet')"
+              title="Click to inspect Portfolio Page 9 in high-resolution lightbox">
+              <div class="escapement-iterations-header">
+                <span style="font-weight: 700; color: var(--cyan-primary); display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem;">
+                  <span>🌕</span> Portfolio Page 9: Landing Dynamics &amp; Atmospheric Recovery
+                </span>
+                <span style="font-size: 0.65rem; color: var(--text-muted); flex-shrink: 0;">
+                  🔍 Click to Expand Page
+                </span>
+              </div>
+              <div class="escapement-iterations-img-wrap" style="background: #ffffff; padding: 0.25rem;">
+                <img src="assets/pages/page_9.png"
+                  alt="Case Study: Simulated Mun Mission Portfolio Page (Page 9)"
+                  class="escapement-iterations-img" style="background: #ffffff;">
+              </div>
             </div>
           </div>
         </article>

@@ -215,32 +215,73 @@ function switchKinematicsTab(tabId, btnElement) {
 window.switchKinematicsTab = switchKinematicsTab;
 
 /* ==========================================================================
-   3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission)
+   2e. MUN MISSION TAB SWITCHER
+   ========================================================================== */
+function switchMunTab(tabId, btnElement) {
+  const panes = document.querySelectorAll('.mun-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  const target = document.getElementById(`mun-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  const buttons = document.querySelectorAll('.mun-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`munTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchMunTab = switchMunTab;
+
+/* ==========================================================================
+   3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission - 7 Flight Phases)
    ========================================================================== */
 const stageData = {
   1: {
-    title: 'Stage 1: High TWR Atmospheric Escape (Solid Rocket Boosters)',
-    desc: 'High thrust-to-weight solid rocket boosters engineered to overcome aerodynamic drag in Kerbin’s thick sea-level atmosphere with maximum initial impulse.',
+    title: 'Stage 1: Launch Pad Ignition & SRB Atmospheric Boost',
+    badge: 'Phase 1: Lift-Off | TWR > 1.8',
+    desc: 'Solid Rocket Boosters (SRBs) ignite alongside the center liquid core to punch through Kerbin’s dense lower atmosphere with massive sea-level thrust and high initial impulse. Telemetry HUD: Altitude 374m, Stage 005, Total Mission ΔV 9,243 m/s.',
     img: 'assets/images/p8_img3_569.jpeg'
   },
   2: {
-    title: 'Stage 2: Booster Core & Gravity Turn Ascent Profile',
-    desc: 'Liquid-fueled core stage executing a continuous gravity turn starting at 70km altitude to trade vertical momentum for horizontal orbital insertion velocity.',
-    img: 'assets/images/p8_img3_569.jpeg'
+    title: 'Stage 2: Radial Booster Jettison (Stage 1-2 Separation)',
+    badge: 'Phase 2: Jettison | Spent Dry Mass',
+    desc: 'Twin radial solid rocket boosters burn out and decouple. Solid separation motors fire radially to push the spent casings away from the core stage, eliminating dead dry mass while preserving vehicle momentum.',
+    img: 'assets/images/p8_img2_568.png'
   },
   3: {
-    title: 'Stage 3: Trans-Munar Injection (TMI) & Vacuum Isp Optimization',
-    desc: 'High vacuum specific impulse (Isp) stage executing precise burn nodes for Hohmann transfer orbit insertion from low parking orbit to the Mun.',
-    img: 'assets/images/p8_img6_573.png'
+    title: 'Stage 3: High TWR Atmospheric Escape & Orbital Insertion',
+    badge: 'Phase 3: Insertion | 70km Parking Orbit',
+    desc: 'Center booster core executes continuous gravity turn, locking onto prograde through 70km atmosphere to convert vertical climb into orbital speed and achieve stable Low Kerbin Orbit (LKO).',
+    img: 'assets/images/p8_img4_570.png'
   },
   4: {
-    title: 'Stage 4: Munar Descent & Ascent Stage (Lander Module)',
-    desc: 'Low-gravity throttleable lander with wide-stance landing legs designed for surface stability, terrain impact dampening, and subsequent lunar ascent.',
-    img: 'assets/images/p9_img1_578.jpeg'
+    title: 'Stage 4: Trans-Munar Injection (TMI) & Hohmann Trajectory',
+    badge: 'Phase 4: TMI Burn | Max Vac Isp ~350s+',
+    desc: 'High vacuum Isp upper stage executes precise prograde maneuver node at periapsis, stretching orbital apoapsis into a transfer ellipse to encounter the Mun’s gravitational sphere of influence (SOI).',
+    img: 'assets/images/p8_img6_573.png'
   },
   5: {
-    title: 'Stage 5: Command Module & Parachute Atmospheric Recovery',
-    desc: 'Aerodynamic heat-shielded capsule configured with staged drogue and main recovery parachutes for safe splashdown return.',
+    title: 'Stage 5: Munar Surface Touchdown (Lander Module)',
+    badge: 'Phase 5: Lunar Touchdown | Low-g Landing',
+    desc: 'Low-gravity throttleable descent stage performs a constant-altitude deceleration burn. Wide-stance quad landing legs with oleo shock dampers stabilize the craft on sloped regolith (Telemetry: Alt 2,819m, Stage 002).',
+    img: 'assets/images/p9_img1_578.jpeg'
+  },
+  6: {
+    title: 'Stage 6: Munar Liftoff & Ascent Stage Separation',
+    badge: 'Phase 6: Lunar Liftoff | Stage 4B Separation',
+    desc: 'Ascent module ignites its reaction thrusters and decouples from the descent base, leaving the landing gear and empty tanks on the Mun surface to maximize return mass ratio for trans-Kerbin injection.',
+    img: 'assets/images/p9_img3_580.png'
+  },
+  7: {
+    title: 'Stage 7: Atmospheric Entry & Triple Parachute Recovery',
+    badge: 'Phase 7: Kerbin Re-entry | Terminal Velocity <6 m/s',
+    desc: 'Command capsule enters Kerbin atmosphere blunt-end first to dissipate extreme orbital kinetic energy. Staged triple parachutes deploy for gentle ocean splashdown and safe crew recovery.',
     img: 'assets/images/p9_img2_579.png'
   }
 };
@@ -251,6 +292,7 @@ function initRocketStages() {
   const stageBtns = document.querySelectorAll('.stage-btn');
   const stageImg = document.getElementById('rocketStageImg');
   const titleEl = document.getElementById('stageDetailTitle');
+  const badgeEl = document.getElementById('stageDetailBadge');
   const descEl = document.getElementById('stageDetailDesc');
 
   stageBtns.forEach(btn => {
@@ -264,6 +306,7 @@ function initRocketStages() {
       if (!data) return;
 
       if (titleEl) titleEl.textContent = data.title;
+      if (badgeEl) badgeEl.textContent = data.badge;
       if (descEl) descEl.textContent = data.desc;
       if (stageImg) {
         stageImg.style.opacity = '0';
@@ -279,7 +322,7 @@ function initRocketStages() {
 function openActiveStageLightbox() {
   const data = stageData[currentStageId];
   if (data) {
-    openLightbox(data.img, data.title + ' — ' + data.desc);
+    openLightbox(data.img, `${data.title} [${data.badge}] — ${data.desc}`);
   }
 }
 

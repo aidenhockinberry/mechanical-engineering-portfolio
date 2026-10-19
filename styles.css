@@ -1318,22 +1318,22 @@ body::before {
 /* Staging Architecture Interactive Breakdown (Mun Mission) */
 .rocket-stages-layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 1.5rem;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 1.25rem;
   align-items: center;
 }
 
 .stage-buttons {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.35rem;
 }
 
 .stage-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
+  padding: 0.45rem 0.75rem;
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -1353,17 +1353,18 @@ body::before {
   background: linear-gradient(135deg, rgba(0, 240, 255, 0.15), rgba(56, 189, 248, 0.05));
   border-color: var(--cyan-primary);
   color: var(--cyan-primary);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
 }
 
 .stage-name {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 600;
 }
 
 .stage-dv {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--orange-accent);
 }
 
@@ -1371,21 +1372,79 @@ body::before {
   background: var(--bg-surface-subtle);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1.25rem;
+  padding: 1rem 1.25rem;
 }
 
 .stage-detail-title {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
 }
 
 .stage-detail-desc {
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.55;
+}
+
+/* Mun Vehicle Blueprint CAD Layout (Tab 2) */
+.mun-blueprint-container {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 1rem;
+  align-items: center;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+@media (max-width: 650px) {
+  .mun-blueprint-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mun-blueprint-callouts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.blueprint-callout-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  transition: border-color var(--transition-fast);
+}
+
+.blueprint-callout-item:hover {
+  border-color: var(--cyan-primary);
+}
+
+.blueprint-callout-item .callout-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(0, 240, 255, 0.15);
+  border: 1px solid var(--cyan-primary);
+  color: var(--cyan-primary);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 
 /* ==========================================================================
@@ -3613,7 +3672,8 @@ body::before {
 
 .rubiks-tab-controls,
 .chassis-tab-controls,
-.kinematics-tab-controls {
+.kinematics-tab-controls,
+.mun-tab-controls {
   display: flex;
   align-items: center;
   gap: 0.45rem;
@@ -3623,7 +3683,8 @@ body::before {
 
 .rubiks-tab-btn,
 .chassis-tab-btn,
-.kinematics-tab-btn {
+.kinematics-tab-btn,
+.mun-tab-btn {
   padding: 0.42rem 0.85rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -3641,14 +3702,16 @@ body::before {
 
 .rubiks-tab-btn:hover,
 .chassis-tab-btn:hover,
-.kinematics-tab-btn:hover {
+.kinematics-tab-btn:hover,
+.mun-tab-btn:hover {
   color: var(--cyan-primary);
   border-color: var(--cyan-primary);
 }
 
 .rubiks-tab-btn.active,
 .chassis-tab-btn.active,
-.kinematics-tab-btn.active {
+.kinematics-tab-btn.active,
+.mun-tab-btn.active {
   background: rgba(0, 240, 255, 0.15);
   border-color: var(--cyan-primary);
   color: var(--cyan-primary);
@@ -3658,13 +3721,15 @@ body::before {
 
 .rubiks-tab-pane,
 .chassis-tab-pane,
-.kinematics-tab-pane {
+.kinematics-tab-pane,
+.mun-tab-pane {
   display: none;
 }
 
 .rubiks-tab-pane.active,
 .chassis-tab-pane.active,
-.kinematics-tab-pane.active {
+.kinematics-tab-pane.active,
+.mun-tab-pane.active {
   display: flex;
   flex-direction: column;
   animation: rubiksFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
