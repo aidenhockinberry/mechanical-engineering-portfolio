@@ -215,6 +215,115 @@ function switchKinematicsTab(tabId, btnElement) {
 window.switchKinematicsTab = switchKinematicsTab;
 
 /* ==========================================================================
+   2e. MOTORIZED HEXAPOD KINEMATIC WALKER TAB SWITCHER
+   ========================================================================== */
+function switchWalkerTab(tabId, btnElement) {
+  // Hide all walker tab panes
+  const panes = document.querySelectorAll('.walker-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`walker-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.walker-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`walkerTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchWalkerTab = switchWalkerTab;
+
+/* ==========================================================================
+   2f. WIND-POWERED KINEMATIC TRANSPORT (CRAWLER) TAB SWITCHER
+   ========================================================================== */
+function switchCrawlerTab(tabId, btnElement) {
+  // Hide all crawler tab panes
+  const panes = document.querySelectorAll('.crawler-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`crawler-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.crawler-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`crawlerTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchCrawlerTab = switchCrawlerTab;
+
+/* ==========================================================================
+   2g. KINEMATIC GENEVA MECHANISMS TAB SWITCHER
+   ========================================================================== */
+function switchGenevaTab(tabId, btnElement) {
+  // Hide all geneva tab panes
+  const panes = document.querySelectorAll('.geneva-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`geneva-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.geneva-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`genevaTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchGenevaTab = switchGenevaTab;
+
+/* ==========================================================================
+   2h. MONOLITHIC COMPLIANT YES/NO DECISION INDEXER TAB SWITCHER
+   ========================================================================== */
+function switchYesNoTab(tabId, btnElement) {
+  // Hide all yesno tab panes
+  const panes = document.querySelectorAll('.yesno-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`yesno-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.yesno-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`yesnoTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchYesNoTab = switchYesNoTab;
+
+
+/* ==========================================================================
    3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission)
    ========================================================================== */
 const stageData = {

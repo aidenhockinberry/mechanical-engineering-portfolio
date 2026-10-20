@@ -10,7 +10,7 @@
   <meta name="keywords"
     content="Aiden Hockinberry, Mechanical Engineering, Portfolio, CAD, Fusion 360, 3D Printing, Robotics, Kinematics, Piston Engines">
   <meta name="author" content="Aiden Hockinberry">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -93,7 +93,7 @@
               <span class="metric-label">Mechatronics</span>
             </div>
             <div class="metric-item">
-              <span class="metric-val emerald" id="metric-systems">13</span>
+              <span class="metric-val emerald" id="metric-systems">16</span>
               <span class="metric-label">Engineered Systems</span>
             </div>
           </div>
@@ -130,7 +130,7 @@
     <div class="container">
       <div class="filter-wrapper">
         <div class="era-tabs">
-          <button class="era-tab active" data-era="all">🚀 All Projects (13)</button>
+          <button class="era-tab active" data-era="all">🚀 All Projects (16)</button>
           <button class="era-tab" data-era="manufacturing">🖨️ Era 1: 3D Printing & Mechatronics</button>
           <button class="era-tab" data-era="virtual">🌌 Era 2: Virtual Simulation & Digital Twins</button>
           <button class="era-tab" data-era="early">⚙️ Era 3: Physical Foundations</button>
@@ -294,79 +294,272 @@
         </article>
 
         <!-- Project 2: Wind-Powered Kinematic Transport Prototype -->
-        <article class="project-card card-reversed" data-era="manufacturing" data-discipline="cad kinematics">
+        <article class="project-card card-reversed" id="project-wind-transport" data-era="manufacturing" data-discipline="cad kinematics">
           <div class="card-top-bar">
-            <span class="era-badge manufacturing">Fluid Dynamics & 3D Print</span>
+            <span class="era-badge manufacturing">Fluid Dynamics &amp; Kinematics</span>
             <div class="card-tech-tags">
-              <span class="tech-tag">Autodesk TinkerCAD</span>
-              <span class="tech-tag">Creality 3D Printer</span>
-              <span class="tech-tag">Propeller Pitch Iteration</span>
-              <span class="tech-tag">Power Transfer Linkage</span>
               <span class="tech-tag"
-                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600;">🎬
-                Physical Test Video</span>
+                style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(2, 132, 199, 0.2)); border-color: var(--cyan-primary) !important; color: var(--cyan-primary) !important; font-weight: 700; box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);">🌪️ Headwind Propulsion</span>
+              <span class="tech-tag">Multi-Blade Turbine</span>
+              <span class="tech-tag">90° Bevel Gearbox</span>
+              <span class="tech-tag">Spur Reduction Stage</span>
+              <span class="tech-tag">Universal Joint Linkage</span>
+              <button class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/crawler/20261019_141005.mp4', 'Wind-Powered Kinematic Transport Prototype - Live 15-second physical test demonstrating headwind propulsion across test bench')">
+                🎬 Play Wind Test (15s)
+              </button>
             </div>
           </div>
 
           <div class="card-content-layout">
             <div class="card-media-side">
-              <div class="project-img-wrapper video-preview-wrapper"
-                onclick="openVideoLightbox('assets/videos/wind_transport_prototype.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
-                <img src="assets/images/p12_img1_604.png" alt="Wind Powered Kinematic Transport" class="project-img">
-                <div class="video-play-overlay">
-                  <div class="play-icon-pulse">▶</div>
-                  <span class="video-play-label">Watch Wind Rover in Action</span>
-                </div>
-              </div>
-              <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
-                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
-                  onclick="openVideoLightbox('assets/videos/wind_transport_prototype.mp4', 'Wind-Powered Kinematic Transport Prototype - Live physical demonstration of aerodynamic propeller propulsion & drivetrain')">
-                  🎬 Play Test Video
+              <!-- Multi-Tab Controls -->
+              <div class="rubiks-tab-controls crawler-tab-controls">
+                <button class="rubiks-tab-btn crawler-tab-btn active" id="crawlerTabBtn-video"
+                  onclick="switchCrawlerTab('video', this)">
+                  🎬 LIVE WIND TESTS (2)
                 </button>
-                <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
-                  onclick="openLightbox('assets/images/p12_img1_604.png', 'Wind-Powered Kinematic Transport Prototype - Bench testing with fan airflow')">
-                  🔍 View Test Bench
+                <button class="rubiks-tab-btn crawler-tab-btn" id="crawlerTabBtn-drivetrain"
+                  onclick="switchCrawlerTab('drivetrain', this)">
+                  ⚙️ DRIVETRAIN &amp; GEARS
+                </button>
+                <button class="rubiks-tab-btn crawler-tab-btn" id="crawlerTabBtn-aerodynamics"
+                  onclick="switchCrawlerTab('aerodynamics', this)">
+                  🌪️ BLADE PITCH (CAD)
+                </button>
+                <button class="rubiks-tab-btn crawler-tab-btn" id="crawlerTabBtn-gallery"
+                  onclick="switchCrawlerTab('gallery', this)">
+                  📁 ALL MEDIA (6)
                 </button>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.75rem;">
-                <div class="project-img-wrapper"
-                  onclick="openLightbox('assets/images/turbine.png', 'Propeller Pitch Attempt 1 - Initial Blade Angle')">
-                  <img src="assets/images/turbine.png" alt="Propeller Attempt 1" class="project-img">
-                  <button class="img-inspect-btn">🔍 Attempt 1</button>
+              <!-- TAB 1: Live Wind Tunnel Tests -->
+              <div class="rubiks-tab-pane crawler-tab-pane active" id="crawler-tab-video">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/crawler/20261019_141005.mp4', 'Wind-Powered Kinematic Transport - Live physical test demonstrating forward locomotion directly into an electric fan headwind')"
+                  title="Click to play wind test video">
+                  <div class="walker-gait-badge" style="border-color: rgba(0, 240, 255, 0.6); color: var(--cyan-primary);">
+                    🌪️ LIVE TEST: HEADWIND TRAVERSAL (15s)
+                  </div>
+                  <img src="assets/crawler/20261019_171713.jpg" alt="Wind-Powered Kinematic Transport Prototype" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse">▶</div>
+                    <span class="video-play-label">Watch Wind Rover Crawl into Headwind (15s)</span>
+                  </div>
                 </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/crawler/20261019_141005.mp4', 'Wind-Powered Kinematic Transport - Isometric Angle (15s): Full test board traversal directly into electric fan airflow')">
+                    🎬 Full Traversal Test (15s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/crawler/20261019_140807.mp4', 'Wind-Powered Kinematic Transport - Side Elevation (10s): High-speed turbine spin and drive axle torque engagement')">
+                    ⚡ Side Elevation Run (10s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/crawler/20261019_171713.jpg', 'Wind-Powered Kinematic Transport Prototype - Full machine side profile with multi-blade turbine, Technic chassis, and wide-track wheels')">
+                    🔍 Inspect Assembly
+                  </button>
+                </div>
+
+                <!-- 3-Column Preview Grid -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/crawler/20261019_171717.jpg', 'Lower Drivetrain Gear Mesh - Dual spur gear reduction stage coupling vertical turbine shaft to wheel drive axle')"
+                    title="Lower Drivetrain Gear Mesh">
+                    <img src="assets/crawler/20261019_171717.jpg" alt="Lower Drivetrain Gear Mesh" class="project-img" style="aspect-ratio: 4/3; object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Gear Mesh</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/crawler/20261019_171732.jpg', 'Top Transmission Head - 90-degree bevel gearbox and dual crank arms for kinematic power transfer')"
+                    title="Top Transmission Head">
+                    <img src="assets/crawler/20261019_171732.jpg" alt="Bevel Gear Transmission" class="project-img" style="aspect-ratio: 4/3; object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Bevel Gears</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/crawler/20261019_171723.jpg', 'Universal Joint Linkage - Flexible angular coupling transmitting rotational torque from lower chassis to upper mechanisms')"
+                    title="Universal Joint Linkage">
+                    <img src="assets/crawler/20261019_171723.jpg" alt="Universal Joint Linkage" class="project-img" style="aspect-ratio: 4/3; object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 U-Joint</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: Drivetrain & Gears -->
+              <div class="rubiks-tab-pane crawler-tab-pane" id="crawler-tab-drivetrain">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">⚙️ Mechanical Power Transmission Architecture</span>
+                  <span>Click any technical component to inspect in full HD</span>
+                </div>
+
                 <div class="project-img-wrapper"
-                  onclick="openLightbox('assets/images/turbine45.png', 'Propeller Pitch Attempt 2 - Optimized Aerodynamic Blade Pitch')">
-                  <img src="assets/images/turbine45.png" alt="Propeller Attempt 2" class="project-img">
-                  <button class="img-inspect-btn">🔍 Attempt 2 (Tuned)</button>
+                  onclick="openLightbox('assets/crawler/20261019_171717.jpg', 'Lower Drivetrain Macro - Double spur gear reduction inside rigid Technic frame stepping up torque to the front wheels')"
+                  title="Click to inspect drivetrain in full HD">
+                  <img src="assets/crawler/20261019_171717.jpg" alt="Lower Drivetrain Assembly" class="project-img" style="aspect-ratio: 16/9; object-fit: cover;">
+                  <button class="img-inspect-btn">🔍 View Gear Train Architecture</button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/crawler/20261019_171732.jpg', 'Top 90-Degree Bevel Gearbox - Tan bevel gears converting vertical rotation to horizontal transverse shaft with dual crank linkages')"
+                    title="Top 90-Degree Bevel Gearbox">
+                    <img src="assets/crawler/20261019_171732.jpg" alt="Bevel Gear Box" class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 90° Bevel Stage</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/crawler/20261019_171723.jpg', 'Universal Joint Angular Coupling - Red sleeve &amp; ball socket transferring rotational torque across angled chassis members')"
+                    title="Universal Joint Angular Coupling">
+                    <img src="assets/crawler/20261019_171723.jpg" alt="Universal Joint" class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 U-Joint Coupling</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Blade Pitch Aerodynamic Iterations -->
+              <div class="rubiks-tab-pane crawler-tab-pane" id="crawler-tab-aerodynamics">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">🌪️ Aerodynamic Impeller Design &amp; Pitch Iterations</span>
+                  <span>3D CAD modeling in TinkerCAD with fluid dynamic pitch tuning</span>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/turbine.png', 'Propeller Pitch Attempt 1 - Initial Blade Angle: Flat profile requiring high stall airflow to begin rotation')"
+                    title="Blade Pitch Attempt 1">
+                    <img src="assets/images/turbine.png" alt="Propeller Attempt 1" class="project-img">
+                    <button class="img-inspect-btn">🔍 Attempt 1 (Flat Angle)</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/images/turbine45.png', 'Propeller Pitch Attempt 2 - Optimized Aerodynamic 45° Blade Pitch: Dramatically lowered startup wind threshold and doubled torque output')"
+                    title="Blade Pitch Attempt 2">
+                    <img src="assets/images/turbine45.png" alt="Propeller Attempt 2" class="project-img">
+                    <button class="img-inspect-btn">🔍 Attempt 2 (Tuned 45°)</button>
+                  </div>
+                </div>
+
+                <div class="project-img-wrapper" style="margin-top: 0.75rem;"
+                  onclick="openLightbox('assets/crawler/20261019_171713.jpg', 'Physical Multi-Blade Turbine Impeller - Mounted onto the rover rotor shaft ready for benchtop wind tunnel testing')"
+                  title="Physical Multi-Blade Turbine">
+                  <img src="assets/crawler/20261019_171713.jpg" alt="Physical Turbine Rotor" class="project-img" style="aspect-ratio: 16/9; object-fit: cover;">
+                  <button class="img-inspect-btn">🔍 View Physical Rotor Mount</button>
+                </div>
+              </div>
+
+              <!-- TAB 4: All Media Gallery (6) -->
+              <div class="rubiks-tab-pane crawler-tab-pane" id="crawler-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 All Photos &amp; Test Videos (6)</span>
+                  <span>Click any card to inspect full HD media &amp; video runs</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <!-- Video 1 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/crawler/20261019_141005.mp4', 'Full Test Board Traversal (15s) - Isometric perspective showing rover crawling against continuous electric fan headwind')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/crawler/20261019_171713.jpg" alt="Video 1 Thumb" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <div class="play-icon-pulse" style="position: absolute; width: 36px; height: 36px; font-size: 1rem;">▶</div>
+                      <button class="img-inspect-btn">🎬 Play 15s Video</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">🎬 Full Board Traversal Run (15s)</span>
+                      <span class="rubiks-gallery-sub">Isometric wind tunnel bench traversal</span>
+                    </div>
+                  </div>
+
+                  <!-- Video 2 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/crawler/20261019_140807.mp4', 'Side Elevation Dynamic Run (10s) - Side-view capturing turbine spin velocity and wheel drive torque')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/crawler/20261019_171713.jpg" alt="Video 2 Thumb" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <div class="play-icon-pulse" style="position: absolute; width: 36px; height: 36px; font-size: 1rem;">▶</div>
+                      <button class="img-inspect-btn">🎬 Play 10s Video</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">🎬 Side Elevation Run (10s)</span>
+                      <span class="rubiks-gallery-sub">High-speed rotor dynamics &amp; drive torque</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 1: Full Assembly Profile -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/crawler/20261019_171713.jpg', 'Wind Transport Prototype - Full side elevation showing turbine, Technic chassis, racing wheels, and upper transmission tower')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/crawler/20261019_171713.jpg" alt="Full Machine Elevation" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Complete Rover Side Elevation</span>
+                      <span class="rubiks-gallery-sub">Turbine, chassis frame &amp; drive wheels</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 2: Lower Gear Train -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/crawler/20261019_171717.jpg', 'Lower Drivetrain - Dual spur reduction gears stepping up torque to the front drive axle')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/crawler/20261019_171717.jpg" alt="Lower Gearbox Macro" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Lower Spur Gear Reduction</span>
+                      <span class="rubiks-gallery-sub">Rotor shaft coupling &amp; wheel drive axle</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 3: Universal Joint -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/crawler/20261019_171723.jpg', 'Universal Joint Linkage - Angular drive coupling routing rotational torque from lower frame to upper linkage')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/crawler/20261019_171723.jpg" alt="Universal Joint Macro" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Universal Joint Linkage</span>
+                      <span class="rubiks-gallery-sub">Angular torque transfer &amp; frame tie-in</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 4: Top Bevel Gears -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/crawler/20261019_171732.jpg', 'Top 90-Degree Bevel Gearbox - Tan bevel gears driving transverse axle and dual crank arms')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/crawler/20261019_171732.jpg" alt="Top Bevel Gears Macro" class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Top 90° Bevel Gear Stage</span>
+                      <span class="rubiks-gallery-sub">Right-angle transmission &amp; dual cranks</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
+            <!-- Right Column -->
             <div class="card-info-side">
               <h3 class="project-heading">Wind-Powered Kinematic Transport Prototype</h3>
               <p class="project-summary">
-                Engineered a wind-driven rover that harnesses ambient air currents to generate forward mechanical
-                locomotion. Developed custom multi-blade turbine propellers, evaluated fluid-dynamic pitch variations,
-                and routed rotational energy to the drive axle through a 90-degree transmission linkage.
+                Conceived, modeled, and physically built an autonomous wind-propelled rover capable of crawling directly into headwind airflow. Harnessing ambient wind currents with a custom 3D-printed multi-blade turbine impeller, the rover routes rotational kinetic energy through a multi-stage transmission: a lower spur gear reduction to drive the front wheels, an angled universal joint linkage, and a top 90-degree bevel gearbox driving dual crank arms. Validated on a dedicated test bench against an electric fan airflow, proving sustainable forward mechanical propulsion against aerodynamic resistance.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
-                  <div class="spec-box-title">⚙️ Innovations</div>
+                  <div class="spec-box-title">⚙️ Fluid Dynamics &amp; Impeller Synthesis</div>
                   <ul class="spec-list">
-                    <li><strong>Optimized Blade Pitch:</strong> Iterated through several 3D-printed impeller geometries
-                      (Attempt 1 vs. Attempt 2) to maximize torque extraction at lower air velocities.</li>
-                    <li><strong>Power Transmission:</strong> Efficient bevel/gear linkage converting horizontal turbine
-                      rotation to vertical axle drive.</li>
+                    <li><strong>Aerodynamic Pitch Optimization:</strong> Iterated through multiple 3D-printed blade angles in TinkerCAD, evaluating 0° flat vs. 45° helical pitch to minimize startup stall speed and extract maximum rotational torque.</li>
+                    <li><strong>Multi-Blade Rotor Dynamics:</strong> High-solidity blade layout captures low-velocity airflow efficiently, generating sufficient starting torque to overcome static chassis inertia and rolling resistance.</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
-                  <div class="spec-box-title">🔧 Challenges Solved</div>
+                  <div class="spec-box-title">🔧 Mechanical Drivetrain &amp; Kinematics</div>
                   <ul class="spec-list">
-                    <li><strong>Center of Gravity Management:</strong> Re-engineered the modular Technic chassis to
-                      prevent aerodynamic tipping under high frontal wind drag.</li>
+                    <li><strong>Multi-Stage Gear Reduction:</strong> Precision-meshed spur gear stage inside a Technic cage steps up mechanical torque from the high-RPM turbine shaft to the front drive axle.</li>
+                    <li><strong>90° Bevel Gearbox &amp; U-Joint:</strong> Angled universal joint transfers rotational power up to a top bevel gear stage driving dual counter-phased crank arms.</li>
+                    <li><strong>Kinematic Drag Struts:</strong> Trailing support struts provide 3-point static stability, preventing aerodynamic pitch-back under high frontal wind drag.</li>
                   </ul>
                 </div>
               </div>
@@ -1788,6 +1981,1265 @@
           </div>
         </article>
 
+        <!-- Project 7: Motorized Hexapod Kinematic Walker -->
+        <article class="project-card project-card-featured" id="project-hexapod-walker" data-era="manufacturing"
+          data-discipline="kinematics electromechanical cad">
+          <div class="card-top-bar">
+            <span class="era-badge manufacturing">Robotics &amp; Mechatronics Flagship</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag"
+                style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(2, 132, 199, 0.2)); border-color: var(--cyan-primary) !important; color: var(--cyan-primary) !important; font-weight: 700; box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);">🦀 Planar 4-Bar Kinematic Linkage</span>
+              <span class="tech-tag">Longitudinal Driveshaft</span>
+              <span class="tech-tag">3x Worm Gear Stages</span>
+              <span class="tech-tag">Alternating Tripod Gait</span>
+              <span class="tech-tag">Lego Technic Kinematics</span>
+              <button class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/walker/walker_gait_test_run.mp4', 'Motorized Hexapod Kinematic Walker - Live 32-second physical test demonstrating continuous dynamic walking gait across flat terrain')">
+                🎬 Play Test Video (32s)
+              </button>
+            </div>
+          </div>
+
+          <div class="card-content-layout">
+            <div class="card-media-side">
+              <!-- Multi-Tab Controls -->
+              <div class="rubiks-tab-controls walker-tab-controls">
+                <button class="rubiks-tab-btn walker-tab-btn active" id="walkerTabBtn-video"
+                  onclick="switchWalkerTab('video', this)">
+                  🎬 LIVE VIDEO &amp; MOTION
+                </button>
+                <button class="rubiks-tab-btn walker-tab-btn" id="walkerTabBtn-drivetrain"
+                  onclick="switchWalkerTab('drivetrain', this)">
+                  ⚙️ DRIVETRAIN &amp; WORM GEARS
+                </button>
+                <button class="rubiks-tab-btn walker-tab-btn" id="walkerTabBtn-kinematics"
+                  onclick="switchWalkerTab('kinematics', this)">
+                  📐 KINEMATIC LINKAGES
+                </button>
+                <button class="rubiks-tab-btn walker-tab-btn" id="walkerTabBtn-iterations"
+                  onclick="switchWalkerTab('iterations', this)">
+                  🛠️ 5x DESIGN ITERATIONS
+                </button>
+                <button class="rubiks-tab-btn walker-tab-btn" id="walkerTabBtn-gallery"
+                  onclick="switchWalkerTab('gallery', this)">
+                  📁 ALL PHOTOS (8)
+                </button>
+              </div>
+
+              <!-- TAB 1: Live Video & Key Machine Views -->
+              <div class="rubiks-tab-pane walker-tab-pane active" id="walker-tab-video">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/walker/walker_gait_test_run.mp4', 'Motorized Hexapod Kinematic Walker - Live 32-second physical test demonstrating continuous dynamic walking gait across flat terrain')"
+                  title="Click to play dynamic walking test video">
+                  <div class="walker-gait-badge">🦀 DYNAMIC GAIT: 32s RUN</div>
+                  <img src="assets/walker/walker_side_elevation.jpg"
+                    alt="Motorized Hexapod Kinematic Walker Side Elevation" class="project-img">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse">▶</div>
+                    <span class="video-play-label">Watch Physical Walk Test (32s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/walker/walker_gait_test_run.mp4', 'Motorized Hexapod Kinematic Walker - Live 32-second physical test demonstrating continuous dynamic walking gait across flat terrain')">
+                    🎬 Play Walk Test (32s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/walker/walker_stride_dynamics.mp4', 'Motorized Hexapod Kinematic Walker - High-speed dynamic stride and foot-strike sequence')">
+                    ⚡ Stride Dynamics (14s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/walker/walker_side_elevation.jpg', 'Motorized Hexapod Kinematic Walker - Full side elevation showing planar 4-bar linkages, underslung battery bay, and structural chassis')">
+                    🔍 Inspect Stance
+                  </button>
+                </div>
+
+                <!-- Tri-view thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_driveshaft_blueprint.jpg', 'Longitudinal Transmission Shaft - Top-down engineering view showing continuous driveshaft with 3 synchronized worm gears')"
+                    title="Driveshaft Blueprint View">
+                    <img src="assets/walker/walker_driveshaft_blueprint.jpg" alt="Driveshaft Blueprint"
+                      class="project-img">
+                    <button class="img-inspect-btn">🔍 Driveshaft</button>
+                  </div>
+
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_worm_gear_detail.jpg', 'Primary Worm Gear Mesh - High-reduction non-backdrivable gear mesh driving central axle')"
+                    title="Worm Gear Mesh Detail">
+                    <img src="assets/walker/walker_worm_gear_detail.jpg" alt="Worm Gear Mesh" class="project-img">
+                    <button class="img-inspect-btn">🔍 Worm Gear</button>
+                  </div>
+
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_table_deployment.jpg', 'Flat Terrain Deployment - Fully assembled hexapod walker prepared for dynamic bench testing')"
+                    title="Table Deployment Overview">
+                    <img src="assets/walker/walker_table_deployment.jpg" alt="Bench Test Deployment"
+                      class="project-img">
+                    <button class="img-inspect-btn">🔍 Test Bench</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: Drivetrain & Worm Gear Stages -->
+              <div class="rubiks-tab-pane walker-tab-pane" id="walker-tab-drivetrain">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">⚙️ 3-Stage Worm Gearbox &amp; Central Transmission Shaft</span>
+                  <span>Click to inspect technical drivetrain in full HD</span>
+                </div>
+
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/walker/walker_driveshaft_blueprint.jpg', 'Longitudinal Transmission Architecture - Single continuous center shaft synchronizing all 3 leg stations with red coupling sleeves and triple worm gears')"
+                  title="Click to inspect driveshaft blueprint in full HD">
+                  <img src="assets/walker/walker_driveshaft_blueprint.jpg" alt="Central Driveshaft Blueprint"
+                    class="project-img" style="aspect-ratio: 16/9; object-fit: cover;">
+                  <button class="img-inspect-btn">🔍 View Driveshaft Architecture</button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_worm_gear_detail.jpg', 'Worm Gear Mesh - Direct drive coupling from Power Functions motor into high-reduction worm and 24-tooth spur')"
+                    title="Motor & Worm Gear Mesh">
+                    <img src="assets/walker/walker_worm_gear_detail.jpg" alt="Motor Worm Mesh" class="project-img"
+                      style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Worm Mesh</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_chassis_isometric.jpg', 'Isometric Chassis Perspective - Structural beam triangulation and gear train support framing')"
+                    title="Chassis Isometric Structure">
+                    <img src="assets/walker/walker_chassis_isometric.jpg" alt="Chassis Isometric" class="project-img"
+                      style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Chassis Frame</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Kinematic Linkages & Gait Mechanics -->
+              <div class="rubiks-tab-pane walker-tab-pane" id="walker-tab-kinematics">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📐 Planar 4-Bar Kinematic Linkage &amp; Gait Coordination</span>
+                  <span>Click to inspect linkage geometry in full HD</span>
+                </div>
+
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/walker/walker_side_elevation.jpg', 'Hexapod Stance Elevation - Calibrated 4-bar planar linkages delivering fluid ovoid ground contact trajectory and high stance clearance')"
+                  title="Click to inspect side elevation in full HD">
+                  <img src="assets/walker/walker_side_elevation.jpg" alt="Linkage Stance Elevation"
+                    class="project-img" style="aspect-ratio: 16/9; object-fit: cover;">
+                  <button class="img-inspect-btn">🔍 View Stance Geometry</button>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_linkage_pivot_macro.jpg', 'Crank Arm & Linkage Pivot - Macro view of drive crank, yellow axle joiner, and triangulated leg struts')"
+                    title="Linkage Pivot Macro Detail">
+                    <img src="assets/walker/walker_linkage_pivot_macro.jpg" alt="Linkage Pivot Detail"
+                      class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Pivot Macro</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/walker/walker_front_perspective.jpg', 'Front Track Stance - Wide-stance front leg orientation ensuring lateral equilibrium and rollover resistance')"
+                    title="Front Track Stance">
+                    <img src="assets/walker/walker_front_perspective.jpg" alt="Front Track Stance"
+                      class="project-img" style="object-fit: cover;">
+                    <button class="img-inspect-btn">🔍 Front Track</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 4: All Photos Gallery (8) -->
+              <div class="rubiks-tab-pane walker-tab-pane" id="walker-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 All Physical Prototyping Photos (8)</span>
+                  <span>Click any image to inspect in full HD</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 440px; overflow-y: auto; padding-right: 4px;">
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_side_elevation.jpg', 'Side Elevation & Battery Bay - Full 6-legged stance with underslung battery enclosure for low center of gravity')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_side_elevation.jpg" alt="Side Elevation"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Side Elevation &amp; Low-CG Bay</span>
+                      <span class="rubiks-gallery-sub">Full 6-legged stance &amp; underslung battery</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_driveshaft_blueprint.jpg', 'Longitudinal Driveshaft - Top-down engineering view showing continuous transmission shaft synchronizing 3 leg stations')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_driveshaft_blueprint.jpg" alt="Transmission Shaft"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Longitudinal Driveshaft</span>
+                      <span class="rubiks-gallery-sub">Central transmission shaft &amp; 3 worm stages</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_worm_gear_detail.jpg', 'Primary Worm Mesh - Power Functions motor pinion driving worm gear and 24-tooth spur for high-torque reduction')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_worm_gear_detail.jpg" alt="Worm Gear Mesh"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Primary Worm Gear Mesh</span>
+                      <span class="rubiks-gallery-sub">High-reduction non-backdrivable gearing</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_linkage_pivot_macro.jpg', 'Crank Arm & Linkage Pivot - Detailed macro view of crank arm, yellow axle joiner, and triangulated leg strut')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_linkage_pivot_macro.jpg" alt="Linkage Pivot Macro"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Crank Arm &amp; Pivot Macro</span>
+                      <span class="rubiks-gallery-sub">Triangulated leg struts &amp; joiners</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_chassis_isometric.jpg', 'Isometric Chassis Perspective - Structural beam triangulation and gear train support framing')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_chassis_isometric.jpg" alt="Chassis Isometric"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Chassis Isometric Perspective</span>
+                      <span class="rubiks-gallery-sub">Cross-braced structural framing &amp; geartrain</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_drivetrain_profile.jpg', 'Drivetrain Side Profile - Motor bracket mounting, power cabling routing, and axle supports')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_drivetrain_profile.jpg" alt="Drivetrain Profile"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Drivetrain Side Profile</span>
+                      <span class="rubiks-gallery-sub">Motor mounting &amp; cable harness routing</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_front_perspective.jpg', 'Front Track Stance - Forward leg pair geometry showing wide track for dynamic stability')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_front_perspective.jpg" alt="Front Track Stance"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Front Track Stance</span>
+                      <span class="rubiks-gallery-sub">Forward stance &amp; lateral ground clearance</span>
+                    </div>
+                  </div>
+
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/walker/walker_table_deployment.jpg', 'Flat Terrain Test Deployment - Fully assembled hexapod walker prepared for dynamic bench testing')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/walker/walker_table_deployment.jpg" alt="Test Bench Deployment"
+                        class="rubiks-gallery-thumb" style="object-fit: cover;">
+                      <button class="img-inspect-btn">🔍 View Full HD</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Test Bench Deployment</span>
+                      <span class="rubiks-gallery-sub">Fully assembled robot on test surface</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 5: Hands-On Engineering Design Iterations (5) -->
+              <div class="rubiks-tab-pane walker-tab-pane" id="walker-tab-iterations">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">🛠️ Prototyping Evolution &amp; 5x Mechanical Iterations</span>
+                  <span>Click any iteration to inspect hardware solution in full HD</span>
+                </div>
+
+                <div class="walker-iterations-list">
+                  <!-- Iteration 1 -->
+                  <div class="walker-iteration-item"
+                    onclick="openLightbox('assets/walker/walker_linkage_pivot_macro.jpg', 'Iteration 1: Four-Bar Linkage Length Tuning - Adjusted and optimized bar lengths to transform choppy, stuttering steps into a fluid, ovoid ground-contact walking trajectory')">
+                    <img src="assets/walker/walker_linkage_pivot_macro.jpg" alt="Linkage Iteration" class="walker-iteration-thumb">
+                    <div class="walker-iteration-content">
+                      <div class="walker-iteration-header">
+                        <span class="walker-iteration-title">1. Four-Bar Linkage Member Lengths</span>
+                        <span class="walker-iteration-num">Kinematics</span>
+                      </div>
+                      <p class="walker-iteration-detail">
+                        <strong>Problem &amp; Solution:</strong> Initial leg linkages exhibited abrupt, jerky ground strikes and discontinuous momentum. Iteratively tuned the <strong>lengths of the four-bar linkage (leg) parts</strong> to produce an elongated, fluid ovoid trajectory with smooth foot-plant dynamics.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Iteration 2 -->
+                  <div class="walker-iteration-item"
+                    onclick="openLightbox('assets/walker/walker_worm_gear_detail.jpg', 'Iteration 2: Enlarged Worm-Mesh Spur Gear - Increased diameter and tooth count to boost gear reduction, amplify torque, and eliminate drivetrain backlash')">
+                    <img src="assets/walker/walker_worm_gear_detail.jpg" alt="Worm Gear Mesh Iteration" class="walker-iteration-thumb">
+                    <div class="walker-iteration-content">
+                      <div class="walker-iteration-header">
+                        <span class="walker-iteration-title">2. High-Torque Worm-Mesh Gear</span>
+                        <span class="walker-iteration-num">Drivetrain</span>
+                      </div>
+                      <p class="walker-iteration-detail">
+                        <strong>Problem &amp; Solution:</strong> High chassis mass during single-tripod lift phases caused motor strain and drivetrain play. <strong>Increased the size of the gear meshing with the worm gear</strong> to significantly increase mechanical torque and decrease backlash.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Iteration 3 -->
+                  <div class="walker-iteration-item"
+                    onclick="openLightbox('assets/walker/walker_driveshaft_blueprint.jpg', 'Iteration 3: Rigid Metal Axle Upgrade - Eliminated plastic axle torsional twist and bending deflection to maintain strict leg synchronization across all 6 stations')">
+                    <img src="assets/walker/walker_driveshaft_blueprint.jpg" alt="Metal Axle Blueprint" class="walker-iteration-thumb">
+                    <div class="walker-iteration-content">
+                      <div class="walker-iteration-header">
+                        <span class="walker-iteration-title">3. Metal Axle Replacement</span>
+                        <span class="walker-iteration-num">Structural</span>
+                      </div>
+                      <p class="walker-iteration-detail">
+                        <strong>Problem &amp; Solution:</strong> Plastic axles suffered flexural bending and torsional windup under walking loads, shifting leg phases and placing legs at inconsistent heights. <strong>Replaced the plastic axle with a metal axle</strong> to eliminate bending and maintain strict, uniform leg synchronization.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Iteration 4 -->
+                  <div class="walker-iteration-item"
+                    onclick="openLightbox('assets/walker/walker_drivetrain_profile.jpg', 'Iteration 4: Centered & Underslung Battery Bay - Relocated battery to the geometric center on the bottom belly to drastically lower center of mass and eliminate dynamic tipping')">
+                    <img src="assets/walker/walker_drivetrain_profile.jpg" alt="Underslung Battery Profile" class="walker-iteration-thumb">
+                    <div class="walker-iteration-content">
+                      <div class="walker-iteration-header">
+                        <span class="walker-iteration-title">4. Underslung Center Battery</span>
+                        <span class="walker-iteration-num">Dynamics</span>
+                      </div>
+                      <p class="walker-iteration-detail">
+                        <strong>Problem &amp; Solution:</strong> Elevated battery positioning caused roll moments and dynamic tipping during tripod transitions. <strong>Moved the battery into the center and on the bottom</strong> to level out weight distribution and substantially lower the robot's center of mass.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Iteration 5 -->
+                  <div class="walker-iteration-item"
+                    onclick="openLightbox('assets/walker/walker_chassis_isometric.jpg', 'Iteration 5: Top-Mounted Inversion Posts - Built-in maintenance stand allowing the robot to be safely flipped upside-down on the workbench for gear tuning and linkage inspection')">
+                    <img src="assets/walker/walker_chassis_isometric.jpg" alt="Top Chassis Flip Posts" class="walker-iteration-thumb">
+                    <div class="walker-iteration-content">
+                      <div class="walker-iteration-header">
+                        <span class="walker-iteration-title">5. Top-Mounted Inversion Flip Posts</span>
+                        <span class="walker-iteration-num">DFM / DFA</span>
+                      </div>
+                      <p class="walker-iteration-detail">
+                        <strong>Problem &amp; Solution:</strong> Resting the walker upside-down for adjustments previously stressed and bent the delicate leg linkages. <strong>Added standoff posts on the top</strong> to act as an integrated workbench stand, making it easy to flip over, inspect gears, and service mechanisms without linkage strain.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-info-side">
+              <h3 class="project-heading">Motorized Hexapod Kinematic Walker</h3>
+              <p class="project-summary">
+                Conceived, engineered, and physically constructed an operational six-legged walking robot implementing
+                custom planar 4-bar kinematic linkage geometry. Driven by an onboard electric motor transmitting power
+                through a continuous longitudinal driveshaft, the mechanism synchronizes three dual-sided worm-gear boxes.
+                Through five rigorous mechanical design iterations—tuning 4-bar leg proportions for fluid gait, upsizing worm-mesh gears for high torque, replacing plastic with rigid metal axles, centering battery mass underneath for a low CG, and installing top maintenance flip posts—the robot achieves an alternating tripod gait with zero electronic timing jitter, dynamic stability, and robust bench serviceability.
+              </p>
+
+              <div class="card-spec-grid">
+                <div class="spec-box">
+                  <div class="spec-box-title">⚙️ Mechanical Transmission &amp; Drivetrain</div>
+                  <ul class="spec-list">
+                    <li><strong>Continuous Longitudinal Driveshaft:</strong> A single central transmission shaft distributes
+                      rotational torque across the front, middle, and rear axle stations, mechanically locking all 6 legs in
+                      flawless synchronicity without electronic timing drift.</li>
+                    <li><strong>Triple High-Torque Worm Drives:</strong> 24:1 reduction worm-and-spur stages deliver massive
+                      torque multiplication to lift chassis mass during single-tripod support phases while inherently
+                      preventing back-driving under gravitational loads.</li>
+                    <li><strong>Underslung Low-CG Battery Enclosure:</strong> The central battery power pack is suspended
+                      beneath the primary chassis beams, lowering the roll center and preventing overturning during dynamic
+                      stride transitions.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box orange">
+                  <div class="spec-box-title">🔧 Kinematic Linkages &amp; Gait Coordination</div>
+                  <ul class="spec-list">
+                    <li><strong>Planar 4-Bar Kinematic Linkage Optimization:</strong> Proportionally calibrated bar lengths convert
+                      continuous 360° crank rotation into an ovoid, flat-bottomed walking stride that maximizes ground traction
+                      duration and rapid return clearance.</li>
+                    <li><strong>Alternating Tripod Stance (180° Anti-Phase):</strong> Legs are paired into two complementary
+                      triangular triads that alternate between support and swing phases, maintaining static equilibrium
+                      throughout the entire gait cycle.</li>
+                    <li><strong>Dual Live Physical Demonstrations:</strong> Validated through continuous live test runs
+                      (<strong>32s full gait traversal</strong> and <strong>14s stride dynamics</strong>), proving
+                      non-binding pivot kinematics, backlash absorption, and structural rigidity under load.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box green" style="grid-column: 1 / -1;">
+                  <div class="spec-box-title">🛠️ Engineering Design Process (EDP) &amp; 5 Design Iterations</div>
+                  <ul class="spec-list">
+                    <li><strong>1. Four-Bar Linkage Length Tuning:</strong> Changed the member lengths of the four-bar linkage (legs) parts to eliminate jerky foot strikes and achieve a fluid, continuous walking gait.</li>
+                    <li><strong>2. High-Torque Gear Meshing:</strong> Increased the size of the gear meshing with the worm gear to amplify torque multiplication and decrease mechanical backlash.</li>
+                    <li><strong>3. Solid Metal Axle Upgrade:</strong> Replaced the plastic axle with a metal axle to eliminate bending deflection and prevent legs from being held at different positions.</li>
+                    <li><strong>4. Centered &amp; Underslung Battery:</strong> Moved the battery into the center and on the bottom of the chassis to level out weight and significantly lower the center of mass.</li>
+                    <li><strong>5. Top Inversion Flip Posts:</strong> Added vertical standoff posts on the top of the chassis to make the robot easy to flip over, inspect, and work on at the bench without straining leg pivots.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 8: Kinematic Intermittent Motion: 3-Slot & 4-Slot Geneva Drives -->
+        <article class="project-card project-card-featured card-reversed" id="project-geneva-mechanism" data-era="manufacturing"
+          data-discipline="kinematics cad">
+          <div class="card-top-bar">
+            <span class="era-badge manufacturing">Kinematic Synthesis &amp; 3D Print</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag"
+                style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(2, 132, 199, 0.2)); border-color: var(--cyan-primary) !important; color: var(--cyan-primary) !important; font-weight: 700; box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);">⚙️ 4-Slot (90° Index)</span>
+              <span class="tech-tag"
+                style="background: rgba(168, 85, 247, 0.15); border-color: #a855f7; color: #c084fc; font-weight: 700;">📐 3-Slot (120° Index)</span>
+              <span class="tech-tag">Tangential Pin Entry</span>
+              <span class="tech-tag">Convex Dwell Lock</span>
+              <span class="tech-tag">Rigid Center-Distance Link</span>
+              <button class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/spinner/20260702_190730.mp4', '4-Slot Geneva Mechanism - Live physical operation showing continuous rotary input converted into smooth 90-degree intermittent indexing with dwell lock')">
+                🎬 4-Slot Video (5s)
+              </button>
+              <button class="tech-tag"
+                style="background: rgba(168, 85, 247, 0.15); border-color: #a855f7; color: #c084fc; font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/spinner/20260702_191043.mp4', '3-Slot Geneva Mechanism - Live physical operation showing wide-angle 120-degree indexing powered by large-diameter drive disc and offset drive pin')">
+                🎬 3-Slot Video (9s)
+              </button>
+            </div>
+          </div>
+
+          <div class="card-content-layout">
+            <div class="card-media-side">
+              <!-- Multi-Tab Controls -->
+              <div class="rubiks-tab-controls geneva-tab-controls">
+                <button class="rubiks-tab-btn geneva-tab-btn active" id="genevaTabBtn-4slot"
+                  onclick="switchGenevaTab('4slot', this)">
+                  🎬 4-SLOT GENEVA (90°)
+                </button>
+                <button class="rubiks-tab-btn geneva-tab-btn" id="genevaTabBtn-3slot"
+                  onclick="switchGenevaTab('3slot', this)">
+                  🎬 3-SLOT GENEVA (120°)
+                </button>
+                <button class="rubiks-tab-btn geneva-tab-btn" id="genevaTabBtn-lock"
+                  onclick="switchGenevaTab('lock', this)">
+                  🔒 DWELL LOCK &amp; KINEMATICS
+                </button>
+                <button class="rubiks-tab-btn geneva-tab-btn" id="genevaTabBtn-gallery"
+                  onclick="switchGenevaTab('gallery', this)">
+                  📁 ALL MEDIA (10)
+                </button>
+              </div>
+
+              <!-- TAB 1: 4-Slot Geneva (90° Indexing) -->
+              <div class="rubiks-tab-pane geneva-tab-pane active" id="geneva-tab-4slot">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/spinner/20260702_190730.mp4', '4-Slot Geneva Mechanism - Live physical operation showing continuous rotary input converted into smooth 90-degree intermittent indexing with dwell lock')"
+                  title="Click to play 4-slot Geneva mechanism video">
+                  <div class="geneva-badge">🔄 4-SLOT GENEVA: 90° INDEXING (5s)</div>
+                  <img src="assets/spinner/20260702_190611.jpg"
+                    alt="4-Slot Geneva Mechanism Meshed Assembly" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse">▶</div>
+                    <span class="video-play-label">Watch 90° Intermittent Indexing (5s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/spinner/20260702_190730.mp4', '4-Slot Geneva Mechanism - Live physical operation showing continuous rotary input converted into smooth 90-degree intermittent indexing with dwell lock')">
+                    🎬 Play 4-Slot Video (5s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/spinner/20260702_190611.jpg', '4-Slot Geneva Mechanism - Meshed drive pin and Maltese cross wheel with integrated dwell locking disc')">
+                    🔍 Meshed Drive
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/spinner/20260702_190633.jpg', '4-Slot Geneva Assembly - Disassembled components showing Maltese cross, drive wheel with eccentric pin, and center-distance spacer link')">
+                    🧩 Disassembled Parts
+                  </button>
+                </div>
+
+                <!-- Tri-view sub-thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190611.jpg', '4-Slot Geneva Mechanism - Fully meshed pin-in-slot interface with circular dwell collar')"
+                    title="Meshed Assembly View">
+                    <img src="assets/spinner/20260702_190611.jpg" alt="4-Slot Meshed Assembly" class="project-img">
+                    <button class="img-inspect-btn">🔍 Meshed</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190633.jpg', '4-Slot Geneva System - Maltese cross, eccentric driver, and rigid center-distance link bar')"
+                    title="Exploded Component View">
+                    <img src="assets/spinner/20260702_190633.jpg" alt="4-Slot Exploded Components" class="project-img">
+                    <button class="img-inspect-btn">🔍 Sub-Parts</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190649.jpg', '4-Slot Driving Disc Profile - Showing drive pin height, locking collar radius, and relief cutout')"
+                    title="Driver Geometry Detail">
+                    <img src="assets/spinner/20260702_190649.jpg" alt="Driver Profile and Pin" class="project-img">
+                    <button class="img-inspect-btn">🔍 Pin Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: 3-Slot Geneva (120° Indexing) -->
+              <div class="rubiks-tab-pane geneva-tab-pane" id="geneva-tab-3slot">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/spinner/20260702_191043.mp4', '3-Slot Geneva Mechanism - Live physical operation showing wide-angle 120-degree indexing powered by large-diameter drive disc and offset drive pin')"
+                  title="Click to play 3-slot Geneva mechanism video">
+                  <div class="geneva-badge" style="border-color: rgba(168, 85, 247, 0.6); color: #c084fc;">
+                    📐 3-SLOT GENEVA: 120° INDEXING (9s)
+                  </div>
+                  <img src="assets/spinner/20260702_190858.jpg"
+                    alt="3-Slot Geneva Mechanism Disassembled Setup" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse" style="border-color: #c084fc; color: #c084fc;">▶</div>
+                    <span class="video-play-label">Watch 120° Wide-Angle Indexing (9s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem; background: linear-gradient(135deg, #7c3aed, #9333ea);"
+                    onclick="openVideoLightbox('assets/spinner/20260702_191043.mp4', '3-Slot Geneva Mechanism - Live physical operation showing wide-angle 120-degree indexing powered by large-diameter drive disc and offset drive pin')">
+                    🎬 Play 3-Slot Video (9s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/spinner/20260702_190910.jpg', '3-Slot Geneva Star Wheel - Geometrically tuned star wheel featuring 120° slot spacing and high-curvature dwell locking arcs')">
+                    ⭐ 3-Slot Star Wheel
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/spinner/20260702_190904.jpg', 'Enlarged Drive Disc - Extended crank arm and circular perimeter serving as positive dwell brake')">
+                    ⚙️ Enlarged Driver
+                  </button>
+                </div>
+
+                <!-- Tri-view sub-thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190858.jpg', '3-Slot Geneva System Overview - Large drive disc, 3-slot star wheel, and center-distance link bar')"
+                    title="Complete 3-Slot System">
+                    <img src="assets/spinner/20260702_190858.jpg" alt="Complete 3-Slot System" class="project-img">
+                    <button class="img-inspect-btn">🔍 Overview</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190904.jpg', 'Enlarged 3-Slot Drive Disc - Showing central bearing bore, extended driving pin arm, and circumferential dwell lock contour')"
+                    title="Enlarged Drive Disc Detail">
+                    <img src="assets/spinner/20260702_190904.jpg" alt="Enlarged Drive Disc" class="project-img">
+                    <button class="img-inspect-btn">🔍 Driver</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190910.jpg', '3-Slot Star Wheel Kinematics - Three precision radial slots with generous entry chamfers and concave dwell flanks')"
+                    title="3-Slot Star Wheel Detail">
+                    <img src="assets/spinner/20260702_190910.jpg" alt="3-Slot Star Wheel" class="project-img">
+                    <button class="img-inspect-btn">🔍 Star Wheel</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Dwell Lock & Kinematics -->
+              <div class="rubiks-tab-pane geneva-tab-pane" id="geneva-tab-lock">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/spinner/20260702_191115.mp4', 'Geneva Mechanism Dwell Lock Test - Demonstrating positive locking engagement between driver circular arc and Geneva wheel concave contour to prevent backlash during stationary phase')"
+                  title="Click to play dwell locking video test">
+                  <div class="geneva-badge" style="border-color: rgba(16, 185, 129, 0.6); color: #34d399;">
+                    🔒 DWELL LOCK &amp; ANTI-BACKLASH TEST (12s)
+                  </div>
+                  <img src="assets/spinner/20260702_190649.jpg"
+                    alt="Dwell Lock and Clearance Interface" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse" style="border-color: #34d399; color: #34d399;">▶</div>
+                    <span class="video-play-label">Watch Positive Dwell Lock Test (12s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem; background: linear-gradient(135deg, #059669, #10b981);"
+                    onclick="openVideoLightbox('assets/spinner/20260702_191115.mp4', 'Geneva Mechanism Dwell Lock Test - Demonstrating positive locking engagement between driver circular arc and Geneva wheel concave contour to prevent backlash during stationary phase')">
+                    🎬 Play Dwell Lock Test (12s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/spinner/20260702_190916.jpg', 'Rigid Center-Distance Linkage Fixture - Dual-journal spacer maintaining exact theoretical center-to-center shaft distance for tangential pin meshing')">
+                    📏 Center-Distance Fixture
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/spinner/20260702_190649.jpg', 'Driver Pin Height & Locking Collar Relief - Elevation view showing clearance between drive pin, base disk, and locking arc')">
+                    🔍 Pin &amp; Collar Relief
+                  </button>
+                </div>
+
+                <!-- Dual-view sub-thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190916.jpg', 'Rigid Center-Distance Linkage Fixture - High-precision dual-pin spacing bar locking shaft centers at distance C = R / sin(pi/n)')"
+                    title="Center-Distance Link Fixture">
+                    <img src="assets/spinner/20260702_190916.jpg" alt="Center-Distance Fixture" class="project-img">
+                    <button class="img-inspect-btn">🔍 Center Link</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/spinner/20260702_190649.jpg', 'Dwell Lock Interaction - Elevation view demonstrating how the raised cylindrical collar nests into the star wheel flank')"
+                    title="Locking Collar Elevation">
+                    <img src="assets/spinner/20260702_190649.jpg" alt="Locking Collar Detail" class="project-img">
+                    <button class="img-inspect-btn">🔍 Locking Collar</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 4: All Media Gallery (10 items) -->
+              <div class="rubiks-tab-pane geneva-tab-pane" id="geneva-tab-gallery">
+                <div class="rubiks-gallery-header">
+                  <span style="color: var(--cyan-primary); font-weight: 600;">📁 All Project Photos &amp; Video Recordings (10)</span>
+                  <span>Click any image to view in HD lightbox or play video</span>
+                </div>
+
+                <div class="rubiks-gallery-grid" style="max-height: 480px; overflow-y: auto; padding-right: 4px;">
+                  <!-- Video 1 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/spinner/20260702_190730.mp4', '4-Slot Geneva Mechanism - Live physical operation showing continuous rotary input converted into smooth 90-degree intermittent indexing with dwell lock')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190611.jpg" alt="4-Slot Video Thumbnail" class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🎬 Video (5s)</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">4-Slot 90° Test Video</span>
+                      <span class="rubiks-gallery-sub">Live 5-second dynamic demo</span>
+                    </div>
+                  </div>
+
+                  <!-- Video 2 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/spinner/20260702_191043.mp4', '3-Slot Geneva Mechanism - Live physical operation showing wide-angle 120-degree indexing powered by large-diameter drive disc and offset drive pin')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190858.jpg" alt="3-Slot Video Thumbnail" class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🎬 Video (9s)</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">3-Slot 120° Test Video</span>
+                      <span class="rubiks-gallery-sub">Live 9-second dynamic demo</span>
+                    </div>
+                  </div>
+
+                  <!-- Video 3 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/spinner/20260702_191115.mp4', 'Geneva Mechanism Dwell Lock Test - Demonstrating positive locking engagement between driver circular arc and Geneva wheel concave contour to prevent backlash during stationary phase')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190649.jpg" alt="Dwell Lock Video Thumbnail" class="rubiks-gallery-thumb">
+                      <button class="img-inspect-btn">🎬 Video (12s)</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Dwell Lock &amp; Play Test</span>
+                      <span class="rubiks-gallery-sub">Backlash elimination analysis</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 1 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190611.jpg', '4-Slot Geneva Mechanism - Meshed drive pin and Maltese cross wheel with integrated dwell locking disc')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190611.jpg" alt="4-Slot Meshed Assembly" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">4-Slot Meshed Assembly</span>
+                      <span class="rubiks-gallery-sub">Pin in slot &amp; locking disc</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 2 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190633.jpg', '4-Slot Geneva Assembly - Disassembled components showing Maltese cross, drive wheel with eccentric pin, and center-distance spacer link')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190633.jpg" alt="4-Slot Disassembled Assembly" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">4-Slot Component Layout</span>
+                      <span class="rubiks-gallery-sub">Wheel, driver, &amp; spacing link</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 3 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190649.jpg', '4-Slot Driving Disc Profile - Showing drive pin height, locking collar radius, and relief cutout')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190649.jpg" alt="4-Slot Driver Elevation" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">4-Slot Driver Relief</span>
+                      <span class="rubiks-gallery-sub">Pin height &amp; collar profile</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 4 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190858.jpg', '3-Slot Geneva System Overview - Large drive disc, 3-slot star wheel, and center-distance link bar')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190858.jpg" alt="3-Slot Disassembled Setup" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">3-Slot System Layout</span>
+                      <span class="rubiks-gallery-sub">Enlarged driver &amp; 3-slot star</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 5 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190904.jpg', 'Enlarged 3-Slot Drive Disc - Showing central bearing bore, extended driving pin arm, and circumferential dwell lock contour')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190904.jpg" alt="Enlarged Drive Disc" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Enlarged 3-Slot Driver</span>
+                      <span class="rubiks-gallery-sub">Extended arm &amp; dwell arc</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 6 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190910.jpg', '3-Slot Geneva Star Wheel Kinematics - Three precision radial slots with generous entry chamfers and concave dwell flanks')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190910.jpg" alt="3-Slot Star Wheel" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">3-Slot Star Wheel</span>
+                      <span class="rubiks-gallery-sub">120° radial slots &amp; concave arcs</span>
+                    </div>
+                  </div>
+
+                  <!-- Photo 7 -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/spinner/20260702_190916.jpg', 'Rigid Center-Distance Linkage Fixture - Dual-journal spacer maintaining exact theoretical center-to-center shaft distance for tangential pin meshing')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/spinner/20260702_190916.jpg" alt="Center-Distance Spacer Link" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Photo</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Center-Distance Link</span>
+                      <span class="rubiks-gallery-sub">Fixed journal pitch fixture</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-info-side">
+              <h3 class="project-heading">Kinematic Intermittent Motion: 3-Slot &amp; 4-Slot Geneva Drives</h3>
+              <p class="project-summary">
+                Conceived, modeled, and 3D-printed two distinct functional Geneva mechanisms (Maltese cross indexing drives)
+                to investigate intermittent rotary motion, duty-cycle timing, and positive dwell locking mechanics. The project
+                compares a standard 4-slot system (90° output indexing, 1:1 motion-to-dwell ratio) against a geometrically
+                challenging 3-slot system (120° output indexing, 2:1 motion-to-dwell ratio). To achieve bind-free operation
+                right off the print bed, the design incorporates tangential pin entry geometry to eliminate impact shock,
+                an integrated circular dwell brake to suppress rotational backlash, and a rigid center-distance spacer linkage
+                that precisely fixes shaft journal pitch.
+              </p>
+
+              <div class="card-spec-grid">
+                <div class="spec-box">
+                  <div class="spec-box-title">⚙️ Kinematic Geometry &amp; Dwell Mechanics</div>
+                  <ul class="spec-list">
+                    <li><strong>Tangential Pin Entry (θ = 90°):</strong> The drive pin enters and exits each slot along a vector exactly perpendicular to the driving crank arm and parallel to the slot centerline, ensuring zero instantaneous relative acceleration at engagement to prevent mechanical shock.</li>
+                    <li><strong>Continuous-to-Intermittent Translation:</strong> Converts uniform continuous rotary input into regulated, incremental angular steps with positive stationary dwell phases without requiring electronic sensors or clutches.</li>
+                    <li><strong>Integrated Convex Locking Arc:</strong> The drive wheel integrates a raised circular collar that nests perfectly into the matching concave flank of the Geneva wheel during dwell, mechanically immobilizing the driven wheel against external torque or vibration.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box orange">
+                  <div class="spec-box-title">🔧 Additive Tolerancing &amp; Fixturing</div>
+                  <ul class="spec-list">
+                    <li><strong>Rigid Center-Distance Linkage:</strong> Engineered a custom two-journal spacer bar maintaining the exact theoretical shaft center distance C = R / sin(π/n), preventing tooth binding or sloppy disengagement.</li>
+                    <li><strong>FDM Print Clearance Optimization:</strong> Calibrated pin journal diameters (-0.15mm diametral clearance), radial slot width (+0.20mm clearance), and bottom-layer elephant's foot compensation to guarantee effortless hand spinning without post-machining or lubrication.</li>
+                    <li><strong>Dwell Clearance Tuning:</strong> Applied a 0.25mm radial relief between the convex drive rim and the concave star wheel contour to balance zero-backlash holding torque with minimal sliding friction.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box green" style="grid-column: 1 / -1;">
+                  <div class="spec-box-title">📊 Kinematic Synthesis: 4-Slot vs. 3-Slot Geneva Comparison</div>
+                  <table class="geneva-matrix-table">
+                    <thead>
+                      <tr>
+                        <th>Kinematic Parameter</th>
+                        <th>4-Slot Geneva Mechanism</th>
+                        <th>3-Slot Geneva Mechanism</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Output Indexing Angle (Δθ)</strong></td>
+                        <td>90° per cycle (4 discrete stops / revolution)</td>
+                        <td>120° per cycle (3 discrete stops / revolution)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Driver Motion Angle (β)</strong></td>
+                        <td>180° (Drive pin is engaged for 50% of rotation)</td>
+                        <td>240° (Drive pin is engaged for 66.7% of rotation)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Driver Dwell Angle (δ)</strong></td>
+                        <td>180° (Stationary locked dwell for 50% of rotation)</td>
+                        <td>120° (Stationary locked dwell for 33.3% of rotation)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Motion-to-Dwell Ratio</strong></td>
+                        <td>1 : 1 (Symmetric, balanced duty cycle)</td>
+                        <td>2 : 1 (Extended motion phase; motion dominates)</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Drive Wheel Architecture</strong></td>
+                        <td>Compact concentric disc with raised locking rim</td>
+                        <td>Substantially enlarged disc to clear 120° tangent entry</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Primary Industrial Applications</strong></td>
+                        <td>Motion picture projectors (24 fps), automated rotary indexing tables</td>
+                        <td>High-throw conveyor indexing, packaging carousels, 3-station tooling</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 9: Monolithic Compliant Yes/No Decision Indexer -->
+        <article class="project-card project-card-featured" id="project-compliant-decision-indexer" data-era="manufacturing"
+          data-discipline="cad kinematics">
+          <div class="card-top-bar">
+            <span class="era-badge manufacturing">Compliant Mechanisms &amp; Additive Kinematics</span>
+            <div class="card-tech-tags">
+              <span class="tech-tag"
+                style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(2, 132, 199, 0.2)); border-color: var(--cyan-primary) !important; color: var(--cyan-primary) !important; font-weight: 700; box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);">🔁 Monolithic Serpentine Flexures</span>
+              <span class="tech-tag"
+                style="background: rgba(16, 185, 129, 0.15); border-color: #10b981; color: #34d399; font-weight: 700;">⚙️ 8-Tooth Ratchet Escapement</span>
+              <span class="tech-tag">📐 45° Discrete Indexing (360°/8)</span>
+              <span class="tech-tag">🎯 Bistable YES/NO State Toggle</span>
+              <span class="tech-tag">Zero Metal Springs or Fasteners</span>
+              <button class="tech-tag"
+                style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/yes-no/20261019_171309.mp4', 'Monolithic Compliant Decision Indexer - Live physical demonstration of push-button rapid 45-degree indexing between YES and NO states')">
+                🎬 Assembled Clicker (8s)
+              </button>
+              <button class="tech-tag"
+                style="background: rgba(16, 185, 129, 0.15); border-color: #10b981; color: #34d399; font-weight: 600; cursor: pointer;"
+                onclick="openVideoLightbox('assets/yes-no/20261019_171516.mp4', 'Compliant Flexure Mechanism - High-speed internal view demonstrating monolithic serpentine spring compression, cantilever pawl advancement, and ratchet tooth reset')">
+                🎬 Compliant Motion (8s)
+              </button>
+            </div>
+          </div>
+
+          <div class="card-content-layout">
+            <div class="card-media-side">
+              <!-- Multi-Tab Controls -->
+              <div class="rubiks-tab-controls yesno-tab-controls">
+                <button class="rubiks-tab-btn yesno-tab-btn active" id="yesnoTabBtn-assembled"
+                  onclick="switchYesNoTab('assembled', this)">
+                  🎬 ASSEMBLED CLICKER (8s)
+                </button>
+                <button class="rubiks-tab-btn yesno-tab-btn" id="yesnoTabBtn-internal"
+                  onclick="switchYesNoTab('internal', this)">
+                  ⚙️ COMPLIANT FLEXURES (8s)
+                </button>
+                <button class="rubiks-tab-btn yesno-tab-btn" id="yesnoTabBtn-kinematics"
+                  onclick="switchYesNoTab('kinematics', this)">
+                  📐 RATCHET &amp; ARBOR KINEMATICS
+                </button>
+                <button class="rubiks-tab-btn yesno-tab-btn" id="yesnoTabBtn-gallery"
+                  onclick="switchYesNoTab('gallery', this)">
+                  📁 ALL MEDIA (9)
+                </button>
+              </div>
+
+              <!-- TAB 1: Assembled Clicker Demo -->
+              <div class="rubiks-tab-pane yesno-tab-pane active" id="yesno-tab-assembled">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/yes-no/20261019_171309.mp4', 'Monolithic Compliant Decision Indexer - Live physical demonstration of push-button rapid 45-degree indexing between YES and NO states')"
+                  title="Click to play assembled clicker demonstration video">
+                  <div class="yesno-badge">🎯 LIVE CLICKER DEMO: 45° DISCRETE STEPPING (8s)</div>
+                  <img src="assets/yes-no/20261019_171302.jpg"
+                    alt="Assembled Monolithic Decision Indexer with Honeycomb Faceplate" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse">▶</div>
+                    <span class="video-play-label">Watch Push-Button Decision Indexing (8s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openVideoLightbox('assets/yes-no/20261019_171309.mp4', 'Monolithic Compliant Decision Indexer - Live physical demonstration of push-button rapid 45-degree indexing between YES and NO states')">
+                    🎬 Play Assembled Video (8s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171302.jpg', 'Assembled Decision Indexer - Honeycomb faceplate revealing NO in the precision viewing aperture window')">
+                    🔍 Aperture Window
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171348.jpg', 'Interchangeable Honeycomb Faceplates - Contrasting high-visibility yellow and matte black hexagonal screens')">
+                    🎨 Faceplate Grids
+                  </button>
+                </div>
+
+                <!-- Tri-view sub-thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171302.jpg', 'Assembled Mechanism - Tactile knurled outer bezel, perforated honeycomb mesh, and clear embossed state window')"
+                    title="Assembled Device Front View">
+                    <img src="assets/yes-no/20261019_171302.jpg" alt="Assembled Device Front" class="project-img">
+                    <button class="img-inspect-btn">🔍 Assembled</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171348.jpg', 'Interchangeable Honeycomb Screens - High-contrast yellow and stealth black snap-in faceplates with indexing aperture')"
+                    title="Faceplate Options">
+                    <img src="assets/yes-no/20261019_171348.jpg" alt="Yellow & Black Faceplates" class="project-img">
+                    <button class="img-inspect-btn">🔍 Faceplates</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171437.jpg', '8-Segment Decision Wheel - 45-degree radial sector division alternating YES and NO in outer knurled case')"
+                    title="Dial Wheel in Housing">
+                    <img src="assets/yes-no/20261019_171437.jpg" alt="8-Segment Dial Wheel" class="project-img">
+                    <button class="img-inspect-btn">🔍 Dial Wheel</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 2: Compliant Flexure Dynamics -->
+              <div class="rubiks-tab-pane yesno-tab-pane" id="yesno-tab-internal">
+                <div class="project-img-wrapper video-preview-wrapper"
+                  onclick="openVideoLightbox('assets/yes-no/20261019_171516.mp4', 'Compliant Flexure Mechanism - High-speed internal view demonstrating monolithic serpentine spring compression, cantilever pawl advancement, and ratchet tooth reset')"
+                  title="Click to play internal mechanism motion video">
+                  <div class="yesno-badge" style="border-color: rgba(16, 185, 129, 0.6); color: #34d399;">
+                    ⚙️ MONOLITHIC COMPLIANT SPRINGS &amp; PAWL MOTION (8s)
+                  </div>
+                  <img src="assets/yes-no/20261019_171505.jpg"
+                    alt="Internal Monolithic Compliant Serpentine Spring Architecture" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <div class="video-play-overlay">
+                    <div class="play-icon-pulse" style="border-color: #34d399; color: #34d399;">▶</div>
+                    <span class="video-play-label">Watch Serpentine Flexures &amp; Pawl Reset (8s)</span>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-primary" style="flex: 1.2; font-size: 0.74rem; padding: 0.4rem 0.6rem; background: linear-gradient(135deg, #059669, #10b981); border-color: #10b981;"
+                    onclick="openVideoLightbox('assets/yes-no/20261019_171516.mp4', 'Compliant Flexure Mechanism - High-speed internal view demonstrating monolithic serpentine spring compression, cantilever pawl advancement, and ratchet tooth reset')">
+                    🎬 Play Internal Motion (8s)
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171505.jpg', 'Monolithic Compliant Leaf Springs - Symmetrical dual multi-wave serpentine flexures and linear pushrod track')">
+                    🔍 Serpentine Springs
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171546.jpg', 'Underside of 8-Sector Disc - Integrated central arbor and 8-tooth ratchet pinion molded directly on rear face')">
+                    ⚙️ Ratchet Underside
+                  </button>
+                </div>
+
+                <!-- Tri-view sub-thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171505.jpg', 'Internal Monolithic Flexures - Symmetrical dual-sided serpentine leaf springs and flexible driving pawl arm')"
+                    title="Internal Compliant Mechanism">
+                    <img src="assets/yes-no/20261019_171505.jpg" alt="Exposed Serpentine Springs" class="project-img">
+                    <button class="img-inspect-btn">🔍 Flexures</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171546.jpg', 'Underside Ratchet Pinion - Integrated 8-tooth gear arbor extruded on the back of the YES/NO dial disc')"
+                    title="Ratchet Pinion Underside">
+                    <img src="assets/yes-no/20261019_171546.jpg" alt="Underside Ratchet Pinion" class="project-img">
+                    <button class="img-inspect-btn">🔍 Pinion Gear</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171613.jpg', 'Macro Ratchet Geometry - Extreme close-up showing asymmetric tooth slopes, driving faces, and precision journal shaft')"
+                    title="Macro Ratchet Teeth">
+                    <img src="assets/yes-no/20261019_171613.jpg" alt="Macro Tooth Profile" class="project-img">
+                    <button class="img-inspect-btn">🔍 Tooth Profile</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: 8-Tooth Ratchet & Arbor Kinematics -->
+              <div class="rubiks-tab-pane yesno-tab-pane" id="yesno-tab-kinematics">
+                <div class="project-img-wrapper"
+                  onclick="openLightbox('assets/yes-no/20261019_171613.jpg', '8-Tooth Asymmetric Ratchet Arbor - Extreme macro view showing steep 90° driving faces, low-angle return ramps, and integrated shaft journal')"
+                  title="Click to inspect macro ratchet arbor detail" style="cursor: pointer;">
+                  <div class="yesno-badge" style="border-color: rgba(245, 158, 11, 0.6); color: #fbbf24;">
+                    📐 8-TOOTH ESCAPEMENT ARBOR (45° INDEX ANGLE)
+                  </div>
+                  <img src="assets/yes-no/20261019_171613.jpg"
+                    alt="Macro 8-Tooth Ratchet Arbor Detail" class="project-img" style="aspect-ratio: 16/10; object-fit: cover;">
+                  <button class="img-inspect-btn">🔍 Inspect Macro Pinion</button>
+                </div>
+
+                <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap;">
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171449.jpg', '8-Sector Radial Dial Wheel - Top lighting angle highlighting radial partition lines and typography scale')">
+                    🔍 Dial Sector Layout
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171505.jpg', 'Internal Escapement Track - Pushrod guide, cantilever pawl flexure, and center arbor bushing cavity')">
+                    🔍 Linear-to-Rotary Track
+                  </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
+                    onclick="openLightbox('assets/yes-no/20261019_171348.jpg', 'Hexagonal Mesh Detail - CAD parametric honeycomb perforation pattern for lightweighting and aperture isolation')">
+                    🔍 Honeycomb Mesh
+                  </button>
+                </div>
+
+                <!-- Tri-view sub-thumbnails -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 0.75rem;">
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171449.jpg', 'Rotary Dial Top View - 8-position radial sectors with embossed YES/NO lettering and knurled perimeter')"
+                    title="Dial Top View">
+                    <img src="assets/yes-no/20261019_171449.jpg" alt="Dial Top View" class="project-img">
+                    <button class="img-inspect-btn">🔍 Dial Top</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171505.jpg', 'Monolithic Pushrod & Serpentine Flexures - Linear guide track ensuring straight-line plunger displacement')"
+                    title="Plunger Assembly">
+                    <img src="assets/yes-no/20261019_171505.jpg" alt="Plunger & Track" class="project-img">
+                    <button class="img-inspect-btn">🔍 Linear Track</button>
+                  </div>
+                  <div class="project-img-wrapper"
+                    onclick="openLightbox('assets/yes-no/20261019_171348.jpg', 'Hexagonal Mesh Screens - Precision laser/3D-printed aperture screens in dual aesthetic configurations')"
+                    title="Aperture Mesh">
+                    <img src="assets/yes-no/20261019_171348.jpg" alt="Aperture Mesh" class="project-img">
+                    <button class="img-inspect-btn">🔍 Mesh Bezel</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 4: All Media Gallery (9 Assets) -->
+              <div class="rubiks-tab-pane yesno-tab-pane" id="yesno-tab-gallery">
+                <div class="rubiks-gallery-grid" style="grid-template-columns: repeat(3, 1fr);">
+                  <!-- 1. Video: Assembled Clicker -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/yes-no/20261019_171309.mp4', 'Monolithic Compliant Decision Indexer - Live physical demonstration of push-button rapid 45-degree indexing between YES and NO states')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171302.jpg" alt="Assembled Video Thumbnail" class="rubiks-gallery-thumb">
+                      <div class="rubiks-gallery-play-badge">▶ 8s</div>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">🎬 Assembled Clicker Test</span>
+                      <span class="rubiks-gallery-sub">45° discrete indexing under hand thumb actuation</span>
+                    </div>
+                  </div>
+
+                  <!-- 2. Video: Internal Compliant Flexure Motion -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openVideoLightbox('assets/yes-no/20261019_171516.mp4', 'Compliant Flexure Mechanism - High-speed internal view demonstrating monolithic serpentine spring compression, cantilever pawl advancement, and ratchet tooth reset')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171505.jpg" alt="Internal Motion Video Thumbnail" class="rubiks-gallery-thumb">
+                      <div class="rubiks-gallery-play-badge" style="background: rgba(16, 185, 129, 0.9);">▶ 8s</div>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">🎬 Internal Flexures &amp; Pawl</span>
+                      <span class="rubiks-gallery-sub">Symmetrical spring flexure compression &amp; escapement action</span>
+                    </div>
+                  </div>
+
+                  <!-- 3. Image: Assembled Device Front -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171302.jpg', 'Assembled Decision Indexer - Fully assembled tactile body showing NO state framed in aperture window')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171302.jpg" alt="Assembled Device Front" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Assembled Aperture View</span>
+                      <span class="rubiks-gallery-sub">Framed NO state with honeycomb screen</span>
+                    </div>
+                  </div>
+
+                  <!-- 4. Image: Yellow & Black Faceplates -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171348.jpg', 'Interchangeable Honeycomb Faceplates - Contrasting high-visibility yellow and matte black hexagonal screens')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171348.jpg" alt="Interchangeable Faceplates" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Honeycomb Faceplates</span>
+                      <span class="rubiks-gallery-sub">Dual-color testing (Yellow vs. Matte Black)</span>
+                    </div>
+                  </div>
+
+                  <!-- 5. Image: 8-Segment Dial in Case -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171437.jpg', '8-Segment Decision Wheel - 45-degree radial sector division alternating YES and NO seated in outer casing')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171437.jpg" alt="8-Segment Dial in Case" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">8-Segment YES/NO Dial</span>
+                      <span class="rubiks-gallery-sub">45° alternating radial sector layout</span>
+                    </div>
+                  </div>
+
+                  <!-- 6. Image: Dial Disc Top View -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171449.jpg', 'Rotary Dial Disc Top Angle - Embossed typography, partition ribs, and textured knurled perimeter')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171449.jpg" alt="Dial Disc Top Angle" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Rotary Dial Top Angle</span>
+                      <span class="rubiks-gallery-sub">Embossed lettering &amp; knurled grip bezel</span>
+                    </div>
+                  </div>
+
+                  <!-- 7. Image: Exposed Internal Mechanism -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171505.jpg', 'Internal Monolithic Flexures - Symmetrical dual-sided serpentine leaf springs, linear guide track, and driving pawl arm')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171505.jpg" alt="Internal Monolithic Flexures" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Monolithic Serpentine Springs</span>
+                      <span class="rubiks-gallery-sub">Dual-sided folded beam leaf flexures</span>
+                    </div>
+                  </div>
+
+                  <!-- 8. Image: Underside Ratchet Pinion -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171546.jpg', 'Dial Underside with Ratchet Pinion - Integrated 8-tooth gear arbor extruded directly on rear face of dial disc')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171546.jpg" alt="Underside Ratchet Pinion" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Dial Rear &amp; Ratchet Pinion</span>
+                      <span class="rubiks-gallery-sub">Extruded 8-tooth central drive pinion arbor</span>
+                    </div>
+                  </div>
+
+                  <!-- 9. Image: Macro Ratchet Tooth Detail -->
+                  <div class="rubiks-gallery-card"
+                    onclick="openLightbox('assets/yes-no/20261019_171613.jpg', 'Macro Ratchet Geometry - Extreme close-up showing asymmetric tooth slopes, driving faces, and precision journal shaft')">
+                    <div class="rubiks-gallery-thumb-wrap">
+                      <img src="assets/yes-no/20261019_171613.jpg" alt="Macro Ratchet Geometry" class="rubiks-gallery-thumb" loading="lazy">
+                      <button class="img-inspect-btn">🔍 View Full</button>
+                    </div>
+                    <div class="rubiks-gallery-caption">
+                      <span class="rubiks-gallery-title">Macro Ratchet Teeth &amp; Shaft</span>
+                      <span class="rubiks-gallery-sub">Asymmetric ratchet tooth profile &amp; arbor journal</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-info-side">
+              <h3 class="project-heading">Monolithic Compliant Mechanism: Push-Button YES/NO Decision Indexer</h3>
+              <p class="project-summary">
+                Conceived, modeled, and 3D-printed a fully mechanical, pocket-sized decision maker featuring an entirely
+                monolithic compliant flexure suspension and an internal 8-tooth ratchet escapement. Instead of relying on
+                traditional metal coil springs, pins, or fasteners, the return stroke is powered by 3D-printed dual
+                symmetrical serpentine leaf springs integrated directly into the linear push-rod slider. Each press of
+                the tactile plunger translates linear stroke displacement into a discrete 45-degree rotational step
+                (360° / 8 = 45°) via an elastic cantilever driving pawl, toggling the internal dial between YES and NO
+                through a framed aperture in a parametric honeycomb faceplate.
+              </p>
+
+              <div class="card-spec-grid">
+                <div class="spec-box">
+                  <div class="spec-box-title">⚙️ Compliant Flexure &amp; Escapement Kinematics</div>
+                  <ul class="spec-list">
+                    <li><strong>Monolithic Serpentine Leaf Springs:</strong> Dual symmetrical multi-wave flexures engineered within the elastic strain limits of the thermoplastic filament (PLA/PETG), providing consistent linear restoring force with zero mechanical creep or fatigue settling.</li>
+                    <li><strong>Single-Stage Overrunning Escapement:</strong> An integrated cantilever pawl arm deflects elastically over the angled ramp of the 8-tooth ratchet during the return stroke, then locks solidly against the steep driving face upon the subsequent forward stroke to advance the disc by exactly 45°.</li>
+                    <li><strong>Linear-to-Rotary Conversion:</strong> Converts tactile thumb depression into incremental rotary indexing without gears, belts, or external energy sources.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box orange">
+                  <div class="spec-box-title">🔧 Additive Tolerancing &amp; EDC Ergonomics</div>
+                  <ul class="spec-list">
+                    <li><strong>Parametric Arbor &amp; Low-Friction Journal:</strong> Engineered a central shaft journal with calibrated diametral clearance (0.25mm) ensuring smooth, uninhibited rotation while preventing axial tilt under single-sided pawl actuation.</li>
+                    <li><strong>Interchangeable Honeycomb Faceplates:</strong> Designed snap-fit hexagonal perforated screens (tested in high-contrast yellow and stealth black) that shield the internal mechanism while framing the embossed typography within a dedicated viewing aperture.</li>
+                    <li><strong>Tactile Knurled Bezel:</strong> Outer casing features circumferential knurling for secure single-handed grip and actuation.</li>
+                  </ul>
+                </div>
+
+                <div class="spec-box green" style="grid-column: 1 / -1;">
+                  <div class="spec-box-title">📊 Engineering Specification &amp; Kinematic Parameter Matrix</div>
+                  <table class="yesno-matrix-table">
+                    <thead>
+                      <tr>
+                        <th>Design Parameter</th>
+                        <th>Technical Specification</th>
+                        <th>Engineering Implementation Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Kinematic Cycle</strong></td>
+                        <td>Linear Stroke $\to$ 45° Rotary Step</td>
+                        <td>Translates one tactile plunger push into a discrete 1/8th revolution indexing cycle</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Compliant Return Spring</strong></td>
+                        <td>Monolithic Symmetrical Serpentine Flexures</td>
+                        <td>Dual multi-wave folded-beam leaf springs providing linear spring-back without metal hardware</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Escapement Drive</strong></td>
+                        <td>8-Tooth Asymmetric Ratchet &amp; Cantilever Pawl</td>
+                        <td>Steep 90° driving face for positive engagement; angled flank for low-friction pawl bypass on return</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Output States</strong></td>
+                        <td>8 Discrete Radial Sectors (45° pitch)</td>
+                        <td>4 alternating YES / 4 alternating NO positions framed in single viewing aperture window</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Part Count &amp; Fasteners</strong></td>
+                        <td>3 Primary 3D-Printed Components</td>
+                        <td>Zero metal springs, zero screws, zero adhesive; 100% additive kinematic snap-fit assembly</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Tolerance &amp; Clearances</strong></td>
+                        <td>0.25mm Arbor Journal Clearance</td>
+                        <td>Prevents rotational binding while controlling planar wobble under asymmetric pawl thrust</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Ergonomics &amp; Haptics</strong></td>
+                        <td>Pocket EDC Form Factor with Knurled Bezel</td>
+                        <td>High-tactile click feedback with textured perimeter ring and interchangeable yellow/black screens</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -2939,7 +4391,7 @@
             <span class="skill-badge">Boolean Logic (AND, OR, XOR)</span>
             <span class="skill-badge">State Machine Architecture</span>
             <span class="skill-badge">Sequential Micro-Timing</span>
-            <span class="skill-badge">Strandbeest Walking Gait</span>
+            <span class="skill-badge">Hexapod Dynamic Walking Gait</span>
             <span class="skill-badge">Sensor Feedback Loops</span>
             <span class="skill-badge">Geyser/PaperMC Automation</span>
           </div>
@@ -3038,7 +4490,7 @@
           onclick="openExportStudioModal()" title="Open interactive Print & PDF Portfolio Studio">
           <span>🖨️ Export PDF Portfolio</span>
         </a>
-        <a href="about.html" class="footer-link" title="View Aiden's background, coursework & transcript">
+        <a href="about.html" class="footer-link" title="View Aiden's background, coursework & credentials">
           <span>👤 About Aiden</span>
         </a>
         <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="footer-link" title="Open official resume PDF">
@@ -3328,12 +4780,12 @@
                     <div class="print-proj-title">2. Wind-Powered Kinematic Transport Prototype</div>
                     <div class="print-proj-meta">Fluid Dynamics • Impeller Pitch Tuning • 90° Bevel Linkage</div>
                     <div class="print-thumb-row">
-                      <img src="assets/images/p12_img1_604.png" alt="Wind Rover" class="print-thumb">
-                      <img src="assets/images/p12_img3_607.png" alt="Propeller Pitch" class="print-thumb">
+                      <img src="assets/crawler/20261019_171713.jpg" alt="Wind Rover Side Elevation" class="print-thumb" title="Full Rover Assembly">
+                      <img src="assets/crawler/20261019_171717.jpg" alt="Drivetrain Gear Mesh" class="print-thumb" title="Lower Spur Reduction">
+                      <img src="assets/crawler/20261019_171732.jpg" alt="Top Bevel Gear Stage" class="print-thumb" title="90° Bevel Gear Stage">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a wind-driven rover harnessing ambient airflow. Developed custom 3D-printed multi-blade
-                      impellers (Attempt 1 vs. 2) and 90° torque transfer linkages.
+                      Engineered a wind-driven rover capable of crawling directly into headwind airflow. Developed custom 3D-printed multi-blade turbine impellers, multi-stage spur gear reduction, and a 90° bevel transmission linkage with trailing drag struts.
                     </p>
                   </div>
                 </div>
@@ -3432,6 +4884,83 @@
                           class="print-thumb" title="3D Printed Spindles">
                         <img src="assets/images/rubiks_cube/20260731_220640.jpg" alt="Kociemba Log" class="print-thumb"
                           title="Kociemba Solve Log">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="print-proj-full" style="margin-top: 0.5rem;">
+                  <div class="print-proj-title">7. Motorized Hexapod Kinematic Walker</div>
+                  <div class="print-proj-meta">Planar 4-Bar Kinematic Linkages • Longitudinal Driveshaft • 3x Worm Gear Stages • Alternating Tripod Gait</div>
+                  <div class="print-table-layout">
+                    <div style="width: 32%;">
+                      <img src="assets/walker/walker_side_elevation.jpg"
+                        alt="Motorized Hexapod Kinematic Walker" class="print-thumb-single">
+                    </div>
+                    <div style="width: 66%;">
+                      <p class="print-proj-summary" style="margin: 0 0 0.35rem 0;">
+                        Constructed an operational 6-legged walking robot implementing custom planar 4-bar kinematic linkages driven by an onboard electric motor. Refined across 5 mechanical iterations: 4-bar link length calibration for fluid walking, enlarged worm-mesh spur gears for torque, rigid metal axles to prevent deflection, an underslung centered battery for dynamic stability, and top-mounted inversion posts for bench serviceability.
+                      </p>
+                      <div class="print-thumb-row">
+                        <img src="assets/walker/walker_driveshaft_blueprint.jpg" alt="Driveshaft Blueprint"
+                          class="print-thumb" title="Longitudinal Driveshaft">
+                        <img src="assets/walker/walker_worm_gear_detail.jpg" alt="Worm Gear Mesh"
+                          class="print-thumb" title="Primary Worm Gear Mesh">
+                        <img src="assets/walker/walker_linkage_pivot_macro.jpg" alt="Linkage Pivot"
+                          class="print-thumb" title="Linkage Pivot Macro">
+                        <img src="assets/walker/walker_chassis_isometric.jpg" alt="Chassis Isometric" class="print-thumb"
+                          title="Isometric Chassis">
+                      </div>
+                    </div>
+                </div>
+
+                <div class="print-proj-full" style="margin-top: 0.5rem;">
+                  <div class="print-proj-title">8. Kinematic Intermittent Motion: 3-Slot &amp; 4-Slot Geneva Drives</div>
+                  <div class="print-proj-meta">Intermittent Rotary Kinematics • Tangential Pin Entry • 90° vs 120° Indexing • Dwell Locking Brake</div>
+                  <div class="print-table-layout">
+                    <div style="width: 32%;">
+                      <img src="assets/spinner/20260702_190611.jpg"
+                        alt="4-Slot Geneva Mechanism Meshed Assembly" class="print-thumb-single">
+                    </div>
+                    <div style="width: 66%;">
+                      <p class="print-proj-summary" style="margin: 0 0 0.35rem 0;">
+                        Engineered and physically 3D-printed two operational Geneva mechanisms comparing a 4-slot (90° index, 1:1 motion-to-dwell ratio) and a 3-slot (120° index, 2:1 motion-to-dwell ratio) design. Features tangential pin entry to minimize impact shock, an integrated circular dwell brake to eliminate backlash, and a rigid center-distance spacer fixture.
+                      </p>
+                      <div class="print-thumb-row">
+                        <img src="assets/spinner/20260702_190858.jpg" alt="3-Slot Geneva Setup"
+                          class="print-thumb" title="3-Slot Geneva Setup">
+                        <img src="assets/spinner/20260702_190904.jpg" alt="Enlarged Driver"
+                          class="print-thumb" title="Enlarged Driver Disc">
+                        <img src="assets/spinner/20260702_190910.jpg" alt="3-Slot Star Wheel"
+                          class="print-thumb" title="3-Slot Star Wheel">
+                        <img src="assets/spinner/20260702_190916.jpg" alt="Center Link" class="print-thumb"
+                          title="Center-Distance Link">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="print-proj-full" style="margin-top: 0.5rem;">
+                  <div class="print-proj-title">9. Monolithic Compliant Mechanism: Push-Button YES/NO Decision Indexer</div>
+                  <div class="print-proj-meta">Monolithic Serpentine Flexures • 8-Tooth Ratchet Escapement • 45° Discrete Indexing • Zero Hardware Springs</div>
+                  <div class="print-table-layout">
+                    <div style="width: 32%;">
+                      <img src="assets/yes-no/20261019_171302.jpg"
+                        alt="Monolithic Compliant Decision Indexer" class="print-thumb-single">
+                    </div>
+                    <div style="width: 66%;">
+                      <p class="print-proj-summary" style="margin: 0 0 0.35rem 0;">
+                        Engineered a fully 3D-printed pocket decision maker utilizing monolithic serpentine leaf spring flexures and an internal 8-tooth ratchet escapement. Converts linear thumb depression into a precise 45° rotary step ($360^\circ / 8 = 45^\circ$) toggling between YES and NO through an aperture in a parametric honeycomb faceplate without any metal springs or fasteners.
+                      </p>
+                      <div class="print-thumb-row">
+                        <img src="assets/yes-no/20261019_171505.jpg" alt="Serpentine Flexures"
+                          class="print-thumb" title="Monolithic Serpentine Flexure Springs">
+                        <img src="assets/yes-no/20261019_171437.jpg" alt="8-Sector Dial"
+                          class="print-thumb" title="8-Sector YES/NO Dial Wheel">
+                        <img src="assets/yes-no/20261019_171546.jpg" alt="Ratchet Pinion"
+                          class="print-thumb" title="Underside 8-Tooth Ratchet Pinion">
+                        <img src="assets/yes-no/20261019_171348.jpg" alt="Honeycomb Screens" class="print-thumb"
+                          title="Interchangeable Honeycomb Screens">
                       </div>
                     </div>
                   </div>

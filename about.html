@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Aiden Hockinberry | Mechanical Engineering Profile & Resume</title>
   <meta name="description"
-    content="Official biography, academic transcripts, Makerspace training, and engineering credentials of Aiden Hockinberry. High school senior and collegiate dual-enrolled student.">
+    content="Official biography, academic coursework, GPA, Makerspace training, and engineering credentials of Aiden Hockinberry. High school senior and collegiate dual-enrolled student.">
   <meta name="keywords"
-    content="Aiden Hockinberry, Mechanical Engineering, Resume, Transcripts, Hayes High School, Marion Technical College, Columbus State, Point Makerspace">
+    content="Aiden Hockinberry, Mechanical Engineering, Resume, Academics, Coursework, Hayes High School, Marion Technical College, Columbus State, Point Makerspace">
   <meta name="author" content="Aiden Hockinberry">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
 </head>
@@ -64,7 +64,7 @@
       </div>
 
       <div class="section-tag" style="margin-top: 1.25rem;">
-        <span>00 // BIOGRAPHY, ACADEMIC TRANSCRIPTS & RESUME</span>
+        <span>00 // BIOGRAPHY, ACADEMICS & RESUME</span>
       </div>
       <h1 class="section-title" style="font-size: 2.75rem; margin-top: 0.5rem;">
         Meet Aiden: Background & Credentials
@@ -78,8 +78,8 @@
         <button class="btn btn-primary" onclick="openResumeModal()">
           <span>📄 Preview Official Resume (PDF)</span>
         </button>
-        <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="btn btn-accent">
-          <span>📜 View Official Transcript (PDF)</span>
+        <a href="#aboutBentoGrid" onclick="filterAboutGrid('academics')" class="btn btn-accent">
+          <span>🎓 Academic Profile & GPA (4.014)</span>
         </a>
         <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline">
           <span>⬇️ Download Resume</span>
@@ -160,8 +160,8 @@
         <button class="btn btn-primary" onclick="openResumeModal()" title="View Aiden's Official Resume">
           <span>📄 View Official Resume (PDF)</span>
         </button>
-        <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="btn btn-outline" title="View Official Transcript">
-          <span>📜 Official Transcript</span>
+        <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline" title="Download Official Resume PDF">
+          <span>⬇️ Download Resume</span>
         </a>
       </div>
     </div>
@@ -257,7 +257,7 @@
             <div class="edu-seals-row" style="margin-top: 0.65rem; padding: 0.65rem 0.85rem; background: rgba(2, 6, 23, 0.4); border: 1px solid rgba(56, 189, 248, 0.15); border-radius: var(--radius-sm);">
               <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--cyan-primary); font-weight: 700; margin-bottom: 0.35rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.3rem;">
                 <span>🎖️ OHIO GRADUATION SEALS (ALL 6 EARNED):</span>
-                <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" style="color: var(--cyan-primary); text-decoration: underline; font-size: 0.72rem;">View Official Transcript (PDF) ↗</a>
+                <span style="color: var(--text-muted); font-size: 0.72rem; font-family: var(--font-mono);">Official Transcripts Available Upon Request</span>
               </div>
               <div style="display: flex; flex-wrap: wrap; gap: 0.3rem;">
                 <span class="course-chip" style="font-size: 0.72rem;">🏅 Honors Diploma</span>
@@ -469,6 +469,46 @@
               Engineered functional mechanical assemblies: boundary-layer Tesla turbine, pendulum clock escapement, functional rolling-element ball bearings, spinning decision maker, and multi-piece snap-fit Connect 4.
             </p>
           </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">🦀</span>
+              <span class="tech-name">Motorized Hexapod Kinematic Walker</span>
+            </div>
+            <p class="tech-box-desc">
+              Engineered an operational 6-legged walking robot implementing custom planar 4-bar linkages, driven by a continuous longitudinal transmission shaft and triple worm gearboxes. Refined through 5 hands-on design iterations: four-bar link length calibration for fluid walking, enlarged worm-mesh spur gearing for torque and backlash control, rigid metal axle replacement to prevent leg deflection, an underslung centered battery for a low roll center, and top-mounted inversion posts for bench serviceability.
+            </p>
+          </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">🌪️</span>
+              <span class="tech-name">Wind-Powered Kinematic Transport</span>
+            </div>
+            <p class="tech-box-desc">
+              Engineered a headwind-crawling rover utilizing custom 3D-printed aerodynamic multi-blade turbine impellers, multi-stage spur gear reduction, and a 90° bevel transmission linkage to convert wind energy directly into forward mechanical drive traction.
+            </p>
+          </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">🔄</span>
+              <span class="tech-name">Kinematic Geneva Drives (3-Slot &amp; 4-Slot)</span>
+            </div>
+            <p class="tech-box-desc">
+              Engineered and 3D-printed two functional intermittent motion systems comparing a 4-slot ($90^\circ$ index, 1:1 motion-to-dwell ratio) and a 3-slot ($120^\circ$ index, 2:1 motion-to-dwell ratio) Geneva drive. Features tangential slot entry, a circular dwell locking brake, and a calibrated center-distance linkage fixture.
+            </p>
+          </div>
+
+          <div class="resume-tech-box">
+            <div class="tech-box-header">
+              <span class="tech-icon">🔁</span>
+              <span class="tech-name">Monolithic Compliant Decision Indexer</span>
+            </div>
+            <p class="tech-box-desc">
+              Engineered a zero-hardware pocket-sized decision maker utilizing 3D-printed monolithic serpentine leaf spring flexures and an internal 8-tooth ratchet escapement. Converts linear thumb clicks into discrete 45° rotary stepping ($360^\circ / 8 = 45^\circ$), toggling between YES and NO states.
+            </p>
+          </div>
         </div>
       </article>
 
@@ -550,9 +590,9 @@
               <span class="resume-tag-pill">Official Credentials Hub</span>
               <span class="resume-tag-pill meta">Updated 2026 • Verified PDF Documents</span>
             </div>
-            <h3 class="resume-widget-title">Official Resume & Academic Transcript</h3>
+            <h3 class="resume-widget-title">Official Resume & Academic Credentials</h3>
             <p class="resume-widget-desc">
-              Download or view Aiden's official resume and high school academic transcript detailing course-by-course letter grades, dual-college credits, Point Makerspace technical training, and BPA honors.
+              Download or view Aiden's verified resume detailing collegiate dual-enrollment credits, machine shop technical training, BPA honors, and engineering project leadership. Official academic transcripts are available upon request.
             </p>
             <div class="resume-widget-buttons">
               <button class="btn btn-primary" onclick="openResumeModal()">
@@ -564,8 +604,8 @@
               <a href="assets/Aiden_Hockinberry_resume_1.pdf" download="Aiden_Hockinberry_Resume.pdf" class="btn btn-outline">
                 <span>⬇️ Download Resume PDF</span>
               </a>
-              <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="btn btn-outline" title="Open Official High School Transcript PDF">
-                <span>📜 View Official Transcript (PDF)</span>
+              <a href="#aboutBentoGrid" onclick="filterAboutGrid('academics')" class="btn btn-outline" title="Review Academic Profile & GPA">
+                <span>🎓 Review Academic Profile</span>
               </a>
             </div>
           </div>
@@ -582,7 +622,7 @@
           Ready to Explore the Engineering Builds?
         </h3>
         <p style="color: var(--text-secondary); font-size: 0.95rem; max-width: 680px; margin-top: 0.35rem;">
-          Inspect 13 functional engineered systems across 3 distinct eras—from Autodesk Fusion 360 parametric models and 3D-printed mechatronics to 70+ virtual piston engines.
+          Inspect 16 functional engineered systems across 3 distinct eras—from Autodesk Fusion 360 parametric models and 3D-printed mechatronics to 70+ virtual piston engines.
         </p>
       </div>
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
@@ -616,8 +656,8 @@
         <a href="assets/Aiden_Hockinberry_resume_1.pdf" target="_blank" class="footer-link" title="Open official resume PDF">
           <span>📄 Resume PDF</span>
         </a>
-        <a href="assets/aiden_hockinberry_transcript.pdf" target="_blank" class="footer-link" title="Download official high school transcript">
-          <span>🎓 Transcript PDF</span>
+        <a href="javascript:void(0)" onclick="filterAboutGrid('academics'); document.getElementById('aboutBentoGrid').scrollIntoView({behavior:'smooth'});" class="footer-link" title="View Academic Credentials & Coursework">
+          <span>🎓 Academic Profile</span>
         </a>
         <button class="btn btn-outline" style="font-size: 0.75rem; padding: 0.4rem 0.85rem;"
           onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Scroll back to top">
