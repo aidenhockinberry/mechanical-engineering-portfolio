@@ -2011,7 +2011,7 @@ body::before {
   box-shadow: 0 0 10px var(--cyan-primary);
 }
 
-/* Fusion 360 vs Physical Build Comparison Card & Tabs */
+/* Fusion 360 vs Real-Life Reference Comparison Card & Tabs */
 .fusion-tab-bar {
   display: flex;
   align-items: center;

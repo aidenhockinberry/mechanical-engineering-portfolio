@@ -177,12 +177,12 @@
             <span class="era-badge manufacturing">Fusion 360 CAD</span>
             <div class="card-tech-tags">
               <span class="tech-tag">Autodesk Fusion 360</span>
-              <span class="tech-tag">Ergonomic Modeling</span>
-              <span class="tech-tag">Woodworking & Fabrication</span>
+              <span class="tech-tag">Parametric Modeling</span>
+              <span class="tech-tag">Real-World Studies</span>
               <button class="tech-tag chair-cad-tag" onclick="openTableLightbox()"
-                title="Click to view Table CAD vs Real build">🪵 Table (CAD vs Real)</button>
+                title="Click to view Table CAD vs Real-Life Reference">🪵 Table (CAD vs Reference)</button>
               <button class="tech-tag chair-cad-tag" onclick="openChairLightbox()"
-                title="Click to view Chair CAD vs Real build">💺 Chair (CAD vs Real)</button>
+                title="Click to view Chair CAD vs Real-Life Reference">💺 Chair (CAD vs Reference)</button>
             </div>
           </div>
 
@@ -191,7 +191,7 @@
               <!-- Sub-Project Selector Tabs -->
               <div class="fusion-tab-bar">
                 <button class="fusion-tab-btn active" id="fusionTabAll" onclick="setFusionDesignView('all')">
-                  <span>👥 All Builds</span>
+                  <span>👥 All Studies</span>
                 </button>
                 <button class="fusion-tab-btn" id="fusionTabTable" onclick="setFusionDesignView('table')">
                   <span>🪵 Console Table</span>
@@ -206,7 +206,7 @@
                 <div class="fusion-compare-header">
                   <div class="compare-tag cad">📐 CAD Table</div>
                   <div class="compare-vs-badge">CONSOLE END TABLE</div>
-                  <div class="compare-tag real">🪵 real_end_table_2</div>
+                  <div class="compare-tag real">🪵 Real Reference</div>
                 </div>
                 <div class="fusion-compare-grid">
                   <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox()"
@@ -216,8 +216,8 @@
                     <button class="img-inspect-btn">🔍 View Both</button>
                   </div>
                   <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox()"
-                    title="Physical End Table Build - Click to inspect both in side-by-side lightbox">
-                    <img src="assets/images/real_end_table_2.jpg" alt="Physical End Table Build (real_end_table_2)"
+                    title="Real-Life Reference Photo - Click to inspect both in side-by-side lightbox">
+                    <img src="assets/images/real_end_table_2.jpg" alt="Real-Life End Table Reference (real_end_table_2)"
                       class="project-img real-table-img">
                     <span class="fusion-sub-badge real">real_end_table_2</span>
                     <button class="img-inspect-btn">🔍 View Both</button>
@@ -226,7 +226,7 @@
                 <div class="fusion-compare-footer" onclick="openTableLightbox()"
                   title="Click to inspect End Table in high-resolution comparison lightbox">
                   <span class="compare-pulse-dot"></span>
-                  <span><strong>End Table Fidelity:</strong> Click either image to inspect CAD & Real Build
+                  <span><strong>End Table Fidelity:</strong> Click either image to inspect CAD & Real-Life Reference
                     side-by-side</span>
                 </div>
               </div>
@@ -236,7 +236,7 @@
                 <div class="fusion-compare-header">
                   <div class="compare-tag cad">📐 CAD Chair</div>
                   <div class="compare-vs-badge">ERGONOMIC CHAIR</div>
-                  <div class="compare-tag real">💺 Real Chair</div>
+                  <div class="compare-tag real">💺 Real Reference</div>
                 </div>
                 <div class="fusion-compare-grid">
                   <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox()"
@@ -246,8 +246,8 @@
                     <button class="img-inspect-btn">🔍 View Both</button>
                   </div>
                   <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox()"
-                    title="Physical Chair Build - Click to inspect both in side-by-side lightbox">
-                    <img src="assets/images/real_chair_1.jpg" alt="Physical Chair Build"
+                    title="Real-Life Reference Photo - Click to inspect both in side-by-side lightbox">
+                    <img src="assets/images/real_chair_1.jpg" alt="Real-Life Chair Reference"
                       class="project-img real-chair-img" id="fusionRealChairImg" onerror="handleChairImgError(this)">
                     <span class="fusion-sub-badge real">real_chair</span>
                     <button class="img-inspect-btn">🔍 View Both</button>
@@ -256,36 +256,31 @@
                 <div class="fusion-compare-footer" onclick="openChairLightbox()"
                   title="Click to inspect Ergonomic Chair in high-resolution comparison lightbox">
                   <span class="compare-pulse-dot chair-dot"></span>
-                  <span><strong>Chair Fidelity:</strong> Click either image to inspect CAD & Real Build
+                  <span><strong>Chair Fidelity:</strong> Click either image to inspect CAD & Real-Life Reference
                     side-by-side</span>
                 </div>
               </div>
             </div>
 
             <div class="card-info-side">
-              <h3 class="project-heading">Fusion Design: Parametric CAD & Physical Build</h3>
+              <h3 class="project-heading">Fusion 360 Design: Real-World Object Studies</h3>
               <p class="project-summary">
-                Applied parametric solid modeling in Autodesk Fusion 360 for complex product design. Engineered a
-                multi-part ergonomic chair assembly and designed a dual-tone console table with cross-bracing that was
-                fully translated from 3D CAD into a real-world physical build.
+                Applied 3D solid modeling in Autodesk Fusion 360 to recreate real-world objects observed in everyday life. Designed a multi-component ergonomic chair assembly and a dual-tone cross-braced console table from scratch, practicing parametric sketching, organic contouring, and proportional visual estimation directly from physical reference pieces.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Design Process</div>
                   <ul class="spec-list">
-                    <li><strong>Parametric Constraining:</strong> Fully constrained sketches ensuring rapid dimensional
-                      modifications.</li>
-                    <li><strong>Joint Simulation:</strong> Verified mechanical interference and clearance fits prior to
-                      cutting materials.</li>
+                    <li><strong>Parametric Constraining:</strong> Created fully constrained 2D sketches and dimensioned profiles to replicate observed real-world geometry.</li>
+                    <li><strong>Assembly Modeling:</strong> Structured complex components into multi-body assemblies (armrests, contoured lumbar backrest, angled cross-braces, and slatted shelving).</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
-                  <div class="spec-box-title">🔧 Manufacturing Fidelity</div>
+                  <div class="spec-box-title">👁️ Observational Fidelity</div>
                   <ul class="spec-list">
-                    <li>Achieved seamless 1-to-1 match between the virtual CAD render and the final physical
-                      wood-and-lacquer construction.</li>
+                    <li>Modeled intricate curves, ergonomics, and structural proportions purely by studying real-life objects, achieving high visual accuracy in Fusion 360 without external blueprints.</li>
                   </ul>
                 </div>
               </div>
@@ -4521,7 +4516,7 @@
           <button class="dual-ctrl-btn active" id="dualBtnBoth" onclick="setDualLightboxView('both')">👥 Both
             Side-by-Side</button>
           <button class="dual-ctrl-btn" id="dualBtnCad" onclick="setDualLightboxView('cad')">📐 CAD Model</button>
-          <button class="dual-ctrl-btn" id="dualBtnReal" onclick="setDualLightboxView('real')">🔨 Real Build</button>
+          <button class="dual-ctrl-btn" id="dualBtnReal" onclick="setDualLightboxView('real')">📷 Real Reference</button>
         </div>
         <button class="modal-close-btn" onclick="closeLightbox()" title="Close Lightbox (Esc)">&times;</button>
       </div>
@@ -4546,7 +4541,7 @@
           </div>
         </div>
 
-        <!-- Dual Comparison Layout (CAD Model vs. Real Build) -->
+        <!-- Dual Comparison Layout (CAD Model vs. Real-Life Reference) -->
         <div class="lightbox-dual-container" id="lightboxDualContainer" style="display: none;">
           <div class="dual-comparison-grid" id="dualComparisonGrid">
             <!-- CAD Pane -->
@@ -4563,17 +4558,17 @@
               </div>
             </div>
 
-            <!-- Real Build Pane -->
+            <!-- Real Reference Pane -->
             <div class="dual-card real-pane" id="dualRealPane">
               <div class="dual-card-header">
-                <span class="dual-card-badge real" id="dualRealBadge">🪵 Physical Woodworking Build</span>
-                <span class="dual-card-type" id="dualRealType">Finished Build</span>
+                <span class="dual-card-badge real" id="dualRealBadge">📷 Real-Life Reference</span>
+                <span class="dual-card-type" id="dualRealType">Observed Physical Object</span>
               </div>
               <div class="dual-card-img-wrap">
-                <img src="" alt="Physical Build Photo" id="dualRealImg" class="dual-img">
+                <img src="" alt="Real-Life Reference Photo" id="dualRealImg" class="dual-img">
               </div>
               <div class="dual-card-footer" id="dualRealFooter">
-                <span>Hand-finished construction with verified dimensional and joint fidelity</span>
+                <span>Real-world physical object observed in person and modeled in Autodesk Fusion 360</span>
               </div>
             </div>
           </div>
@@ -4757,22 +4752,21 @@
                 <!-- Project 1 & 2 -->
                 <div class="print-proj-row">
                   <div class="print-proj-card">
-                    <div class="print-proj-title">1. Fusion Design: Parametric CAD & Physical Build</div>
-                    <div class="print-proj-meta">Autodesk Fusion 360 • Parametric Constraints • Woodworking & Finish
+                    <div class="print-proj-title">1. Fusion 360 Design: Real-World Object Studies</div>
+                    <div class="print-proj-meta">Autodesk Fusion 360 • Parametric Modeling • Visual Observation Studies
                     </div>
                     <div class="print-thumb-row">
                       <img src="assets/images/end_table_1.png" alt="Console Table 3D CAD" class="print-thumb"
                         title="Console Table 3D CAD">
-                      <img src="assets/images/real_end_table_2.jpg" alt="Physical Build Table (real_end_table_2)"
-                        class="print-thumb" title="Physical Table Build">
+                      <img src="assets/images/real_end_table_2.jpg" alt="Real-Life Reference Table (real_end_table_2)"
+                        class="print-thumb" title="Real-Life Reference Table">
                       <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD" class="print-thumb"
                         title="Ergonomic Chair 3D CAD">
-                      <img src="assets/images/real_chair_1.jpg" alt="Physical Chair Build" class="print-thumb"
-                        title="Physical Chair Build" onerror="handleChairImgError(this)">
+                      <img src="assets/images/real_chair_1.jpg" alt="Real-Life Reference Chair" class="print-thumb"
+                        title="Real-Life Reference Chair" onerror="handleChairImgError(this)">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered a multi-part ergonomic chair assembly and cross-braced dual-tone console table fully
-                      translated from 3D parametric CAD into high-fidelity physical builds.
+                      Designed detailed 3D CAD models in Autodesk Fusion 360 by observing real-life everyday objects, recreating a multi-part ergonomic chair and a cross-braced console table with high visual fidelity.
                     </p>
                   </div>
 

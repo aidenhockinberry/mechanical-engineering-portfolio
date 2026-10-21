@@ -609,15 +609,15 @@ function openTableLightbox() {
   openDualLightbox(
     'assets/images/end_table_1.png',
     'assets/images/real_end_table_2.jpg',
-    'Console End Table - 3D CAD vs Physical Build Comparison',
-    '<strong>1-to-1 Manufacturing Fidelity:</strong> Direct side-by-side comparison between the Autodesk Fusion 360 parametric CAD solid model and the finished physical wood-and-lacquer console table (real_end_table_2). Verified dimensional tolerance, joint stability, and aesthetic fidelity.',
+    'Console End Table - 3D CAD vs Real-Life Reference',
+    '<strong>Observational 3D CAD Modeling:</strong> Direct side-by-side comparison between the Autodesk Fusion 360 parametric CAD solid model and the real-world console table that inspired it. Recreated in Fusion 360 by observing the physical table\'s cross-braced frame, slatted lower shelf, and overall proportions.',
     {
       cadBadge: '📐 Autodesk Fusion 360',
       cadType: '3D Parametric CAD Solid Model',
-      cadFooter: 'Constrained joint tolerances, angled cross-bracing & top rebate',
-      realBadge: '🪵 Physical Woodworking Build',
-      realType: 'Finished Table (real_end_table_2)',
-      realFooter: 'Hand-finished white lacquer frame, hardwood top, and lower slatted shelf',
+      cadFooter: 'Modeled angled cross-braces, slatted shelf, and tabletop rebate',
+      realBadge: '📷 Real-Life Reference',
+      realType: 'Observed Object (real_end_table_2)',
+      realFooter: 'Physical console table observed in real life and referenced for CAD modeling',
       activeItem: 'table'
     }
   );
@@ -647,15 +647,15 @@ function openChairLightbox() {
   openDualLightbox(
     'assets/images/gaming_chair_1.png',
     realSrc,
-    'Ergonomic Gaming/Office Chair - 3D CAD vs Physical Build Comparison',
-    '<strong>Biomechanical & Ergonomic Modeling:</strong> Direct comparison between the Autodesk Fusion 360 multi-part ergonomic chair CAD model and the finished physical chair. Verified lumbar curvature, tilt-pivot joint clearance, and caster stability.',
+    'Ergonomic Gaming/Office Chair - 3D CAD vs Real-Life Reference',
+    '<strong>Observational 3D CAD Modeling:</strong> Direct comparison between the Autodesk Fusion 360 multi-part ergonomic chair CAD model and the real-life chair observed in person. Recreated curved contours, lumbar curvature, armrests, and 5-wheel swivel base from visual observation.',
     {
       cadBadge: '📐 Autodesk Fusion 360',
       cadType: '3D Parametric CAD Solid Model',
-      cadFooter: 'Multi-part seat assembly, contoured lumbar support & armrest joints',
-      realBadge: '💺 Physical Chair Build',
-      realType: 'Finished Chair Build',
-      realFooter: 'Contoured racing backrest with lumbar bolsters, armrests, and 5-star swivel base',
+      cadFooter: 'Multi-part seat assembly, contoured lumbar support & armrest details',
+      realBadge: '📷 Real-Life Reference',
+      realType: 'Observed Object (real_chair)',
+      realFooter: 'Physical chair observed in real life and referenced for CAD modeling',
       activeItem: 'chair'
     }
   );
@@ -765,9 +765,9 @@ function openDualLightbox(cadSrc, realSrc, title, caption, meta) {
 
   setDualLightboxView('both');
 
-  if (titleEl) titleEl.textContent = title || '3D CAD vs Physical Build Comparison';
+  if (titleEl) titleEl.textContent = title || '3D CAD vs Real-Life Reference Comparison';
   if (captionEl) {
-    captionEl.innerHTML = caption || '<strong>1-to-1 Manufacturing Fidelity:</strong> Direct side-by-side comparison between Autodesk Fusion 360 parametric CAD model and physical build.';
+    captionEl.innerHTML = caption || '<strong>Observational 3D CAD Modeling:</strong> Direct side-by-side comparison between Autodesk Fusion 360 CAD model and real-life reference object.';
   }
   modal.classList.add('open');
 }
