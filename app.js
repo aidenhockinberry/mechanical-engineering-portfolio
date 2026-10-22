@@ -2,6 +2,16 @@
    AIDEN HOCKINBERRY - MECHANICAL ENGINEERING PORTFOLIO SCRIPT (app.js)
    ========================================================================== */
 
+function trackAnalytics(eventName, eventParams = {}) {
+  try {
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', eventName, eventParams);
+    }
+  } catch (err) {
+    // Fail silently so adblockers never interrupt user experience
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initEngineGallery();
   initCadViewers();
@@ -696,6 +706,7 @@ function openLightbox(src, caption) {
   if (titleEl) titleEl.textContent = 'High-Resolution Blueprint & Build';
   if (captionEl) captionEl.innerHTML = caption || 'High-Resolution CAD / Prototype Diagram';
   modal.classList.add('open');
+  trackAnalytics('view_blueprint_lightbox', { image_src: src, caption: caption || '' });
 }
 
 function openDualLightbox(cadSrc, realSrc, title, caption, meta) {
@@ -770,6 +781,7 @@ function openDualLightbox(cadSrc, realSrc, title, caption, meta) {
     captionEl.innerHTML = caption || '<strong>Observational 3D CAD Modeling:</strong> Direct side-by-side comparison between Autodesk Fusion 360 CAD model and real-life reference object.';
   }
   modal.classList.add('open');
+  trackAnalytics('view_cad_comparison', { item: title || 'CAD vs Reference' });
 }
 
 function setDualLightboxView(mode) {
@@ -901,6 +913,7 @@ function openVideoLightbox(videoSrc, caption) {
   if (titleEl) titleEl.textContent = '🎬 Live Prototype Testing Video';
   if (captionEl) captionEl.innerHTML = caption || 'Live Physical Prototype Testing Demonstration';
   modal.classList.add('open');
+  trackAnalytics('watch_prototype_video', { video_src: cleanSrc, title: caption || '' });
 
   const playPromise = video.play();
   if (playPromise !== undefined) {
@@ -982,6 +995,7 @@ function initThemeToggle() {
     localStorage.setItem('ah_theme', next);
     if (icon) icon.textContent = next === 'dark' ? '☀️' : '🌙';
     showToast(`Switched to ${next === 'dark' ? 'Precision Blueprint Dark' : 'Clean Studio Light'} mode.`);
+    trackAnalytics('toggle_theme', { theme: next });
   });
 }
 
@@ -1108,6 +1122,7 @@ function triggerPrintPortfolio() {
   const url = baseUrlInput ? baseUrlInput.value : 'https://aidenhockinberry.github.io/mechenical-engineering-portfolio/';
   updateQrCodes(url);
   showToast('📄 Preparing printable PDF portfolio layout...');
+  trackAnalytics('export_portfolio_print');
   
   setTimeout(() => {
     window.print();
