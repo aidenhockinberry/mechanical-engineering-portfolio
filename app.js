@@ -168,6 +168,14 @@ function switchEscapementTab(tabId, btnElement) {
     if (defaultBtn) defaultBtn.classList.add('active');
   }
 
+  // If switching away from 3D while in fullscreen, restore view
+  if (tabId !== '3d') {
+    const card = document.getElementById('escapementStlCard');
+    if (card && card.classList.contains('fullscreen')) {
+      toggleEscapementFullscreen();
+    }
+  }
+
   // If switching to 3D tab, initialize or resize
   if (tabId === '3d') {
     if (!escapement3D.initialized) {
@@ -1469,14 +1477,49 @@ function toggleEscapementFullscreen() {
   const btn = document.getElementById('stlFullscreenBtn');
   if (!card) return;
 
-  const isFull = card.classList.toggle('fullscreen');
-  if (btn) {
-    btn.innerHTML = isFull ? '✕ Exit' : '⛶ Expand';
-    btn.classList.toggle('active', isFull);
+  if (!escapement3D.placeholder) {
+    escapement3D.placeholder = document.createElement('div');
+    escapement3D.placeholder.id = 'escapementStlPlaceholder';
+    escapement3D.placeholder.style.display = 'none';
   }
 
-  setTimeout(onEscapementResize, 50);
-  setTimeout(onEscapementResize, 250);
+  const isEntering = !card.classList.contains('fullscreen');
+
+  if (isEntering) {
+    // Escapes parent container CSS bounds/transforms by mounting directly to <body>
+    if (card.parentNode && card.parentNode !== document.body) {
+      card.parentNode.insertBefore(escapement3D.placeholder, card);
+    }
+    document.body.appendChild(card);
+    card.classList.add('fullscreen');
+    document.body.classList.add('stl-modal-open');
+
+    if (btn) {
+      btn.innerHTML = '✕ Minimize';
+      btn.classList.add('active');
+      btn.title = 'Minimize back to project card (Esc)';
+    }
+  } else {
+    // Restore card to its original position in the project card
+    card.classList.remove('fullscreen');
+    document.body.classList.remove('stl-modal-open');
+
+    if (escapement3D.placeholder && escapement3D.placeholder.parentNode) {
+      escapement3D.placeholder.parentNode.insertBefore(card, escapement3D.placeholder);
+      if (escapement3D.placeholder.parentNode) {
+        escapement3D.placeholder.parentNode.removeChild(escapement3D.placeholder);
+      }
+    }
+
+    if (btn) {
+      btn.innerHTML = '⛶ Expand';
+      btn.classList.remove('active');
+      btn.title = 'Expand to Fullscreen';
+    }
+  }
+
+  setTimeout(onEscapementResize, 30);
+  setTimeout(onEscapementResize, 150);
 }
 
 function updateEscapementTheme(theme) {
