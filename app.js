@@ -167,6 +167,16 @@ function switchEscapementTab(tabId, btnElement) {
     const defaultBtn = document.getElementById(`escapementTabBtn-${tabId}`);
     if (defaultBtn) defaultBtn.classList.add('active');
   }
+
+  // If switching to 3D tab, initialize or resize
+  if (tabId === '3d') {
+    if (!escapement3D.initialized) {
+      initEscapement3DViewer();
+    } else {
+      setTimeout(onEscapementResize, 50);
+    }
+    trackAnalytics('inspect_3d_stl_model', { model: 'cylinder_escapement' });
+  }
 }
 window.switchEscapementTab = switchEscapementTab;
 
@@ -996,6 +1006,9 @@ function initThemeToggle() {
     if (icon) icon.textContent = next === 'dark' ? '☀️' : '🌙';
     showToast(`Switched to ${next === 'dark' ? 'Precision Blueprint Dark' : 'Clean Studio Light'} mode.`);
     trackAnalytics('toggle_theme', { theme: next });
+    if (typeof updateEscapementTheme === 'function') {
+      updateEscapementTheme(next);
+    }
   });
 }
 
@@ -1210,5 +1223,281 @@ function initSmoothScroll() {
     });
   });
 }
+
+/* ==========================================================================
+   12. INTERACTIVE 3D CAD (.STL) VIEWER FOR GRAVITY-DRIVEN ESCAPEMENT
+   Powered by Three.js & STLLoader
+   ========================================================================== */
+const escapement3D = {
+  initialized: false,
+  scene: null,
+  camera: null,
+  renderer: null,
+  controls: null,
+  mesh: null,
+  initialCamPos: null,
+  initialCamTarget: null,
+  materials: {},
+  currentMaterial: 'cyan',
+  animId: null,
+  container: null
+};
+
+function initEscapement3DViewer() {
+  const mount = document.getElementById('escapement3dCanvas');
+  const loadingOverlay = document.getElementById('stlLoadingOverlay');
+  if (!mount || typeof THREE === 'undefined' || typeof THREE.STLLoader === 'undefined') return;
+
+  if (escapement3D.initialized) {
+    onEscapementResize();
+    return;
+  }
+
+  escapement3D.container = mount;
+  const width = mount.clientWidth || mount.offsetWidth || 600;
+  const height = mount.clientHeight || mount.offsetHeight || 380;
+
+  // Scene
+  const scene = new THREE.Scene();
+  escapement3D.scene = scene;
+  const isDark = document.documentElement.getAttribute('data-theme') !== 'light';
+  scene.background = new THREE.Color(isDark ? 0x060c18 : 0xf1f5f9);
+
+  // Camera
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 5000);
+  escapement3D.camera = camera;
+
+  // Renderer
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  if (THREE.sRGBEncoding) {
+    renderer.outputEncoding = THREE.sRGBEncoding;
+  }
+  mount.innerHTML = '';
+  mount.appendChild(renderer.domElement);
+  escapement3D.renderer = renderer;
+
+  // OrbitControls
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 1.8;
+  controls.enablePan = true;
+  controls.screenSpacePanning = true;
+  escapement3D.controls = controls;
+
+  // Studio Lighting
+  const ambientLight = new THREE.AmbientLight(0xffffff, isDark ? 0.7 : 0.9);
+  scene.add(ambientLight);
+
+  const keyLight = new THREE.DirectionalLight(0x00f0ff, 0.85);
+  keyLight.position.set(300, 450, 300);
+  scene.add(keyLight);
+
+  const fillLight = new THREE.DirectionalLight(0xffffff, 0.7);
+  fillLight.position.set(-300, -150, -300);
+  scene.add(fillLight);
+
+  const topRim = new THREE.DirectionalLight(0x38bdf8, 0.55);
+  topRim.position.set(0, 500, 100);
+  scene.add(topRim);
+
+  // Materials definition
+  escapement3D.materials = {
+    cyan: new THREE.MeshPhysicalMaterial({
+      color: 0x00d4f0,
+      emissive: 0x001d2e,
+      roughness: 0.22,
+      metalness: 0.12,
+      clearcoat: 0.7,
+      clearcoatRoughness: 0.18
+    }),
+    metal: new THREE.MeshStandardMaterial({
+      color: 0xdde4ec,
+      metalness: 0.88,
+      roughness: 0.25
+    }),
+    wireframe: new THREE.MeshStandardMaterial({
+      color: 0x38bdf8,
+      wireframe: true,
+      roughness: 0.5
+    })
+  };
+
+  // STL Loader
+  const loader = new THREE.STLLoader();
+  const stlUrl = 'assets/images/3dmodels/cylinder%20escapment.stl';
+
+  loader.load(
+    stlUrl,
+    function (geometry) {
+      geometry.computeVertexNormals();
+      geometry.center();
+      geometry.computeBoundingBox();
+
+      const bbox = geometry.boundingBox;
+      const size = new THREE.Vector3();
+      bbox.getSize(size);
+      const maxDim = Math.max(size.x, size.y, size.z);
+
+      // Create Mesh
+      const mesh = new THREE.Mesh(geometry, escapement3D.materials.cyan);
+      scene.add(mesh);
+      escapement3D.mesh = mesh;
+
+      // Radial Blueprint Ground Grid
+      const gridRadius = maxDim * 0.9;
+      const grid = new THREE.PolarGridHelper(
+        gridRadius,
+        16,
+        8,
+        64,
+        isDark ? 0x00f0ff : 0x0284c7,
+        isDark ? 0x1e293b : 0xcbd5e1
+      );
+      grid.position.y = -size.y / 2 - 2;
+      scene.add(grid);
+
+      // Camera Setup
+      const fov = camera.fov * (Math.PI / 180);
+      const camDist = Math.abs(maxDim / 2 / Math.tan(fov / 2)) * 1.5;
+      camera.position.set(camDist * 0.75, camDist * 0.55, camDist * 1.05);
+      camera.near = maxDim / 100;
+      camera.far = maxDim * 20;
+      camera.updateProjectionMatrix();
+
+      controls.target.set(0, 0, 0);
+      controls.maxDistance = maxDim * 4.5;
+      controls.minDistance = maxDim * 0.25;
+      controls.update();
+
+      escapement3D.initialCamPos = camera.position.clone();
+      escapement3D.initialCamTarget = controls.target.clone();
+
+      // Hide loading spinner
+      if (loadingOverlay) {
+        loadingOverlay.classList.add('hidden');
+      }
+
+      escapement3D.initialized = true;
+    },
+    function (xhr) {
+      // Progress
+    },
+    function (err) {
+      console.error('Error loading STL model:', err);
+      if (loadingOverlay) {
+        loadingOverlay.innerHTML = `
+          <div style="color: #ef4444; font-size: 0.85rem; font-family: var(--font-mono); text-align: center; padding: 1rem;">
+            ⚠️ Unable to render 3D STL directly in WebGL.
+            <div style="margin-top: 0.6rem;">
+              <a href="${stlUrl}" download class="btn btn-primary" style="font-size: 0.75rem;">Download Raw .STL (493 KB)</a>
+            </div>
+          </div>
+        `;
+      }
+    }
+  );
+
+  // Render Loop
+  function animate() {
+    escapement3D.animId = requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  // Resize listener
+  window.addEventListener('resize', onEscapementResize);
+}
+
+function onEscapementResize() {
+  if (!escapement3D.renderer || !escapement3D.camera || !escapement3D.container) return;
+  const width = escapement3D.container.clientWidth;
+  const height = escapement3D.container.clientHeight;
+  if (width === 0 || height === 0) return;
+  escapement3D.camera.aspect = width / height;
+  escapement3D.camera.updateProjectionMatrix();
+  escapement3D.renderer.setSize(width, height);
+}
+
+function setEscapementMaterial(matName) {
+  if (!escapement3D.mesh || !escapement3D.materials[matName]) return;
+  escapement3D.mesh.material = escapement3D.materials[matName];
+  escapement3D.currentMaterial = matName;
+
+  ['stlMatCyan', 'stlMatMetal', 'stlMatWire'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.classList.remove('active');
+  });
+
+  const activeBtn = document.getElementById(
+    matName === 'cyan' ? 'stlMatCyan' : (matName === 'metal' ? 'stlMatMetal' : 'stlMatWire')
+  );
+  if (activeBtn) activeBtn.classList.add('active');
+}
+
+function toggleEscapementAutoRotate() {
+  if (!escapement3D.controls) return;
+  escapement3D.controls.autoRotate = !escapement3D.controls.autoRotate;
+  const btn = document.getElementById('stlAutoRotateBtn');
+  if (btn) {
+    if (escapement3D.controls.autoRotate) {
+      btn.classList.add('active');
+      btn.innerHTML = '🔄 Spin';
+    } else {
+      btn.classList.remove('active');
+      btn.innerHTML = '⏸ Paused';
+    }
+  }
+}
+
+function resetEscapementCamera() {
+  if (!escapement3D.camera || !escapement3D.controls || !escapement3D.initialCamPos) return;
+  escapement3D.camera.position.copy(escapement3D.initialCamPos);
+  escapement3D.controls.target.copy(escapement3D.initialCamTarget);
+  escapement3D.controls.update();
+}
+
+function toggleEscapementFullscreen() {
+  const card = document.getElementById('escapementStlCard');
+  const btn = document.getElementById('stlFullscreenBtn');
+  if (!card) return;
+
+  const isFull = card.classList.toggle('fullscreen');
+  if (btn) {
+    btn.innerHTML = isFull ? '✕ Exit' : '⛶ Expand';
+    btn.classList.toggle('active', isFull);
+  }
+
+  setTimeout(onEscapementResize, 50);
+  setTimeout(onEscapementResize, 250);
+}
+
+function updateEscapementTheme(theme) {
+  if (!escapement3D.scene) return;
+  const isDark = theme !== 'light';
+  escapement3D.scene.background.set(isDark ? 0x060c18 : 0xf1f5f9);
+}
+
+// Global Exports
+window.initEscapement3DViewer = initEscapement3DViewer;
+window.setEscapementMaterial = setEscapementMaterial;
+window.toggleEscapementAutoRotate = toggleEscapementAutoRotate;
+window.resetEscapementCamera = resetEscapementCamera;
+window.toggleEscapementFullscreen = toggleEscapementFullscreen;
+window.updateEscapementTheme = updateEscapementTheme;
+
+// Exit fullscreen on Esc key
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const card = document.getElementById('escapementStlCard');
+    if (card && card.classList.contains('fullscreen')) {
+      toggleEscapementFullscreen();
+    }
+  }
+});
 
 

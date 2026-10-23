@@ -20,7 +20,7 @@
   <meta name="keywords"
     content="Aiden Hockinberry, Mechanical Engineering, Portfolio, CAD, Fusion 360, 3D Printing, Robotics, Kinematics, Piston Engines">
   <meta name="author" content="Aiden Hockinberry">
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -704,6 +704,11 @@
                 14 CAD Iterations</span>
               <span class="tech-tag">5-Stage Chain Drive</span>
               <span class="tech-tag">3-Gen Ratchet</span>
+              <button class="tech-tag"
+                style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(2, 132, 199, 0.2)); border-color: var(--cyan-primary) !important; color: var(--cyan-primary) !important; font-weight: 700; cursor: pointer; box-shadow: 0 0 10px rgba(0, 240, 255, 0.25);"
+                onclick="switchEscapementTab('3d', document.getElementById('escapementTabBtn-3d'))">
+                🧊 3D CAD Viewer (.STL)
+              </button>
               <span class="tech-tag">Physical Prototype Graveyard</span>
               <span class="tech-tag"
                 style="background: rgba(2, 132, 199, 0.15); border-color: var(--cyan-primary); color: var(--cyan-primary); font-weight: 600;">🎬
@@ -718,6 +723,10 @@
                 <button class="escapement-tab-btn active" id="escapementTabBtn-video"
                   onclick="switchEscapementTab('video', this)">
                   🎬 VIDEO & ITERATIONS
+                </button>
+                <button class="escapement-tab-btn" id="escapementTabBtn-3d"
+                  onclick="switchEscapementTab('3d', this)">
+                  🧊 INTERACTIVE 3D (.STL)
                 </button>
                 <button class="escapement-tab-btn" id="escapementTabBtn-gallery"
                   onclick="switchEscapementTab('gallery', this);">
@@ -744,6 +753,10 @@
                     onclick="openVideoLightbox('assets/videos/pendulum_clock.mp4', 'Gravity-Driven Escapement & Ratchet System - Live physical operation of gravity-powered pendulum clockwork mechanism')">
                     🎬 Play Clockwork Video
                   </button>
+                  <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem; border-color: var(--cyan-primary); color: var(--cyan-primary);"
+                    onclick="switchEscapementTab('3d', document.getElementById('escapementTabBtn-3d'))">
+                    🧊 View 3D STL Model
+                  </button>
                   <button class="btn btn-outline" style="flex: 1; font-size: 0.72rem; padding: 0.35rem 0.5rem;"
                     onclick="openLightbox('assets/pages/page_15.png', 'Gravity-Driven Escapement & Ratchet System - Complete Physical Apparatus with Callouts: Weight, Chain, Ratchet, Escapement Mechanism')">
                     🔍 View Labeled Mechanism
@@ -752,7 +765,59 @@
 
               </div>
 
-              <!-- TAB 2: Project Gallery (All other images related to this project) -->
+              <!-- TAB 2: Interactive 3D STL CAD Viewer -->
+              <div class="escapement-tab-pane" id="escapement-tab-3d">
+                <div class="stl-viewer-card" id="escapementStlCard">
+                  <!-- 3D Header Toolbar -->
+                  <div class="stl-viewer-header">
+                    <div class="stl-viewer-meta">
+                      <span class="stl-title-badge">🧊 Cylinder Escapement Wheel</span>
+                      <span class="stl-spec-chip">9,872 Triangles • .STL</span>
+                    </div>
+                    <div class="stl-toolbar-controls">
+                      <div class="stl-mat-selector" title="Select 3D Material / Shader">
+                        <button class="stl-tool-btn active" id="stlMatCyan" onclick="setEscapementMaterial('cyan')" title="Cyber Cyan / Resin PLA">💎 Cyan</button>
+                        <button class="stl-tool-btn" id="stlMatMetal" onclick="setEscapementMaterial('metal')" title="Machined Steel / Aluminum">⚙️ Metal</button>
+                        <button class="stl-tool-btn" id="stlMatWire" onclick="setEscapementMaterial('wireframe')" title="CAD Polygon Mesh Wireframe">📐 Mesh</button>
+                      </div>
+                      <button class="stl-tool-btn active" id="stlAutoRotateBtn" onclick="toggleEscapementAutoRotate()" title="Toggle Auto-Rotation">🔄 Spin</button>
+                      <button class="stl-tool-btn" onclick="resetEscapementCamera()" title="Reset Camera View">🎯 Reset</button>
+                      <button class="stl-tool-btn" id="stlFullscreenBtn" onclick="toggleEscapementFullscreen()" title="Toggle Fullscreen">⛶ Expand</button>
+                    </div>
+                  </div>
+
+                  <!-- 3D Viewport / Canvas Container -->
+                  <div class="stl-viewport-wrapper">
+                    <div id="escapement3dCanvas" class="stl-canvas-mount"></div>
+                    
+                    <!-- Loading Spinner -->
+                    <div class="stl-loading-overlay" id="stlLoadingOverlay">
+                      <div class="stl-spinner"></div>
+                      <span class="stl-loading-text">Rendering 3D Escapement Wheel...</span>
+                      <span class="stl-loading-sub">Autodesk Fusion 360 • 493 KB</span>
+                    </div>
+
+                    <!-- Watermark / Coordinates badge -->
+                    <div class="stl-viewport-overlay-corner">
+                      <span class="stl-hud-badge">Autodesk Fusion 360 CAD</span>
+                      <span class="stl-hud-axis">Axes: X/Y/Z • Centered Origin</span>
+                    </div>
+                  </div>
+
+                  <!-- 3D Footer Controls & Download Bar -->
+                  <div class="stl-viewer-footer">
+                    <div class="stl-controls-hint">
+                      <span class="stl-hint-icon">🖱️</span>
+                      <span class="stl-hint-text">Left-click + drag to rotate • Scroll to zoom • Right-click to pan</span>
+                    </div>
+                    <a href="assets/images/3dmodels/cylinder%20escapment.stl" download="cylinder_escapement_wheel.stl" class="btn btn-outline stl-download-action" title="Download raw 3D STL file for CAD inspection or 3D printing">
+                      <span>⬇️ Download .STL (493 KB)</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- TAB 3: Project Gallery (All other images related to this project) -->
               <div class="escapement-tab-pane" id="escapement-tab-gallery">
                 <div class="escapement-gallery-header">
                   <span style="color: var(--cyan-primary); font-weight: 600;">📁 All Project Images &amp; CAD Iterations
@@ -761,6 +826,20 @@
                 </div>
 
                 <div class="escapement-gallery-grid" style="max-height: 480px; overflow-y: auto; padding-right: 4px;">
+                  <!-- 0. Interactive 3D STL Model Card -->
+                  <div class="escapement-gallery-card" style="border: 1px solid var(--cyan-primary); box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);"
+                    onclick="switchEscapementTab('3d', document.getElementById('escapementTabBtn-3d'))">
+                    <div class="escapement-gallery-thumb-wrap" style="background: radial-gradient(circle at center, #0e1e38 0%, #030712 100%); display: flex; align-items: center; justify-content: center; min-height: 120px;">
+                      <img src="assets/images/pendulum/silinder%20escapment.png" alt="Interactive 3D STL Model"
+                        class="escapement-gallery-thumb" style="object-fit: contain; max-height: 110px;">
+                      <button class="img-inspect-btn" style="background: var(--cyan-primary); color: #020617; font-weight: 700;">🧊 Launch 3D Viewer</button>
+                    </div>
+                    <div class="escapement-gallery-caption" style="background: rgba(0, 240, 255, 0.08);">
+                      <span class="escapement-gallery-title" style="color: var(--cyan-primary);">🧊 Interactive 3D STL Model</span>
+                      <span class="escapement-gallery-sub">Cylinder wheel • 9,872 Triangles</span>
+                    </div>
+                  </div>
+
                   <!-- 1. The Graveyard -->
                   <div class="escapement-gallery-card"
                     onclick="openLightbox('assets/images/p16_img1_653.png?v=white', 'Escapement Prototype Graveyard - 15+ 3D-printed iterations of escapement wheels and anchor pallets')">
@@ -5394,8 +5473,13 @@
     <!-- Toast Notification Container -->
     <div class="toast-container" id="toastContainer"></div>
 
+    <!-- 3D WebGL Engine & STL Loader (Three.js) -->
+    <script src="assets/vendor/three.min.js"></script>
+    <script src="assets/vendor/OrbitControls.js"></script>
+    <script src="assets/vendor/STLLoader.js"></script>
+
     <!-- Javascript Logic -->
-    <script src="app.js?v=6"></script>
+    <script src="app.js?v=8"></script>
 </body>
 
 </html>
