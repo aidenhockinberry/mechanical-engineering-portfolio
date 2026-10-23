@@ -1409,6 +1409,9 @@ function initEscapement3DViewer() {
   }
   animate();
 
+  // Double-click canvas to reset view
+  container.addEventListener('dblclick', resetEscapementCamera);
+
   // Resize listener
   window.addEventListener('resize', onEscapementResize);
 }
