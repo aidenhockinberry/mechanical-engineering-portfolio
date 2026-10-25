@@ -2135,7 +2135,7 @@ body::before {
 }
 
 .fusion-sub-wrapper {
-  height: 175px;
+  height: 270px;
   position: relative;
   border-radius: var(--radius-sm);
   overflow: hidden;

@@ -4943,75 +4943,30 @@
           </div>
 
           <div class="card-content-layout">
-            <div class="card-media-side">
-              <!-- Sub-Project Selector Tabs -->
-              <div class="fusion-tab-bar">
-                <button class="fusion-tab-btn active" id="fusionTabAll" onclick="setFusionDesignView('all')">
-                  <span>👥 All Studies</span>
-                </button>
-                <button class="fusion-tab-btn" id="fusionTabTable" onclick="setFusionDesignView('table')">
-                  <span>🪵 Console Table</span>
-                </button>
-                <button class="fusion-tab-btn" id="fusionTabChair" onclick="setFusionDesignView('chair')">
-                  <span>💺 Ergonomic Chair</span>
-                </button>
-              </div>
-
-              <!-- Study 1: Console End Table -->
-              <div class="fusion-compare-card fusion-compare-block" id="fusionBlockTable">
+              <!-- Observational CAD Studies: 1 Table & 1 Chair -->
+              <div class="fusion-compare-card" id="fusionShowcaseCard">
                 <div class="fusion-compare-header">
-                  <div class="compare-tag cad">📐 Fusion 360 CAD</div>
-                  <div class="compare-vs-badge">CONSOLE END TABLE STUDY</div>
-                  <div class="compare-tag cad">🔍 Multi-Angle Views</div>
+                  <div class="compare-tag cad">🪵 Console End Table</div>
+                  <div class="compare-vs-badge">AUTODESK FUSION 360 STUDIES</div>
+                  <div class="compare-tag cad">💺 Ergonomic Chair</div>
                 </div>
                 <div class="fusion-compare-grid">
-                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox('assets/images/end_table_1.png', 'Isometric Assembly View')"
-                    title="Console Table CAD Model - Isometric Assembly View (Click to inspect in HD)">
-                    <img src="assets/images/end_table_1.png" alt="Console End Table 3D CAD Model - Isometric View" class="project-img">
-                    <span class="fusion-sub-badge cad">Isometric Assembly</span>
+                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox('assets/images/end_table_1.png')"
+                    title="Console End Table CAD Model - Autodesk Fusion 360 (Click to inspect in HD)">
+                    <img src="assets/images/end_table_1.png" alt="Console End Table 3D CAD Model - Autodesk Fusion 360" class="project-img">
+                    <span class="fusion-sub-badge cad">🪵 Console Table</span>
                     <button class="img-inspect-btn">🔍 View CAD</button>
                   </div>
-                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox('assets/images/end_table_2.png', 'Perspective Detail View')"
-                    title="Console Table CAD Model - Perspective Detail View (Click to inspect in HD)">
-                    <img src="assets/images/end_table_2.png" alt="Console End Table 3D CAD Model - Perspective View"
-                      class="project-img">
-                    <span class="fusion-sub-badge cad">Perspective Detail</span>
+                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox('assets/images/gaming_chair_1.png')"
+                    title="Ergonomic Chair CAD Model - Autodesk Fusion 360 (Click to inspect in HD)">
+                    <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD Model - Autodesk Fusion 360" class="project-img">
+                    <span class="fusion-sub-badge cad">💺 Ergonomic Chair</span>
                     <button class="img-inspect-btn">🔍 View CAD</button>
                   </div>
                 </div>
-                <div class="fusion-compare-footer" onclick="openTableLightbox('assets/images/end_table_1.png')"
-                  title="Click to inspect End Table in high-resolution CAD lightbox">
+                <div class="fusion-compare-footer">
                   <span class="compare-pulse-dot"></span>
-                  <span><strong>Console Table CAD:</strong> Click either view to inspect the high-resolution Fusion 360 solid model</span>
-                </div>
-              </div>
-
-              <!-- Study 2: Ergonomic Office / Gaming Chair -->
-              <div class="fusion-compare-card fusion-compare-block" id="fusionBlockChair">
-                <div class="fusion-compare-header">
-                  <div class="compare-tag cad">📐 Fusion 360 CAD</div>
-                  <div class="compare-vs-badge">ERGONOMIC CHAIR STUDY</div>
-                  <div class="compare-tag cad">🔍 Multi-Angle Views</div>
-                </div>
-                <div class="fusion-compare-grid">
-                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox('assets/images/gaming_chair_1.png', 'Full Assembly View')"
-                    title="Ergonomic Chair CAD Model - Full Assembly View (Click to inspect in HD)">
-                    <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD Model - Full Assembly" class="project-img">
-                    <span class="fusion-sub-badge cad">Full Assembly</span>
-                    <button class="img-inspect-btn">🔍 View CAD</button>
-                  </div>
-                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox('assets/images/gaming_chair_2.png', 'Contoured Ergonomics View')"
-                    title="Ergonomic Chair CAD Model - Contoured Ergonomics View (Click to inspect in HD)">
-                    <img src="assets/images/gaming_chair_2.png" alt="Ergonomic Chair 3D CAD Model - Contoured Ergonomics"
-                      class="project-img">
-                    <span class="fusion-sub-badge cad">Contour Details</span>
-                    <button class="img-inspect-btn">🔍 View CAD</button>
-                  </div>
-                </div>
-                <div class="fusion-compare-footer" onclick="openChairLightbox('assets/images/gaming_chair_1.png')"
-                  title="Click to inspect Ergonomic Chair in high-resolution CAD lightbox">
-                  <span class="compare-pulse-dot chair-dot"></span>
-                  <span><strong>Ergonomic Chair CAD:</strong> Click either view to inspect the high-resolution Fusion 360 solid model</span>
+                  <span><strong>Autodesk Fusion 360:</strong> Click either study to inspect the high-resolution CAD solid model in full detail</span>
                 </div>
               </div>
             </div>
@@ -5850,22 +5805,23 @@
                   <div class="print-proj-title">15. Fusion 360 Design: Observational CAD Studies</div>
                   <div class="print-proj-meta">Observational 3D CAD • Parametric Solid Modeling • Multi-Body Assemblies • Surface Contouring</div>
                   <div class="print-table-layout">
-                    <div style="width: 32%;">
-                      <img src="assets/images/end_table_1.png" alt="End Table CAD" class="print-thumb-single">
+                    <div style="width: 44%; display: flex; gap: 0.5rem;">
+                      <div style="flex: 1; text-align: center;">
+                        <img src="assets/images/end_table_1.png" alt="Console Table CAD" class="print-thumb-single"
+                          style="height: 100px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
+                        <span style="font-size: 0.62rem; color: #475569; display: block; margin-top: 2px; font-weight: 600;">Console Table</span>
+                      </div>
+                      <div style="flex: 1; text-align: center;">
+                        <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair CAD" class="print-thumb-single"
+                          style="height: 100px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
+                        <span style="font-size: 0.62rem; color: #475569; display: block; margin-top: 2px; font-weight: 600;">Ergonomic Chair</span>
+                      </div>
                     </div>
-                    <div style="width: 66%;">
+                    <div style="width: 54%;">
                       <p class="print-proj-summary" style="margin: 0 0 0.35rem 0;">
                         Executed observational 3D CAD modeling studies in Autodesk Fusion 360 inspired by real-world furniture.
                         Modeled angled cross-braced console end table frames, slatted lower shelves, and multi-component ergonomic chair assemblies with contoured lumbar backrests from scratch.
                       </p>
-                      <div class="print-thumb-row">
-                        <img src="assets/images/end_table_2.png" alt="Console Table Perspective" class="print-thumb"
-                          title="Fusion 360 Console Table Perspective CAD Render">
-                        <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair Assembly" class="print-thumb"
-                          title="Fusion 360 Ergonomic Chair Full Assembly">
-                        <img src="assets/images/gaming_chair_2.png" alt="Ergonomic Chair Contours" class="print-thumb"
-                          title="Fusion 360 Ergonomic Chair Contour Render">
-                      </div>
                     </div>
                   </div>
                 </div>

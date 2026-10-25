@@ -714,36 +714,9 @@ function setDualLightboxView(mode) {
 window.setDualLightboxView = setDualLightboxView;
 
 function setFusionDesignView(viewName) {
-  const btnAll = document.getElementById('fusionTabAll');
-  const btnTable = document.getElementById('fusionTabTable');
-  const btnChair = document.getElementById('fusionTabChair');
-  const blockTable = document.getElementById('fusionBlockTable');
-  const blockChair = document.getElementById('fusionBlockChair');
-  if (!blockTable || !blockChair) return;
-
-  [btnAll, btnTable, btnChair].forEach(btn => { if (btn) btn.classList.remove('active'); });
-
-  if (viewName === 'table') {
-    blockTable.style.display = 'flex';
-    blockChair.style.display = 'none';
-    blockTable.classList.add('expanded');
-    blockChair.classList.remove('expanded');
-    if (btnTable) btnTable.classList.add('active');
-  } else if (viewName === 'chair') {
-    blockTable.style.display = 'none';
-    blockChair.style.display = 'flex';
-    blockChair.classList.add('expanded');
-    blockTable.classList.remove('expanded');
-    if (btnChair) btnChair.classList.add('active');
-  } else {
-    // All (Both)
-    blockTable.style.display = 'flex';
-    blockChair.style.display = 'flex';
-    blockTable.classList.remove('expanded');
-    blockChair.classList.remove('expanded');
-    if (btnAll) btnAll.classList.add('active');
-  }
+  // Legacy tab switcher retained safely for backwards compatibility
 }
+window.setFusionDesignView = setFusionDesignView;
 
 function openVideoLightbox(videoSrc, caption) {
   const modal = document.getElementById('lightboxModal');
