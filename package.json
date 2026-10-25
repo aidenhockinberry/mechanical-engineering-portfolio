@@ -4,6 +4,7 @@
   "description": "Mechanical Engineering and Prototyping Portfolio",
   "scripts": {
     "dev": "npx serve -l 3000 .",
+    "serve": "node server.js",
     "start": "npx serve -l 3000 ."
   },
   "keywords": [],

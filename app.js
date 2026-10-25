@@ -350,6 +350,42 @@ function switchYesNoTab(tabId, btnElement) {
 }
 window.switchYesNoTab = switchYesNoTab;
 
+/* ==========================================================================
+   2i. BOUNDARY LAYER BLADELESS TESLA TURBINE TAB SWITCHER & VIDEO LAUNCHER
+   ========================================================================== */
+function switchTurbineTab(tabId, btnElement) {
+  // Hide all turbine tab panes
+  const panes = document.querySelectorAll('.turbine-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  // Show target tab pane
+  const target = document.getElementById(`turbine-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  // Update tab buttons
+  const buttons = document.querySelectorAll('.turbine-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`turbineTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchTurbineTab = switchTurbineTab;
+
+function openTurbineVideo() {
+  const videoPath = 'assets/teslaTurbine/tesla_turbine.mp4';
+  openVideoLightbox(
+    videoPath,
+    'Additive Boundary-Layer Tesla Turbine - High-RPM Compressed Air Spin Demonstration. (Upload/drop video as assets/teslaTurbine/tesla_turbine.mp4)'
+  );
+}
+window.openTurbineVideo = openTurbineVideo;
+
 
 /* ==========================================================================
    3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission)
@@ -567,27 +603,23 @@ function openActiveConnect4CircleLightbox() {
 }
 
 /* ==========================================================================
-   6. ERA & DISCIPLINE FILTERING
+   6. ENGINEERING DISCIPLINE FILTERING
    ========================================================================== */
 function initFilters() {
-  const eraTabs = document.querySelectorAll('.era-tab');
   const disciplineBtns = document.querySelectorAll('.discipline-btn');
   const projectCards = document.querySelectorAll('.project-card');
-  const eraSections = document.querySelectorAll('.era-section-group');
 
-  let activeEra = 'all';
   let activeDiscipline = 'all';
 
   function applyFilters() {
     let visibleIndex = 0;
     projectCards.forEach(card => {
-      const cardEra = card.getAttribute('data-era') || '';
-      const cardDisc = card.getAttribute('data-discipline') || '';
+      const cardDisc = (card.getAttribute('data-discipline') || '').toLowerCase();
+      const targetDisc = activeDiscipline.toLowerCase();
 
-      const matchesEra = activeEra === 'all' || cardEra.includes(activeEra);
-      const matchesDisc = activeDiscipline === 'all' || cardDisc.includes(activeDiscipline);
+      const matchesDisc = targetDisc === 'all' || cardDisc.includes(targetDisc);
 
-      if (matchesEra && matchesDisc) {
+      if (matchesDisc) {
         card.style.display = 'block';
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
@@ -599,32 +631,13 @@ function initFilters() {
         card.classList.remove('card-reversed');
       }
     });
-
-    // Also toggle section visibility if filtered by era
-    eraSections.forEach(sec => {
-      const group = sec.getAttribute('data-era-group');
-      if (activeEra === 'all' || activeEra === group) {
-        sec.style.display = 'block';
-      } else {
-        sec.style.display = 'none';
-      }
-    });
   }
-
-  eraTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      eraTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      activeEra = tab.getAttribute('data-era');
-      applyFilters();
-    });
-  });
 
   disciplineBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       disciplineBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      activeDiscipline = btn.getAttribute('data-discipline');
+      activeDiscipline = btn.getAttribute('data-discipline') || 'all';
       applyFilters();
     });
   });
@@ -924,7 +937,11 @@ function openVideoLightbox(videoSrc, caption) {
     if (loadingIndicator) loadingIndicator.style.display = 'none';
     console.warn('Video failed to stream directly:', cleanSrc);
     if (captionEl) {
-      captionEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">⚠️ Notice:</span> Stream blocked by browser or connection. <a href="${cleanSrc}" target="_blank" style="color: var(--cyan-primary); text-decoration: underline; font-weight: bold;">Click here to open raw video file</a>.`;
+      if (cleanSrc.toLowerCase().includes('tesla')) {
+        captionEl.innerHTML = `<span style="color: #f59e0b; font-weight: 700;">🎬 Video Demonstration Queued:</span> Physical benchtop compressed air testing footage is being prepared. To view your live test run, drop your video file into <code>assets/teslaTurbine/tesla_turbine.mp4</code>.`;
+      } else {
+        captionEl.innerHTML = `<span style="color: #ef4444; font-weight: 600;">⚠️ Notice:</span> Stream blocked by browser or connection. <a href="${cleanSrc}" target="_blank" style="color: var(--cyan-primary); text-decoration: underline; font-weight: bold;">Click here to open raw video file</a>.`;
+      }
     }
   };
 
@@ -1159,9 +1176,9 @@ function updateQrCodes(baseUrl) {
 
   const qrTargets = [
     { id: 'qr-cover', url: cleanBase },
-    { id: 'qr-era1', url: cleanBase.replace(/#.*$/, '') + '#manufacturing-era' },
-    { id: 'qr-era2', url: cleanBase.replace(/#.*$/, '') + '#virtual-era' },
-    { id: 'qr-era3', url: cleanBase.replace(/#.*$/, '') + '#early-era' },
+    { id: 'qr-era1', url: cleanBase.replace(/#.*$/, '') + '#projects' },
+    { id: 'qr-era2', url: cleanBase.replace(/#.*$/, '') + '#projects' },
+    { id: 'qr-era3', url: cleanBase.replace(/#.*$/, '') + '#projects' },
     { id: 'qr-skills', url: cleanBase.replace(/#.*$/, '') + '#skills' }
   ];
 
