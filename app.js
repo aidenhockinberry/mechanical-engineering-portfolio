@@ -646,72 +646,25 @@ function initFilters() {
 /* ==========================================================================
    5. LIGHTBOX MODAL (Full Resolution CAD & Diagrams)
    ========================================================================== */
-function openTableLightbox() {
-  openDualLightbox(
-    'assets/images/end_table_1.png',
-    'assets/images/real_end_table_2.jpg',
-    'Console End Table - 3D CAD vs Real-Life Reference',
-    '<strong>Observational 3D CAD Modeling:</strong> Direct side-by-side comparison between the Autodesk Fusion 360 parametric CAD solid model and the real-world console table that inspired it. Recreated in Fusion 360 by observing the physical table\'s cross-braced frame, slatted lower shelf, and overall proportions.',
-    {
-      cadBadge: '📐 Autodesk Fusion 360',
-      cadType: '3D Parametric CAD Solid Model',
-      cadFooter: 'Modeled angled cross-braces, slatted shelf, and tabletop rebate',
-      realBadge: '📷 Real-Life Reference',
-      realType: 'Observed Object (real_end_table_2)',
-      realFooter: 'Physical console table observed in real life and referenced for CAD modeling',
-      activeItem: 'table'
-    }
-  );
+function openTableLightbox(src, label) {
+  const targetSrc = (typeof src === 'string' && src.startsWith('assets/')) ? src : 'assets/images/end_table_1.png';
+  const targetCaption = label ?
+    `<strong>Console End Table 3D CAD (${label}):</strong> Modeled in Autodesk Fusion 360 featuring parametric cross-braced frame, slatted lower shelf, and wood-grain texture rendering.` :
+    '<strong>Console End Table 3D CAD:</strong> Autodesk Fusion 360 parametric solid model featuring angled cross-braces, slatted lower shelf, and wood tabletop rendering.';
+  openLightbox(targetSrc, targetCaption);
 }
+window.openTableLightbox = openTableLightbox;
 
-function handleChairImgError(imgEl) {
-  if (!imgEl) return;
-  const candidates = [
-    'assets/images/real_chair_1.jpg',
-    'assets/images/real_chair.jpg',
-    'assets/images/real_chair_1.png',
-    'assets/images/real_chair.png',
-    'assets/images/real_chair_1.jpeg',
-    'assets/images/real_chair.jpeg'
-  ];
-  let currentIdx = parseInt(imgEl.dataset.tryIdx || '0', 10);
-  currentIdx++;
-  if (currentIdx < candidates.length) {
-    imgEl.dataset.tryIdx = currentIdx.toString();
-    imgEl.src = candidates[currentIdx];
-  }
+function openChairLightbox(src, label) {
+  const targetSrc = (typeof src === 'string' && src.startsWith('assets/')) ? src : 'assets/images/gaming_chair_1.png';
+  const targetCaption = label ?
+    `<strong>Ergonomic Chair 3D CAD (${label}):</strong> Autodesk Fusion 360 multi-body assembly featuring contoured lumbar support, armrests, swivel mechanism, and 5-star caster base.` :
+    '<strong>Ergonomic Chair 3D CAD:</strong> Autodesk Fusion 360 multi-body assembly featuring contoured lumbar backrest, ergonomic armrests, and 5-point caster base.';
+  openLightbox(targetSrc, targetCaption);
 }
-
-function openChairLightbox() {
-  const chairImg = document.getElementById('fusionRealChairImg');
-  const realSrc = (chairImg && chairImg.currentSrc) ? chairImg.currentSrc : 'assets/images/real_chair_1.jpg';
-  openDualLightbox(
-    'assets/images/gaming_chair_1.png',
-    realSrc,
-    'Ergonomic Gaming/Office Chair - 3D CAD vs Real-Life Reference',
-    '<strong>Observational 3D CAD Modeling:</strong> Direct comparison between the Autodesk Fusion 360 multi-part ergonomic chair CAD model and the real-life chair observed in person. Recreated curved contours, lumbar curvature, armrests, and 5-wheel swivel base from visual observation.',
-    {
-      cadBadge: '📐 Autodesk Fusion 360',
-      cadType: '3D Parametric CAD Solid Model',
-      cadFooter: 'Multi-part seat assembly, contoured lumbar support & armrest details',
-      realBadge: '📷 Real-Life Reference',
-      realType: 'Observed Object (real_chair)',
-      realFooter: 'Physical chair observed in real life and referenced for CAD modeling',
-      activeItem: 'chair'
-    }
-  );
-}
+window.openChairLightbox = openChairLightbox;
 
 function openLightbox(src, caption) {
-  // If user clicks on chair images, show chair dual comparison modal
-  if (src && (src.includes('chair') || src.includes('gaming_chair'))) {
-    return openChairLightbox();
-  }
-  // If user clicks on end table or real table image, show table dual comparison modal
-  if (src && (src.includes('end_table') || src.includes('real_end_table'))) {
-    return openTableLightbox();
-  }
-
   const modal = document.getElementById('lightboxModal');
   const img = document.getElementById('lightboxImg');
   const video = document.getElementById('lightboxVideo');
@@ -734,7 +687,15 @@ function openLightbox(src, caption) {
   }
   img.style.display = 'block';
   img.src = src;
-  if (titleEl) titleEl.textContent = 'High-Resolution Blueprint & Build';
+  if (titleEl) {
+    if (src && src.includes('end_table')) {
+      titleEl.textContent = 'Autodesk Fusion 360: Console Table CAD Model';
+    } else if (src && (src.includes('chair') || src.includes('gaming_chair'))) {
+      titleEl.textContent = 'Autodesk Fusion 360: Ergonomic Chair CAD Model';
+    } else {
+      titleEl.textContent = 'High-Resolution Blueprint & Build';
+    }
+  }
   if (captionEl) captionEl.innerHTML = caption || 'High-Resolution CAD / Prototype Diagram';
   modal.classList.add('open');
   trackAnalytics('view_blueprint_lightbox', { image_src: src, caption: caption || '' });
@@ -743,106 +704,14 @@ function openLightbox(src, caption) {
 function openDualLightbox(cadSrc, realSrc, title, caption, meta) {
   if (cadSrc === 'chair') return openChairLightbox();
   if (cadSrc === 'table') return openTableLightbox();
-  const modal = document.getElementById('lightboxModal');
-  const img = document.getElementById('lightboxImg');
-  const video = document.getElementById('lightboxVideo');
-  const dualContainer = document.getElementById('lightboxDualContainer');
-  const dualCadImg = document.getElementById('dualCadImg');
-  const dualRealImg = document.getElementById('dualRealImg');
-  const dualControls = document.getElementById('dualViewControls');
-  const itemSwitcher = document.getElementById('modalItemSwitcher');
-  const titleEl = document.getElementById('lightboxTitle');
-  const captionEl = document.getElementById('lightboxCaption');
-  if (!modal) return;
-
-  if (video) {
-    video.pause();
-    video.style.display = 'none';
-    video.src = '';
-  }
-  if (img) img.style.display = 'none';
-  if (dualContainer) dualContainer.style.display = 'block';
-  if (dualControls) dualControls.style.display = 'flex';
-  if (itemSwitcher) itemSwitcher.style.display = 'flex';
-  if (dualCadImg) dualCadImg.src = cadSrc || 'assets/images/end_table_1.png';
-  if (dualRealImg) {
-    dualRealImg.src = realSrc || 'assets/images/real_end_table_2.jpg';
-    dualRealImg.onerror = function() {
-      if (realSrc && realSrc.includes('chair')) {
-        handleChairImgError(this);
-      }
-    };
-  }
-
-  // Update dynamic metadata badges
-  if (meta) {
-    const cadBadge = document.getElementById('dualCadBadge');
-    const cadType = document.getElementById('dualCadType');
-    const cadFooter = document.getElementById('dualCadFooter');
-    const realBadge = document.getElementById('dualRealBadge');
-    const realType = document.getElementById('dualRealType');
-    const realFooter = document.getElementById('dualRealFooter');
-    const switchTable = document.getElementById('modalSwitchTable');
-    const switchChair = document.getElementById('modalSwitchChair');
-
-    if (cadBadge && meta.cadBadge) cadBadge.textContent = meta.cadBadge;
-    if (cadType && meta.cadType) cadType.textContent = meta.cadType;
-    if (cadFooter && meta.cadFooter) cadFooter.textContent = meta.cadFooter;
-    if (realBadge && meta.realBadge) realBadge.textContent = meta.realBadge;
-    if (realType && meta.realType) realType.textContent = meta.realType;
-    if (realFooter && meta.realFooter) realFooter.textContent = meta.realFooter;
-
-    if (switchTable && switchChair) {
-      if (meta.activeItem === 'chair') {
-        switchChair.classList.add('active');
-        switchTable.classList.remove('active');
-      } else {
-        switchTable.classList.add('active');
-        switchChair.classList.remove('active');
-      }
-    }
-  }
-
-  modal.classList.add('modal-dual-active');
-
-  setDualLightboxView('both');
-
-  if (titleEl) titleEl.textContent = title || '3D CAD vs Real-Life Reference Comparison';
-  if (captionEl) {
-    captionEl.innerHTML = caption || '<strong>Observational 3D CAD Modeling:</strong> Direct side-by-side comparison between Autodesk Fusion 360 CAD model and real-life reference object.';
-  }
-  modal.classList.add('open');
-  trackAnalytics('view_cad_comparison', { item: title || 'CAD vs Reference' });
+  openLightbox(cadSrc || 'assets/images/end_table_1.png', caption);
 }
+window.openDualLightbox = openDualLightbox;
 
 function setDualLightboxView(mode) {
-  const grid = document.getElementById('dualComparisonGrid');
-  const cadPane = document.getElementById('dualCadPane');
-  const realPane = document.getElementById('dualRealPane');
-  const btnBoth = document.getElementById('dualBtnBoth');
-  const btnCad = document.getElementById('dualBtnCad');
-  const btnReal = document.getElementById('dualBtnReal');
-
-  [btnBoth, btnCad, btnReal].forEach(btn => { if (btn) btn.classList.remove('active'); });
-
-  if (mode === 'cad') {
-    if (grid) grid.style.gridTemplateColumns = '1fr';
-    if (cadPane) cadPane.style.display = 'flex';
-    if (realPane) realPane.style.display = 'none';
-    if (btnCad) btnCad.classList.add('active');
-  } else if (mode === 'real') {
-    if (grid) grid.style.gridTemplateColumns = '1fr';
-    if (cadPane) cadPane.style.display = 'none';
-    if (realPane) realPane.style.display = 'flex';
-    if (btnReal) btnReal.classList.add('active');
-  } else {
-    // Both
-    if (grid) grid.style.gridTemplateColumns = '';
-    if (cadPane) cadPane.style.display = 'flex';
-    if (realPane) realPane.style.display = 'flex';
-    if (btnBoth) btnBoth.classList.add('active');
-  }
+  // Dual view deprecated; CAD is showcased purely as individual high-res models
 }
+window.setDualLightboxView = setDualLightboxView;
 
 function setFusionDesignView(viewName) {
   const btnAll = document.getElementById('fusionTabAll');
