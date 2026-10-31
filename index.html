@@ -118,9 +118,9 @@
           <div class="hero-card">
             <div class="hero-portrait-frame">
               <!-- <img src="assets/images/p1_img3_491.jpeg" alt="Aiden Hockinberry - Mechanical Engineering" -->
-              <img src="assets/images/aidenhockinberry.jpg" alt="Aiden Hockinberry - Mechanical Engineering"
+              <img src="assets/images/aidenhockinberry.jpeg" alt="Aiden Hockinberry - Mechanical Engineering"
                 class="hero-portrait-img" id="heroPortraitImg"
-                onerror="if (!this.dataset.tried) { this.dataset.tried = '1'; this.src = 'assets/images/AidenHockinberry.jpg'; } else { this.src = 'assets/images/p1_img3_491.jpeg'; }">
+                onerror="if (!this.dataset.tried) { this.dataset.tried = '1'; this.src = 'assets/images/AidenHockinberry.jpeg'; } else { this.src = 'assets/images/p1_img3_491.jpeg'; }">
               <div class="hero-badge-overlay">
                 <div>
                   <div class="overlay-title">Aiden Hockinberry</div>
@@ -214,7 +214,7 @@
                   onclick="openVideoLightbox('assets/videos/rubiks_cube_solver.mp4', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Live physical demonstration of automated scramble solve in 9.68 seconds via Klipper MCU and Kociemba Two-Phase algorithm')"
                   title="Click to play high-speed physical solve video demonstration">
                   <div class="rubiks-benchmark-badge">⏱️ BENCHMARK: 9.68s SOLVE</div>
-                  <img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
+                  <img src="assets/images/rubiks_cube/rubiks_cube_solver_6.jpg"
                     alt="Autonomous 6-Axis Robotic Rubik's Cube Solver" class="project-img">
                   <div class="video-play-overlay">
                     <div class="play-icon-pulse">▶</div>
@@ -227,7 +227,7 @@
                     🎬 Play Solve Video (9.68s)
                   </button>
                   <button class="btn btn-outline" style="flex: 1; font-size: 0.74rem; padding: 0.4rem 0.6rem;"
-                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_1.jpg', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Complete Assembly: 3D printed modular frame, 6 NEMA 17 steppers, custom direct-drive spindles, and 24V silent TMC2209 driver bay')">
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_6.jpg', 'Autonomous 6-Axis Robotic Rubik\'s Cube Solver - Complete Assembly: 3D printed modular frame, 6 NEMA 17 steppers, custom direct-drive spindles, and 24V silent TMC2209 driver bay')">
                     🔍 Inspect 6-Axis Rig
                   </button>
                 </div>
@@ -394,8 +394,8 @@
 
                 <div class="rubiks-gallery-grid">
                   <div class="rubiks-gallery-card"
-                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_1.jpg', 'Rubik\'s Cube Solver - Complete 6-Axis Machine Isometric View')">
-                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
+                    onclick="openLightbox('assets/images/rubiks_cube/rubiks_cube_solver_6.jpg', 'Rubik\'s Cube Solver - Complete 6-Axis Machine Isometric View')">
+                    <div class="rubiks-gallery-thumb-wrap"><img src="assets/images/rubiks_cube/rubiks_cube_solver_6.jpg"
                         alt="Complete 6-Axis Solver" class="rubiks-gallery-thumb"></div>
                     <div class="rubiks-gallery-caption"><span class="rubiks-gallery-title">Complete 6-Axis
                         Solver</span><span class="rubiks-gallery-sub">Full isometric overview</span></div>
@@ -559,33 +559,6 @@
                   </tr>
                 </tbody>
               </table>
-
-              <!-- Dual Technical Spec Callouts -->
-              <div class="card-spec-grid" style="margin-top: 1rem;">
-                <div class="spec-box">
-                  <div class="spec-box-title">⚙️ Mechanical & Kinematic Design</div>
-                  <ul class="spec-list">
-                    <li><strong>Direct-Drive Spindle Adapters:</strong> Engineered custom D-shaft couplers with
-                      set-screw retention, directly interfacing with the Rubik's cube center piece cavities while
-                      maintaining internal spherical bearing preload.</li>
-                    <li><strong>Reactionary Torque Dampening:</strong> 4 interlocking vertical riser towers form a rigid
-                      orthogonal box with the gantry, preventing angular deflection during abrupt 500+ RPM/s² face
-                      stops.</li>
-                  </ul>
-                </div>
-
-                <div class="spec-box orange">
-                  <div class="spec-box-title">⚡ Software, Firmware & Digital Twin</div>
-                  <ul class="spec-list">
-                    <li><strong>Parallel Move Compression:</strong> Algorithmic motion planner analyzes God's Number
-                      move sequences and merges opposing face turns into concurrent dual-axis pulses, slashing physical
-                      solve time to <strong>9.68 seconds</strong>.</li>
-                    <li><strong>Digital Twin State Verification:</strong> Python simulation verifies cube legality and
-                      virtual kinematic states before issuing motion commands to the Klipper MCU, preventing jam states.
-                    </li>
-                  </ul>
-                </div>
-              </div>
 
             </div>
           </div>
@@ -1017,68 +990,6 @@
                       3D printing act as microscopic surface ridges that enhance boundary layer adhesion and viscous
                       shear coupling.</li>
                   </ul>
-                </div>
-
-                <div class="spec-box green" style="grid-column: 1 / -1;">
-                  <div class="spec-box-title">📊 Engineering Specification &amp; Aerodynamic Parameter Matrix</div>
-                  <table class="turbine-matrix-table">
-                    <thead>
-                      <tr>
-                        <th>Design Parameter</th>
-                        <th>Technical Specification</th>
-                        <th>Engineering Implementation Details</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>Operating Principle</strong></td>
-                        <td>Prandtl Boundary-Layer Adhesion &amp; Viscous Drag</td>
-                        <td>Bladeless rotor driven by fluid shear friction without impulse blade cavitation or stall
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Rotor Configuration</strong></td>
-                        <td>7 Co-Axial Parallel Discs with Spacing Rings</td>
-                        <td>Stacked multi-disc rotor maximizing active fluid contact surface area in a compact
-                          cylindrical envelope</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Fluid Injection Mode</strong></td>
-                        <td>Tangential Accelerator Volute Nozzle (90° Peripheral)</td>
-                        <td>Guides pressurized air directly onto the outer circumference along the disc tangent vector
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Flow Trajectory</strong></td>
-                        <td>Centripetal Inward Logarithmic Spiral</td>
-                        <td>Fluid naturally spirals inward from high-velocity perimeter to low-pressure center</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Exhaust Architecture</strong></td>
-                        <td>4 Radial Trapezoidal Discharge Ports per Disc</td>
-                        <td>Axial exhaust through disc hub cutouts and aligned stator ports for low backpressure
-                          discharge</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Bearing &amp; Hub System</strong></td>
-                        <td>Dual Deep-Groove Miniature Radial Ball Bearings</td>
-                        <td>Seated in press-fit pockets on both stator end-caps to minimize runout and rotational drag
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Drive Output Interface</strong></td>
-                        <td>Continuous Longitudinal Transmission Axle Shaft</td>
-                        <td>Protruding central shaft enables direct mechanical torque coupling or tachometer
-                          instrumentation</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Additive Surface Optimization</strong></td>
-                        <td>Concentric Toolpath Micro-Ridges (FDM PLA)</td>
-                        <td>Microscopic layer ridges boost fluid skin friction coefficient, enhancing starting torque
-                          and momentum transfer</td>
-                      </tr>
-                    </tbody>
-                  </table>
                 </div>
               </div>
             </div>
@@ -1526,24 +1437,6 @@
                     <li><strong>Dual Live Physical Demonstrations:</strong> Validated through continuous live test runs
                       (<strong>32s full gait traversal</strong> and <strong>14s stride dynamics</strong>), proving
                       non-binding pivot kinematics, backlash absorption, and structural rigidity under load.</li>
-                  </ul>
-                </div>
-
-                <div class="spec-box green" style="grid-column: 1 / -1;">
-                  <div class="spec-box-title">🛠️ Engineering Design Process (EDP) &amp; 5 Design Iterations</div>
-                  <ul class="spec-list">
-                    <li><strong>1. Four-Bar Linkage Length Tuning:</strong> Changed the member lengths of the four-bar
-                      linkage (legs) parts to eliminate jerky foot strikes and achieve a fluid, continuous walking gait.
-                    </li>
-                    <li><strong>2. High-Torque Gear Meshing:</strong> Increased the size of the gear meshing with the
-                      worm gear to amplify torque multiplication and decrease mechanical backlash.</li>
-                    <li><strong>3. Solid Metal Axle Upgrade:</strong> Replaced the plastic axle with a metal axle to
-                      eliminate bending deflection and prevent legs from being held at different positions.</li>
-                    <li><strong>4. Centered &amp; Underslung Battery:</strong> Moved the battery into the center and on
-                      the bottom of the chassis to level out weight and significantly lower the center of mass.</li>
-                    <li><strong>5. Top Inversion Flip Posts:</strong> Added vertical standoff posts on the top of the
-                      chassis to make the robot easy to flip over, inspect, and work on at the bench without straining
-                      leg pivots.</li>
                   </ul>
                 </div>
               </div>
@@ -3292,61 +3185,6 @@
                       secure single-handed grip and actuation.</li>
                   </ul>
                 </div>
-
-                <div class="spec-box green" style="grid-column: 1 / -1;">
-                  <div class="spec-box-title">📊 Engineering Specification &amp; Kinematic Parameter Matrix</div>
-                  <table class="yesno-matrix-table">
-                    <thead>
-                      <tr>
-                        <th>Design Parameter</th>
-                        <th>Technical Specification</th>
-                        <th>Engineering Implementation Details</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><strong>Kinematic Cycle</strong></td>
-                        <td>Linear Stroke $\to$ 45° Rotary Step</td>
-                        <td>Translates one tactile plunger push into a discrete 1/8th revolution indexing cycle</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Compliant Return Spring</strong></td>
-                        <td>Monolithic Symmetrical Serpentine Flexures</td>
-                        <td>Dual multi-wave folded-beam leaf springs providing linear spring-back without metal hardware
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Escapement Drive</strong></td>
-                        <td>8-Tooth Asymmetric Ratchet &amp; Cantilever Pawl</td>
-                        <td>Steep 90° driving face for positive engagement; angled flank for low-friction pawl bypass on
-                          return</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Output States</strong></td>
-                        <td>8 Discrete Radial Sectors (45° pitch)</td>
-                        <td>4 alternating YES / 4 alternating NO positions framed in single viewing aperture window</td>
-                      </tr>
-                      <tr>
-                        <td><strong>Part Count &amp; Fasteners</strong></td>
-                        <td>3 Primary 3D-Printed Components</td>
-                        <td>Zero metal springs, zero screws, zero adhesive; 100% additive kinematic snap-fit assembly
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Tolerance &amp; Clearances</strong></td>
-                        <td>0.25mm Arbor Journal Clearance</td>
-                        <td>Prevents rotational binding while controlling planar wobble under asymmetric pawl thrust
-                        </td>
-                      </tr>
-                      <tr>
-                        <td><strong>Ergonomics &amp; Haptics</strong></td>
-                        <td>Pocket EDC Form Factor with Knurled Bezel</td>
-                        <td>High-tactile click feedback with textured perimeter ring and interchangeable yellow/black
-                          screens</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
               </div>
             </div>
           </div>
@@ -3502,7 +3340,8 @@
                   <div class="project-img-wrapper"
                     onclick="openLightbox('assets/spinner/20261024_171705.jpg', '6-Slot Geneva Disassembled View - 6-slot Maltese cross wheel, driver crank arm with pin, and rigid center-distance spacing link')"
                     title="Disassembled Components">
-                    <img src="assets/spinner/20261024_171705.jpg" alt="6-Slot Disassembled Components" class="project-img">
+                    <img src="assets/spinner/20261024_171705.jpg" alt="6-Slot Disassembled Components"
+                      class="project-img">
                     <button class="img-inspect-btn">🔍 Sub-Parts</button>
                   </div>
                   <div class="project-img-wrapper"
@@ -3830,13 +3669,20 @@
               <h3 class="project-heading">Kinematic Intermittent Motion: 3-Slot, 4-Slot &amp; 6-Slot Geneva Drives</h3>
               <p class="project-summary">
                 Conceived, modeled, and 3D-printed three distinct functional Geneva mechanisms (Maltese cross indexing
-                drives) to investigate intermittent rotary motion, duty-cycle timing, and positive dwell locking mechanics
-                across varying slot counts. The portfolio compares a 6-slot drive (60° indexing, 1:2 motion-to-dwell ratio
-                where dwell dominates), a standard 4-slot system (90° indexing, 1:1 symmetric duty cycle), and a geometrically
-                challenging 3-slot system (120° indexing, 2:1 motion-to-dwell ratio). To achieve bind-free operation right off
-                the print bed, each design incorporates tangential pin entry geometry (θ = 90° at engagement) to eliminate
-                impact shock, an integrated circular dwell collar to suppress rotational backlash, and rigid center-distance
-                spacer linkages that precisely fix shaft journal pitch based on theoretical center distance C = R / sin(π/n).
+                drives) to investigate intermittent rotary motion, duty-cycle timing, and positive dwell locking
+                mechanics
+                across varying slot counts. The portfolio compares a 6-slot drive (60° indexing, 1:2 motion-to-dwell
+                ratio
+                where dwell dominates), a standard 4-slot system (90° indexing, 1:1 symmetric duty cycle), and a
+                geometrically
+                challenging 3-slot system (120° indexing, 2:1 motion-to-dwell ratio). To achieve bind-free operation
+                right off
+                the print bed, each design incorporates tangential pin entry geometry (θ = 90° at engagement) to
+                eliminate
+                impact shock, an integrated circular dwell collar to suppress rotational backlash, and rigid
+                center-distance
+                spacer linkages that precisely fix shaft journal pitch based on theoretical center distance C = R /
+                sin(π/n).
               </p>
 
               <div class="card-spec-grid">
@@ -3868,67 +3714,7 @@
                       rim and the concave star wheel contour to balance zero-backlash holding torque with minimal
                       sliding friction.</li>
                   </ul>
-                </div>
-
-                <div class="spec-box green" style="grid-column: 1 / -1;">
-                  <div class="spec-box-title">📊 Kinematic Synthesis: 6-Slot vs. 4-Slot vs. 3-Slot Geneva Comparison</div>
-                  <div style="overflow-x: auto;">
-                    <table class="geneva-matrix-table">
-                      <thead>
-                        <tr>
-                          <th>Kinematic Parameter</th>
-                          <th>6-Slot Geneva Mechanism</th>
-                          <th>4-Slot Geneva Mechanism</th>
-                          <th>3-Slot Geneva Mechanism</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><strong>Output Indexing Angle (Δθ)</strong></td>
-                          <td>60° per cycle (6 discrete stops / rev)</td>
-                          <td>90° per cycle (4 discrete stops / rev)</td>
-                          <td>120° per cycle (3 discrete stops / rev)</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Driver Motion Angle (β)</strong></td>
-                          <td>120° (Drive pin engaged for 33.3% of cycle)</td>
-                          <td>180° (Drive pin engaged for 50.0% of cycle)</td>
-                          <td>240° (Drive pin engaged for 66.7% of cycle)</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Driver Dwell Angle (δ)</strong></td>
-                          <td>240° (Locked stationary dwell for 66.7% of cycle)</td>
-                          <td>180° (Locked stationary dwell for 50.0% of cycle)</td>
-                          <td>120° (Locked stationary dwell for 33.3% of cycle)</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Motion-to-Dwell Ratio</strong></td>
-                          <td>1 : 2 (Stationary dwell phase dominates)</td>
-                          <td>1 : 1 (Symmetric, balanced duty cycle)</td>
-                          <td>2 : 1 (Extended motion phase; motion dominates)</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Theoretical Center Distance (C)</strong></td>
-                          <td>C = R / sin(30°) = 2.000 · R</td>
-                          <td>C = R / sin(45°) = 1.414 · R</td>
-                          <td>C = R / sin(60°) = 1.155 · R</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Drive Wheel Architecture</strong></td>
-                          <td>Slender crank arm with concentric collar cutout</td>
-                          <td>Compact concentric disc with raised locking rim</td>
-                          <td>Substantially enlarged disc to clear 120° tangent entry</td>
-                        </tr>
-                        <tr>
-                          <td><strong>Primary Industrial Applications</strong></td>
-                          <td>CNC rotary tool changers, hexagonal indexing turrets</td>
-                          <td>Motion picture projectors (24 fps), automated rotary tables</td>
-                          <td>High-throw packaging carousels, 3-station assembly indexing</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                </div>push the latest
               </div>
             </div>
           </div>
@@ -4936,22 +4722,27 @@
                   <div class="compare-tag cad">💺 Ergonomic Chair</div>
                 </div>
                 <div class="fusion-compare-grid">
-                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openTableLightbox('assets/images/end_table_1.png')"
+                  <div class="project-img-wrapper fusion-sub-wrapper"
+                    onclick="openTableLightbox('assets/images/end_table_1.png')"
                     title="Console End Table CAD Model - Autodesk Fusion 360 (Click to inspect in HD)">
-                    <img src="assets/images/end_table_1.png" alt="Console End Table 3D CAD Model - Autodesk Fusion 360" class="project-img">
+                    <img src="assets/images/end_table_1.png" alt="Console End Table 3D CAD Model - Autodesk Fusion 360"
+                      class="project-img">
                     <span class="fusion-sub-badge cad">🪵 Console Table</span>
                     <button class="img-inspect-btn">🔍 View CAD</button>
                   </div>
-                  <div class="project-img-wrapper fusion-sub-wrapper" onclick="openChairLightbox('assets/images/gaming_chair_1.png')"
+                  <div class="project-img-wrapper fusion-sub-wrapper"
+                    onclick="openChairLightbox('assets/images/gaming_chair_1.png')"
                     title="Ergonomic Chair CAD Model - Autodesk Fusion 360 (Click to inspect in HD)">
-                    <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD Model - Autodesk Fusion 360" class="project-img">
+                    <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair 3D CAD Model - Autodesk Fusion 360"
+                      class="project-img">
                     <span class="fusion-sub-badge cad">💺 Ergonomic Chair</span>
                     <button class="img-inspect-btn">🔍 View CAD</button>
                   </div>
                 </div>
                 <div class="fusion-compare-footer">
                   <span class="compare-pulse-dot"></span>
-                  <span><strong>Autodesk Fusion 360:</strong> Click either study to inspect the high-resolution CAD solid model in full detail</span>
+                  <span><strong>Autodesk Fusion 360:</strong> Click either study to inspect the high-resolution CAD
+                    solid model in full detail</span>
                 </div>
               </div>
             </div>
@@ -4959,23 +4750,38 @@
             <div class="card-info-side">
               <h3 class="project-heading">Fusion 360 Design: Observational CAD Studies</h3>
               <p class="project-summary">
-                Applied advanced 3D solid modeling in Autodesk Fusion 360 to execute observational CAD reverse-engineering studies of complex everyday objects. Inspired by real-world physical furniture, these digital studies focus strictly on CAD craftsmanship and parametric technique: reconstructing complex physical geometry from visual observation into fully constrained 2D sketches, organic ergonomic contours, and multi-body solid assemblies without relying on external blueprints. Featured models include a multi-component ergonomic chair assembly with contoured lumbar support and 5-point caster base, alongside a craftsman-style console end table featuring angled truss cross-bracing and a lower slatted shelf.
+                Applied advanced 3D solid modeling in Autodesk Fusion 360 to execute observational CAD
+                reverse-engineering studies of complex everyday objects. Inspired by real-world physical furniture,
+                these digital studies focus strictly on CAD craftsmanship and parametric technique: reconstructing
+                complex physical geometry from visual observation into fully constrained 2D sketches, organic ergonomic
+                contours, and multi-body solid assemblies without relying on external blueprints. Featured models
+                include a multi-component ergonomic chair assembly with contoured lumbar support and 5-point caster
+                base, alongside a craftsman-style console end table featuring angled truss cross-bracing and a lower
+                slatted shelf.
               </p>
 
               <div class="card-spec-grid">
                 <div class="spec-box">
                   <div class="spec-box-title">⚙️ Parametric CAD Architecture</div>
                   <ul class="spec-list">
-                    <li><strong>Fully Constrained Sketching:</strong> Recreated observed proportions using parametric 2D profiles with geometric constraints (tangency, symmetry, perpendicularity) for dynamic dimension scalability.</li>
-                    <li><strong>Multi-Body Assemblies:</strong> Structured complex assemblies into distinct components (swivel star base, gas cylinder, contoured backrest, armrest brackets, table cross-braces, and slatted shelf).</li>
+                    <li><strong>Fully Constrained Sketching:</strong> Recreated observed proportions using parametric 2D
+                      profiles with geometric constraints (tangency, symmetry, perpendicularity) for dynamic dimension
+                      scalability.</li>
+                    <li><strong>Multi-Body Assemblies:</strong> Structured complex assemblies into distinct components
+                      (swivel star base, gas cylinder, contoured backrest, armrest brackets, table cross-braces, and
+                      slatted shelf).</li>
                   </ul>
                 </div>
 
                 <div class="spec-box orange">
                   <div class="spec-box-title">📐 Observational Reverse-Engineering</div>
                   <ul class="spec-list">
-                    <li><strong>Ergonomic Curvature &amp; Proportion:</strong> Modeled compound curves, lumbar fillets, and frame structural ratios purely from visual observation, achieving high dimensional harmony.</li>
-                    <li><strong>Material Finish &amp; Rendering:</strong> Applied physical appearance materials (wood grain textures, matte and gloss polymers, and metallic finishes) with custom environment lighting in Fusion 360's render workspace.</li>
+                    <li><strong>Ergonomic Curvature &amp; Proportion:</strong> Modeled compound curves, lumbar fillets,
+                      and frame structural ratios purely from visual observation, achieving high dimensional harmony.
+                    </li>
+                    <li><strong>Material Finish &amp; Rendering:</strong> Applied physical appearance materials (wood
+                      grain textures, matte and gloss polymers, and metallic finishes) with custom environment lighting
+                      in Fusion 360's render workspace.</li>
                   </ul>
                 </div>
               </div>
@@ -5366,7 +5172,7 @@
                 <div class="print-cover-sidebar">
                   <div class="print-portrait-frame">
                     <img src="assets/images/aidenhockinberry.jpg" alt="Aiden Hockinberry" class="print-portrait-img"
-                      onerror="if (!this.dataset.tried) { this.dataset.tried = '1'; this.src = 'assets/images/AidenHockinberry.jpg'; } else { this.src = 'assets/images/p1_img3_491.jpeg'; }">
+                      onerror="if (!this.dataset.tried) { this.dataset.tried = '1'; this.src = 'assets/images/AidenHockinberry.jpeg'; } else { this.src = 'assets/images/p1_img3_491.jpeg'; }">
                   </div>
 
                   <div class="print-qr-card">
@@ -5404,7 +5210,7 @@
                     Record</div>
                   <div class="print-table-layout">
                     <div style="width: 32%;">
-                      <img src="assets/images/rubiks_cube/rubiks_cube_solver_1.jpg"
+                      <img src="assets/images/rubiks_cube/rubiks_cube_solver_6.jpg"
                         alt="Autonomous 6-Axis Robotic Rubik's Cube Solver" class="print-thumb-single">
                     </div>
                     <div style="width: 66%;">
@@ -5607,8 +5413,10 @@
                   </div>
 
                   <div class="print-proj-card">
-                    <div class="print-proj-title">8. Kinematic Intermittent Motion: 3-Slot, 4-Slot &amp; 6-Slot Geneva Drives</div>
-                    <div class="print-proj-meta">Intermittent Rotary Kinematics • Tangential Pin Entry • 60°, 90° &amp; 120°
+                    <div class="print-proj-title">8. Kinematic Intermittent Motion: 3-Slot, 4-Slot &amp; 6-Slot Geneva
+                      Drives</div>
+                    <div class="print-proj-meta">Intermittent Rotary Kinematics • Tangential Pin Entry • 60°, 90° &amp;
+                      120°
                       Indexing • Dwell Locking Brake</div>
                     <div class="print-thumb-row">
                       <img src="assets/spinner/20261024_171656.jpg" alt="6-Slot Geneva Assembly" class="print-thumb">
@@ -5616,8 +5424,10 @@
                       <img src="assets/spinner/20260702_190858.jpg" alt="3-Slot Setup" class="print-thumb">
                     </div>
                     <p class="print-proj-summary">
-                      Engineered three operational Geneva mechanisms comparing 6-slot (60°), 4-slot (90°), and 3-slot (120°)
-                      indexing with tangential pin entry to minimize impact shock, positive circular dwell brakes, and center-distance linkages.
+                      Engineered three operational Geneva mechanisms comparing 6-slot (60°), 4-slot (90°), and 3-slot
+                      (120°)
+                      indexing with tangential pin entry to minimize impact shock, positive circular dwell brakes, and
+                      center-distance linkages.
                     </p>
                   </div>
                 </div>
@@ -5788,24 +5598,31 @@
                 <!-- Project 15: Fusion 360 Observational Object Studies -->
                 <div class="print-proj-full" style="margin-top: 0.5rem;">
                   <div class="print-proj-title">15. Fusion 360 Design: Observational CAD Studies</div>
-                  <div class="print-proj-meta">Observational 3D CAD • Parametric Solid Modeling • Multi-Body Assemblies • Surface Contouring</div>
+                  <div class="print-proj-meta">Observational 3D CAD • Parametric Solid Modeling • Multi-Body Assemblies
+                    • Surface Contouring</div>
                   <div class="print-table-layout">
                     <div style="width: 44%; display: flex; gap: 0.5rem;">
                       <div style="flex: 1; text-align: center;">
                         <img src="assets/images/end_table_1.png" alt="Console Table CAD" class="print-thumb-single"
                           style="height: 100px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
-                        <span style="font-size: 0.62rem; color: #475569; display: block; margin-top: 2px; font-weight: 600;">Console Table</span>
+                        <span
+                          style="font-size: 0.62rem; color: #475569; display: block; margin-top: 2px; font-weight: 600;">Console
+                          Table</span>
                       </div>
                       <div style="flex: 1; text-align: center;">
                         <img src="assets/images/gaming_chair_1.png" alt="Ergonomic Chair CAD" class="print-thumb-single"
                           style="height: 100px; object-fit: cover; border-radius: 3px; border: 1px solid #cbd5e1;">
-                        <span style="font-size: 0.62rem; color: #475569; display: block; margin-top: 2px; font-weight: 600;">Ergonomic Chair</span>
+                        <span
+                          style="font-size: 0.62rem; color: #475569; display: block; margin-top: 2px; font-weight: 600;">Ergonomic
+                          Chair</span>
                       </div>
                     </div>
                     <div style="width: 54%;">
                       <p class="print-proj-summary" style="margin: 0 0 0.35rem 0;">
-                        Executed observational 3D CAD modeling studies in Autodesk Fusion 360 inspired by real-world furniture.
-                        Modeled angled cross-braced console end table frames, slatted lower shelves, and multi-component ergonomic chair assemblies with contoured lumbar backrests from scratch.
+                        Executed observational 3D CAD modeling studies in Autodesk Fusion 360 inspired by real-world
+                        furniture.
+                        Modeled angled cross-braced console end table frames, slatted lower shelves, and multi-component
+                        ergonomic chair assemblies with contoured lumbar backrests from scratch.
                       </p>
                     </div>
                   </div>
