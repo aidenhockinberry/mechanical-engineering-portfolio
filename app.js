@@ -381,40 +381,84 @@ function openTurbineVideo() {
   const videoPath = 'assets/teslaTurbine/tesla_turbine.mp4';
   openVideoLightbox(
     videoPath,
-    'Additive Boundary-Layer Tesla Turbine - High-RPM Compressed Air Spin Demonstration. (Upload/drop video as assets/teslaTurbine/tesla_turbine.mp4)'
+    'Additive Tesla Turbine - High-RPM Compressed Air Spin Demonstration. (Upload/drop video as assets/teslaTurbine/tesla_turbine.mp4)'
   );
 }
 window.openTurbineVideo = openTurbineVideo;
 
 
 /* ==========================================================================
-   3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER (Mun Mission)
+   3. SIMULATED ROCKET STAGES INTERACTIVE VIEWER & TAB SWITCHER (Mun Mission)
    ========================================================================== */
+function switchMunTab(tabId, btnElement) {
+  const panes = document.querySelectorAll('.mun-tab-pane');
+  panes.forEach(pane => pane.classList.remove('active'));
+
+  const target = document.getElementById(`mun-tab-${tabId}`);
+  if (target) {
+    target.classList.add('active');
+  }
+
+  const buttons = document.querySelectorAll('.mun-tab-btn');
+  buttons.forEach(b => b.classList.remove('active'));
+
+  if (btnElement) {
+    btnElement.classList.add('active');
+  } else {
+    const defaultBtn = document.getElementById(`munTabBtn-${tabId}`);
+    if (defaultBtn) defaultBtn.classList.add('active');
+  }
+}
+window.switchMunTab = switchMunTab;
+
 const stageData = {
   1: {
-    title: 'Stage 1: High TWR Atmospheric Escape (Solid Rocket Boosters)',
-    desc: 'High thrust-to-weight solid rocket boosters engineered to overcome aerodynamic drag in Kerbin’s thick sea-level atmosphere with maximum initial impulse.',
-    img: 'assets/images/p8_img3_569.jpeg'
+    title: 'Stage 1: Pre-Launch Vehicle Stack & 5-Stage ΔV Telemetry',
+    badge: 'Phase 1: Launch Pad | 5 Stages Ready',
+    desc: 'Complete 5-stage launch vehicle positioned on the KSC launch pad prior to ignition. Left telemetry panel details per-stage specific impulse (Isp 210s–285s), thrust, TWR, burn duration, and ΔV allocation across all 5 discrete stages.',
+    img: 'assets/images/kerbal/KSP_%23.png'
   },
   2: {
-    title: 'Stage 2: Booster Core & Gravity Turn Ascent Profile',
-    desc: 'Liquid-fueled core stage executing a continuous gravity turn starting at 70km altitude to trade vertical momentum for horizontal orbital insertion velocity.',
-    img: 'assets/images/p8_img3_569.jpeg'
+    title: 'Stage 2: Launch Pad Ignition & SRB Atmospheric Boost',
+    badge: 'Phase 2: Lift-Off | Alt: 374m | TWR > 1.8',
+    desc: 'Solid Rocket Boosters (SRBs) ignite alongside the center liquid core to punch through Kerbin’s dense lower atmosphere with high sea-level thrust and maximum initial impulse (Telemetry HUD: Altitude 374m, Stage 005, Total Mission ΔV 9,243 m/s).',
+    img: 'assets/images/kerbal/20A0A4_1.JPG'
   },
   3: {
-    title: 'Stage 3: Trans-Munar Injection (TMI) & Vacuum Isp Optimization',
-    desc: 'High vacuum specific impulse (Isp) stage executing precise burn nodes for Hohmann transfer orbit insertion from low parking orbit to the Mun.',
-    img: 'assets/images/p8_img6_573.png'
+    title: 'Stage 3: Radial Solid Booster Separation (43,770m)',
+    badge: 'Phase 3: SRB Jettison | Alt: 43,770m | 8,249 m/s ΔV',
+    desc: 'Spent solid rocket booster casings decouple in the upper stratosphere using symmetrical radial separation pushers, shedding dead structural mass while the central liquid sustainer continues firing.',
+    img: 'assets/images/kerbal/_6.jpg'
   },
   4: {
-    title: 'Stage 4: Munar Descent & Ascent Stage (Lander Module)',
-    desc: 'Low-gravity throttleable lander with wide-stance landing legs designed for surface stability, terrain impact dampening, and subsequent lunar ascent.',
-    img: 'assets/images/p9_img1_578.jpeg'
+    title: 'Stage 4: Gravity Turn & Low Kerbin Orbit Insertion',
+    badge: 'Phase 4: Orbital Insertion | 70km LKO Parking Orbit',
+    desc: 'Liquid-fueled core stage executes a continuous aerodynamic pitch-over gravity turn above Kerbin’s 70km atmosphere, trading vertical ascent for horizontal orbital insertion velocity.',
+    img: 'assets/images/kerbal/_69.png'
   },
   5: {
-    title: 'Stage 5: Command Module & Parachute Atmospheric Recovery',
-    desc: 'Aerodynamic heat-shielded capsule configured with staged drogue and main recovery parachutes for safe splashdown return.',
-    img: 'assets/images/p9_img2_579.png'
+    title: 'Stage 5: Trans-Munar Injection (TMI) & Hohmann Transfer',
+    badge: 'Phase 5: TMI Burn Node | 375.1 m/s Prograde',
+    desc: 'Vacuum-optimized upper stage executes a 375.1 m/s prograde maneuver burn from Low Kerbin Orbit, establishing a Hohmann transfer ellipse intercepted by the Mun’s sphere of influence (Periapsis: 296.7 km).',
+    img: 'assets/images/kerbal/_4.jpg'
+  },
+  6: {
+    title: 'Stage 6: Munar Surface Touchdown (2,819m Elevation)',
+    badge: 'Phase 6: Surface Touchdown | Alt: 2,819m | 3,819 m/s ΔV Left',
+    desc: 'Wide-stance quad landing gear with telescopic oleo struts deployed on the Munar surface following a throttle-governed suicide deceleration burn, preventing tip-over moments on uneven crater regolith.',
+    img: 'assets/images/kerbal/20260509191915_1.jpg'
+  },
+  7: {
+    title: 'Stage 7: Munar Liftoff & Ascent Stage Separation',
+    badge: 'Phase 7: Munar Ascent | 4x Ascent Thrusters Firing',
+    desc: 'Upper ascent module decouples from the lower descent base—using the landing stage as a stationary launch pad—and fires 4 radial ascent engines to enter Munar orbit and plot the Kerbin return trajectory.',
+    img: 'assets/images/kerbal/_60.png'
+  },
+  8: {
+    title: 'Stage 8: Atmospheric Re-Entry & Triple Parachute Splashdown',
+    badge: 'Phase 8: Splashdown Recovery | <6 m/s Terminal Descent',
+    desc: 'After shedding >3,200 m/s of orbital return velocity via the blunt ablative heat shield, sequenced triple main parachutes deploy over Kerbin’s ocean to slow the command capsule to a safe <6 m/s splashdown.',
+    img: 'assets/images/kerbal/image_4.png'
   }
 };
 
@@ -424,6 +468,7 @@ function initRocketStages() {
   const stageBtns = document.querySelectorAll('.stage-btn');
   const stageImg = document.getElementById('rocketStageImg');
   const titleEl = document.getElementById('stageDetailTitle');
+  const badgeEl = document.getElementById('stageDetailBadge');
   const descEl = document.getElementById('stageDetailDesc');
 
   stageBtns.forEach(btn => {
@@ -437,6 +482,7 @@ function initRocketStages() {
       if (!data) return;
 
       if (titleEl) titleEl.textContent = data.title;
+      if (badgeEl && data.badge) badgeEl.textContent = data.badge;
       if (descEl) descEl.textContent = data.desc;
       if (stageImg) {
         stageImg.style.opacity = '0';
@@ -767,15 +813,15 @@ function openVideoLightbox(videoSrc, caption) {
   // Users can unmute at any moment via the native audio control
   video.muted = true;
 
-  video.oncanplay = function() {
+  video.oncanplay = function () {
     if (loadingIndicator) loadingIndicator.style.display = 'none';
   };
 
-  video.onplaying = function() {
+  video.onplaying = function () {
     if (loadingIndicator) loadingIndicator.style.display = 'none';
   };
 
-  video.onerror = function() {
+  video.onerror = function () {
     if (loadingIndicator) loadingIndicator.style.display = 'none';
     console.warn('Video failed to stream directly:', cleanSrc);
     if (captionEl) {
@@ -987,7 +1033,7 @@ function filterAboutGrid(tabName) {
 function togglePrintSheet(sheetId, isChecked) {
   const sheet = document.getElementById(sheetId);
   if (!sheet) return;
-  
+
   if (isChecked) {
     sheet.classList.remove('hidden-for-print');
     sheet.style.display = 'flex';
@@ -1003,7 +1049,7 @@ function triggerPrintPortfolio() {
   updateQrCodes(url);
   showToast('📄 Preparing printable PDF portfolio layout...');
   trackAnalytics('export_portfolio_print');
-  
+
   setTimeout(() => {
     window.print();
   }, 250);
